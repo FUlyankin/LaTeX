@@ -1,2 +1,2 @@
 # LaTeX
-Материалы по LaTeX
+studying LaTeX
