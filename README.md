@@ -1,2 +1,2 @@
 # LaTeX
-studying LaTeX
+studying LaTeX in Ranepa! 
