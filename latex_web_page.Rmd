@@ -1,0 +1,146 @@
+Установка LaTeX
+---------------
+
+Подробную инструкцию по установке LaTeX можно найти [[тут | https://github.com/FUlyankin/LaTeX/wiki/LaTeX_install]].
+
+Также можно посмотреть подробную инструкцию по установке связки R-RStudio-LaTeX и кучу других интересных вещей, связанных с R [тут](https://github.com/bdemeshev/em301/wiki/R). Спасибо за это Демешеву Борису Борисовичу!
+
+-----
+
+Неплохие книги о LaTeX
+---------------
+
+* Воронцов, [LaTeX в примерах](http://www.ccas.ru/voron/download/voron05latex.pdf)
+* Львовский, [Набор и вёрстка в системе LaTeX](http://www.mccme.ru/free-books/llang/newllang.pdf)
+* Неплохая [Wiki-книга] (https://en.wikibooks.org/wiki/LaTeX) о LaTeX c кучей примеров, но на английском. 
+
+Замечание ко всем книжкам! Следует использовать кодировку utf-8 для файлов. Если в книге есть строчка `\usepackage[cp1251]{inputenc}`, то её нужно заменить на `\usepackage[utf8]{inputenc}`.
+
+
+Полезные ссылки и сервисы
+---------------
+
+*  Куча [различных примеров](http://www.latextemplates.com/) использования LaTeX, шаблоны!
+*  Ещё [куча примеров](https://www.overleaf.com/latex/templates) использования LaTeX, шаблоны!
+*  Нарисуй символ мышкой [в окошечке](http://detexify.kirelabs.org/classify.html) и получи для него Tex-овскую команду!
+*  [Сервис](http://latex2png.com/) для конвертации TeX-овского кода в картинку!
+*  [Сервис](http://www.tablesgenerator.com/latex_tables) для рисования табличек!
+*  [Главная страница](https://www.geogebra.org/cms/ru/) проекта Geogebra!
+*  [Примеры рисунков в tikz](http://www.texample.net/tikz/)                
+*  [Куча](http://tex.stackexchange.com/questions/158668/nice-scientific-pictures-show-off) разной безумной анимации и картинок, сделанных с помощью LaTeX!
+*  [Темы для презентаций](https://www.hartwork.org/beamer-theme-matrix/) в Beamer!
+*  [Три базовые открытые презентации](https://www.overleaf.com/latex/learn/free-online-introduction-to-latex-part-1#.V_o9Bh8xDqN), из которых я кое-что спёр для курса. 
+
+
+**Свои вопросы по LaTeX** лучше всего задать на [tex.stackexchange.com](http://tex.stackexchange.com/)
+
+* Онлайн редактор [[Sharelatex|https://www.sharelatex.com/]]
+* Онлайн редактор [[Overleaf|https://www.overleaf.com/]]
+
+
+
+
+## Преамбулы
+
+ 1. [Преамбула для души](https://github.com/FUlyankin/LaTeX/raw/master/sem_4/for_soul.tex) 
+ 2. [Преамбула по ГОСТ]( )
+ 
+
+## Agenda
+
+ 1. лекция:  Обо всём и ни о чём! Введение в TeX. Мотивация изучать TeX. Математика в LaTeX.
+ 2. Рисунки и таблицы в LaTeX.
+ 3. Графика (Tikz). Великая и могучая Geogebra. Собственные команды и макросы.
+ 4. Оформление документа в целом. Преамбула для души. Некоторые странные пакеты.
+ 5. Преамбула по жёсткому госту. XeTeX. Работа со шрифтами. 
+ 6. Список литературы, bibtex. ГОСТ и bibtex. Автоматические ссылки.
+ 7. R + LaTeX --- самая мощная связка в мире! Автоматизация создания документов. Как создать 100 красивых анкет для игры в киллера в один клик? Пара слов о Markdown и Make-файлах.
+ 8. Презентации в LaTeX --- большая боль или чувство стиля?  
+
+
+## Логи семинаров
+
+### Занятие 1, дата
+* Уютненькая [Презентация](https://github.com/FUlyankin/LaTeX/raw/master/sem_1/presa.pdf )
+* Наш [первый документ](https://github.com/FUlyankin/LaTeX/raw/master/sem_1/Our%20first%20LaTeX%20doc.tex) в LaTeX 
+* [Математика в LaTeX](https://github.com/FUlyankin/LaTeX/raw/master/sem_1/%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0%20%D0%B2%20LaTeX.tex) 
+* Домашнее задание:
+  * Если ты ещё не установил софт, то установи! Как? Смотри выше!
+  * Создать свой первый документ в LaTeX! Создать в нём перечень с десятью фактами о себе. Написать пять своих  любимых формулы и две ненавистные. Рассказать почему ты именно так относишься к этим формулам. Вставить своё фото! Не забыть подключить в преамбуле пакет для вставки картинок с помощью команды `\usepackage{graphicx}`!
+
+### Занятие 2 
+* Теховский файл [Картинки и таблицы](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/%D0%9A%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8%20%D0%B8%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D1%8B.tex) в LaTeX. [Папка с картинками](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/images.zip) для файла.
+* Задания для семинара 
+
+### Занятие 3
+* Теховский файл [Графика и Tikz](https://github.com/FUlyankin/LaTeX/raw/master/sem_3/%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0%20%D0%B2%20LaTeX.tex)
+* Теховский файл [Свои команды и макросы](https://github.com/FUlyankin/LaTeX/raw/master/sem_3/%D0%BC%D0%B0%D0%BA%D1%80%D0%BE%D1%81%D1%8B%20%D0%B8%20%D1%81%D1%87%D1%91%D1%82%D1%87%D0%B8%D0%BA%D0%B8.tex)
+* Задания для семинара
+
+### Занятие 4
+* [Теховский файл](https://github.com/FUlyankin/LaTeX/raw/master/sem_4/all.tex) оформление документа в целом
+* [Теховский файл](https://github.com/FUlyankin/LaTeX/raw/master/sem_4/kolont.tex) с кучей новых команд в преамбуле
+
+### Занятие 5
+* [Теховский файл](https://github.com/FUlyankin/LaTeX/raw/master/sem_5/xetex.tex) работа со шрифтами в XeLaTeX
+* Хороший [менеджер по шрифтам](https://apps.ubuntu.com/cat/applications/precise/font-manager/) для Linux
+* Неплохой [менеджер по шрифтам](http://www.proximasoftware.com/fontexpert/) для Windows
+* Шрифт вымогателей можно скачать [тут!](http://www.dafont.com/phorssa.font)
+* [Магистерская дисертация](https://github.com/FUlyankin/LaTeX/raw/master/sem_5/KShilin_gost.zip) в ГОСТ от Шилина Кирилла Юрьевича!
+* [Преамбула по ГОСТ]( ) с моими корректировками!
+
+
+### Занятие 6
+* [Теховский файл](https://github.com/FUlyankin/LaTeX/raw/master/sem_6/my_bibliograthy.tex) создание библиографии в ручную
+* [Теховский файл](https://github.com/FUlyankin/LaTeX/raw/master/sem_6/biblatex.zip) работа в biblatex
+* Неплохая [шпаргалка по biber](https://github.com/FUlyankin/LaTeX/blob/master/sem_6/HSE.pdf) от вышкинского курса с coursera.
+
+
+### Занятие 7: R, Markdown и Sweave
+* Основы работы в R-Sweave (R+LaTeX) в [одном файле](https://github.com/FUlyankin/LaTeX/raw/master/sem_7/R%2BLaTeX.Rnw )
+* Основы работы в R-markdown (R+Markdown) в [одном файле]( https://github.com/FUlyankin/LaTeX/raw/master/sem_7/R%20%2B%20Markdown%20.Rmd)
+* [Создание](https://github.com/FUlyankin/LaTeX/raw/master/sem_7/many_pdf.zip) огромного количества похожих pdf
+* [Создание](https://github.com/FUlyankin/LaTeX/raw/master/sem_7/longpfd.zip) одного длинного pdf из похожих частей
+* [Создание](https://github.com/FUlyankin/LaTeX/raw/master/sem_7/Killer_game.zip) анкет для игры в киллера
+
+#### Немного больше о Sweave и knitr! 
+Knitr - развитие Sweave. Он был создан для более простой и удобной работы с картинками. Вместе с появлением этого пакета часть опций в Sweave изменилась и стала неактуальной. Появились новые опции.
+
+* [Опции в R-sweawe и knitr](http://yihui.name/knitr/options/)
+* Тут будет ссылка на что-нибудь про brew! 
+* А вот [отсюда](https://botthoughts.wordpress.com/2012/05/17/generating-reports-for-different-data-sets-using-brew-and-knitr/) растут ноги этого всего!
+
+#### Markdown =)
+
+* [Хороший туториал](http://www.markdowntutorial.com/) по Markdown. Если у вас есть свободные 10 минут, то их хватит, чтобы изучить его!
+* Ещё немножечко Markdown на русском можно найти [тут](http://opp.psy.msu.ru/help.php?file=markdown.html) и [здесь](http://opp.psy.msu.ru/help.php?file=advanced_markdown.html)!
+* [Уроки](http://rmarkdown.rstudio.com/) по Markdown в R! Это шикарная страница. Обязательно посмотрите её!
+* [Перевод](http://spec.commonmark.org/dingus/) разметки Markdown в HTML!
+
+### Занятие 8
+* [Несколько примеров](https://ru.sharelatex.com/learn/Biblatex_bibliography_styles) использования разных стилей для biber.
+* [Как создать свою тему](http://hamaluik.com/posts/better-beamer-themes/) инструкция step by step.
+
+
+Полезные и не очень виньетки!
+-----------------------
+* [Пакет с todo-шками!](http://ctan.altspu.ru/macros/latex/contrib/todonotes/todonotes.pdf) - Todonotes!
+* [Пакет для оформления кода!](http://mirror.macomnet.net/pub/CTAN/macros/latex/contrib/minted/minted.pdf) - Minted!
+
+* [Пакет цитирования](https://www.ctan.org/pkg/cite)   {cite} 
+* [Библиография в bibtex](http://www.ctan.org/pkg/biblatex)
+* [Пакет для Российского ГОСТ](http://www.ctan.org/pkg/biblatex-gost) в bibtex  {biblatex-gost}
+
+* Самый [смешной пакет](https://www.ctan.org/pkg/indentfirst) в мире! 
+
+
+Другие курсы по LaTeX
+-------------
+
+[Документы и презентации в LaTeX от ВШЭ](https://www.coursera.org/learn/latex/home/welcome). Введение в LaTeX от Высшей Школы Экономики на русском языке!
+
+
+
+
+
+
