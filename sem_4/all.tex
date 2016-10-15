@@ -1,0 +1,281 @@
+\documentclass[pdftex, 12pt, a4paper]{article}
+
+
+\usepackage{etex}     
+% расширение классического tex в частности позволяет подгружать гораздо больше пакетов, чем мы и займёмся далее
+
+
+%%%%%%%%%% Русский язык %%%%%%%%%%
+\usepackage[british,russian]{babel} % выбор языка для документа
+\usepackage[utf8]{inputenc}         % задание utf8 кодировки исходного tex файла
+\usepackage[X2,T2A]{fontenc}        % кодировка
+\usepackage{cmap}					% поиск в PDF
+
+
+%%%%%%%%%% Математика %%%%%%%%%%
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+
+%\mathtoolsset{showonlyrefs=true}  % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+%\usepackage{leqno} % Нумерация формул слева
+
+
+%%%%%%%%%% Работа с картинками %%%%%%%%%
+\usepackage{graphicx}                  % Для вставки рисунков
+\usepackage{graphics} 
+\graphicspath{{images/}{pictures/}}    % можно указать папки с картинками
+\usepackage{wrapfig}                   % Обтекание рисунков и таблиц текстом
+\usepackage{subfigure}                 % для создания нескольких рисунков внутри одного
+
+
+%%%%%%%%%% Работа с таблицами %%%%%%%%%%
+\usepackage{tabularx}            % новые типы колонок
+\usepackage{tabulary}            % и ещё новые типы колонок
+\usepackage{array}               % Дополнительная работа с таблицами
+\usepackage{longtable}           % Длинные таблицы
+\usepackage{multirow}            % Слияние строк в таблице
+\usepackage{float}               % возможность позиционировать объекты в нужном месте 
+\usepackage{booktabs}            % таблицы как в книгах!  
+\renewcommand{\arraystretch}{1.3} % больше расстояние между строками
+
+
+
+%%%%%%%%%% Графика и рисование %%%%%%%%%%
+\usepackage{tikz, pgfplots}      % язык для рисования графики из latex'a
+\usepackage{pgfplotstable}
+\usetikzlibrary{trees}           % tikz-прибамбас для рисовки деревьев
+\usepackage{tikz-qtree}          % альтернативный tikz-прибамбас для рисовки деревьев
+\usetikzlibrary{arrows}          % tikz-прибамбас для рисовки стрелочек подлиннее
+
+\usepackage{amscd}                   % Пакеты для рисования 
+\usepackage[matrix,arrow,curve]{xy}  % комунитативных диаграмм
+
+
+%%%%%%%%%% Гиперссылки %%%%%%%%%%
+\usepackage{xcolor}              % разные цвета
+
+% Два способа включить в пакете какие-то опции:
+%\usepackage[опции]{пакет}
+%\usepackage[pdftex,unicode,colorlinks=true,hyperindex,breaklinks]{hyperref}
+
+\usepackage{hyperref}
+\hypersetup{				
+    unicode=true,           % позволяет использовать юникодные символы
+    colorlinks=true,       	% true - цветные ссылки, false - ссылки в рамках
+    urlcolor=blue,          % цвет ссылки на url
+    linkcolor=red,          % внутренние ссылки
+    citecolor=green,        % на библиографию
+	pdfnewwindow=true       % при щелчке в pdf на ссылку откроется новый pdf
+	hyperindex=true         % сделать ли ссылку кликабельной?
+	breaklinks=true         % если ссылка не умещается в одну строку, разбивать    
+	                        % ли ее на две части?
+}
+\usepackage{csquotes}            % Еще инструменты для ссылок
+
+
+%%%%%%%%%% Програмный код %%%%%%%%%%
+\usepackage{minted}
+% Включает подцветку комманд в программах!
+% Нужно, чтобы на компе стоял питон, надо поставить пакет Pygments, в котором он сделан через pip или cmd ( нужно ввести easy_install Pygments ). 
+% После нужно зайти в настройки texmaker и там прописать в PdfLatex pdflatex -shell-escape -synctex=1 -interaction=nonstopmode %.tex
+% Документация по пакету хорошая, сам читал, погуглите!
+
+
+%%%%%%%%%% Другие приятные пакеты %%%%%%%%%
+\usepackage{multicol}       % несколько колонок
+\usepackage{verbatim}       % для многострочных комментариев
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет Последний день Помпеи}
+% \listoftodos --- печатает все поставленные \todo'шки
+
+
+
+%%%%%%%%%% Свои команды %%%%%%%%%%
+\usepackage{etoolbox}       % логические операторы для своих макросов
+
+%Можно определить любой мат. оператор:
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Corr}{Corr}
+\DeclareMathOperator{\E}{\mathop{E}}
+
+
+%Можно задать любую команду, например:
+\newcommand{\iid}{\text{i.\hspace{1pt}i.\hspace{1pt}d.}}
+
+%Можно определить новый символ, например для множества действительных чисел! Команда \ensuremath автоматически проверяет наличие математического режима:
+\def\R{\ensuremath{\mathbb{R}{ }}} 
+
+%Можно ввести свои собственные сокращения:
+\def \a{\alpha}
+\def \b{\beta}
+\def \t{\tau}
+\def \dt{\delta}
+\def \s{\sigma}
+\def \la{\lambda}
+\newcommand{\e}{\varepsilon}
+
+%Можно переделать старые команды:
+\renewcommand{\phi}{\varphi}
+\renewcommand{\le}{\leqslant}
+\renewcommand{\ge}{\geqslant}
+
+
+%%%%%%%%%% Теоремы %%%%%%%%%%
+\theoremstyle{plain}              % Это стиль по умолчанию.  Есть другие стили. 
+\newtheorem{theorem}{Теорема}[section]
+\newtheorem{result}{Следствие}[theorem]
+% счётчик подчиняется теоремному, нумерация идёт по главам согласованно между собой
+
+\theoremstyle{definition}         % убирает курсив и что-то еще наверное делает ;)
+\newtheorem*{defin}{Определение}  % нумерация не идёт вообще
+
+\newtheorem{fignia}{Какая-то фигня}
+
+
+
+\title{Оформление документа в целом}
+\date{\today}
+
+
+
+\begin{document} % конец преамбулы, начало документа
+
+\maketitle
+
+\section{Набор текста}
+
+\subsection{Длинное тире и неразрывный пробел}
+
+% --- это длинное тире 
+Дима --- слесарь!
+
+Дима - слесарь!
+
+% ~ это неразрывный пробел
+% Обычно неразрывный пробел ставится после предлогов, перед единицами измерения. В случае если 10 кг попадет на конец строки, ~ позволит сохранить их рядом, а не написать 10 на одной строке, а кг на другой.
+
+\newpage
+
+
+\subsection{Шрифт}
+
+\begin{table}[h!]
+	\caption{Размеры шрифта}
+	\centering
+		\begin{tabular}{|c|c|}
+		\hline	\verb|\tiny|      & \tiny        крошечный \\
+		\hline	\verb|\scriptsize|   & \scriptsize  очень маленький\\
+			\hline \verb|\footnotesize| & \footnotesize  довольно маленький \\
+			\hline \verb|\small|        &  \small        маленький \\
+			\hline \verb|\normalsize|   &  \normalsize  нормальный \\
+			\hline \verb|\large|        &  \large       большой \\
+			\hline \verb|\Large|        &  \Large       еще больше \\[5pt]
+			\hline \verb|\LARGE|        &  \LARGE       очень большой \\[5pt]
+			\hline \verb|\huge|         &  \huge        огромный \\[5pt]
+			\hline \verb|\Huge|         &  \Huge        громадный \\ \hline
+		\end{tabular}
+\end{table}
+
+\begin{Huge}
+\emph{Какой-нибудь \emph{обычный}  текст.}
+\end{Huge}
+
+Можно писать текст и \LARGE постоянно переключать \tiny шрифты между \normalsize собой.
+
+
+\section{Сноски}
+
+Чтобы сделать сноску к какому-то месту в тексте, достаточно использовать команду \verb|\footnote| с одним обязательным аргументом — текстом сноски. Cноски\footnote{Вроде этой.} нумеруются подряд на протяжении всей главы. 
+
+
+\section{несколько колонок} 
+
+Будут ли борелевскими на числовой прямой множества
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $(2;5)$,
+    \item $(-\infty;t)$,
+    \item $(t; +\infty)$,
+    \item $[2;5]$,     
+    \item $(-\infty;t]$,
+    \item $[t; +\infty)$,
+    \item $(3;5]$? 
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{3}
+Какой-то длинный длинный текст, который в конечном счёте будет расположен  в нашем клёвом документе в три колонки. Три колонки --- это круто! Много колонок!!! Обожаю колонки!!! 
+\end{multicols}
+
+
+\section{Буквальное воспроизведение}
+
+Окружение verbatim предназначено для буквального воспроизведения имеющихся в файле символов.
+
+\begin{verbatim}
+hсодержимое файла something.txti
+	я                  мог бы 
+писать      красиво, но $ }{%        пишу 
+
+криво!
+\end{verbatim}
+
+Можно использовать это окружения для написания команд напрямую. Например, команда \verb"\dots" задает многоточие.
+
+\newpage
+\section{Красивое оформление кода}
+
+Окружение minted красиво и с автоматической подцветкой оформляет код в питоне!
+
+\begin{minted}[breaklines]{python}
+import numpy as np
+import pandas as pd
+
+#Вспомогательная функция для получения правильного количества дней. Работает даже с високосным годом.
+def monthlength(month,year):
+    if year % 4 == 0:
+         VisYear = 29
+    else:
+         VisYear = 28
+    return [31,VisYear,31,30,31,30,31,31,30,31,30,31][month]
+\end{minted} 
+
+Окружение minted красиво и с автоматической подцветкой оформляет код в R! При этом оно делает это с разной уникальной подцветкой, соответствующей оригинальной подцветке языка! 
+
+\begin{minted}[breaklines,linenos]{R}
+library("dplyr")
+library("ggplot2")
+
+ALLdata <- read.csv("data.txt",sep="\t",dec=".",header=TRUE)
+data_usd <- data.frame(ALLdata$STATEMENT[-1],diff(ALLdata$USD,1))
+names(data_usd) <- c('Statement','USD')
+\end{minted} 
+
+Можно писать математические комменатрии к коду.
+
+\begin{minted}[mathescape]{python}
+# Код ниже выдаст $\sum_{i=1}^{n}i$
+def sum_from_one_to(n):
+	r = range(1, n + 1)
+	return sum(r)
+\end{minted}
+
+\newpage
+\section{Гиперссылки}
+
+\url{https://vk.com}
+
+В \href{https://vk.com}{этой социальной сети} можно многое найти!
+
+\section{Todo и Missfigure}
+
+\todo{Здесь надо коэффициенты исправить}
+\missingfigure{Здесь будет Последний день Помпеи} 
+
+
+\end{document} % конец документа

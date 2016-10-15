@@ -1,0 +1,110 @@
+% HSE Beamer Theme
+% by Danil Fedorovykh
+% http://hse.ru/staff/df
+%
+% Version 1.0
+% June 2014
+
+%%% Loading packages useful for typesetting our slides
+\usepackage{wrapfig}
+\usepackage{xcolor}
+\usepackage{etoolbox}
+\usepackage{hyperref} 
+
+\ProvidesPackage{beamerthemeHSE}[2014/06/08] % Defines the theme HSE
+
+\usefonttheme{default} % Font theme
+
+\definecolor{HSEblue}{cmyk}{1,0.66,0,0.02}        % Pantone 286
+\definecolor{HSEgreen}{cmyk}{0.69,0,1,0}          % Pantone 361
+\definecolor{HSEred}{cmyk}{0,0.95,1,0.29}         % Pantone 484
+\definecolor{HSEorange}{cmyk}{0,0.42,0.77,0}      % Pantone 131
+\setbeamercolor{WhiteOnBlue}{bg=HSEblue,fg=white} % White on Pantone 286
+\setbeamercolor{BlueOnWhite}{fg=HSEblue,bg=white} % Pantone 286 on White
+
+\usepackage{hyperref}
+\hypersetup{
+    unicode=true,          % non-Latin characters in Acrobat’s bookmarks
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=white,       % color of internal links (change box color with linkbordercolor)
+    citecolor=HSEblue,     % color of links to bibliography
+    filecolor=HSEblue,     % color of file links
+    urlcolor=HSEblue       % color of external links
+}
+
+%%% Some design features
+\setbeamertemplate{navigation symbols}{}    % Comment out to show nav. bar
+\setbeamertemplate{itemize items}[circle]   % Style of bullet points, may be default, triangle, circle, square, or ball
+%\setbeamertemplate{theorems}[numbered]     % Number objects such as theorems and definitions
+
+
+%%% Set color of different objects (see Beamer User Guide for more info)
+\usecolortheme[named=HSEblue]{structure}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{frametitle}{bg=HSEblue}
+\setbeamercolor{frametitle}{fg=white}
+\setbeamercolor{headline}{bg=HSEblue}
+\setbeamercolor{alerted text}{fg=HSEred}
+\setbeamercolor{itemize item}{fg=HSEblue}
+\setbeamercolor{itemize subitem}{fg=HSEblue}
+\setbeamercolor{itemize subsubitem}{fg=HSEblue}
+\setbeamercolor{block title example}{fg=HSEgreen}
+\AtBeginEnvironment{exampleblock}{
+    \setbeamercolor{itemize item}{fg=HSEgreen}
+    \setbeamercolor{itemize subitem}{fg=HSEgreen}
+    \setbeamercolor{itemize subsubitem}{fg=HSEgreen}
+                                 }
+\setbeamercolor{palette primary}{bg=HSEblue}
+\setbeamercolor{palette primary}{fg=white}
+\setbeamercolor{palette secondary}{bg=HSEblue}
+\setbeamercolor{palette secondary}{fg=white}
+\setbeamercolor{palette tertiary}{bg=HSEblue}
+\setbeamercolor{palette tertiary}{fg=white}
+
+%%% Layout issues
+\setbeamertemplate{headline}[default]{} % Empty headline
+\setbeamertemplate{frametitle} % Frametitle with logo
+{
+    \nointerlineskip
+    \begin{beamercolorbox}[sep=0.3cm,wd=\paperwidth]{frametitle}
+		\vbox{}\vskip-0.7ex% 
+		\begin{wrapfigure}{r}{0.12\textwidth}
+			\vskip-3ex\includegraphics[width=0.08\textwidth]{HSE-theme/HSE-small}
+ 		\end{wrapfigure}
+ 		\strut\insertframetitle
+
+ 		\small\strut\insertframesubtitle
+		\vskip-1ex%
+    \end{beamercolorbox}
+}
+
+\makeatletter
+\setbeamertemplate{footline} % Footline
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2ex,dp=1ex,center]{WhiteOnBlue}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2ex,dp=1ex,center]{WhiteOnBlue}%
+    \usebeamerfont{title in head/foot}\insertshortinstitute
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2ex,dp=1ex,right]{WhiteOnBlue}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+
+\addtobeamertemplate{title page}{%
+  \leavevmode%
+  \vspace{-.23cm}
+  \hbox{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=0.3\paperheight]{frametitle}
+      \begin{center}
+        \includegraphics[height=0.28\paperheight]{HSE-theme/HSE-main} 
+        \vspace{-0.025\paperheight}
+      \end{center}
+   \end{beamercolorbox}}
+}{\vspace{3cm}}
