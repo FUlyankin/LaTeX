@@ -122,7 +122,7 @@ $(document).ready(function () {
 <div id="-latex" class="section level2">
 <h2>Установка LaTeX</h2>
 <p>Подробную инструкцию по установке LaTeX можно найти <a href="https://github.com/FUlyankin/LaTeX/wiki/LaTeX_install">тут</a>.</p>
-<p>Также можно посмотреть подробную инструкцию по установке связки R-RStudio-LaTeX и кучу других интересных вещей, связанных с R <a href="https://github.com/bdemeshev/em301/wiki/R">тут</a>. Спасибо за это Демешеву Борису Борисовичу!</p>
+<p>Также можно посмотреть подробную инструкцию по установке связки R-RStudio-LaTeX и кучу других интересных вещей, связанных с R <a href="https://github.com/bdemeshev/em301/wiki/R">тут</a>. Спасибо за это и за многое другое Демешеву Борису Борисовичу!</p>
 <hr />
 </div>
 <div id="---latex" class="section level2">
@@ -139,7 +139,7 @@ $(document).ready(function () {
 <ul>
 <li>Куча <a href="http://www.latextemplates.com/">различных примеров</a> использования LaTeX, шаблоны!</li>
 <li>Ещё <a href="https://www.overleaf.com/latex/templates">куча примеров</a> использования LaTeX, шаблоны!</li>
-<li>Нарисуй символ мышкой <a href="http://detexify.kirelabs.org/classify.html">в окошечке</a> и получи для него Tex-овскую команду!</li>
+<li>Нарисуй символ мышкой <a href="http://detexify.kirelabs.org/classify.html">в окошечке</a> и получи для него TeX-овскую команду!</li>
 <li><a href="http://latex2png.com/">Сервис</a> для конвертации TeX-овского кода в картинку!</li>
 <li><a href="http://www.tablesgenerator.com/latex_tables">Сервис</a> для рисования табличек!</li>
 <li><a href="https://www.geogebra.org/cms/ru/">Главная страница</a> проекта Geogebra!</li>
@@ -154,23 +154,24 @@ $(document).ready(function () {
 <li>Онлайн редактор <a href="https://www.sharelatex.com/">Sharelatex</a></li>
 <li>Онлайн редактор <a href="https://www.overleaf.com/">Overleaf</a></li>
 </ul>
+<hr />
 </div>
 <div class="section level2">
 <h2>Преамбулы</h2>
 <ol style="list-style-type: decimal">
 <li><a href="https://github.com/FUlyankin/LaTeX/raw/master/sem_4/for_soul.tex">Преамбула для души</a></li>
-<li><a href>Преамбула по ГОСТ</a></li>
+<li><a href>Преамбула по ГОСТ</a> — в разработке</li>
 </ol>
 </div>
 <div id="agenda" class="section level2">
 <h2>Agenda</h2>
 <ol style="list-style-type: decimal">
-<li>лекция: Обо всём и ни о чём! Введение в TeX. Мотивация изучать TeX. Математика в LaTeX.</li>
+<li>Обо всём и ни о чём! Введение в TeX. Мотивация изучать TeX. Математика в LaTeX.</li>
 <li>Рисунки и таблицы в LaTeX.</li>
 <li>Графика (Tikz). Великая и могучая Geogebra. Собственные команды и макросы.</li>
 <li>Оформление документа в целом. Преамбула для души. Некоторые странные пакеты.</li>
 <li>Преамбула по жёсткому госту. XeTeX. Работа со шрифтами.</li>
-<li>Список литературы, bibtex. ГОСТ и bibtex. Автоматические ссылки.</li>
+<li>Список литературы, bibtex. ГОСТ и bibtex. Автоматические ссылки. Пакет biblatex-gost.</li>
 <li>R + LaTeX — самая мощная связка в мире! Автоматизация создания документов. Как создать 100 красивых анкет для игры в киллера в один клик? Пара слов о Markdown и Make-файлах.</li>
 <li>Презентации в LaTeX — большая боль или чувство стиля?</li>
 </ol>
@@ -183,9 +184,11 @@ $(document).ready(function () {
 <li>Уютненькая <a href="https://github.com/FUlyankin/LaTeX/raw/master/sem_1/presa.pdf">Презентация</a></li>
 <li>Наш <a href="https://github.com/FUlyankin/LaTeX/raw/master/sem_1/Our%20first%20LaTeX%20doc.tex">первый документ</a> в LaTeX</li>
 <li><a href="https://github.com/FUlyankin/LaTeX/raw/master/sem_1/%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0%20%D0%B2%20LaTeX.tex">Математика в LaTeX</a></li>
-<li>Домашнее задание:</li>
+<li>Домашнее задание:
+<ul>
 <li>Если ты ещё не установил софт, то установи! Как? Смотри выше!</li>
 <li>Создать свой первый документ в LaTeX! Создать в нём перечень с десятью фактами о себе. Написать пять своих любимых формулы и две ненавистные. Рассказать почему ты именно так относишься к этим формулам. Вставить своё фото! Не забыть подключить в преамбуле пакет для вставки картинок с помощью команды <code>\usepackage{graphicx}</code>!</li>
+</ul></li>
 </ul>
 </div>
 <div id="-2" class="section level3">
@@ -208,6 +211,7 @@ $(document).ready(function () {
 <ul>
 <li><a href="https://github.com/FUlyankin/LaTeX/raw/master/sem_4/all.tex">Теховский файл</a> оформление документа в целом</li>
 <li><a href="https://github.com/FUlyankin/LaTeX/raw/master/sem_4/kolont.tex">Теховский файл</a> с кучей новых команд в преамбуле</li>
+<li>Задания для семинара</li>
 </ul>
 </div>
 <div id="-5" class="section level3">
@@ -218,7 +222,8 @@ $(document).ready(function () {
 <li>Неплохой <a href="http://www.proximasoftware.com/fontexpert/">менеджер по шрифтам</a> для Windows</li>
 <li>Шрифт вымогателей можно скачать <a href="http://www.dafont.com/phorssa.font">тут!</a></li>
 <li><a href="https://github.com/FUlyankin/LaTeX/raw/master/sem_5/KShilin_gost.zip">Магистерская дисертация</a> в ГОСТ от Шилина Кирилла Юрьевича!</li>
-<li><a href>Преамбула по ГОСТ</a> с моими корректировками!</li>
+<li><a href>Преамбула по ГОСТ</a> — в разработке</li>
+<li>Задания для семинара</li>
 </ul>
 </div>
 <div id="-6" class="section level3">
@@ -227,16 +232,25 @@ $(document).ready(function () {
 <li><a href="https://github.com/FUlyankin/LaTeX/raw/master/sem_6/my_bibliograthy.tex">Теховский файл</a> создание библиографии в ручную</li>
 <li><a href="https://github.com/FUlyankin/LaTeX/raw/master/sem_6/biblatex.zip">Теховский файл</a> работа в biblatex</li>
 <li>Неплохая <a href="https://github.com/FUlyankin/LaTeX/blob/master/sem_6/HSE.pdf">шпаргалка по biber</a> от вышкинского курса с coursera.</li>
+<li><a href>Теховский файл</a> пакет biblatex-gost — в разработке</li>
 </ul>
 </div>
 <div id="-7-r-markdown--sweave" class="section level3">
 <h3>Занятие 7: R, Markdown и Sweave</h3>
 <ul>
+<li>Небольшая <a href>презенация</a> про разметки — в разработке</li>
 <li>Основы работы в R-Sweave (R+LaTeX) в <a href="https://github.com/FUlyankin/LaTeX/raw/master/sem_7/R%2BLaTeX.Rnw">одном файле</a></li>
 <li>Основы работы в R-markdown (R+Markdown) в <a href="https://github.com/FUlyankin/LaTeX/raw/master/sem_7/R%20%2B%20Markdown%20.Rmd">одном файле</a></li>
 <li><a href="https://github.com/FUlyankin/LaTeX/raw/master/sem_7/many_pdf.zip">Создание</a> огромного количества похожих pdf</li>
 <li><a href="https://github.com/FUlyankin/LaTeX/raw/master/sem_7/longpfd.zip">Создание</a> одного длинного pdf из похожих частей</li>
 <li><a href="https://github.com/FUlyankin/LaTeX/raw/master/sem_7/Killer_game.zip">Создание</a> анкет для игры в киллера</li>
+<li>Работа с большими проектами. Главы диплома в разных файлах. Рассчеты в Rnw. И их объединение. — в разработке</li>
+<li>Домашнее задание:
+<ul>
+<li>Написать в связке R + LaTeX скрипт, который будет создавать из кучи рисунков красивый pdf-файл.</li>
+<li>Написать в связке R + LaTeX скрипт, который соберёт вам готовый диплом из разных кусочков и удалит из папки весь мусор.</li>
+<li>Придумать свой полезный скрипт и реализовать его!</li>
+</ul></li>
 </ul>
 <div id="---sweave--knitr" class="section level4">
 <h4>Немного больше о Sweave и knitr!</h4>
@@ -250,35 +264,46 @@ $(document).ready(function () {
 <div id="markdown" class="section level4">
 <h4>Markdown =)</h4>
 <ul>
+<li>Нафига козе <del>баян</del> <a href="https://xakep.ru/2013/08/30/markdown-fisrt-steps/">Markdown</a></li>
 <li><a href="http://www.markdowntutorial.com/">Хороший туториал</a> по Markdown. Если у вас есть свободные 10 минут, то их хватит, чтобы изучить его!</li>
 <li>Ещё немножечко Markdown на русском можно найти <a href="http://opp.psy.msu.ru/help.php?file=markdown.html">тут</a> и <a href="http://opp.psy.msu.ru/help.php?file=advanced_markdown.html">здесь</a>!</li>
 <li><a href="http://rmarkdown.rstudio.com/">Уроки</a> по Markdown в R! Это шикарная страница. Обязательно посмотрите её!</li>
-<li><a href="http://spec.commonmark.org/dingus/">Перевод</a> разметки Markdown в HTML!</li>
 </ul>
 </div>
 </div>
 <div id="-8" class="section level3">
 <h3>Занятие 8</h3>
 <ul>
+<li><a href>Texовский файл</a> с презентацией с занятия — в разработке</li>
+<li><a href>Стилевой файл</a> и <a href>шаблон презентации</a> для него — надо залить</li>
 <li><a href="https://ru.sharelatex.com/learn/Biblatex_bibliography_styles">Несколько примеров</a> использования разных стилей для biber.</li>
 <li><a href="http://hamaluik.com/posts/better-beamer-themes/">Как создать свою тему</a> инструкция step by step.</li>
 </ul>
+<hr />
 </div>
 </div>
 <div id="----" class="section level2">
 <h2>Полезные и не очень виньетки!</h2>
 <ul>
 <li><a href="http://ctan.altspu.ru/macros/latex/contrib/todonotes/todonotes.pdf">Пакет с todo-шками!</a> - Todonotes!</li>
-<li><p><a href="http://mirror.macomnet.net/pub/CTAN/macros/latex/contrib/minted/minted.pdf">Пакет для оформления кода!</a> - Minted!</p></li>
+<li><a href="http://mirror.macomnet.net/pub/CTAN/macros/latex/contrib/minted/minted.pdf">Пакет для оформления кода!</a> - Minted!</li>
 <li><a href="https://www.ctan.org/pkg/cite">Пакет цитирования</a> {cite}</li>
 <li><a href="http://www.ctan.org/pkg/biblatex">Библиография в bibtex</a></li>
-<li><p><a href="http://www.ctan.org/pkg/biblatex-gost">Пакет для Российского ГОСТ</a> в bibtex {biblatex-gost}</p></li>
-<li><p>Самый <a href="https://www.ctan.org/pkg/indentfirst">смешной пакет</a> в мире!</p></li>
+<li><a href="http://www.ctan.org/pkg/biblatex-gost">Пакет для Российского ГОСТ</a> в bibtex {biblatex-gost}</li>
+<li>Самый смешной и гениальный <a href="https://www.ctan.org/pkg/indentfirst">пакет</a> в мире!</li>
 </ul>
 </div>
 <div id="---latex" class="section level2">
 <h2>Другие курсы по LaTeX</h2>
 <p><a href="https://www.coursera.org/learn/latex/home/welcome">Документы и презентации в LaTeX от ВШЭ</a>. Введение в LaTeX от Высшей Школы Экономики на русском языке!</p>
+</div>
+<div id="-" class="section level2">
+<h2>Плохие идеи:</h2>
+<ul>
+<li>Показать Atom</li>
+<li>Показать как работать с Git и как делать страницы через R + Markdown</li>
+<li>Показть make-файлы для Linux</li>
+</ul>
 </div>
 
 
