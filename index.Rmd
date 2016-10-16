@@ -100,7 +100,9 @@ output: html_document
 * [Теховский файл](https://github.com/FUlyankin/LaTeX/raw/master/sem_6/my_bibliograthy.tex) создание библиографии в ручную
 * [Теховский файл](https://github.com/FUlyankin/LaTeX/raw/master/sem_6/biblatex.zip) работа в biblatex
 * Неплохая [шпаргалка по biber](https://github.com/FUlyankin/LaTeX/blob/master/sem_6/HSE.pdf) от вышкинского курса с coursera.
+* [Несколько примеров](https://ru.sharelatex.com/learn/Biblatex_bibliography_styles) использования разных стилей для biber.
 * [Теховский файл]() пакет biblatex-gost --- в разработке
+* Задания для семинара
 
 
 ### Занятие 7: R, Markdown и Sweave
@@ -134,9 +136,8 @@ Knitr - развитие Sweave. Он был создан для более пр
 ### Занятие 8
 * [Texовский файл]() с презентацией с занятия --- в разработке
 * [Стилевой файл]() и [шаблон презентации]() для него --- надо залить
-* [Несколько примеров](https://ru.sharelatex.com/learn/Biblatex_bibliography_styles) использования разных стилей для biber.
 * [Как создать свою тему](http://hamaluik.com/posts/better-beamer-themes/) инструкция step by step.
-
+* Задания для семинара
 
 ********
 
