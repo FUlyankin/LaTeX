@@ -1,21 +1,31 @@
-\documentclass[pdftex, 12pt, a4paper]{article}
+\documentclass[12pt, a4paper]{article}  
 
-\usepackage{etex}     
-% расширение классического tex в частности позволяет подгружать гораздо больше пакетов, чем мы и займёмся далее
-
-
-%%%%%%%%%% Русский язык %%%%%%%%%%
-\usepackage[british,russian]{babel} % выбор языка для документа
-\usepackage[utf8]{inputenc}         % задание utf8 кодировки исходного tex файла
-\usepackage[X2,T2A]{fontenc}        % кодировка
-\usepackage{cmap}					% поиск в PDF
-
+\usepackage{etex} % расширение классического tex в частности позволяет подгружать гораздо больше пакетов, чем мы и займёмся далее
 
 %%%%%%%%%% Математика %%%%%%%%%%
 \usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
-
 %\mathtoolsset{showonlyrefs=true}  % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
 %\usepackage{leqno} % Нумерация формул слева
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{HelveticaNeueCyr}   % задаёт основной шрифт документа
+
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{HelveticaNeueCyr}
+\newfontfamily{\cyrillicfont}{HelveticaNeueCyr}
+\newfontfamily{\cyrillicfontsf}{HelveticaNeueCyr}
+% Иногда тех не видит структуры шрифтов. Эти трое бравых парней спасают ситуацию и доопределяют те куски, которые Тех не увидел.
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+\setmathfont{Asana Math}      % шрифт для математики
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+
 
 
 %%%%%%%%%% Работа с картинками %%%%%%%%%
@@ -37,23 +47,12 @@
 \renewcommand{\arraystretch}{1.3} % больше расстояние между строками
 
 
-%%%%%%%%%% Графика и рисование %%%%%%%%%%
-\usepackage{tikz, pgfplots}      % язык для рисования графики из latex'a
-\usepackage{pgfplotstable}
-\usetikzlibrary{trees}           % tikz-прибамбас для рисовки деревьев
-\usepackage{tikz-qtree}          % альтернативный tikz-прибамбас для рисовки деревьев
-\usetikzlibrary{arrows}          % tikz-прибамбас для рисовки стрелочек подлиннее
-
-\usepackage{amscd}                   % Пакеты для рисования 
-\usepackage[matrix,arrow,curve]{xy}  % комунитативных диаграмм
-
-
 %%%%%%%%%% Гиперссылки %%%%%%%%%%
 \usepackage{xcolor}              % разные цвета
 
 % Два способа включить в пакете какие-то опции:
 %\usepackage[опции]{пакет}
-%\usepackage[pdftex,unicode,colorlinks=true,hyperindex,breaklinks]{hyperref}
+%\usepackage[unicode,colorlinks=true,hyperindex,breaklinks]{hyperref}
 
 \usepackage{hyperref}
 \hypersetup{				
@@ -68,9 +67,7 @@
 	                        % ли ее на две части?
 }
 
-
 \usepackage{csquotes}            % Еще инструменты для ссылок
-
 
 %%%%%%%%%% Програмный код %%%%%%%%%%
 \usepackage{minted}
@@ -97,7 +94,6 @@
 
 
 %%%%%%%%%% Оформление %%%%%%%%%%
-
 %ТОТ САМЫЙ ПАКЕТ - ЛЕГЕНДА!
 \usepackage{indentfirst}       % установка отступа в первом абзаце главы!!!
 
@@ -131,56 +127,8 @@
 \tolerance=1000     % Ещё какое-то наказание.
 
 
-%%%%%%%%%% Свои команды %%%%%%%%%%
-\usepackage{etoolbox}    % логические операторы для своих макросов
-
-%Можно определить любой мат. оператор:
-\DeclareMathOperator{\Cov}{Cov}
-\DeclareMathOperator{\Var}{Var}
-\DeclareMathOperator{\Corr}{Corr}
-\DeclareMathOperator{\E}{\mathop{E}}
 
 
-%Можно задать любую команду, например:
-\newcommand{\iid}{\text{i.\hspace{1pt}i.\hspace{1pt}d.}}
-
-%Можно определить новый символ, например для множества действительных чисел! Команда \ensuremath автоматически проверяет наличие математического режима:
-\def\R{\ensuremath{\mathbb{R}{ }}} 
-
-%Можно ввести свои собственные сокращения:
-\def \a{\alpha}
-\def \b{\beta}
-\def \t{\tau}
-\def \dt{\delta}
-\newcommand{\e}{\varepsilon}
-\def \ga{\gamma}
-\def \kp{\varkappa}
-\def \la{\lambda}
-\def \sg{\sigma}
-\def \tt{\theta}
-\def \Dt{\Delta}
-\def \La{\Lambda}
-\def \Sg{\Sigma}
-\def \Tt{\Theta}
-\def \Om{\Omega}
-\def \om{\omega}
-
-%Можно переделать старые команды:
-\renewcommand{\phi}{\varphi}
-\renewcommand{\le}{\leqslant}
-\renewcommand{\ge}{\geqslant}
-
-
-%%%%%%%%%% Теоремы %%%%%%%%%%
-\theoremstyle{plain}              % Это стиль по умолчанию.  Есть другие стили. 
-\newtheorem{theorem}{Теорема}[section]
-\newtheorem{result}{Следствие}[theorem]
-% счётчик подчиняется теоремному, нумерация идёт по главам согласованно между собой
-
-\theoremstyle{definition}         % убирает курсив и что-то еще наверное делает ;)
-\newtheorem*{defin}{Определение}  % нумерация не идёт вообще
-
-\newtheorem{fignia}{Какая-то фигня}
 
 
 \begin{document}

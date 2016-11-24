@@ -1,20 +1,31 @@
-\documentclass[12pt, a4paper]{article}
+\documentclass[12pt, a4paper]{article}  
 
 \usepackage{etex} % расширение классического tex в частности позволяет подгружать гораздо больше пакетов, чем мы и займёмся далее
 
-
-%%%%%%%%%% Русский язык %%%%%%%%%%
-\usepackage[british,russian]{babel} % выбор языка для документа
-\usepackage[utf8]{inputenc}         % задание utf8 кодировки исходного tex файла
-\usepackage[X2,T2A]{fontenc}        % кодировка
-\usepackage{cmap}					% поиск в PDF
-
-
 %%%%%%%%%% Математика %%%%%%%%%%
 \usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
-
 %\mathtoolsset{showonlyrefs=true}  % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
 %\usepackage{leqno} % Нумерация формул слева
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{HelveticaNeueCyr}   % задаёт основной шрифт документа
+
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{HelveticaNeueCyr}
+\newfontfamily{\cyrillicfont}{HelveticaNeueCyr}
+\newfontfamily{\cyrillicfontsf}{HelveticaNeueCyr}
+% Иногда тех не видит структуры шрифтов. Эти трое бравых парней спасают ситуацию и доопределяют те куски, которые Тех не увидел.
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+\setmathfont{Asana Math}      % шрифт для математики
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+
 
 
 %%%%%%%%%% Работа с картинками %%%%%%%%%
@@ -36,42 +47,17 @@
 \renewcommand{\arraystretch}{1.3} % больше расстояние между строками
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Свои команды!  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\DeclareMathOperator{\sgn}{sgn}
-\DeclareMathOperator{\Var}{Var}
-
-\def\R{\ensuremath{\mathbb{R}}} %команда\mathbb{ } рисует стилизованные буквы, \ensuremath позволяет не переключаться в мат режим в ходе написания текста
-
-\def\F{\ensuremath{\mathcal{F}}{ }} %команда \mathfrac{ } рисует буквы в готическом стиле
-
-%% Краткое написание букв
-\def \a{\alpha}
-\def \b{\beta}
-\def \la{\lambda}
-\def \sg{\sigma}
-\def \e{\varepsilon}
-
-%% Неравенства с косыми чёртачками
-\renewcommand{\le}{\leqslant}
-\renewcommand{\ge}{\geqslant}
 
 
 
 % Заголовок
+\author{Уютный факультатив} 
 \title{Картинки и таблицы в \LaTeX}
 \date{\today}
 
-\begin{document} % конец преамбулы, начало документа
+\begin{document} 
 
 \maketitle
-
-\section{Разница между растровыми и векторными картинками}
-
-
-\includegraphics[scale=0.8]{rv.jpg}
-
-
 
 \section{Картинки}
 \subsection{Вставка картинок}
@@ -93,6 +79,22 @@
 % Вставить картинку размера 5/10 от ширины текста
 \includegraphics[width=0.5\textwidth]{doge.png}
 
+% Единицы измерения в LaTeX: 
+% mm  миллиметры 
+% cm  сантиметры
+% in  дюймы
+% 
+% em  ширина буквы M используемого шрифта
+% ex  высота бувы х используемого шрифта
+% 
+% \pagewidth   ширина страницы     \pageheight   высота страницы
+% \textwidth   ширина текста       \textheight   высота текста
+%
+% \linewidth   длина текста в текущем окружении
+
+
+
+
 
 \subsection{Нумерация картинок}
 
@@ -103,7 +105,7 @@
 % h - поставить рисунок там, где он идет по тексту с нарушением всех правил верстки (here) 
 % p - поставить рисунок на отдельной странице, целиком состоящей из "плавающих" рисунков и таблиц
 % h! - поставить ну прям с высокой вероятностью там где надо нам
-% H - в 100 случаях из 100 рисунок будет там где нам надо
+% H - в 100 случаях из 100 рисунок будет там где нам надо (нужен пакет float)
 
 \begin{figure}[H]
 %\caption{Заголовок мог быть и здесь}
@@ -114,14 +116,14 @@
 %\caption[Заголовок для списка рисунков]{Обычный заголовок}
 \end{figure}
 
-Это окружение автоматически размещает картинку в таком месте куда она входит целиком. На рис. \ref{pic:doge} изображена знаменитая собака породы хаски!
+Это окружение автоматически размещает картинку в таком месте куда она входит целиком, если не указать [H].  На рис. \ref{pic:doge} изображена знаменитая собака породы хаски!
 
 
 % Можно создать несколько рисунков внутри одного!
 \subsection{Два рисунка внутри одного}
 
 \begin{figure}[h!]
-\begin{minipage}[h!]{0.49\linewidth}
+\begin{minipage}[h!]{0.49\linewidth} % Обратите внимание на \linewidth-длину текста в теущем окружении!
 \center{\footnotesize{растровый и векторный} \\ \includegraphics[width=0.8\linewidth]{rv.jpg}}
 \end{minipage}
 \hfill
@@ -159,21 +161,6 @@ $P(\ldots)$ & 0.1 & 0.2 & 0.4 & 0.2 & 0.1 \\
 % b{...} - абзац будет выроавнен по нижней строке        (лежит в array)
 
 \vspace{20mm}
-
-% Единицы измерения в LaTeX: 
-% mm  миллиметры 
-% cm  сантиметры
-% in  дюймы
-% 
-% em  ширина буквы M используемого шрифта
-% ex  высота бувы х используемого шрифта
-% 
-% \pagewidth   ширина страницы     \pageheight   высота страницы
-% \textwidth   ширина текста       \textheight   высота текста
-%
-% \linewidth   длина текста в текущем окружении
-
-
 
 \begin{tabular}{|m{3cm}|p{1cm}|p{3cm}|}
 \hline

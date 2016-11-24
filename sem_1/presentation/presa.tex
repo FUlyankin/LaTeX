@@ -8,13 +8,26 @@
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %        LOADING PACKAGES
 %-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-\usepackage[T2A]{fontenc}			% кодировка
-\usepackage[utf8]{inputenc}			% кодировка исходного текста
-\usepackage[english,russian]{babel}	% локализация и переносы
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}  % Тут мы подключаем пакеты для математики!
 
+%%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%% Дополнительная работа с математикой
-\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} % AMS
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{HelveticaNeueCyr}   % задаёт основной шрифт документа
+
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{HelveticaNeueCyr}
+\newfontfamily{\cyrillicfont}{HelveticaNeueCyr}
+\newfontfamily{\cyrillicfontsf}{HelveticaNeueCyr}
+% Иногда тех не видит структуры шрифтов. Эти трое бравых парней спасают ситуацию и доопределяют те куски, которые Тех не увидел.
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+\setmathfont{Asana Math}      % шрифт для математики
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
 
 %%% Работа с картинками
 \usepackage{graphicx}  % Для вставки рисунков
@@ -42,6 +55,15 @@
 
 \usepackage{xcolor}
 \usepackage{hyperref}
+\hypersetup{				
+    unicode=true,           % позволяет использовать юникодные символы
+    colorlinks=true,       	% true - цветные ссылки, false - ссылки в рамках
+    urlcolor=blue,          % цвет ссылки на url
+    linkcolor=red,          % внутренние ссылки
+	hyperindex=true         % сделать ли ссылку кликабельной?
+	breaklinks=true         % если ссылка не умещается в одну строку, разбивать    
+	                        % ли ее на две части?
+}
 \usepackage{verbatim}
 \usepackage{fancyvrb}
 \usepackage{mdframed}
@@ -67,16 +89,68 @@
 
 \begin{document}
 
+\begingroup
+\setbeamercolor{background canvas}{bg = LTXDarkGrey}
+\begin{frame}[plain]
+\begin{center}
+\LARGE{\color{red}{ВНИМАНИЕ!}}
+\end{center}
+\color{white}{ДАННЫЙ КУРС СОДЕРЖИТ БОЛЬШОЕ КОЛИЧЕСТВО РАЗНООБРАЗНОГО КОДА И ЗАДАНИЙ ДЛЯ САМОСТОЯТЕЛЬНОГО РЕШЕНИЯ.\\ НА ПЕРВЫЙ ВЗГЛЯД ОН МОЖЕТ ПОКАЗАТЬСЯ СЛОЖНЫМ И ТРАВМИРОВАТЬ НЕПОДГОТОВЛЕННУЮ ПСИХИКУ. \\ ТАКЖЕ ОН СОДЕРЖИТ БОЛЬШОЕ КОЛИЧЕСТВО НЕУДАЧНЫХ ШУТОК И НЕУМЕСТНЫХ ОТСЫЛОК. \\ В СВЯЗИ С ЭТИМ КУРС НЕ РЕКОМЕНДУЕТСЯ ПРОСЛУШИВАТЬ \ldots НИКОМУ.}
+\end{frame}
+\endgroup 
+
  \maketitle
  
- 
+\begin{frame}
+\frametitle{Идеология курса}
+\begin{itemize}
+\item 8 лекций и 8 семинаров 
+\item лекция --- я рассказываю какие-то вещи
+\item что-то неясно $\Rightarrow$ \alert{СПРОСИ}
+\item семинар --- мы закрепляем эти вещи
+\item на семинаре присутствуют 4-5 человек, которые хорошо знают \LaTeX{} и помогают вам
+\item есть проблема $\Rightarrow$ \alert{зови одного из нас}
+\item для зачёта надо сдать 70\% домашек
+\end{itemize} 
+\end{frame} 
+
+
+\begin{frame}
+\frametitle{Повестка курса}
+\begin{enumerate}
+\item Обо всём и ни о чём! Введение, мотивация, математика.
+\item Шрифты, рисунки и таблицы.
+\item Оформление докумена в целом.
+\item Список литературы. Bib\LaTeX{}. Сложные документы.
+\item Графика, TikZ, Geogebra. Свои команды и макросы.
+\item Преамбула для души и для ГОСТ. Bib\LaTeX{-gost}.
+\item Связка R и \LaTeX{}. Автоматизация создания документов.
+\item Презентации в \LaTeX{}--- большая боль или чувство стиля?
+\end{enumerate}
+\end{frame} 
+
+
+\begin{frame}
+\frametitle{Куда идти за мудростью}
+
+У нашего курса есть страничка на Github! Многие из вас уже были там и видели, что там много разной мудрости.
+\vspace{1cm}
+
+\begin{block}{Страничка курса:}
+\vspace{3mm}
+\centerline {\url{https://fulyankin.github.io/LaTeX/}} 
+\vspace{3mm}
+\end{block}
+\end{frame}
+
+
 \begin{frame}
 \frametitle{Что это вообще такое ?} 
-
 \alert{TeX} --- это созданная американским математиком и программистом Дональдом Кнутом система для верстки текстов с формулами. 
 
-
+\centering \includegraphics[scale=0.5]{knut.jpg}\\
 \end{frame} 
+
 
 \begin{frame}
 \frametitle{Почему \LaTeX{}?} 
@@ -90,8 +164,6 @@
 \item Огромное количество различных пакетов и расширений в свободном доступе
 \end{itemize}
 \end{frame}
-
-
 
 
 \begin{frame}
@@ -111,6 +183,84 @@
 \end{columns}
 \end{frame}
 
+
+\begin{frame}{Движки}
+\centering 
+	\begin{tabulary}{\textwidth}{JcJ}
+		\toprule
+			движок			& рождение & отличия	\\[0.25em]
+		\midrule
+		\TeX{}				    & 1978 & начало пути  \\[0.25em]
+		\LaTeX{}				& 1984 & расширение, упрощение \\[0.25em] 
+		\midrule
+
+		pdf\LaTeX{}				& 2000 & сборка не dvi, а сразу pdf  \\[0.25em]
+		Xe\LaTeX{}				& 2004 & юникод, куча шрифтов   \\[0.25em]
+		Lua\LaTeX{} 		    & 2007 & язык Lua + Xe\LaTeX     \\[0.25em]
+		\midrule
+		bib\TeX{}				& 1985 &  удобная библиография  \\[0.25em]
+		bib\LaTeX{} (biber)		& 2010 &  юникод, ряд улучшений    \\[0.25em]
+		\bottomrule
+	\end{tabulary}
+	
+	\mbox{ }
+
+	\href{https://habrahabr.ru/post/114610/}{Статья про движки на хабре}
+\end{frame}
+
+
+\begin{frame}{О правильном софте}
+\begin{columns}
+\begin{column}{.48\linewidth}
+\includegraphics[width=0.5\linewidth]{RStudio-Ball.png}\\
+\mbox{ } \\
+\includegraphics[width=0.9\linewidth]{Python-logo.png}\\
+\end{column}
+
+
+\begin{column}{.48\linewidth}
+\includegraphics[width=0.6\linewidth]{julia-logo.png}	
+\mbox{ } \\
+\includegraphics[width=0.9\linewidth]{c-vs-cpp.png}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}{Популярность языков программирования}
+\centering \includegraphics[width=0.7\linewidth]{lang.png}\\
+\vspace{0.2cm}
+Подробнее на \centerline {\url{http://www.tiobe.com/tiobe-index/}} 
+\end{frame}
+
+
+\begin{frame}{Самый важный язык}
+\centering \includegraphics[width=\linewidth]{english.jpg}\\
+\end{frame}
+
+
+\begin{frame}{<<How to \ldots>> а также <<Error: \ldots>>}
+\centering \includegraphics[width=\linewidth]{texexchan.png}\\
+\end{frame}
+
+
+\begin{frame}{Мой рук}
+\centering \includegraphics[width=\linewidth]{russia.png}\\
+\end{frame}
+
+
+\begin{frame}{Мемы про Stack Overflow} 
+\begin{columns}
+\begin{column}{.48\linewidth}
+\includegraphics[width=\linewidth]{googling.jpg}\\
+\end{column}
+
+
+\begin{column}{.48\linewidth}
+\includegraphics[width=\linewidth]{copypast.jpg}\\	
+\end{column}
+\end{columns}
+\end{frame}
 
 
 \begin{frame}
@@ -154,8 +304,8 @@
 \begin{tabular}{p{6.5cm}p{4cm}}
 \begin{verbatim}
 \begin{enumerate}
-	\item Чай
-	\item Молоко
+\item Чай
+\item Молоко
 \end{enumerate}
 \end{verbatim} 
 & \vspace{6mm} \begin{center}
@@ -184,6 +334,41 @@
 \end{frame}
 
 
+% разные классы документов
+
+\begin{frame}{Что где писать}
+\begin{block}{Преамбула}
+\begin{itemize}
+\item Команды, определяющие вид документа в целом
+\item Команды, подключающие пакеты
+\item Команды, которые создают новые команды, чтобы удобнее использовать старые команды
+\item Ещё какие-нибудь команды
+\end{itemize}
+\end{block}
+
+\begin{block}{Документ}
+Основной текст документа
+\end{block}
+\end{frame}
+
+
+\begin{frame}{Откуда берутся пакеты?}
+
+\begin{columns}
+\begin{column}{.66\linewidth}
+\begin{itemize}
+\item Их находят в капусте (нет)
+\item Их скачивают с сайта \url{http://www.ctan.org}
+\end{itemize}
+\end{column}
+\begin{column}{.33\linewidth}
+\hfill \includegraphics[width=\linewidth]{cabage.png}	
+\end{column}
+\end{columns}
+\includegraphics[width=0.7\linewidth]{CTAN.png}	
+\end{frame}
+
+
 \begin{frame}[fragile]
 \frametitle{Хорошие мысли о \LaTeX!} 
 \begin{itemize}
@@ -195,6 +380,8 @@
 \end{itemize}
 \end{frame}
 
+% Cмотрим первый файл до формул!
+
 \begin{frame}[fragile]
 \frametitle{Формулы в \LaTeX!} 
 \begin{itemize}
@@ -203,6 +390,8 @@
 \item Внутри математического режима \LaTeX{} сам расставляет пробелы. Все ваши пробелы игнорируются.
 \end{itemize}
 \end{frame}
+
+% Смотрим кусок с интегралом!
 
 \begin{frame}
 \frametitle{Формулы в \LaTeX!} 
@@ -214,6 +403,7 @@
 \end{itemize}
 \end{frame}
 
+% Распознать символ и вставить его
 
 \begin{frame}
 \frametitle{Служебные символы} 
@@ -233,16 +423,12 @@
 
 \section{Мотивация}
 
-\begin{frame}
-\centering
-\frametitle{Мотивация изучать \LaTeX{}} 
-\includegraphics[scale=0.48]{scarlet.jpg}
-
+\begin{frame}\frametitle{Мотивация изучать \LaTeX{}} 
+Сделать мем - латех курильщика и латех здорового человека
 \end{frame}
 
 
-\begin{frame}
-\frametitle{\insertsection} 
+\begin{frame}{Мотивация}
 
 	\centering
     \includegraphics[height=0.7\textheight]{m1.png}
@@ -253,8 +439,7 @@
     
 \end{frame}
 
-\begin{frame}
-\frametitle{\insertsection} 
+\begin{frame}{Мотивация}
     \centering
     \includegraphics[height=0.7\textheight]{m2.png}
     
@@ -262,8 +447,7 @@
     \alert{\textbf{В \LaTeX{} список литературы сгенерируется автоматически!}}
 \end{frame}
 
-\begin{frame}
-\frametitle{\insertsection} 
+\begin{frame}{Мотивация}
     \centering
     \includegraphics[height=0.7\textheight]{m4.png}
     
@@ -272,8 +456,7 @@
 \end{frame}
 
 
-\begin{frame}
-\frametitle{\insertsection} 
+\begin{frame}{Мотивация}
     \centering
     \includegraphics[scale=0.5]{m5.png}
     
@@ -282,8 +465,17 @@
 \end{frame}
 
 
-\begin{frame}
-\frametitle{\insertsection} 
+\begin{frame}{Где раздобыть шаблоны}
+\centering
+\url{http://www.latextemplates.com/}
+\includegraphics[width=0.6\linewidth]{template1.png}	
+
+\url{https://www.overleaf.com/latex/templates}
+\includegraphics[width=\linewidth]{template2.png}	
+\end{frame}
+
+
+\begin{frame}{Мотивация}
     \centering
     \includegraphics[height=0.6\textheight]{m6.png}
     
@@ -292,8 +484,7 @@
 \end{frame}
 
 
-\begin{frame}
-\frametitle{\insertsection} 
+\begin{frame}{Мотивация}
     \centering
     \includegraphics[scale=0.5]{m7.png}
 
@@ -306,8 +497,7 @@
 \end{frame}
 
 
-\begin{frame}
-\frametitle{\insertsection} 
+\begin{frame}{Мотивация}
     \centering
     \includegraphics[scale=0.5]{m8.png}
     
@@ -316,8 +506,7 @@
 \end{frame}
 
 
-\begin{frame}
-\frametitle{\insertsection} 
+\begin{frame}{Мотивация}
     \centering
     \includegraphics[scale=0.5]{m10.png}
     
@@ -326,32 +515,44 @@
 \end{frame}
 
 
-\begin{frame}
-\frametitle{А если говорить серьёзно, то \ldots} 
+\begin{frame}{А если говорить серьёзно, то \ldots} 
     \centering
     \includegraphics[scale=0.2]{latexvsword.png}
 \end{frame}
 
 
 \section{Домашка}
-
-\begin{frame}[fragile]
-\frametitle{\insertsection} 
+% Переделать слайд с домашкой!
+\begin{frame}[fragile]{Домашка}
 \begin{enumerate}
 \item Зайти на страничку курса в Github по вот {\color{blue} \href{https://github.com/FUlyankin/LaTeX/wiki}{этой ссылке}} и внимательно изучить её! 
 \item Установить \LaTeX{}! Как? Смотри в репозитории! 
 \item Создать свой первый документ в \LaTeX! Создать в нём перечень с       десятью фактами о себе. Написать три своих любимых формулы и одну ненавистную.      Рассказать почему эти формулы любимые, а та ненавистная. Вставить своё фото!  Не забыть подключить в преамбуле пакет для вставки картинок с помощью команды \verb|\usepackage|\{graphicx\}!
+\item Посмотреть это интервью с Дональдом Кнутом и понять насколько он классный! 
+\centerline {\url{https://habrahabr.ru/company/edison/blog/313790/}} 
 \end{enumerate}
 \end{frame}
 
 
+% Выбрать что-нибудь одно!
+\begingroup
+\setbeamercolor{background canvas}{bg = LTXDarkGrey}
+\begin{frame}[plain]
+\centering \includegraphics[width=0.7\linewidth]{keep-calm.png}
+\end{frame}
+\endgroup 
+
+
+
+\begin{frame}
+\centering \alert{\LARGE{ KEEP CALM }}
+
+\vspace{1cm}
+\centering \includegraphics[width=0.8\linewidth]{joke_2.png}
+\vspace{1cm} 
+
+\centering \alert{\LARGE{ AND \TeX{ } IT }}
+\end{frame}
+
 \end{document}
 
-%\only<2->{Эта строчка появляется не сразу и не занимает места.
-    %\centering
-    %\includegraphics[height=0.7\textheight]{rep.jpg}
-
-
-\begin{frame}[fragile]
-
-\end{frame}

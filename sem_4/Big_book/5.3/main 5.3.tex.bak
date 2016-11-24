@@ -1,0 +1,22 @@
+\documentclass[a4paper,12pt]{book}
+
+\input{preamble}
+
+%\includeonly{chapters/ch2,chapters/ch3}
+
+\begin{document} % конец преамбулы, начало документа
+
+\tableofcontents
+
+\chapter{1}
+\include{chapter_1/chapter_1}
+
+\chapter{2}
+\include{chapter_2/chapter_2}
+
+\chapter{3}
+\include{chapter_3/chapter_3}
+
+
+\end{document} % конец документа
+
