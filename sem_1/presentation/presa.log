@@ -1,6 +1,6 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.11.11)  24 NOV 2016 21:08
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.11.11)  25 NOV 2016 01:01
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
 **presa.tex
 (./presa.tex
@@ -1858,7 +1858,7 @@ Requested font "HelveticaNeueCyr/OT" at 10.95pt
 Requested font "HelveticaNeueCyr/B/OT" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/B/OT" at 10.95pt
- -> ^^À~^^^^B
+ -> 0^^ýk^^B
 Requested font "HelveticaNeueCyr/I/OT" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/I/OT" at 10.95pt
@@ -1888,7 +1888,7 @@ Requested font "HelveticaNeueCyr/BI/OT" at 10.95pt
 .................................................
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;mapping=tex-text;
 " at 10.95pt
- -> `^^Ì^^^^B
+ -> 0^^ýk^^B
 Requested font "HelveticaNeueCyr" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT" at 10.95pt
@@ -1900,7 +1900,7 @@ Requested font "HelveticaNeueCyr/BI/OT" at 10.95pt
 Requested font "HelveticaNeueCyr/OT" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/B/OT" at 10.95pt
- -> ^^à^^ë^^^^B
+ -> 
 Requested font "HelveticaNeueCyr/OT" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/I/OT" at 10.95pt
@@ -1910,13 +1910,13 @@ Requested font "HelveticaNeueCyr/OT" at 10.95pt
 Requested font "HelveticaNeueCyr/OT" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/B/OT" at 10.95pt
- -> ^^P^^!^^^^B
+ -> 
 Requested font "HelveticaNeueCyr/B/OT" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/I/OT" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/I/OT" at 10.95pt
- -> P^^ë^^^^B
+ -> p^^_l^^B
 Requested font "HelveticaNeueCyr/BI/OT" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/BI/OT" at 10.95pt
@@ -1941,9 +1941,9 @@ Requested font "HelveticaNeueCyr/BI/OT" at 10.95pt
 Requested font "HelveticaNeueCyr" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT" at 10.95pt
- -> 0
+ -> 
 Requested font "HelveticaNeueCyr" at 10.95pt
- -> ^^P^^+^^^^B
+ -> 
 Requested font "HelveticaNeueCyr/OT" at 10.95pt
  -> 
 
@@ -2094,7 +2094,7 @@ l.2126  }
 
 ))
 Requested font "Asana Math/OT" at 10.95pt
- -> 0T^^^^B
+ -> `^^Ól^^B
 \g__fontspec_family_AsanaMath_int=\count327
 Requested font "Asana Math/B/OT" at 10.95pt
  -> 
@@ -2492,12 +2492,12 @@ Package: chronology 2015/03/27 v1.1.1 Horizontal timeline
 .................................................
 )
 LaTeX Font Info:    Try loading font information for EU1+zpltosf on input line 
-90.
-LaTeX Font Info:    No file EU1zpltosf.fd. on input line 90.
+91.
+LaTeX Font Info:    No file EU1zpltosf.fd. on input line 91.
 
 
 LaTeX Font Warning: Font shape `EU1/zpltosf/m/n' undefined
-(Font)              using `EU1/lmr/m/n' instead on input line 90.
+(Font)              using `EU1/lmr/m/n' instead on input line 91.
 
 (./presa.aux
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -2507,52 +2507,52 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
 )
 \openout1 = `presa.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/npxmi/m/it on input line 90.
-LaTeX Font Info:    Try loading font information for OML+npxmi on input line 90
+LaTeX Font Info:    Checking defaults for OML/npxmi/m/it on input line 91.
+LaTeX Font Info:    Try loading font information for OML+npxmi on input line 91
 .
  (/usr/share/texlive/texmf-dist/tex/latex/newpx/omlnpxmi.fd
 File: omlnpxmi.fd 2013/03/21 Fontinst v1.933 font definitions for OML/npxmi.
 )
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMS/npxsy/m/n on input line 90.
-LaTeX Font Info:    Try loading font information for OMS+npxsy on input line 90
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMS/npxsy/m/n on input line 91.
+LaTeX Font Info:    Try loading font information for OMS+npxsy on input line 91
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/omsnpxsy.fd
 File: omsnpxsy.fd 2013/03/24 Fontinst v1.933 font definitions for OMS/npxsy.
 )
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for U/npxexa/m/n on input line 90.
-LaTeX Font Info:    Try loading font information for U+npxexa on input line 90.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for U/npxexa/m/n on input line 91.
+LaTeX Font Info:    Try loading font information for U+npxexa on input line 91.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/unpxexa.fd
 File: unpxexa.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxexa.
 )
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 90.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 90.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 91.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 91.
 
 (/usr/share/texmf/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for LMX/npxexx/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for LMX/npxexx/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -2590,7 +2590,7 @@ LaTeX Font Info:    ... okay on input line 90.
 
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box118
-Package hyperref Info: Link coloring ON on input line 90.
+Package hyperref Info: Link coloring ON on input line 91.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -2600,9 +2600,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count359
 )
-LaTeX Info: Redefining \ref on input line 90.
-LaTeX Info: Redefining \pageref on input line 90.
-LaTeX Info: Redefining \nameref on input line 90.
+LaTeX Info: Redefining \ref on input line 91.
+LaTeX Info: Redefining \pageref on input line 91.
+LaTeX Info: Redefining \nameref on input line 91.
 
 (./presa.out) (./presa.out)
 \@outlinefile=\write6
@@ -2633,16 +2633,16 @@ Dictionary: translator-numbers-dictionary, Language: English
 orem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 90.
+LaTeX Info: Redefining \includegraphics on input line 91.
 
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 90.
+LaTeX Info: Redefining \selectfont on input line 91.
 
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.13} into 
 your preamble.
- on input line 90.
+ on input line 91.
 
 \c@lstlisting=\count360
 \c@mv@tabular=\count361
@@ -2694,7 +2694,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 20.74pt
 
 LaTeX Font Warning: Font shape `EU1/HelveticaNeueCyr(1)/m/sc' undefined
 (Font)              using `EU1/HelveticaNeueCyr(1)/m/n' instead on input line 1
-02.
+03.
 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 20.74pt
  -> 
@@ -2713,30 +2713,30 @@ Requested font "zplmi" at 16.1pt
 Requested font "zplmi" at 11.4pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/newpx/zplmi.tfm
 LaTeX Font Info:    Font shape `EU1/AsanaMath(1)/m/n' will be
-(Font)              scaled to size 20.74031pt on input line 102.
+(Font)              scaled to size 20.74031pt on input line 103.
 Requested font "Asana Math/OT:script=math;language=DFLT;" at 20.74031pt
  -> 
 LaTeX Font Info:    Font shape `EU1/AsanaMath(1)/m/n' will be
-(Font)              scaled to size 16.10025pt on input line 102.
+(Font)              scaled to size 16.10025pt on input line 103.
 Requested font "Asana Math/OT:script=math;language=DFLT;" at 16.10025pt
  -> 
 LaTeX Font Info:    Font shape `EU1/AsanaMath(1)/m/n' will be
-(Font)              scaled to size 11.40016pt on input line 102.
+(Font)              scaled to size 11.40016pt on input line 103.
 Requested font "Asana Math/OT:script=math;language=DFLT;" at 11.40016pt
  -> 
 LaTeX Font Info:    Font shape `EU1/AsanaMath(2)/m/n' will be
-(Font)              scaled to size 20.73969pt on input line 102.
+(Font)              scaled to size 20.73969pt on input line 103.
 Requested font "Asana Math/OT:script=math;language=DFLT;" at 20.73969pt
  -> 
 LaTeX Font Info:    Font shape `EU1/AsanaMath(2)/m/n' will be
-(Font)              scaled to size 16.09975pt on input line 102.
+(Font)              scaled to size 16.09975pt on input line 103.
 Requested font "Asana Math/OT:script=math;language=DFLT;" at 16.09975pt
  -> 
 LaTeX Font Info:    Font shape `EU1/AsanaMath(2)/m/n' will be
-(Font)              scaled to size 11.39981pt on input line 102.
+(Font)              scaled to size 11.39981pt on input line 103.
 Requested font "Asana Math/OT:script=math;language=DFLT;" at 11.39981pt
  -> 
-LaTeX Font Info:    Try loading font information for U+msa on input line 102.
+LaTeX Font Info:    Try loading font information for U+msa on input line 103.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
@@ -2746,7 +2746,7 @@ Requested font "msam10" at 16.1pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 Requested font "msam10" at 11.4pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
-LaTeX Font Info:    Try loading font information for U+msb on input line 102.
+LaTeX Font Info:    Try loading font information for U+msb on input line 103.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -2757,7 +2757,7 @@ Requested font "msbm10" at 16.1pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 Requested font "msbm10" at 11.4pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-LaTeX Font Info:    Try loading font information for U+wasy on input line 102.
+LaTeX Font Info:    Try loading font information for U+wasy on input line 103.
 
 (/usr/share/texlive/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
@@ -2767,17 +2767,17 @@ Requested font "wasy10" at 20.74pt
 
 
 LaTeX Font Warning: Font shape `U/wasy/m/n' in size <16.1> not available
-(Font)              size <17.28> substituted on input line 102.
+(Font)              size <17.28> substituted on input line 103.
 
 Requested font "wasy10" at 17.28pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/wasy/wasy10.tfm
 
 LaTeX Font Warning: Font shape `U/wasy/m/n' in size <11.4> not available
-(Font)              size <10.95> substituted on input line 102.
+(Font)              size <10.95> substituted on input line 103.
 
 Requested font "wasy10" at 10.95pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/wasy/wasy10.tfm
-LaTeX Font Info:    Try loading font information for U+npxmia on input line 102
+LaTeX Font Info:    Try loading font information for U+npxmia on input line 103
 .
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/unpxmia.fd
 File: unpxmia.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxmia.
@@ -2788,7 +2788,7 @@ Requested font "zplmia" at 16.1pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/newpx/zplmia.tfm
 Requested font "zplmia" at 11.4pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/newpx/zplmia.tfm
-LaTeX Font Info:    Try loading font information for U+npxsym on input line 102
+LaTeX Font Info:    Try loading font information for U+npxsym on input line 103
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/unpxsym.fd
@@ -2800,7 +2800,7 @@ Requested font "zplsym" at 16.1pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/newpx/zplsym.tfm
 Requested font "zplsym" at 11.4pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/newpx/zplsym.tfm
-LaTeX Font Info:    Try loading font information for U+npxsyc on input line 102
+LaTeX Font Info:    Try loading font information for U+npxsyc on input line 103
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/unpxsyc.fd
@@ -2839,27 +2839,27 @@ Requested font "zplmi" at 10.5pt
 Requested font "zplmi" at 7.9pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/newpx/zplmi.tfm
 LaTeX Font Info:    Font shape `EU1/AsanaMath(1)/m/n' will be
-(Font)              scaled to size 14.4002pt on input line 102.
+(Font)              scaled to size 14.4002pt on input line 103.
 Requested font "Asana Math/OT:script=math;language=DFLT;" at 14.4002pt
  -> 
 LaTeX Font Info:    Font shape `EU1/AsanaMath(1)/m/n' will be
-(Font)              scaled to size 10.50015pt on input line 102.
+(Font)              scaled to size 10.50015pt on input line 103.
 Requested font "Asana Math/OT:script=math;language=DFLT;+ssty=0;" at 10.50015pt
  -> 
 LaTeX Font Info:    Font shape `EU1/AsanaMath(1)/m/n' will be
-(Font)              scaled to size 7.9001pt on input line 102.
+(Font)              scaled to size 7.9001pt on input line 103.
 Requested font "Asana Math/OT:script=math;language=DFLT;+ssty=1;" at 7.9001pt
  -> 
 LaTeX Font Info:    Font shape `EU1/AsanaMath(2)/m/n' will be
-(Font)              scaled to size 14.39977pt on input line 102.
+(Font)              scaled to size 14.39977pt on input line 103.
 Requested font "Asana Math/OT:script=math;language=DFLT;" at 14.39977pt
  -> 
 LaTeX Font Info:    Font shape `EU1/AsanaMath(2)/m/n' will be
-(Font)              scaled to size 10.49983pt on input line 102.
+(Font)              scaled to size 10.49983pt on input line 103.
 Requested font "Asana Math/OT:script=math;language=DFLT;+ssty=0;" at 10.49983pt
  -> 
 LaTeX Font Info:    Font shape `EU1/AsanaMath(2)/m/n' will be
-(Font)              scaled to size 7.89987pt on input line 102.
+(Font)              scaled to size 7.89987pt on input line 103.
 Requested font "Asana Math/OT:script=math;language=DFLT;+ssty=1;" at 7.89987pt
  -> 
 Requested font "msam10" at 14.4pt
@@ -2879,7 +2879,7 @@ Requested font "wasy10" at 14.4pt
 
 
 LaTeX Font Warning: Font shape `U/wasy/m/n' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 102.
+(Font)              size <10.95> substituted on input line 103.
 
 Requested font "wasy8" at 8.0pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/wasy/wasy8.tfm
@@ -2914,7 +2914,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 12.0pt
 File: pero.png Graphic file (type QTm)
 <use  "pero.png" >
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> `^^^^^^B
+ -> p
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -2927,9 +2927,9 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- ->  )^^$^^B
-Requested font "Asana Math/OT:script=math;language=DFLT;+ssty=1;" at 7.96558pt
  -> 
+Requested font "Asana Math/OT:script=math;language=DFLT;+ssty=1;" at 7.96558pt
+ -> pX^^Î^^B
 Requested font "Asana Math/OT:script=math;language=DFLT;+ssty=1;" at 6.6021pt
  -> 
 Requested font "zplmi" at 10.95pt
@@ -2939,27 +2939,27 @@ Requested font "zplmi" at 7.96558pt
 Requested font "zplmi" at 6.6021pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/newpx/zplmi.tfm
 LaTeX Font Info:    Font shape `EU1/AsanaMath(1)/m/n' will be
-(Font)              scaled to size 10.95015pt on input line 115.
+(Font)              scaled to size 10.95015pt on input line 116.
 Requested font "Asana Math/OT:script=math;language=DFLT;" at 10.95015pt
  -> 
 LaTeX Font Info:    Font shape `EU1/AsanaMath(1)/m/n' will be
-(Font)              scaled to size 7.96568pt on input line 115.
+(Font)              scaled to size 7.96568pt on input line 116.
 Requested font "Asana Math/OT:script=math;language=DFLT;+ssty=1;" at 7.96568pt
  -> 
 LaTeX Font Info:    Font shape `EU1/AsanaMath(1)/m/n' will be
-(Font)              scaled to size 6.60219pt on input line 115.
+(Font)              scaled to size 6.60219pt on input line 116.
 Requested font "Asana Math/OT:script=math;language=DFLT;+ssty=1;" at 6.60219pt
  -> 
 LaTeX Font Info:    Font shape `EU1/AsanaMath(2)/m/n' will be
-(Font)              scaled to size 10.94983pt on input line 115.
+(Font)              scaled to size 10.94983pt on input line 116.
 Requested font "Asana Math/OT:script=math;language=DFLT;" at 10.94983pt
  -> 
 LaTeX Font Info:    Font shape `EU1/AsanaMath(2)/m/n' will be
-(Font)              scaled to size 7.96545pt on input line 115.
+(Font)              scaled to size 7.96545pt on input line 116.
 Requested font "Asana Math/OT:script=math;language=DFLT;+ssty=1;" at 7.96545pt
  -> 
 LaTeX Font Info:    Font shape `EU1/AsanaMath(2)/m/n' will be
-(Font)              scaled to size 6.60199pt on input line 115.
+(Font)              scaled to size 6.60199pt on input line 116.
 Requested font "Asana Math/OT:script=math;language=DFLT;+ssty=1;" at 6.60199pt
  -> 
 Requested font "msam10" at 10.95pt
@@ -3007,7 +3007,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^ ^^å^^0^^B
+ -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -3019,11 +3019,11 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 7.96558pt
- ->  ^^è^^0^^B
+ -> @^^'^^Ú^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> `^^!^^0^^B
+ -> ^^À ^^Û^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -3041,7 +3041,7 @@ File: Latex.png Graphic file (type QTm)
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
- -> @^^;^^0^^B
+ -> `:^^Û^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -3072,7 +3072,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
 
 ]
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> @^^Ï^^0^^B
+ -> `^^^^Ú^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -3082,7 +3082,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^0^^ò^^0^^B
+ -> ^^P^^2^^Ú^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -3098,15 +3098,15 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^ÀN^^1^^B
+ -> ^^^^Í^^Û^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^ ^^Þ^^0^^B
+ -> ^^ ^^^^Ú^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^ ^^Þ^^0^^B
+ -> ^^ ^^^^Ú^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 File: Latex.png Graphic file (type QTm)
@@ -3114,9 +3114,9 @@ File: Latex.png Graphic file (type QTm)
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
- -> ^^Ðo^^1^^B
+ -> ^^ ^^î^^Û^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> 
+ ->  B^^Û^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -3128,28 +3128,28 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> ^^ð^^7^^0^^B
+ -> ^^6^^Û^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 4.0pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^P^^H^^1^^B
+ -> 0G^^Û^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> ^^À^^:^^0^^B
+ -> ^^à9^^Û^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^P^^H^^1^^B
+ -> 0G^^Û^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> ^^P^^H^^1^^B
+ -> 0G^^Û^^B
  [4
 
 ]
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^0^^ò^^0^^B
+ -> ^^P^^2^^Ú^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 12.0pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^b^^1^^B
+ ->  ^^â^^Û^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -3164,7 +3164,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^0w^^1^^B
+ -> @^^÷^^Û^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -3195,7 +3195,7 @@ File: images/knut.jpg Graphic file (type QTm)
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^P^^H^^1^^B
+ -> 0G^^Û^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 File: Latex.png Graphic file (type QTm)
@@ -3203,9 +3203,9 @@ File: Latex.png Graphic file (type QTm)
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
- -> ^^P^^H^^1^^B
+ -> 0G^^Û^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^^^ñ^^1^^B
+ ->  ^^1^^Û^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -3232,8 +3232,6 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
 
 ]
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^ðH^^1^^B
-Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
@@ -3242,13 +3240,15 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^À^^ ^^1^^B
+ -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^À^^ ^^1^^B
+ -> ^^^^_^^Ü^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^À^^ ^^1^^B
+ -> ^^^^_^^Ü^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^P{^^1^^B
+ -> ^^^^_^^Ü^^B
+Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
+ -> `^^ú^^Û^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -3275,29 +3275,29 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.5pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^^^^^1^^B
+ ->  ^^O^^Ü^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^P^^H^^1^^B
+ -> 0G^^Û^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^P^^H^^1^^B
+ -> 0G^^Û^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^P^^H^^1^^B
+ -> 0G^^Û^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> ^^P^^H^^1^^B
+ -> 0G^^Û^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^P^^H^^1^^B
+ -> 0G^^Û^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> ^^ð^^U^^2^^B
+ -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 4.0pt
- -> ^^ð^^U^^2^^B
+ -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^ð^^U^^2^^B
+ -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> 0^^\^^2^^B
+ -> ^^À[^^Ü^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^ð^^U^^2^^B
+ -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> 0^^\^^2^^B
+ -> ^^À[^^Ü^^B
  [7
 
 ]
@@ -3319,7 +3319,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^^^4^^1^^B
+ ->  4^^Ü^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -3358,7 +3358,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> `^^^2^^B
+ -> ^^ð^^Ý^^Ü^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -3366,9 +3366,9 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> `^^^2^^B
+ -> ^^ð^^Ý^^Ü^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> 0W^^2^^B
+ -> ^^À^^Ö^^Ü^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 4.0pt
@@ -3406,21 +3406,21 @@ File: Latex.png Graphic file (type QTm)
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
+ -> P_^^Ü^^B
+Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^ð^^À^^2^^B
+ -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^ð^^À^^2^^B
+ -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^ð^^À^^2^^B
-Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^ð^^À^^2^^B
+ -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> ^^ð^^À^^2^^B
+ -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^ð^^À^^2^^B
+ -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> ^^ ^^û^^2^^B
+ -> ^^P^^;^^Ü^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 4.0pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -3449,7 +3449,7 @@ File: Latex.png Graphic file (type QTm)
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
- ->  ^^'^^2^^B
+ -> p&^^Ý^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -3465,7 +3465,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 4.0pt
- -> ^^ð^^0^^2^^B
+ -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
@@ -3493,33 +3493,33 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 
-Overfull \vbox (1.21153pt too high) detected at line 239
+Overfull \vbox (1.21153pt too high) detected at line 240
  []
 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^0^^]^^3^^B
+ -> @]^^Ý^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- ->  ^^'^^2^^B
+ -> p&^^Ý^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> ^^ð^^W^^3^^B
+ -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 4.0pt
- -> ^^ð^^W^^3^^B
+ -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> 
+ -> P ^^Ý^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^ð^^W^^3^^B
+ -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> 0$^^3^^B
+ -> ^^Àc^^Ý^^B
 [12
 
 ]
@@ -3570,7 +3570,7 @@ File: images/russia.png Graphic file (type QTm)
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^à<^^3^^B
+ -> ^^0{^^Ý^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 File: Latex.png Graphic file (type QTm)
@@ -3596,11 +3596,11 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 4.0pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^à+^^3^^B
+ -> ^^0j^^Ý^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> ^^r^^3^^B
+ ->  ^^ò^^Ý^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^à+^^3^^B
+ -> ^^0j^^Ý^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
  -> 
  [14
@@ -3627,34 +3627,34 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^P^^Ê^^3^^B
+ -> `^^	^^Ý^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^P^^Ê^^3^^B
+ -> `^^	^^Ý^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^P^^Ê^^3^^B
+ -> `^^	^^Ý^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> ^^P^^Ê^^3^^B
+ -> `^^	^^Ý^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^P^^Ê^^3^^B
+ -> `^^	^^Ý^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> ^^P^^Ê^^3^^B
+ -> `^^	^^Ý^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 4.0pt
- -> ^^P^^Ê^^3^^B
+ -> `^^	^^Ý^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^à^^å^^3^^B
+ -> ^^0^^$^^Ý^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> ^^P^^Ê^^3^^B
+ -> `^^	^^Ý^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^ ^^ë^^3^^B
+ -> ^^P^^+^^Ý^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> ^^P^^Ê^^3^^B
+ -> `^^	^^Ý^^B
  [15
 
 ]
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^P^^Ê^^3^^B
+ -> `^^	^^Ý^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 File: Latex.png Graphic file (type QTm)
@@ -3724,7 +3724,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
- -> ^^P^^^^3^^B
+ -> `^^[^^Þ^^B
 File: Latex.png Graphic file (type QTm)
  <use  "Latex.png" >
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
@@ -3775,7 +3775,7 @@ File: images/doge.png Graphic file (type QTm)
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^ ^^þ^^3^^B
+ -> 0^^>^^Ý^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -3783,13 +3783,13 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^À^^Ò^^0^^B
+ -> ^^à^^^^Ú^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 )
-Overfull \hbox (15.46405pt too wide) in paragraph at lines 3--318
+Overfull \hbox (15.46405pt too wide) in paragraph at lines 3--319
 []  
  []
 
@@ -3806,11 +3806,11 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 
-Overfull \vbox (4.14398pt too high) detected at line 318
+Overfull \vbox (4.14398pt too high) detected at line 319
  []
 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^ m^^4^^B
+ -> 0^^í^^Þ^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -3847,7 +3847,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> pl^^4^^B
+ -> ^^ ^^ë^^Þ^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -3915,34 +3915,34 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> p^^^^4^^B
+ -> ^^ ^^[^^ß^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
  -> 
  [19
 
 ]
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^ð^^á^^4^^B
+ -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- ->  ^^^^4^^B
+ -> p^^R^^ß^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 12.0pt
- -> ^^ð^^á^^4^^B
-Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> 
-Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- ->  ^^^^4^^B
-Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> 
+ -> p^^R^^ß^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
+ -> P^^=^^Þ^^B
+Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
+ -> P^^=^^Þ^^B
+Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
+ -> P^^=^^Þ^^B
+Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- ->  ^^Í^^4^^B
+ -> p^^^^Þ^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -3962,25 +3962,25 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> `^^^^4^^B
+ -> ^^ð^^W^^ß^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> 0^^^^4^^B
+ -> ^^À^^D^^ß^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> ^^À^^ ^^4^^B
+ -> ^^^^?^^Þ^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 4.0pt
- -> ^^À^^ ^^4^^B
+ -> ^^^^?^^Þ^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> ^^À^^ ^^4^^B
+ -> ^^^^?^^Þ^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
@@ -3989,7 +3989,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
 
 ]
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- ->  ^^^^4^^B
+ -> p^^R^^ß^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -3997,7 +3997,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> p^^^^4^^B
+ -> ^^ ^^G^^ß^^B
 File: images/cabage.png Graphic file (type QTm)
 
 <use  "images/cabage.png" >
@@ -4006,7 +4006,7 @@ File: images/CTAN.png Graphic file (type QTm)
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> `~^^4^^B
+ -> ^^ð^^ý^^Þ^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 File: Latex.png Graphic file (type QTm)
@@ -4016,7 +4016,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> 0^^B^^5^^B
+ -> ^^ÀA^^ß^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -4034,7 +4034,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 4.0pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> ^^ð^^7^^4^^B
+ -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
@@ -4049,9 +4049,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^ 5^^5^^B
-Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^ð^^7^^4^^B
+ -> 0u^^ß^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -4065,7 +4063,9 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^àW^^5^^B
+ -> 
+Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
+ -> ^^0^^Ö^^ß^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -4104,7 +4104,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> P^^]^^5^^B
+ -> ^^à\^^ß^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
  -> 
  [22
@@ -4139,35 +4139,35 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
- -> ^^à^^Ø^^5^^B
+ -> ^^0^^^^ß^^B
 File: Latex.png Graphic file (type QTm)
  <use  "Latex.png" >
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
- -> ^^ ^^Ò^^5^^B
+ -> ^^P^^^^ß^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> @<^^5^^B
+ -> ^^Ð{^^ß^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> P^^Ò^^5^^B
+ -> ^^à^^^^ß^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> ^^0f^^5^^B
+ -> @^^æ^^ß^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^ðE^^5^^B
+ -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> ^^0f^^5^^B
+ -> @^^æ^^ß^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 4.0pt
- -> ^^ðE^^5^^B
+ -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^ðE^^5^^B
+ -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> ^^ðE^^5^^B
+ -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^ðE^^5^^B
+ -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
  -> 
 
@@ -4175,7 +4175,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
 
 ]
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> 
+ -> P^^û^^ß^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -4183,7 +4183,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> p^^â^^5^^B
+ -> ^^ ^^!^^ß^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 File: images/table.png Graphic file (type QTm)
@@ -4201,7 +4201,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^0^^Í^^5^^B
+ -> @^^^^ß^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -4217,24 +4217,24 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 4.0pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- ->  o^^5^^B
+ -> p^^î^^ß^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> ^^^^^^5^^B
+ ->  ^^L^^à^^B
  [24
 
 ]
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
- -> 0h^^5^^B
+ -> ^^À^^ç^^ß^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> 0h^^5^^B
+ -> ^^À^^ç^^ß^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 File: Latex.png Graphic file (type QTm)
@@ -4244,8 +4244,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^Ð^^
-^^5^^B
+ -> ^^ ^^I^^à^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -4273,11 +4272,11 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
 
 ]
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> 0^^ ^^5^^B
+ -> ^^À^^_^^à^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 20.74pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^à^^^^5^^B
+ -> ^^0^^Z^^à^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -4331,7 +4330,7 @@ File: images/m1.png Graphic file (type QTm)
 
 LaTeX Font Warning: Font shape `EU1/HelveticaNeueCyr(1)/bx/sc' undefined
 (Font)              using `EU1/HelveticaNeueCyr(1)/bx/n' instead on input line 
-440.
+441.
 
 Requested font "HelveticaNeueCyr/B/OT:script=latn;language=DFLT;" at 7.96558pt
  -> 
@@ -4346,13 +4345,13 @@ File: Latex.png Graphic file (type QTm)
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
- -> `Y^^6^^B
+ -> ^^ð^^Ø^^à^^B
 
-Overfull \vbox (3.18376pt too high) detected at line 440
+Overfull \vbox (3.18376pt too high) detected at line 441
  []
 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> `^^B^^6^^B
+ -> ^^ðA^^à^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -4383,11 +4382,11 @@ File: images/m2.png Graphic file (type QTm)
 Requested font "HelveticaNeueCyr/B/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^ l^^6^^B
+ -> ^^P^^ì^^à^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^ l^^6^^B
+ -> ^^P^^ì^^à^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
- -> ^^ l^^6^^B
+ -> ^^P^^ì^^à^^B
 File: Latex.png Graphic file (type QTm)
  <use  "Latex.png" >
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
@@ -4395,7 +4394,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 
-Overfull \vbox (16.17378pt too high) detected at line 448
+Overfull \vbox (16.17378pt too high) detected at line 449
  []
 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -4440,11 +4439,11 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 
-Overfull \vbox (3.18376pt too high) detected at line 456
+Overfull \vbox (3.18376pt too high) detected at line 457
  []
 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^^^Ë^^6^^B
+ ->  ^^^^à^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -4454,9 +4453,9 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> 
+ -> P^^^^à^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> 
+ -> P^^^^à^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 4.0pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -4512,7 +4511,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
 
 ]
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^ ^^^^6^^B
+ -> ^^P^^Y^^á^^B
 File: images/template1.png Graphic file (type QTm)
 
 <use  "images/template1.png" >
@@ -4542,19 +4541,19 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> @^^W^^7^^B
+ -> ^^ÐV^^á^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 4.0pt
- -> @^^W^^7^^B
+ -> ^^ÐV^^á^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> @^^W^^7^^B
+ -> ^^ÐV^^á^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> @^^W^^7^^B
+ -> ^^ÐV^^á^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> @^^W^^7^^B
+ -> ^^ÐV^^á^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
  -> 
  [32
@@ -4563,7 +4562,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
 File: images/m6.png Graphic file (type QTm)
  <use  "images/m6.png" >
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> @'^^7^^B
+ -> ^^Ðf^^á^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
@@ -4573,7 +4572,7 @@ File: Latex.png Graphic file (type QTm)
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
- -> ^^Ð3^^7^^B
+ -> ^^ r^^á^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -4585,15 +4584,15 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> @^^X^^7^^B
+ -> ^^ÐW^^á^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 4.0pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> @^^X^^7^^B
+ -> ^^ÐW^^á^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> @^^X^^7^^B
+ -> ^^ÐW^^á^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
@@ -4619,23 +4618,23 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^Ð,^^7^^B
+ -> ^^ k^^á^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^à+^^7^^B
-Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> 
-Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> ^^ -^^7^^B
+ -> ^^0j^^á^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> ^^ -^^7^^B
+ -> 0m^^á^^B
+Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
+ -> 
+Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
+ -> 0m^^á^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 4.0pt
- -> ^^ -^^7^^B
+ -> 0m^^á^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^à+^^7^^B
+ -> ^^0j^^á^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -4651,7 +4650,7 @@ File: images/m8.png Graphic file (type QTm)
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^Px^^7^^B
+ -> `^^÷^^á^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 File: Latex.png Graphic file (type QTm)
@@ -4681,7 +4680,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^ð^^ç^^7^^B
+ -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
  -> 
  [35
@@ -4692,7 +4691,7 @@ File: images/m10.png Graphic file (type QTm)
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^ ^^Ñ^^7^^B
+ -> 0^^^^á^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 File: Latex.png Graphic file (type QTm)
@@ -4703,7 +4702,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> @^^á^^7^^B
+ -> ^^Ð^^ ^^á^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -4715,7 +4714,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> 
+ -> P^^H^^â^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 4.0pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -4725,7 +4724,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> 0^^^^7^^B
+ -> ^^À^^N^^â^^B
  [36
 
 ]
@@ -4734,9 +4733,9 @@ File: images/latexvsword.png Graphic file (type QTm)
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> p^^Ð^^7^^B
+ -> ^^ ^^^^á^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
- -> ^^ ^^Ñ^^7^^B
+ -> 0^^^^á^^B
 File: Latex.png Graphic file (type QTm)
  <use  "Latex.png" >
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
@@ -4744,8 +4743,7 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^P^^
-^^7^^B
+ -> `^^I^^â^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -4755,9 +4753,9 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> `^^^^7^^B
+ -> ^^ð^^D^^â^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> `^^^^7^^B
+ -> ^^ð^^D^^â^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 4.0pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -4773,17 +4771,17 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
 
 ]
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> `^^/^^7^^B
+ -> ^^ð.^^â^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 20.74pt
- -> `^^+^^7^^B
+ -> ^^ð*^^â^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> `^^+^^7^^B
+ -> ^^ð*^^â^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> `^^+^^7^^B
+ -> ^^ð*^^â^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^^^%^^7^^B
+ ->  %^^â^^B
  [38
 
 ]
@@ -4793,30 +4791,130 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> `^^+^^7^^B
+ -> ^^ð*^^â^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> `^^+^^7^^B
+ -> ^^ð*^^â^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> `^^+^^7^^B
-Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
+ -> ^^ð*^^â^^B
+Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.0pt
  -> 
-Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^à^^^^^8^^B
-Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
+Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.0pt
  -> 
-Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> ^^à^^^^^8^^B
-Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
+Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.0pt
  -> 
+Requested font "Asana Math/OT:script=math;language=DFLT;+ssty=0;" at 10.0pt
+ -> 
+Requested font "Asana Math/OT:script=math;language=DFLT;+ssty=1;" at 7.3pt
+ -> 
+Requested font "Asana Math/OT:script=math;language=DFLT;+ssty=1;" at 5.5pt
+ -> 
+Requested font "zplmi" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/newpx/zplmi.tfm
+Requested font "zplmi" at 7.3pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/newpx/zplmi.tfm
+Requested font "zplmi" at 5.5pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/newpx/zplmi.tfm
+LaTeX Font Info:    Font shape `EU1/AsanaMath(1)/m/n' will be
+(Font)              scaled to size 10.00015pt on input line 7.
+Requested font "Asana Math/OT:script=math;language=DFLT;+ssty=0;" at 10.00015pt
+ -> 
+LaTeX Font Info:    Font shape `EU1/AsanaMath(1)/m/n' will be
+(Font)              scaled to size 7.30011pt on input line 7.
+Requested font "Asana Math/OT:script=math;language=DFLT;+ssty=1;" at 7.30011pt
+ -> 
+LaTeX Font Info:    Font shape `EU1/AsanaMath(1)/m/n' will be
+(Font)              scaled to size 5.50008pt on input line 7.
+Requested font "Asana Math/OT:script=math;language=DFLT;+ssty=1;" at 5.50008pt
+ -> 
+LaTeX Font Info:    Font shape `EU1/AsanaMath(2)/m/n' will be
+(Font)              scaled to size 9.99985pt on input line 7.
+Requested font "Asana Math/OT:script=math;language=DFLT;+ssty=0;" at 9.99985pt
+ -> 
+LaTeX Font Info:    Font shape `EU1/AsanaMath(2)/m/n' will be
+(Font)              scaled to size 7.29988pt on input line 7.
+Requested font "Asana Math/OT:script=math;language=DFLT;+ssty=1;" at 7.29988pt
+ -> 
+LaTeX Font Info:    Font shape `EU1/AsanaMath(2)/m/n' will be
+(Font)              scaled to size 5.49991pt on input line 7.
+Requested font "Asana Math/OT:script=math;language=DFLT;+ssty=1;" at 5.49991pt
+ -> 
+Requested font "msam10" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+Requested font "msam7" at 7.3pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+Requested font "msam5" at 5.5pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+Requested font "msbm10" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+Requested font "msbm7" at 7.3pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+Requested font "msbm5" at 5.5pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+Requested font "wasy10" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/wasy/wasy10.tfm
 
-Overfull \hbox (21.90005pt too wide) in paragraph at lines 6--8
-[]  
- []
 
+LaTeX Font Warning: Font shape `U/wasy/m/n' in size <5.5> not available
+(Font)              size <5> substituted on input line 7.
+
+Requested font "wasy5" at 5.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/wasy/wasy5.tfm
+Requested font "zplmia" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/newpx/zplmia.tfm
+Requested font "zplmia" at 7.3pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/newpx/zplmia.tfm
+Requested font "zplmia" at 5.5pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/newpx/zplmia.tfm
+Requested font "zplsym" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/newpx/zplsym.tfm
+Requested font "zplsym" at 7.3pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/newpx/zplsym.tfm
+Requested font "zplsym" at 5.5pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/newpx/zplsym.tfm
+Requested font "zplsyc" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/newpx/zplsyc.tfm
+Requested font "zplsyc" at 7.3pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/newpx/zplsyc.tfm
+Requested font "zplsyc" at 5.5pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/newpx/zplsyc.tfm
+Requested font "zplexa" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
+Requested font "zplexa" at 7.3pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
+Requested font "zplexa" at 5.5pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
+Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.0pt
+ -> 
+Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.0pt
+ -> 
+Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.0pt
+ -> 
+Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.0pt
+ -> 
+Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.0pt
+ -> 
+Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.0pt
+ -> 
+Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.0pt
+ -> 
+Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.0pt
+ -> 
+Missing character: There is no Ã¦ in font HelveticaNeueCyr-Roman/OT:script=latn;
+language=DFLT;!
+Missing character: There is no Å’ in font HelveticaNeueCyr-Roman/OT:script=latn;
+language=DFLT;!
+Missing character: There is no Å’ in font HelveticaNeueCyr-Roman/OT:script=latn;
+language=DFLT;!
+Missing character: There is no Å’ in font HelveticaNeueCyr-Roman/OT:script=latn;
+language=DFLT;!
+Missing character: There is no Å’ in font HelveticaNeueCyr-Roman/OT:script=latn;
+language=DFLT;!
+Missing character: There is no Å’ in font HelveticaNeueCyr-Roman/OT:script=latn;
+language=DFLT;!
 )
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
@@ -4829,9 +4927,9 @@ File: Latex.png Graphic file (type QTm)
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 14.4pt
- -> ^^Ð^^(^^7^^B
+ -> PH^^â^^B
 
-Overfull \vbox (0.46045pt too high) detected at line 534
+Overfull \vbox (21.40076pt too high) detected at line 538
  []
 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -4851,20 +4949,20 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 4.0pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> 
+ -> ^^À^^3^^ð^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> 
+ -> ^^^^6^^ð^^B
 [39
 
 ]
 File: images/keep-calm.png Graphic file (type QTm)
  <use  "images/keep-calm.png" >
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- ->  F^^8^^B
+ -> ^^à^^^^ð^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
@@ -4891,13 +4989,13 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> 
+ -> @^^^^ð^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 4.0pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
- -> 
+ -> ^^ð^^^^ð^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
- -> 
+ -> ^^ð^^^^ð^^B
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
@@ -4914,15 +5012,15 @@ Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 6.0pt
 \tf@snm=\write9
 \openout9 = `presa.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 557.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 557.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 561.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 561.
 
 (./presa.aux
 Requested font "HelveticaNeueCyr/OT:script=latn;language=DFLT;" at 10.95pt
  -> 
 )
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 557.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 557.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 561.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 561.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -4931,14 +5029,14 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 557.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 561.
  ) 
 Here is how much of TeX's memory you used:
- 55365 strings out of 493638
- 1184926 string characters out of 6146795
- 1419688 words of memory out of 5000000
- 57695 multiletter control sequences out of 15000+600000
- 30851 words of font info for 148 fonts, out of 8000000 for 9000
+ 55438 strings out of 493638
+ 1186837 string characters out of 6146795
+ 1419687 words of memory out of 5000000
+ 57755 multiletter control sequences out of 15000+600000
+ 39251 words of font info for 181 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  73i,14n,134p,10448b,1056s stack positions out of 5000i,500n,10000p,200000b,80000s
 
