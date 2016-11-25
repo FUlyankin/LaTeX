@@ -22,8 +22,8 @@
 \newfontfamily{\cyrillicfontsf}{HelveticaNeueCyr}
 % Иногда тех не видит структуры шрифтов. Эти трое бравых парней спасают ситуацию и доопределяют те куски, которые Тех не увидел.
 
-\usepackage{unicode-math}     % пакет для установки математического шрифта
-\setmathfont{Asana Math}      % шрифт для математики
+% \usepackage{unicode-math}     % пакет для установки математического шрифта
+% \setmathfont{Asana Math}      % шрифт для математики
 
 \usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
 \setdefaultlanguage{russian}  % Основной язык документа
@@ -119,14 +119,14 @@
 \begin{frame}
 \frametitle{Повестка курса}
 \begin{enumerate}
-\item Обо всём и ни о чём! Введение, мотивация, математика.
+\item Обо всём и ни о чём! Мотивация, математика.
 \item Шрифты, рисунки и таблицы.
 \item Оформление докумена в целом.
 \item Список литературы. Bib\LaTeX{}. Сложные документы.
 \item Графика, TikZ, Geogebra. Свои команды и макросы.
 \item Преамбула для души и для ГОСТ. Bib\LaTeX{-gost}.
 \item Связка R и \LaTeX{}. Автоматизация создания документов.
-\item Презентации в \LaTeX{}--- большая боль или чувство стиля?
+\item Презентации в \LaTeX{} - большая боль или чувство стиля?
 \end{enumerate}
 \end{frame} 
 
@@ -271,7 +271,7 @@
 
 \mbox{ } 
 
-\LaTeX{} WYSIWYM (What You See Is What You {\color{green} MEAN})
+\LaTeX{} WYSIWYM (What You See Is What You \alert{MEAN})
 \LaTeX{} сам позаботится об оформлении, вам остаётся только думать о содержании!
 \end{frame}
 
@@ -279,7 +279,7 @@
 
 \begin{frame}[fragile]
 \frametitle{Как это работает?}
-Вы пишите свой текст с различными {\color{green} командами}, описывающими структуру текста, а \LaTeX{} преобразует их в красиво отформатированный pdf-документ!
+Вы пишите свой текст с различными \alert{командами}, описывающими структуру текста, а \LaTeX{} преобразует их в красиво отформатированный pdf-документ!
 
 \begin{mdframed}[backgroundcolor=LTXLightGreen]
 В Португалии \verb|\textbf|\{дождь\} является \verb|\textit|\{причиной\}  не выходить на работу.
@@ -373,19 +373,36 @@
 \begin{itemize}
 \item Каждый документ состоит из преамбулы и основной части;
 \item Все \alert{комнады} начинаются с знака \verb|\|;
-\item Каждый аргумент команды стоит в фигурных скобках \{ \};
+\item Аргументы команд стоят в фигурных скобках \{ \};
 \item С помощью знака \% можно закомментировать какую-то часть документа, \LaTeX{} проигнорирует закомментированную часть;
 \item Неважно сколько строк я оставил между абзацами и сколько пробелов я оставил между словами; 
 \end{itemize}
 \end{frame}
 
+\section{Наш первый файл}
 % Cоздаём первый файл до интеграла
+
+\begin{frame}{Компиляция и её результаты}
+
+\centering 
+	\begin{tabulary}{\linewidth}{JcJ}
+		\toprule
+		  файл	  & & предназначение \\[0.25em]
+		\midrule
+		  .tex    & & мы пишем в этом файле  \\[0.25em]
+		  .pdf    & & наш документ  \\[0.25em]
+		  .log    & & логи, информация обо всём, что произошло во время компиляции  \\[0.25em]
+		  .aux    & & карта документа, в нём записаны все ссылки, номера страниц, табоиц и т.д.  \\[0.25em]
+          .synctex     & & позволяет нажать в pdf правую кнопку и перейти к соответствующему месту в tex-файле  \\[0.25em]
+		\bottomrule
+	\end{tabulary}
+\end{frame}
 
 \begin{frame}[fragile]
 \frametitle{Формулы в \LaTeX!} 
 \begin{itemize}
-\item С помощью символа \$ мы можем перейти внутри текста в математический режим! Один \$ открывает математический режим, второй закрывает его! 
-\item С помощью символов \$\$ или \verb|\[| и \verb|\]| можно написать выключную формулу. Выключной объект --- такой объект, для которого необходима отдельная строка!
+\item С помощью символа \$ мы можем перейти внутри текста в математический режим! Один \$ открывает математический режим, второй закрывает его!  \pause
+\item С помощью символов \$\$ или \verb|\[| и \verb|\]| можно написать выключную формулу. Выключной объект --- такой объект, для которого необходима отдельная строка! \pause
 \item Внутри математического режима \LaTeX{} сам расставляет пробелы. Все ваши пробелы игнорируются.
 \end{itemize}
 \end{frame}
@@ -396,7 +413,7 @@
 \frametitle{Формулы в \LaTeX!} 
 \begin{itemize}
 \item В \LaTeX{} можно найти символы на все случаи жизни $\Im$
-\item По {\color{blue} \href{http://detexify.kirelabs.org/classify.html}{этой ссылке}} расположен распознаватель символов!
+\item По {\color{blue} \href{http://detexify.kirelabs.org/classify.html}{этой ссылке}} расположен распознаватель символов! \pause
 \item В книге Львовского есть огровное количество символов с подробными комментариями! Например: 
 \centering  \includegraphics[scale=0.2]{table.png}
 \end{itemize}
@@ -410,7 +427,7 @@
 \mbox{ } 
 
 \centering
-\Large{ \$ \% \{ \} \# \& --- служебные символы}
+\Large{ \$ \% \{ \} \# \& — служебные символы}
 
 \mbox{ }
 
@@ -419,50 +436,31 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Как работает \LaTeX{}}
 
-\end{frame}
-
-
-\begin{frame}{Компиляция и её результаты}
-
-\end{frame}
-
-% Обсуждение файла с математикой
+\section{Подробнее о математике в \LaTeX{}} 
 
 
 \section{Мотивация}
 
-\begin{frame}\frametitle{Мотивация изучать \LaTeX{}} 
-Сделать мем - латех курильщика и латех здорового человека
-\end{frame}
-
-
 \begin{frame}{Мотивация}
-
 	\centering
-    \includegraphics[height=0.7\textheight]{m1.png}
-    
-    
     \alert{\textbf{В \LaTeX{} никогда ничего никуда не съедет!}}
-    
+    \includegraphics[height=0.68\textheight]{m1.png}
     
 \end{frame}
 
 \begin{frame}{Мотивация}
     \centering
-    \includegraphics[height=0.7\textheight]{m2.png}
-    
-    \vfill
     \alert{\textbf{В \LaTeX{} список литературы сгенерируется автоматически!}}
+    
+    \includegraphics[height=0.68\textheight]{m2.png}
 \end{frame}
 
 \begin{frame}{Мотивация}
     \centering
-    \includegraphics[height=0.7\textheight]{m4.png}
-    
-    \vfill
     \alert{\textbf{Зачем первак, когда есть \LaTeX{}!}}
+    
+    \includegraphics[height=0.68\textheight]{m4.png}
 \end{frame}
 
 
@@ -531,28 +529,32 @@
 \end{frame}
 
 
+
+\begin{frame}{Точка пересечения слишком близко}
+\centering
+    \includegraphics[scale=0.48]{pain.png}
+
+
+\url{http://www.kgasuclan.ru/blog/119-avtonumeracija-formul-risunkov-tablic-v-word.html}
+\end{frame}
+
+
 \section{Домашка} % Показать Pdf с домашкой, объяснить что делать!
 
 
-% Выбрать что-нибудь одно!
 \begingroup
 \setbeamercolor{background canvas}{bg = LTXDarkGrey}
 \begin{frame}[plain]
-\centering \includegraphics[width=0.7\linewidth]{keep-calm.png}
+\vspace{0.5cm}
+\centering \color{white}{\Huge{ KEEP CALM }}
+
+\vspace{0.2cm}
+\centering \includegraphics[width=0.8\linewidth]{joke_2.png}
+\vspace{0.2cm}
+
+\centering \color{white}{\Huge{ AND \TeX{ } IT }}
 \end{frame}
 \endgroup 
-
-
-
-\begin{frame}
-\centering \alert{\LARGE{ KEEP CALM }}
-
-\vspace{1cm}
-\centering \includegraphics[width=0.8\linewidth]{joke_2.png}
-\vspace{1cm} 
-
-\centering \alert{\LARGE{ AND \TeX{ } IT }}
-\end{frame}
 
 \end{document}
 
