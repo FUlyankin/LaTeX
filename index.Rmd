@@ -157,6 +157,8 @@ Knitr - развитие Sweave. Он был создан для более пр
 Полезные и не очень виньетки
 -----------------------
 * [Пакет Booktabs](http://www.ctan.org/tex-archive/macros/latex/contrib/booktabs/)
+* [Пакет fontspec](https://www.ctan.org/pkg/fontspec)
+* [Пакет unicode-math](https://www.ctan.org/pkg/unicode-math)
 
 * [Пакет с todo-шками!](http://ctan.altspu.ru/macros/latex/contrib/todonotes/todonotes.pdf) - Todonotes!
 * [Пакет для оформления кода!](http://mirror.macomnet.net/pub/CTAN/macros/latex/contrib/minted/minted.pdf) - Minted
