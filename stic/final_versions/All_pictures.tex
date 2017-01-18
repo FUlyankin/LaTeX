@@ -1,0 +1,55 @@
+\documentclass{standalone}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+\usepackage{fontspec}            % пакет для подгрузки шрифтов
+\setmainfont{Amiri}   % задаёт основной шрифт документа
+
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Amiri}
+\newfontfamily{\cyrillicfont}{Amiri}
+\newfontfamily{\cyrillicfontsf}{Burst My Bubble}
+% Иногда тех не видит структуры шрифтов. Эти трое бравых парней спасают ситуацию и доопределяют те куски, которые Тех не увидел.
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+\setmathfont{Asana Math}      % шрифт для математики
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+
+\usepackage{pgf,tikz,pgfplots}
+\usetikzlibrary{arrows,calc}
+\usepackage{relsize} 
+
+\usepackage{graphicx} 
+\usepackage{rotating}
+\usepackage{xcolor}
+\usepackage{color}
+
+\newcommand{\BBig}{\fontsize{60}{60}\selectfont}
+
+\definecolor{bl}{HTML}{333333}
+\definecolor{latxlatx}{HTML}{434545}
+
+
+\begin{document}
+
+\centering
+
+\begin{tikzpicture}[scale=1]
+\node[inner sep=0pt] (russell) at (3.4,-6.3) {\includegraphics[angle=0,scale=1]{dummy_trap.pdf}};    
+\node[inner sep=0pt] (russell) at (-3.7,-6.3) {\includegraphics[angle=0,scale=1]{LaTeX-logo.pdf}}; 
+\node[inner sep=0pt] (russell) at (0,0) {\includegraphics[angle=0,scale=1]{beta.pdf}};                             
+\node[inner sep=0pt] (russell) at (0,-12.4) {\includegraphics[angle=0,scale=1]{zen.pdf}};               
+\node[inner sep=0pt] (russell) at (0,-18.6) {\includegraphics[angle=0,scale=1]{logotips.pdf}};               
+%\node[inner sep=0pt] (russell) at (0,0)   {\includegraphics[angle=0,scale=1]{sex.jpg}};               
+%\node[inner sep=0pt] (russell) at (0,0)   {\includegraphics[angle=0,scale=1]{sex.jpg}};               
+%\node[inner sep=0pt] (russell) at (0,0)   {\includegraphics[angle=0,scale=1]{sex.jpg}};               
+\end{tikzpicture}
+
+%\includegraphics{ISLM.pdf}
+
+
+
+\end{document}

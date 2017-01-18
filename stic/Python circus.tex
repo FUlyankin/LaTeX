@@ -1,0 +1,67 @@
+\documentclass{standalone}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+\usepackage{fontspec}            % пакет для подгрузки шрифтов
+\setmainfont{Burst My Bubble}   % задаёт основной шрифт документа
+
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Burst My Bubble}
+\newfontfamily{\cyrillicfont}{Burst My Bubble}
+\newfontfamily{\cyrillicfontsf}{Burst My Bubble}
+% Иногда тех не видит структуры шрифтов. Эти трое бравых парней спасают ситуацию и доопределяют те куски, которые Тех не увидел.
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+\setmathfont{Asana Math}      % шрифт для математики
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+
+\usepackage{pgf,tikz,pgfplots}
+\usetikzlibrary{arrows,calc}
+\usepackage{relsize} 
+
+\usepackage{graphicx} 
+\usepackage{rotating}
+\usepackage{xcolor}
+\usepackage{color}
+
+%\newcommand{\Big}{\fontsize{50}{60}\selectfont Foo}
+
+\definecolor{bl}{HTML}{333333}
+\definecolor{rred}{HTML}{A01B0A}
+
+
+\begin{document}
+
+\centering
+
+\begin{tikzpicture}[scale=2]
+\begin{scope}[rotate=30]  
+% Radius of regular polygons
+  \newdimen\R
+  \R=2cm
+  \coordinate (center) at (0,0);
+ \draw (0:\R)
+     \foreach \x in {60,120,...,360} {  -- (\x:\R) }
+              -- cycle (300:\R)
+              -- cycle (240:\R)
+              -- cycle (180:\R)
+              -- cycle (120:\R)
+              -- cycle (60:\R)
+              -- cycle (0:\R)  [line width=3.8pt,color=bl,fill=white];
+\end{scope}
+       
+% pictures
+\begin{scope}[xshift=-0.5cm,yshift=0.9cm]
+\node[inner sep=0pt] (russell) at (0,0)   {\includegraphics[angle=0,scale=0.08]{circus.png}};               
+\node[inner sep=0pt] (russell) at (0,0.29)   {\includegraphics[angle=0,scale=0.1]{propeller.png}};   
+\end{scope}     
+       
+\node[inner sep=0pt] (russell) at (-0.5,-1)   {\includegraphics[angle=0,scale=0.35]{pyt_snake.png}};               
+\node[inner sep=0pt] (russell) at (1,0)   {\includegraphics[angle=0,scale=0.08]{python.png}};               
+
+\end{tikzpicture}
+
+\end{document}
