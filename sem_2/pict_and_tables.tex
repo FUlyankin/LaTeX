@@ -10,13 +10,13 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{fontspec}         % пакет для подгрузки шрифтов
-\setmainfont{HelveticaNeueCyr}   % задаёт основной шрифт документа
+\setmainfont{Roboto}   % задаёт основной шрифт документа
 
 % why do we need \newfontfamily:
 % http://tex.stackexchange.com/questions/91507/
-\newfontfamily{\cyrillicfonttt}{HelveticaNeueCyr}
-\newfontfamily{\cyrillicfont}{HelveticaNeueCyr}
-\newfontfamily{\cyrillicfontsf}{HelveticaNeueCyr}
+\newfontfamily{\cyrillicfonttt}{Roboto}
+\newfontfamily{\cyrillicfont}{Roboto}
+\newfontfamily{\cyrillicfontsf}{Roboto}
 % Иногда тех не видит структуры шрифтов. Эти трое бравых парней спасают ситуацию и доопределяют те куски, которые Тех не увидел.
 
 \usepackage{unicode-math}     % пакет для установки математического шрифта
@@ -80,6 +80,7 @@
 \includegraphics[width=0.5\textwidth]{doge.png}
 
 % Единицы измерения в LaTeX: 
+% pt  пункт (0.35 mm) 
 % mm  миллиметры 
 % cm  сантиметры
 % in  дюймы
@@ -159,16 +160,7 @@ $P(\ldots)$ & 0.1 & 0.2 & 0.4 & 0.2 & 0.1 \\
 % p{...} - колнка верстается как абзац, в скобках - ширина колонки
 % m{...} - абзац будет выровнен по середине своей высоты (лежит в array)
 % b{...} - абзац будет выроавнен по нижней строке        (лежит в array)
-
-\vspace{20mm}
-
-\begin{tabular}{|m{3cm}|p{1cm}|p{3cm}|}
-\hline
-$Y$ & -1 & 0 \\
-\hline
-$P(\ldots)$ & 0.2 & 0.8 \\
-\hline
-\end{tabular}
+% Использовать p,m,b --- не очень хорошая идея...
 
 \vspace{20mm}
 
@@ -243,20 +235,56 @@ $P(\ldots)$ & 0.1 & 0.2 & 0.4 & 0.2 & 0.1 \\
 \end{center}
 
 
+\section{Таблицы для истиных Леди и Джентельменов. Booktabs.}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+& Estimate & Std. Error & t value & $Pr( > | t |)$ \\
+\midrule
+Intercept & -1.6598 & 0.0239 & -69.51 & 0.0000 \\
+cut & -0.0206 & 0.0014 & -14.53 & 0.0000 \\
+color & 0.1085 & 0.0011 & 97.30 & 0.0000 \\
+clarity & -0.1784 & 0.0021 & -86.67 & 0.0000 \\
+depth & 0.0121 & 0.0003 & 43.28 & 0.0000 \\
+table & 0.0022 & 0.0002 & 12.07 & 0.0000 \\
+price & 0.0000 & 0.0000 & 231.49 & 0.0000 \\
+x & 0.2425 & 0.0018 & 134.73 & 0.0000 \\
+y & 0.0060 & 0.0012 & 4.92 & 0.0000 \\
+z & 0.0046 & 0.0021 & 2.18 & 0.0290 \\
+\bottomrule
+\end{tabular}
+\caption{Моя милая регрессия}
+\end{table}
 
 
-\subsection{Длинная таблица}
+\section{Когда лень прописывать все столбцы}
+
+\begin{tabular}{l*{10}{l}}
+\hline
+Расширение краёв:   &  1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+\hline
+Аподизация:             & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+\hline
+Сглаживания краёв:  & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9  \\
+\hline
+\end{tabular}
+
+
+\section{Длинная таблица}
+% Обратите внимание! В таблице стоят разделители. Но милый booktabs бьёт нас за них по рукам и отнимает их у нас. 
 
 \begin{center}
 \begin{longtable}{|l|l|l|}
 \caption{Простая длинная таблица} \label{tab:long} \\
 \hline
-\textbf{First column} & \textbf{Second column} & \textbf{Third column} \\ \hline 
+\textbf{Первая колонка} & \textbf{Вторая колонка} & \textbf{Третья колонка} \\ \hline 
 \endfirsthead
 
 \multicolumn{3}{c}{\tablename{} \thetable{} --- продолжение } \\
 \hline 
-\textbf{First column}&\textbf{Second column} & \textbf{Third column} \\
+\textbf{Первая}&\textbf{Вторая} & \textbf{Третья} \\
 \hline 
 \endhead
 
@@ -363,12 +391,12 @@ Dogecoin был создан программистом из Портланда 
 
 \begin{wraptable}{r}{0.5\linewidth}
 \begin{center}
-\begin{tabular}{|c|c|c|c|}
-\hline
+\begin{tabular}{cccc}
+\toprule
 $Y$ & -1 & 0 & 1  \\
-\hline
+\midrule
 $P(\ldots)$ & 0.1 & 0.8 & 0.1 \\
-\hline
+\bottomrule
 \end{tabular}
 \caption{Обтекаемая таблица}
 \end{center}
@@ -378,7 +406,7 @@ $P(\ldots)$ & 0.1 & 0.8 & 0.1 \\
 
 
 \section{Список таблиц и список рисунков}
-
+% В эти списки пойдёт всё, что находится в окружениях figure и table
 \listoffigures
 
 \listoftables

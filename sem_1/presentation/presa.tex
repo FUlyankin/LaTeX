@@ -13,13 +13,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{fontspec}         % пакет для подгрузки шрифтов
-\setmainfont{HelveticaNeueCyr}   % задаёт основной шрифт документа
+\setmainfont{Roboto}   % задаёт основной шрифт документа
 
 % why do we need \newfontfamily:
 % http://tex.stackexchange.com/questions/91507/
-\newfontfamily{\cyrillicfonttt}{HelveticaNeueCyr}
-\newfontfamily{\cyrillicfont}{HelveticaNeueCyr}
-\newfontfamily{\cyrillicfontsf}{HelveticaNeueCyr}
+\newfontfamily{\cyrillicfonttt}{Roboto}
+\newfontfamily{\cyrillicfont}{Roboto}
+\newfontfamily{\cyrillicfontsf}{Roboto}
 % Иногда тех не видит структуры шрифтов. Эти трое бравых парней спасают ситуацию и доопределяют те куски, которые Тех не увидел.
 
 % \usepackage{unicode-math}     % пакет для установки математического шрифта
@@ -60,7 +60,7 @@
     colorlinks=true,       	% true - цветные ссылки, false - ссылки в рамках
     urlcolor=blue,          % цвет ссылки на url
     linkcolor=red,          % внутренние ссылки
-	hyperindex=true         % сделать ли ссылку кликабельной?
+	hyperindex=true,        % сделать ли ссылку кликабельной?
 	breaklinks=true         % если ссылка не умещается в одну строку, разбивать    
 	                        % ли ее на две части?
 }
@@ -109,7 +109,7 @@
 \item лекция --- я рассказываю какие-то вещи
 \item что-то неясно $\Rightarrow$ \alert{СПРОСИ}
 \item семинар --- мы закрепляем эти вещи
-\item на семинаре присутствуют 4-5 человек, которые хорошо знают \LaTeX{} и помогают вам
+\item на семинаре присутствуют 3-5 человек, которые хорошо знают \LaTeX{} и помогают вам
 \item есть проблема $\Rightarrow$ \alert{зови одного из нас}
 \item для зачёта надо сдать 70\% домашек
 \end{itemize} 

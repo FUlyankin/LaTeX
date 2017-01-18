@@ -1,22 +1,30 @@
-\documentclass[12pt, a4paper]{article}
+\documentclass[12pt, a4paper]{article}  
 
-
-\usepackage{etex}     
-% расширение классического tex в частности позволяет подгружать гораздо больше пакетов, чем мы и займёмся далее
-
-
-%%%%%%%%%% Русский язык %%%%%%%%%%
-\usepackage[british,russian]{babel} % выбор языка для документа
-\usepackage[utf8]{inputenc}         % задание utf8 кодировки исходного tex файла
-\usepackage[X2,T2A]{fontenc}        % кодировка
-\usepackage{cmap}					% поиск в PDF
-
+\usepackage{etex} % расширение классического tex в частности позволяет подгружать гораздо больше пакетов, чем мы и займёмся далее
 
 %%%%%%%%%% Математика %%%%%%%%%%
 \usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
-
 %\mathtoolsset{showonlyrefs=true}  % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
 %\usepackage{leqno} % Нумерация формул слева
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Roboto}   % задаёт основной шрифт документа
+
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Roboto}
+\newfontfamily{\cyrillicfont}{Roboto}
+\newfontfamily{\cyrillicfontsf}{Roboto}
+% Иногда тех не видит структуры шрифтов. Эти трое бравых парней спасают ситуацию и доопределяют те куски, которые Тех не увидел.
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+\setmathfont{Asana Math}      % шрифт для математики
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
 
 
 %%%%%%%%%% Работа с картинками %%%%%%%%%
@@ -115,11 +123,14 @@
 \draw[blue,fill=yellow](2,2) circle [radius = 0.5];
 \end{tikzpicture}
 
+\vspace{1cm}
 
 \begin{tikzpicture}
 \foreach \x in {0,...,9} 
   \draw (\x,0) circle (0.4);
 \end{tikzpicture}
+
+\vspace{1cm}
 
 % \draw [domain=<xmin>:<xmax>] plot (\x, {function})
 
