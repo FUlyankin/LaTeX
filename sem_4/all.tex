@@ -10,13 +10,13 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{fontspec}         % пакет для подгрузки шрифтов
-\setmainfont{HelveticaNeueCyr}   % задаёт основной шрифт документа
+\setmainfont{Roboto}   % задаёт основной шрифт документа
 
 % why do we need \newfontfamily:
 % http://tex.stackexchange.com/questions/91507/
-\newfontfamily{\cyrillicfonttt}{HelveticaNeueCyr}
-\newfontfamily{\cyrillicfont}{HelveticaNeueCyr}
-\newfontfamily{\cyrillicfontsf}{HelveticaNeueCyr}
+\newfontfamily{\cyrillicfonttt}{Roboto}
+\newfontfamily{\cyrillicfont}{Roboto}
+\newfontfamily{\cyrillicfontsf}{Roboto}
 % Иногда тех не видит структуры шрифтов. Эти трое бравых парней спасают ситуацию и доопределяют те куски, которые Тех не увидел.
 
 \usepackage{unicode-math}     % пакет для установки математического шрифта
@@ -61,26 +61,34 @@
     urlcolor=blue,          % цвет ссылки на url
     linkcolor=red,          % внутренние ссылки
     citecolor=green,        % на библиографию
-	pdfnewwindow=true       % при щелчке в pdf на ссылку откроется новый pdf
-	hyperindex=true         % сделать ли ссылку кликабельной?
-	breaklinks=true         % если ссылка не умещается в одну строку, разбивать    
-	                        % ли ее на две части?
+	pdfnewwindow=true,      % при щелчке в pdf на ссылку откроется новый pdf
+	hyperindex,             % сделать ли ссылку кликабельной?
+	breaklinks              % если ссылка не умещается в одну строку, разбивать ли ее на две части?   
 }
 
 \usepackage{csquotes}            % Еще инструменты для ссылок
 
 %%%%%%%%%% Програмный код %%%%%%%%%%
 \usepackage{minted}
-% Включает подцветку комманд в программах!
-% Нужно, чтобы на компе стоял питон, надо поставить пакет Pygments, в котором он сделан через pip или cmd ( нужно ввести easy_install Pygments ). 
-% После нужно зайти в настройки texmaker и там прописать в PdfLatex pdflatex -shell-escape -synctex=1 -interaction=nonstopmode %.tex
-% Документация по пакету хорошая, сам читал, погуглите!
+% Включает подсветку команд в программах!
+% Нужно, чтобы на компе стоял питон, надо поставить пакет Pygments, в котором он сделан, через pip.
+
+% Для Windows: Жмём win+r, вводим cmd, жмём enter. Открывается консоль. 
+% Прописываем easy_install Pygments
+% Заходим в настройки texmaker и там прописываем в PdfLatex:
+% pdflatex -shell-escape -synctex=1 -interaction=nonstopmode %.tex
+
+% Для Linux: Открываем консоль. Убеждаемся, что у вас установлен pip командой pip --version
+% Если он не установлен, ставим его: sudo apt-get install python-pip
+% Ставим пакет sudo pip install Pygments
+
+% После всего этого вы должны почувствовать себя тру-программистами! 
+% Документация по пакету хорошая. Сам читал, погуглите!
 
 
 %%%%%%%%%% Другие приятные пакеты %%%%%%%%%
 \usepackage{multicol}       % несколько колонок
 \usepackage{verbatim}       % для многострочных комментариев
-\usepackage{mdframed}       % Этот пакет позволяет рисовать красивые рамки!
 \usepackage{makeidx}        % для создания предметных указателей
 
 \usepackage{enumitem} % дополнительные плюшки для списков
@@ -90,7 +98,6 @@
 % \todo{Здесь надо коэффициенты исправить}
 % \missingfigure{Здесь будет Последний день Помпеи}
 % \listoftodos --- печатает все поставленные \todo'шки
-
 
 
 \title{Оформление документа в целом}

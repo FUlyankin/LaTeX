@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{library}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}dplyr\PYGZdq{}}\PYG{p}{)}
+\PYG{k+kn}{library}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}ggplot2\PYGZdq{}}\PYG{p}{)}
+
+ALLdata \PYG{o}{\PYGZlt{}\PYGZhy{}} read.csv\PYG{p}{(}\PYG{l+s}{\PYGZdq{}data.txt\PYGZdq{}}\PYG{p}{,}sep\PYG{o}{=}\PYG{l+s}{\PYGZdq{}\PYGZbs{}t\PYGZdq{}}\PYG{p}{,}dec\PYG{o}{=}\PYG{l+s}{\PYGZdq{}.\PYGZdq{}}\PYG{p}{,}header\PYG{o}{=}\PYG{k+kc}{TRUE}\PYG{p}{)}
+data\PYGZus{}usd \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{k+kt}{data.frame}\PYG{p}{(}ALLdata\PYG{o}{\PYGZdl{}}STATEMENT\PYG{p}{[}\PYG{l+m}{\PYGZhy{}1}\PYG{p}{],}\PYG{k+kp}{diff}\PYG{p}{(}ALLdata\PYG{o}{\PYGZdl{}}USD\PYG{p}{,}\PYG{l+m}{1}\PYG{p}{))}
+\PYG{k+kp}{names}\PYG{p}{(}data\PYGZus{}usd\PYG{p}{)} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{k+kt}{c}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}Statement\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}USD\PYGZsq{}}\PYG{p}{)}
+\end{Verbatim}
