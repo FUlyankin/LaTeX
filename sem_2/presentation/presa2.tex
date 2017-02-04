@@ -13,13 +13,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{fontspec}         % пакет для подгрузки шрифтов
-\setmainfont{Roboto}   % задаёт основной шрифт документа
+\setmainfont{Linux Libertine O}   % задаёт основной шрифт документа
 
 % why do we need \newfontfamily:
 % http://tex.stackexchange.com/questions/91507/
-\newfontfamily{\cyrillicfonttt}{Roboto}
-\newfontfamily{\cyrillicfont}{Roboto}
-\newfontfamily{\cyrillicfontsf}{Roboto}
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+\newfontfamily{\cyrillicfont}{Linux Libertine O}
+\newfontfamily{\cyrillicfontsf}{Linux Libertine O}
 % Иногда тех не видит структуры шрифтов. Эти трое бравых парней спасают ситуацию и доопределяют те куски, которые Тех не увидел.
 
 % \usepackage{unicode-math}     % пакет для установки математического шрифта
@@ -94,7 +94,7 @@
 \begingroup
 \setbeamercolor{background canvas}{bg = LTXDarkGrey}
 \begin{frame}[plain]
-\centering  \includegraphics[width=0.7\linewidth]{font.jpg}	
+\centering  \includegraphics[width=0.63\linewidth]{font.jpg}	
 \end{frame}
 \endgroup 
 
@@ -119,9 +119,6 @@
 \item Каждое новое заполнение 128 символов $\Rightarrow$ новая кодировка
 \end{itemize}
 \end{frame}
-
-
-% когда-то памяти было совсем немного и всем компьютерам было достаточно 7 бит для представления всех нужных символов (цифры, строчный\прописной латинский алфавит, куча знаков и так называемые управляемые символы — все возможные 127 номеров были кому-то отданы). Кодировка в это время была одна — ASCII. Шло время, все были счастливы, а кто не был счастлив (читай — кому не хватало знака "©" или родной буквы «щ») — использовали оставшиеся 128 знаков на свое усмотрение, то есть создавали новые кодировки. Так появились и ISO-8859-1, и наши (то есть кириличные) cp1251 и KOI8. Вместе с ними появилась и проблема интерпретации байтов типа 0b1******* (то есть символов\чисел от 128 и до 255) — например, 0b11011111 в кодировке cp1251 это наша родная «Я», в тоже время в кодировке ISO-8859-1 это греческая немецкая Eszett (подсказывает Moonrise) "ß". Ожидаемо, сетевая коммуникация и просто обмен файлами между разными компьютерами превратились в чёрт-знает-что.
 
 
 \begin{frame}{Юникод} 
@@ -168,17 +165,12 @@
 \Large
 \begin{itemize}
 \item Шрифты скачиваются из интернета \ldots
-\item Хорошая идея - установить на комп шрифтовый менеджер для безболезненной установки шрифтов
+\item Хорошая идея - установить на комп шрифтовый менеджер для безболезненного просмотра шрифтов
 \item Хороший \href{https://apps.ubuntu.com/cat/applications/precise/font-manager/}{ шрифтовый менеджер} для Linux 
-\item Хороший \href{http://www.proximasoftware.com/fontexpert/}{ шрифтовый менеджер} для Windows 
+\item Хороший \href{http://fontba.se/}{ шрифтовый менеджер} для Windows 
 \end{itemize}
 \end{frame}
 }
-
-
-% Вставить сюда инструкцию по установке шрифтового менеджера! 
-% Установить шрифт воров или ещё какой-нибудь! 
-% Показать как это работает!
 
 
 \section{Картинки} 
@@ -360,8 +352,6 @@ $m$ & $\Re\{\underline{\mathfrak{X}}(m)\}$ &$-\Im\{\underline{\mathfrak{X}}(m)\}
 \end{frame}
 
 
-
-
 \begin{frame}{Правила этикета для истиных Леди и Джентельменов} 
 \begin{block}{Заповеди из документации к booktabs}
 \begin{enumerate}
@@ -375,8 +365,6 @@ $m$ & $\Re\{\underline{\mathfrak{X}}(m)\}$ &$-\Im\{\underline{\mathfrak{X}}(m)\}
 \end{enumerate}
 \end{block}
 \end{frame}
-
-% закоментить команду для отступов и показать что будет 
 
 \begingroup
 \setbeamercolor{background canvas}{bg = LTXDarkGrey}

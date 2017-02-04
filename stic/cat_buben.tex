@@ -1,4 +1,4 @@
-\documentclass{standalone}
+\documentclass[varwidth]{standalone}
 
 \usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
 \usepackage{fontspec}            % пакет для подгрузки шрифтов
@@ -31,16 +31,16 @@
 %\newcommand{\Big}{\fontsize{50}{60}\selectfont Foo}
 
 \definecolor{catcolor}{HTML}{DBC0A5}
+\definecolor{catcolor2}{HTML}{DBC0A5}
+\definecolor{catcolor3}{HTML}{85523A}
 
 \begin{document}
 
 \begin{tikzpicture}[scale=2]
 
 % Cat
-\node[inner sep=0pt] (russell) at (-0.3,-0.8) {\includegraphics[angle=0,scale=0.2]{cat.png}};    
-
-% plantain
-\node[inner sep=0pt] (russell) at (0.8,0.6) {\includegraphics[angle=-30,scale=0.12]{plantain.jpg}};    
+\node[inner sep=0pt] (russell) at (-0.1,-0.8) {\includegraphics[angle=0,scale=0.2]{cat.png}};    
+  
 
 \begin{scope}[rotate=30]   
 % Radius of regular polygons
@@ -54,7 +54,7 @@
               -- cycle (180:\R)
               -- cycle (120:\R)
               -- cycle (60:\R)
-              -- cycle (0:\R)  [line width=3.8pt,color=catcolor];
+              -- cycle (0:\R)  [line width=1.9mm,color=catcolor2];
 \end{scope}       
        
 % Matrix              

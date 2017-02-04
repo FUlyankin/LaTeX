@@ -6,7 +6,7 @@
 
 \usepackage{amsmath,amsfonts,amssymb,amsthm} % AMS
 
-\usepackage[pdftex,unicode,colorlinks=true,urlcolor=blue,hyperindex,breaklinks]{hyperref}  %гиперссылки
+\usepackage[unicode,colorlinks=true,urlcolor=blue,hyperindex,breaklinks]{hyperref}  %гиперссылки
 
 
 %%% Работа с картинками
@@ -154,17 +154,7 @@
 \end{itemize}
 \end{problem}
 
-\begin{problem}
-Написать команду, которая сама будет выводить $x_1 \ldots x_n$.
 
-\newcommand{\xvect}{\ensuremath{x_1,\ldots,x_n}}
-\newcommand{\xvec}[2]{\ensuremath{x_{#1},\ldots,x_{#2}}}
-
-\xvec{2}{6} 
-\xvec{(a,b)}{(c,d)}
-\xvec{y_1}{y_2}
-
-\end{problem}
 
 \begin{problem}
 Сделать так, чтобы чётные главы выводились римскими цифрами, а нечётные русскими буквами.
@@ -179,10 +169,36 @@
 \end{problem}
 
 
+\newpage
+
+\[ \lim_{x \to 0} \frac{\sin{x}}{x} \]
+
+
+
+
 \Closesolutionfile{solution_file}
-
-\input{all_solutions}
-
 
 
 \end{document}
+
+
+
+а,б) 
+
+\newcommand{\xvect}{\ensuremath{x_1,\ldots,x_n}}
+\newcommand{\xvec}[2]{\ensuremath{x_{#1},\ldots,x_{#2}}}
+
+\xvec{2}{6} 
+\xvec{(a,b)}{(c,d)}
+\xvec{y_1}{y_2}
+
+в)
+
+
+г) 
+
+
+
+
+
+

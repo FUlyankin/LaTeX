@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{library}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}dplyr\PYGZdq{}}\PYG{p}{)}
+\PYG{k+kn}{library}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}ggplot2\PYGZdq{}}\PYG{p}{)}
+\PYG{k+kn}{library}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}zoo\PYGZdq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{}Определим оптимальное количество запаздываний:}
+
+order \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{k+kt}{c}\PYG{p}{()}
+min \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{l+m}{10}\PYG{o}{\PYGZca{}}\PYG{l+m}{10}
+\PYG{k+kr}{for}\PYG{p}{(}i \PYG{k+kr}{in} \PYG{l+m}{1}\PYG{o}{:}\PYG{l+m}{10}\PYG{p}{)\PYGZob{}}
+  \PYG{k+kr}{for}\PYG{p}{(}j \PYG{k+kr}{in} \PYG{l+m}{1}\PYG{o}{:}\PYG{l+m}{10}\PYG{p}{)\PYGZob{}}
+    reg \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{k+kp}{paste}\PYG{p}{(}\PYG{k+kt}{c}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Y0\PYGZdq{}}\PYG{p}{,}\PYG{k+kp}{paste}\PYG{p}{(}\PYG{k+kt}{c}\PYG{p}{(}\PYG{k+kp}{paste}\PYG{p}{(}iv\PYGZus{}1\PYG{p}{[}\PYG{l+m}{1}\PYG{o}{:}j\PYG{p}{],}collapse\PYG{o}{=}\PYG{l+s}{\PYGZdq{}+\PYGZdq{}}\PYG{p}{),}    \PYG{k+kp}{paste}\PYG{p}{(}iv\PYGZus{}2\PYG{p}{[}\PYG{l+m}{1}\PYG{o}{:}i\PYG{p}{],}collapse\PYG{o}{=}\PYG{l+s}{\PYGZdq{}+\PYGZdq{}}\PYG{p}{)),}collapse\PYG{o}{=}\PYG{l+s}{\PYGZdq{}+\PYGZdq{}}\PYG{p}{)),}collapse\PYG{o}{=}\PYG{l+s}{\PYGZdq{}\PYGZti{}\PYGZdq{}}\PYG{p}{)}
+    fm \PYG{o}{\PYGZlt{}\PYGZhy{}} glm\PYG{p}{(}data \PYG{o}{=} df\PYG{p}{,}reg\PYG{p}{)}
+    \PYG{k+kr}{if}\PYG{p}{(}BIC\PYG{p}{(}fm\PYG{p}{)}\PYG{o}{\PYGZlt{}}\PYG{k+kp}{min}\PYG{p}{)\PYGZob{}}
+      min \PYG{o}{\PYGZlt{}\PYGZhy{}} BIC\PYG{p}{(}fm\PYG{p}{)}
+      order \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{k+kt}{c}\PYG{p}{(}j\PYG{p}{,}i\PYG{p}{)}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kr}{return}\PYG{p}{(}\PYG{k+kp}{order}\PYG{p}{)}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

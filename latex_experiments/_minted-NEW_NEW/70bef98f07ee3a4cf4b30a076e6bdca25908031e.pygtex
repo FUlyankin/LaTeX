@@ -1,0 +1,85 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{library}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}dplyr\PYGZsq{}}\PYG{p}{)}
+
+ALLdata \PYG{o}{\PYGZlt{}\PYGZhy{}} read.csv\PYG{p}{(}\PYG{l+s}{\PYGZdq{}data.txt\PYGZdq{}}\PYG{p}{,}sep\PYG{o}{=}\PYG{l+s}{\PYGZdq{}\PYGZbs{}t\PYGZdq{}}\PYG{p}{,}dec\PYG{o}{=}\PYG{l+s}{\PYGZdq{}.\PYGZdq{}}\PYG{p}{,}header\PYG{o}{=}\PYG{k+kc}{TRUE}\PYG{p}{)}
+pd \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{k+kt}{data.frame}\PYG{p}{(}ALLdata\PYG{o}{\PYGZdl{}}STATEMENT\PYG{p}{[}\PYG{l+m}{\PYGZhy{}1}\PYG{p}{],}\PYG{k+kp}{diff}\PYG{p}{(}ALLdata\PYG{o}{\PYGZdl{}}USD\PYG{p}{,}\PYG{l+m}{1}\PYG{p}{),}                  \PYG{k+kp}{diff}\PYG{p}{(}ALLdata\PYG{o}{\PYGZdl{}}RTS\PYG{p}{,}\PYG{l+m}{1}\PYG{p}{),}\PYG{k+kp}{diff}\PYG{p}{(}ALLdata\PYG{o}{\PYGZdl{}}MIACR\PYG{p}{,}\PYG{l+m}{1}\PYG{p}{))}
+\PYG{k+kp}{names}\PYG{p}{(}pd\PYG{p}{)} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{k+kt}{c}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}Statement\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}USD\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}RTS\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}MIACR\PYGZsq{}}\PYG{p}{)}
+
+FVTD \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{k+kr}{function}\PYG{p}{(}x\PYG{p}{)\PYGZob{}}
+    sig \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{k+kt}{c}\PYG{p}{()}
+    \PYG{k+kr}{for}\PYG{p}{(}i \PYG{k+kr}{in} \PYG{l+m}{1}\PYG{o}{:}\PYG{k+kp}{length}\PYG{p}{(}x\PYG{p}{))\PYGZob{}}
+      \PYG{k+kr}{if}\PYG{p}{(}x\PYG{p}{[}i\PYG{p}{]}\PYG{o}{\PYGZgt{}}\PYG{l+m}{0}\PYG{p}{)\PYGZob{}}
+        sig\PYG{p}{[}i\PYG{p}{]}\PYG{o}{=}\PYG{l+m}{1}
+      \PYG{p}{\PYGZcb{}}\PYG{k+kp}{else}\PYG{p}{\PYGZob{}}
+        sig\PYG{p}{[}i\PYG{p}{]}\PYG{o}{=}\PYG{l+m}{\PYGZhy{}1}
+      \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k+kr}{for}\PYG{p}{(}i \PYG{k+kr}{in} \PYG{l+m}{1}\PYG{o}{:}\PYG{k+kp}{length}\PYG{p}{(}x\PYG{p}{))\PYGZob{}}
+      \PYG{k+kr}{if}\PYG{p}{(}\PYG{k+kp}{abs}\PYG{p}{(}x\PYG{p}{[}i\PYG{p}{])}\PYG{o}{\PYGZlt{}}\PYG{l+m}{0.2}\PYG{p}{)\PYGZob{}}
+        sig\PYG{p}{[}i\PYG{p}{]} \PYG{o}{=} \PYG{l+m}{0}
+      \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{k+kr}{return}\PYG{p}{(}sig\PYG{p}{)}
+\PYG{p}{\PYGZcb{}}
+
+pd \PYG{o}{=} mutate\PYG{p}{(}pd\PYG{p}{,} USD \PYG{o}{=} FVTD\PYG{p}{(}pd\PYG{o}{\PYGZdl{}}USD\PYG{p}{),}MIACR \PYG{o}{=} FVTD\PYG{p}{(}pd\PYG{o}{\PYGZdl{}}MIACR\PYG{p}{),}RTS \PYG{o}{=} FVTD\PYG{p}{(}pd\PYG{o}{\PYGZdl{}}RTS\PYG{p}{))}
+
+tm \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{k+kr}{function}\PYG{p}{(}x\PYG{p}{,}y\PYG{p}{,}a\PYG{p}{,}b\PYG{p}{)\PYGZob{}}
+    l\PYG{o}{=}\PYG{l+m}{0}
+    \PYG{k+kr}{for}\PYG{p}{(}i \PYG{k+kr}{in} \PYG{l+m}{1}\PYG{o}{:} \PYG{k+kp}{length}\PYG{p}{(}x\PYG{p}{))\PYGZob{}}
+      \PYG{k+kr}{if}\PYG{p}{(}x\PYG{p}{[}i\PYG{p}{]}\PYG{o}{==}a \PYG{o}{\PYGZam{}\PYGZam{}} y\PYG{p}{[}i\PYG{p}{]}\PYG{o}{==}b\PYG{p}{)\PYGZob{}}
+        l\PYG{o}{=}l\PYG{l+m}{+1}
+      \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{k+kr}{return}\PYG{p}{(}l\PYG{p}{)}
+\PYG{p}{\PYGZcb{}}
+
+
+
+TimPes \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{k+kr}{function}\PYG{p}{(}df\PYG{p}{)\PYGZob{}}
+  x \PYG{o}{=} df\PYG{p}{[,}\PYG{l+m}{1}\PYG{p}{]}
+  y \PYG{o}{=} df\PYG{p}{[,}\PYG{l+m}{2}\PYG{p}{]}
+  tma \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{k+kt}{matrix}\PYG{p}{(}\PYG{k+kt}{c}\PYG{p}{(}tm\PYG{p}{(}x\PYG{p}{,}y\PYG{p}{,}\PYG{l+m}{\PYGZhy{}1}\PYG{p}{,}\PYG{l+m}{\PYGZhy{}1}\PYG{p}{),}tm\PYG{p}{(}x\PYG{p}{,}y\PYG{p}{,}\PYG{l+m}{\PYGZhy{}1}\PYG{p}{,}\PYG{l+m}{0}\PYG{p}{),}tm\PYG{p}{(}x\PYG{p}{,}y\PYG{p}{,}\PYG{l+m}{\PYGZhy{}1}\PYG{p}{,}\PYG{l+m}{1}\PYG{p}{),}
+            tm\PYG{p}{(}x\PYG{p}{,}y\PYG{p}{,}\PYG{l+m}{0}\PYG{p}{,}\PYG{l+m}{\PYGZhy{}1}\PYG{p}{),}tm\PYG{p}{(}x\PYG{p}{,}y\PYG{p}{,}\PYG{l+m}{0}\PYG{p}{,}\PYG{l+m}{0}\PYG{p}{),}tm\PYG{p}{(}x\PYG{p}{,}y\PYG{p}{,}\PYG{l+m}{0}\PYG{p}{,}\PYG{l+m}{1}\PYG{p}{),}
+        tm\PYG{p}{(}x\PYG{p}{,}y\PYG{p}{,}\PYG{l+m}{1}\PYG{p}{,}\PYG{l+m}{\PYGZhy{}1}\PYG{p}{),}tm\PYG{p}{(}x\PYG{p}{,}y\PYG{p}{,}\PYG{l+m}{1}\PYG{p}{,}\PYG{l+m}{0}\PYG{p}{),}tm\PYG{p}{(}x\PYG{p}{,}y\PYG{p}{,}\PYG{l+m}{1}\PYG{p}{,}\PYG{l+m}{1}\PYG{p}{)),}nrow\PYG{o}{=}\PYG{l+m}{3}\PYG{p}{)}
+  n\PYG{o}{=}\PYG{k+kp}{length}\PYG{p}{(}x\PYG{p}{)}
+  test \PYG{o}{=} \PYG{l+m}{0}
+  \PYG{k+kr}{for}\PYG{p}{(}i \PYG{k+kr}{in} \PYG{l+m}{1} \PYG{o}{:} \PYG{k+kp}{nrow}\PYG{p}{(}tma\PYG{p}{))\PYGZob{}}
+    \PYG{k+kr}{for}\PYG{p}{(}j \PYG{k+kr}{in} \PYG{l+m}{1} \PYG{o}{:} \PYG{k+kp}{ncol}\PYG{p}{(}tma\PYG{p}{))\PYGZob{}}
+      test \PYG{o}{=} test \PYG{o}{+}\PYG{p}{(}tma\PYG{p}{[}i\PYG{p}{,}j\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{p}{(}\PYG{k+kp}{sum}\PYG{p}{(}tma\PYG{p}{[}i\PYG{p}{,])}\PYG{o}{*}\PYG{k+kp}{sum}\PYG{p}{(}tma\PYG{p}{[,}j\PYG{p}{])}\PYG{o}{/}n\PYG{p}{))}\PYG{o}{/}
+      \PYG{p}{((}\PYG{k+kp}{sum}\PYG{p}{(}tma\PYG{p}{[}i\PYG{p}{,])}\PYG{o}{*}\PYG{k+kp}{sum}\PYG{p}{(}tma\PYG{p}{[,}j\PYG{p}{]))}\PYG{o}{/}n\PYG{p}{)}
+
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{}}
+\PYG{k+kr}{return}\PYG{p}{(}test\PYG{p}{)}
+\PYG{p}{\PYGZcb{}}
+
+df\PYGZus{}usd \PYG{o}{=} \PYG{k+kt}{data.frame}\PYG{p}{(}pd\PYG{o}{\PYGZdl{}}Statement\PYG{p}{,}pd\PYG{o}{\PYGZdl{}}USD\PYG{p}{)}
+df\PYGZus{}rts \PYG{o}{=} \PYG{k+kt}{data.frame}\PYG{p}{(}pd\PYG{o}{\PYGZdl{}}Statement\PYG{p}{,}pd\PYG{o}{\PYGZdl{}}RTS\PYG{p}{)}
+df\PYGZus{}miacr \PYG{o}{=} \PYG{k+kt}{data.frame}\PYG{p}{(}pd\PYG{o}{\PYGZdl{}}Statement\PYG{p}{,}pd\PYG{o}{\PYGZdl{}}MIACR\PYG{p}{)}
+
+myaw \PYG{o}{\PYGZlt{}\PYGZhy{}} lag\PYG{p}{(}zoo\PYG{p}{(}pd\PYG{o}{\PYGZdl{}}Statement\PYG{p}{),}\PYG{l+m}{\PYGZhy{}1}\PYG{p}{)}
+df\PYGZus{}usdl \PYG{o}{=} \PYG{k+kt}{data.frame}\PYG{p}{(}myaw\PYG{p}{,}pd\PYG{o}{\PYGZdl{}}USD\PYG{p}{[}\PYG{l+m}{\PYGZhy{}1}\PYG{p}{])}
+df\PYGZus{}rtsl \PYG{o}{=} \PYG{k+kt}{data.frame}\PYG{p}{(}myaw\PYG{p}{,}pd\PYG{o}{\PYGZdl{}}RTS\PYG{p}{[}\PYG{l+m}{\PYGZhy{}1}\PYG{p}{])}
+df\PYGZus{}miacrl \PYG{o}{=} \PYG{k+kt}{data.frame}\PYG{p}{(}myaw\PYG{p}{,}pd\PYG{o}{\PYGZdl{}}MIACR\PYG{p}{[}\PYG{l+m}{\PYGZhy{}1}\PYG{p}{])}
+
+myaw2 \PYG{o}{\PYGZlt{}\PYGZhy{}} lag\PYG{p}{(}zoo\PYG{p}{(}pd\PYG{o}{\PYGZdl{}}Statement\PYG{p}{),}\PYG{l+m}{\PYGZhy{}2}\PYG{p}{)}
+df\PYGZus{}usdl2 \PYG{o}{=} \PYG{k+kt}{data.frame}\PYG{p}{(}myaw2\PYG{p}{,}pd\PYG{o}{\PYGZdl{}}USD\PYG{p}{[}\PYG{k+kt}{c}\PYG{p}{(}\PYG{l+m}{\PYGZhy{}1}\PYG{p}{,}\PYG{l+m}{\PYGZhy{}2}\PYG{p}{)])}
+df\PYGZus{}rtsl2 \PYG{o}{=} \PYG{k+kt}{data.frame}\PYG{p}{(}myaw2\PYG{p}{,}pd\PYG{o}{\PYGZdl{}}RTS\PYG{p}{[}\PYG{k+kt}{c}\PYG{p}{(}\PYG{l+m}{\PYGZhy{}1}\PYG{p}{,}\PYG{l+m}{\PYGZhy{}2}\PYG{p}{)])}
+df\PYGZus{}miacrl2 \PYG{o}{=} \PYG{k+kt}{data.frame}\PYG{p}{(}myaw2\PYG{p}{,}pd\PYG{o}{\PYGZdl{}}MIACR\PYG{p}{[}\PYG{k+kt}{c}\PYG{p}{(}\PYG{l+m}{\PYGZhy{}1}\PYG{p}{,}\PYG{l+m}{\PYGZhy{}2}\PYG{p}{)])}
+
+TimPes\PYG{p}{(}df\PYGZus{}usd\PYG{p}{)}
+TimPes\PYG{p}{(}df\PYGZus{}rts\PYG{p}{)}
+TimPes\PYG{p}{(}df\PYGZus{}miacr\PYG{p}{)}
+
+TimPes\PYG{p}{(}df\PYGZus{}usdl\PYG{p}{)}
+TimPes\PYG{p}{(}df\PYGZus{}rtsl\PYG{p}{)}
+TimPes\PYG{p}{(}df\PYGZus{}miacrl\PYG{p}{)}
+
+TimPes\PYG{p}{(}df\PYGZus{}usdl2\PYG{p}{)}
+TimPes\PYG{p}{(}df\PYGZus{}rtsl2\PYG{p}{)}
+TimPes\PYG{p}{(}df\PYGZus{}miacrl2\PYG{p}{)}
+
+qchisq\PYG{p}{(}\PYG{l+m}{0.95}\PYG{p}{,}df\PYG{o}{=}\PYG{p}{(}\PYG{l+m}{3\PYGZhy{}1}\PYG{p}{)}\PYG{o}{\PYGZca{}}\PYG{l+m}{2}\PYG{p}{)}
+\end{Verbatim}
