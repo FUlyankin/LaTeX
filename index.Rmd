@@ -75,7 +75,7 @@ Agenda
 > [Уютная форма](https://docs.google.com/forms/d/1NeXvF2TvweifjkZCqfyUoEI4A_TwswzSTEzgSPH6ZPU/edit) для сдачи домашек.
 
 
-### Занятие 1, 9 февраля 2017
+### Занятие 1 (9 февраля)
 * Уютненькая [Презентация номер один](https://github.com/FUlyankin/LaTeX/raw/master/sem_1/presentation/presa.pdf)
 * [Тезисы для презентации](https://github.com/FUlyankin/LaTeX/raw/master/sem_1/tesis_1.pdf)
 * Наш [первый документ](https://github.com/FUlyankin/LaTeX/raw/master/sem_1/Our%20first%20LaTeX%20doc.tex) в LaTeX
@@ -83,8 +83,8 @@ Agenda
 * [Домашнее задание](https://github.com/FUlyankin/LaTeX/raw/master/sem_1/hw1.pdf) (обратите внимание на дедлайн!)
 * На паре не было интернета. Попробуйте [распознать символ](http://detexify.kirelabs.org/classify.html) и переписать его в свой документ в LaTeX
 
-### Занятие 2, 16 февраля 2017 
-* В какой аудитории будет пара и во сколько пока что непонятно. Когда станет ясно, я сообщу. Будем говорить о шрифтах, таблицах, картинках и бандитах :)
+### Занятие 2 (16 февраля)
+* Занятие состоится в аудитории 5-402 с 10:40 до 13:50 (лекция + семинар). Будем говорить о шрифтах, таблицах, картинках и бандитах :)
 
 
 
