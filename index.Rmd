@@ -3,6 +3,9 @@ title: Уютный факультатив по LaTeX
 output: html_document
 ---
 
+Благодарности
+---------------
+Спасибо за помощь в создании этого курса Демешеву Борису Борисовичу, Шилину Кириллу Юрьевичу, Александру Тишину, Рыбаку Константину и Соловью Владу!
 
 Идеология курса 
 ===================
@@ -69,7 +72,19 @@ Agenda
 
 ## Логи семинаров
 
-> Здесь будут разные полезные материалы с семинаров. Презентации, теховские файлы, преамбулы, задания, и многое-многое другое!
+> [Уютная форма](https://docs.google.com/forms/d/1NeXvF2TvweifjkZCqfyUoEI4A_TwswzSTEzgSPH6ZPU/edit) для сдачи домашек.
+
+
+### Занятие 1, 9 февраля 2017
+* Уютненькая [Презентация номер один](https://github.com/FUlyankin/LaTeX/raw/master/sem_1/presentation/presa.pdf)
+* [Тезисы для презентации](https://github.com/FUlyankin/LaTeX/raw/master/sem_1/tesis_1.pdf)
+* Наш [первый документ](https://github.com/FUlyankin/LaTeX/raw/master/sem_1/Our%20first%20LaTeX%20doc.tex) в LaTeX
+* [Математика в LaTeX](https://github.com/FUlyankin/LaTeX/raw/master/sem_1/math_Latex.tex)
+* [Домашнее задание](https://github.com/FUlyankin/LaTeX/raw/master/sem_1/hw1.pdf) (обратите внимание на дедлайн!)
+* На паре не было интернета. Попробуйте [распознать символ](http://detexify.kirelabs.org/classify.html) и переписать его в свой документ в LaTeX
+
+### Занятие 2, 16 февраля 2017 
+* В какой аудитории будет пара и во сколько пока что непонятно. Когда станет ясно, я сообщу. Будем говорить о шрифтах, таблицах, картинках и бандитах :)
 
 
 
