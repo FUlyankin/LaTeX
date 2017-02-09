@@ -1,0 +1,16 @@
+[0] Config.pm:340> INFO - This is Biber 2.4
+[0] Config.pm:343> INFO - Logfile is 'my_book.blg'
+[53] biber:287> INFO - === Вт фев  7, 2017, 00:12:43
+[161] Biber.pm:348> INFO - Reading 'my_book.bcf'
+[338] Biber.pm:742> INFO - Found 4 citekeys in bib section 0
+[345] Biber.pm:3151> INFO - Processing section 0
+[383] Biber.pm:3308> INFO - Looking for bibtex format file 'sc_biblio.bib' for section 0
+[390] bibtex.pm:1113> INFO - Decoding LaTeX character macros into UTF-8
+[395] bibtex.pm:974> INFO - Found BibTeX data source 'sc_biblio.bib'
+[439] Utils.pm:147> WARN - The field 'url' in entry 'herrlich:axiom' cannot be null, deleting it
+[496] UCollate.pm:65> INFO - Overriding locale 'ru-RU' defaults 'variable = shifted' with 'variable = non-ignorable'
+[496] UCollate.pm:65> INFO - Overriding locale 'ru-RU' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[496] Biber.pm:3028> INFO - Sorting list 'nty/global' of type 'entry' with scheme 'nty' and locale 'ru-RU'
+[502] bbl.pm:519> INFO - Writing 'my_book.bbl' with encoding 'UTF-8'
+[517] bbl.pm:615> INFO - Output to my_book.bbl
+[517] Biber.pm:109> INFO - WARNINGS: 1

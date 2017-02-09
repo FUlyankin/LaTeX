@@ -1,7 +1,5 @@
 \documentclass[12pt, a4paper]{article}  
 
-\usepackage{etex} % расширение классического tex в частности позволяет подгружать гораздо больше пакетов, чем мы и займёмся далее
-
 %%%%%%%%%% Математика %%%%%%%%%%
 \usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
 %\mathtoolsset{showonlyrefs=true}  % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
@@ -10,22 +8,25 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{fontspec}         % пакет для подгрузки шрифтов
-\setmainfont{HelveticaNeueCyr}   % задаёт основной шрифт документа
+\setmainfont{Linux Libertine O}   % задаёт основной шрифт документа
 
 % why do we need \newfontfamily:
 % http://tex.stackexchange.com/questions/91507/
-\newfontfamily{\cyrillicfonttt}{HelveticaNeueCyr}
-\newfontfamily{\cyrillicfont}{HelveticaNeueCyr}
-\newfontfamily{\cyrillicfontsf}{HelveticaNeueCyr}
-% Иногда тех не видит структуры шрифтов. Эти трое бравых парней спасают ситуацию и доопределяют те куски, которые Тех не увидел.
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+\newfontfamily{\cyrillicfont}{Linux Libertine O}
+\newfontfamily{\cyrillicfontsf}{Linux Libertine O}
 
 \usepackage{unicode-math}     % пакет для установки математического шрифта
 \setmathfont{Asana Math}      % шрифт для математики
+% \setmathfont[math-style=ISO]{Asana Math}
+% Можно делать смену начертания с помощью разных стилей
+
+% Конкретный символ из конкретного шрифта
+% \setmathfont[range=\int]{Neo Euler}
 
 \usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
 \setdefaultlanguage{russian}  % Основной язык документа
 \setotherlanguage{english}    % Второстепенный язык документа
-
 
 
 %%%%%%%%%% Работа с картинками %%%%%%%%%
@@ -47,6 +48,12 @@
 \renewcommand{\arraystretch}{1.3} % больше расстояние между строками
 
 
+%%%%%%%%%% Графика и рисование %%%%%%%%%%
+\usepackage{tikz, pgfplots}  % язык для рисования графики из latex'a
+\usepackage{amscd}                  %Пакеты для рисования 
+\usepackage[matrix,arrow,curve]{xy} %комунитативных диаграмм
+
+
 %%%%%%%%%% Гиперссылки %%%%%%%%%%
 \usepackage{xcolor}              % разные цвета
 
@@ -61,26 +68,34 @@
     urlcolor=blue,          % цвет ссылки на url
     linkcolor=red,          % внутренние ссылки
     citecolor=green,        % на библиографию
-	pdfnewwindow=true       % при щелчке в pdf на ссылку откроется новый pdf
-	hyperindex=true         % сделать ли ссылку кликабельной?
-	breaklinks=true         % если ссылка не умещается в одну строку, разбивать    
-	                        % ли ее на две части?
+	pdfnewwindow=true,      % при щелчке в pdf на ссылку откроется новый pdf
+	hyperindex,             % сделать ли ссылку кликабельной?
+	breaklinks              % если ссылка не умещается в одну строку, разбивать ли ее на две части?   
 }
 
 \usepackage{csquotes}            % Еще инструменты для ссылок
 
 %%%%%%%%%% Програмный код %%%%%%%%%%
 \usepackage{minted}
-% Включает подцветку комманд в программах!
-% Нужно, чтобы на компе стоял питон, надо поставить пакет Pygments, в котором он сделан через pip или cmd ( нужно ввести easy_install Pygments ). 
-% После нужно зайти в настройки texmaker и там прописать в PdfLatex pdflatex -shell-escape -synctex=1 -interaction=nonstopmode %.tex
-% Документация по пакету хорошая, сам читал, погуглите!
+% Включает подсветку команд в программах!
+% Нужно, чтобы на компе стоял питон, надо поставить пакет Pygments, в котором он сделан, через pip.
+
+% Для Windows: Жмём win+r, вводим cmd, жмём enter. Открывается консоль. 
+% Прописываем easy_install Pygments
+% Заходим в настройки texmaker и там прописываем в PdfLatex:
+% pdflatex -shell-escape -synctex=1 -interaction=nonstopmode %.tex
+
+% Для Linux: Открываем консоль. Убеждаемся, что у вас установлен pip командой pip --version
+% Если он не установлен, ставим его: sudo apt-get install python-pip
+% Ставим пакет sudo pip install Pygments
+
+% После всего этого вы должны почувствовать себя тру-программистами! 
+% Документация по пакету хорошая. Сам читал, погуглите!
 
 
 %%%%%%%%%% Другие приятные пакеты %%%%%%%%%
 \usepackage{multicol}       % несколько колонок
 \usepackage{verbatim}       % для многострочных комментариев
-\usepackage{mdframed}       % Этот пакет позволяет рисовать красивые рамки!
 \usepackage{makeidx}        % для создания предметных указателей
 
 \usepackage{enumitem} % дополнительные плюшки для списков
@@ -93,21 +108,25 @@
 
 
 
-%%%%%%%%%% Оформление %%%%%%%%%%
-%ТОТ САМЫЙ ПАКЕТ - ЛЕГЕНДА!
-
-% Сделать норм порядок пакетов!
-% https://en.wikibooks.org/wiki/LaTeX/Lengths   разные длины которые есть в LaTeX
+%%%% Оформление %%%%%%%
+\usepackage{extsizes} % Возможность сделать 14-й шрифт
+% размер листа бумаги
+\usepackage[paper=a4paper,top=15mm, bottom=15mm,left=35mm,right=10mm,includefoot]{geometry}
 
 \usepackage{indentfirst}       % установка отступа в первом абзаце главы!!!
 
 \usepackage{setspace}  
-\setstretch{1.255}  % Межстрочный интервал
+\setstretch{1.33}  % Межстрочный интервал
 \setlength{\parindent}{1.5em} % Красная строка.
-\usepackage{extsizes} % Возможность сделать 14-й шрифт
+\setlength{\parskip}{4mm}   % Расстояние между абзацами
+% Разные длины в латехе https://en.wikibooks.org/wiki/LaTeX/Lengths
 
-% размер листа бумаги
-\usepackage[paper=a4paper,top=15mm, bottom=15mm,left=35mm,right=10mm,includefoot]{geometry}
+\flushbottom                            % Эта команда заставляет LaTeX чуть растягивать строки, чтобы получить идеально прямоугольную страницу
+\righthyphenmin=2                       % Разрешение переноса двух и более символов
+\widowpenalty=300                     % Небольшое наказание за вдовствующую строку (одна строка абзаца на этой странице, остальное --- на следующей)
+\clubpenalty=3000                     % Приличное наказание за сиротствующую строку (омерзительно висящая одинокая строка в начале страницы)
+\tolerance=1000     % Ещё какое-то наказание.
+
 
 \usepackage{fancyhdr} % Колонтитулы
 \pagestyle{fancy}
@@ -121,17 +140,7 @@
 	\lhead{Верхний левый}
 	\cfoot{ }         % Тут по умолчанию печатается номер страницы 
 	%\lhead{\thepage} % Новая нумерация
-
-
-
-\flushbottom                            % Эта команда заставляет LaTeX чуть растягивать строки, чтобы получить идеально прямоугольную страницу
-\righthyphenmin=2                       % Разрешение переноса двух и более символов
-\widowpenalty=300                     % Небольшое наказание за вдовствующую строку (одна строка абзаца на этой странице, остальное --- на следующей)
-\clubpenalty=3000                     % Приличное наказание за сиротствующую строку (омерзительно висящая одинокая строка в начале страницы)
-\tolerance=1000     % Ещё какое-то наказание.
-
-
-
+	
 
 
 
