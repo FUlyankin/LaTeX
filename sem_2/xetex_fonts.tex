@@ -8,9 +8,11 @@
 
 %%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%
 \usepackage{fontspec}         % пакет для подгрузки шрифтов
-\setmainfont{Linux Libertine O}       % задаёт основной шрифт документа
+\setmainfont{Linux Libertine O}   % задаёт основной шрифт документа
 
-% Зачем на нужна команда \newfontfamily:
+\defaultfontfeatures{Mapping=tex-text}
+
+% why do we need \newfontfamily:
 % http://tex.stackexchange.com/questions/91507/
 \newfontfamily{\cyrillicfonttt}{Linux Libertine O}
 \newfontfamily{\cyrillicfont}{Linux Libertine O}

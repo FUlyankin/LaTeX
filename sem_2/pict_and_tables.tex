@@ -10,13 +10,15 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{fontspec}         % пакет для подгрузки шрифтов
-\setmainfont{Roboto}   % задаёт основной шрифт документа
+\setmainfont{Linux Libertine O}   % задаёт основной шрифт документа
+
+\defaultfontfeatures{Mapping=tex-text}
 
 % why do we need \newfontfamily:
 % http://tex.stackexchange.com/questions/91507/
-\newfontfamily{\cyrillicfonttt}{Roboto}
-\newfontfamily{\cyrillicfont}{Roboto}
-\newfontfamily{\cyrillicfontsf}{Roboto}
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+\newfontfamily{\cyrillicfont}{Linux Libertine O}
+\newfontfamily{\cyrillicfontsf}{Linux Libertine O}
 
 \usepackage{unicode-math}     % пакет для установки математического шрифта
 \setmathfont{Asana Math}      % шрифт для математики
@@ -158,7 +160,6 @@ $P(\ldots)$ & 0.1 & 0.2 & 0.4 & 0.2 & 0.1 \\
 % p{...} - колнка верстается как абзац, в скобках - ширина колонки
 % m{...} - абзац будет выровнен по середине своей высоты (лежит в array)
 % b{...} - абзац будет выроавнен по нижней строке        (лежит в array)
-% Использовать p,m,b --- не очень хорошая идея...
 
 \vspace{20mm}
 
