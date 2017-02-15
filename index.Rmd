@@ -89,7 +89,7 @@ Agenda
 * [Документация к пакету unicode-math](https://www.ctan.org/pkg/unicode-math). Один из pdf-файлов - сравнительная таблица с символами из разных математических шрифтов.
 * Теховский файл [Картинки и таблицы](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/pict_and_tables.tex) в LaTeX. [Папка с картинками](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/images.zip) для файла.
 * Texовский файл [Как не надо делать](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/kak_ne_nado_delat.tex) с ошибками из домашек.
-* [Задание для семинара](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/zadanie_2.zip )
+* [Задание для семинара](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/for%20hw/hw2.pdf)
 
 * [Менеджер по шрифтам](https://apps.ubuntu.com/cat/applications/precise/font-manager/) для Linux
 * [Менеджер по шрифтам](http://fontba.se/) для Windows.
