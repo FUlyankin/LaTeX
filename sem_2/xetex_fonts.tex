@@ -9,15 +9,15 @@
 
 %%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%
 \usepackage{fontspec}         % пакет для подгрузки шрифтов
-\setmainfont{Linux Libertine O}   % задаёт основной шрифт документа
+\setmainfont{Arial}   % задаёт основной шрифт документа
 
 \defaultfontfeatures{Mapping=tex-text}
 
 % why do we need \newfontfamily:
 % http://tex.stackexchange.com/questions/91507/
-\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
-\newfontfamily{\cyrillicfont}{Linux Libertine O}
-\newfontfamily{\cyrillicfontsf}{Linux Libertine O}
+\newfontfamily{\cyrillicfonttt}{Arial}
+\newfontfamily{\cyrillicfont}{Arial}
+\newfontfamily{\cyrillicfontsf}{Arial}
 % Грубо говоря иногда polyglossia начинает балбесничать и не видит структуры кириллических шрифтов. Эти трое бравых парней спасают ситуацию и доопределяют те куски, которые Тех не увидел.
 
 \usepackage{unicode-math}     % пакет для установки математического шрифта

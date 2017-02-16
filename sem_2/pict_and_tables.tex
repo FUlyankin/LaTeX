@@ -11,15 +11,15 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{fontspec}         % пакет для подгрузки шрифтов
-\setmainfont{Linux Libertine O}   % задаёт основной шрифт документа
+\setmainfont{Arial}   % задаёт основной шрифт документа
 
 \defaultfontfeatures{Mapping=tex-text}
 
 % why do we need \newfontfamily:
 % http://tex.stackexchange.com/questions/91507/
-\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
-\newfontfamily{\cyrillicfont}{Linux Libertine O}
-\newfontfamily{\cyrillicfontsf}{Linux Libertine O}
+\newfontfamily{\cyrillicfonttt}{Arial}
+\newfontfamily{\cyrillicfont}{Arial}
+\newfontfamily{\cyrillicfontsf}{Arial}
 
 \usepackage{unicode-math}     % пакет для установки математического шрифта
 \setmathfont{Asana Math}      % шрифт для математики
@@ -129,7 +129,7 @@
 % Обратите внимание на \linewidth-длину текста в теущем окружении!
 \center{\footnotesize{растровый и векторный} \\ \includegraphics[width=0.8\linewidth]{rv.jpg}}
 \end{minipage}
-\hfill
+\vfill
 \begin{minipage}[h!]{0.49\linewidth}
 \center{\footnotesize{DOGE} \\ \includegraphics[width=0.8\linewidth]{doge.png}}
 \end{minipage}
@@ -142,14 +142,16 @@
 
 \section{Таблицы}
 
+
+
 \subsection{Рисование таблиц}
 
-\begin{tabular}{|c|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|cc|p{6cm}|}
 \hline
 $X$ & -2 & -1 & 0 & 1 & 2 \\
 \hline
 $P(\ldots)$ & 0.1 & 0.2 & 0.4 & 0.2 & 0.1 \\
-\hline
+
 \end{tabular}
 
 % & разделяют столбцы, а \\ разделяют строки, \hline - прорисовка линии!
@@ -196,6 +198,7 @@ $P(\ldots)$ & 0.1 & 0.2 & 0.4 & 0.2 & 0.1 \\
 В таблице \ref{tab:random} приведено распределение случайной величины $X$.
 
 \begin{table}[h!]
+\caption{Распределение случайной величины $X$}\label{tab:random}
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
@@ -204,11 +207,9 @@ $X$ & -2 & -1 & 0 & 1 & 2 \\
 $P(\ldots)$ & 0.1 & 0.2 & 0.4 & 0.2 & 0.1 \\
 \hline
 \end{tabular}
-\caption{Распределение случайной величины $X$}\label{tab:random}
 %\caption[Заголовок для списка таблиц]{Обычный заголовок}
 \end{center}
 \end{table}
-
 
 
 
@@ -261,7 +262,6 @@ z & 0.0046 & 0.0021 & 2.18 & 0.0290 \\
 
 
 \section{Длинная таблица}
-% Обратите внимание! В таблице стоят разделители. Но милый booktabs бьёт нас за них по рукам и отнимает их у нас. 
 
 \begin{center}
 \begin{longtable}{|l|l|l|}
@@ -398,7 +398,6 @@ $P(\ldots)$ & 0.1 & 0.8 & 0.1 \\
 \listoffigures
 
 \listoftables
-
 
 
 \end{document}

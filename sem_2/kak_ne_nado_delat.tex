@@ -11,15 +11,15 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{fontspec}         % пакет для подгрузки шрифтов
-\setmainfont{Linux Libertine O}   % задаёт основной шрифт документа
+\setmainfont{Arial}   % задаёт основной шрифт документа
 
 \defaultfontfeatures{Mapping=tex-text}
 
 % why do we need \newfontfamily:
 % http://tex.stackexchange.com/questions/91507/
-\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
-\newfontfamily{\cyrillicfont}{Linux Libertine O}
-\newfontfamily{\cyrillicfontsf}{Linux Libertine O}
+\newfontfamily{\cyrillicfonttt}{Arial}
+\newfontfamily{\cyrillicfont}{Arial}
+\newfontfamily{\cyrillicfontsf}{Arial}
 
 \usepackage{unicode-math}     % пакет для установки математического шрифта
 \setmathfont{Asana Math}      % шрифт для математики
@@ -114,13 +114,13 @@ $q < 1$ --- ряд сходится абсолютно
 
 \vspace{5mm}
 
-\begin{equation}
-  \begin{align}
-\hat{u_i} &=\delta_0+\delta_1 z_{1,i} + \delta_2 z_{2,i}+ \ldots + \delta_r z_{r,i}+ \\
-& \delta_{r+1} w_{1,i} + \delta_{r+2} w_{2,i} + \ldots + \delta_{r+m} w_{m,i} +\varepsilon_i  
-  \end{align} 
-   \tag{æææææ}
-\end{equation}
+%\begin{equation}
+%  \begin{align}
+%\hat{u_i} &=\delta_0+\delta_1 z_{1,i} + \delta_2 z_{2,i}+ \ldots + \delta_r z_{r,i}+ \\
+%& \delta_{r+1} w_{1,i} + \delta_{r+2} w_{2,i} + \ldots + \delta_{r+m} w_{m,i} +\varepsilon_i  
+%  \end{align} 
+%   \tag{æææææ}
+%\end{equation}
 
 \vspace{5mm}
 
@@ -204,15 +204,6 @@ $\Var(X)$  \hspace{5mm} $Var(X)$ \hspace{5mm} $\cos(\alpha)$  \hspace{5mm} $cos(
 Использование самых разных красивых символов, подгружены спец пакеты. И при этом не проставлены ссылки или что-то где-то съехало... 
 
 Почему-то некоторые использовали pdf-latex
-
-
-
-\subsection{Самая большая странность} 
-
-\begin{enumerate}[label=\setcounter:{what's going on??}] 
-\item [æ] $C_n^m=\frac{n!}{(m!(n-m)!}$ \label{f1}
-\end{enumerate}
-
 
 \end{document}
 
