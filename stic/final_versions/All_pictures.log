@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.11.11)  5 FEB 2017 19:53
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.11.11)  18 FEB 2017 22:25
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**zen.tex
-(./zen.tex
+**All_pictures.tex
+(./All_pictures.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/standalone/standalone.cls
@@ -1223,8 +1223,8 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \rotFPbot=\skip60
 \rot@float@box=\box56
 \rot@mess@toks=\toks45
-) (./zen.aux)
-\openout1 = `zen.aux'.
+) (./All_pictures.aux)
+\openout1 = `All_pictures.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
 LaTeX Font Info:    ... okay on input line 36.
@@ -1242,7 +1242,6 @@ LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 36.
 LaTeX Font Info:    ... okay on input line 36.
 LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 36.
 LaTeX Font Info:    Try loading font information for T3+cmr on input line 36.
-
 (/usr/share/texmf/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
@@ -1264,19 +1263,33 @@ ick labels; missing features). Consider writing \pgfplotsset{compat=1.13} into
 your preamble.
  on input line 36.
 
-File: zen.png Graphic file (type QTm)
-<use  "zen.png" >
-\R=\dimen274
- [1
+File: beta.pdf Graphic file (type QTm)
+<use  "beta.pdf" >
+File: dummy_trap.pdf Graphic file (type QTm)
+ <use  "dummy_trap.pdf" >
+File: zen.pdf Graphic file (type QTm)
+ <use  "zen.pdf" >
+File: b+greater.pdf Graphic file (type QTm)
 
-] (./zen.aux) ) 
+<use  "b+greater.pdf" >
+File: LaTeX-blud.pdf Graphic file (type QTm)
+ <use  "LaTeX-blud.pdf" >
+File: LaTeX-logo.pdf Graphic file (type QTm)
+ <use  "LaTeX-logo.pdf" >
+File: regression_is_my.pdf Graphic file (type QTm)
+
+<use  "regression_is_my.pdf" >
+File: Bayes.pdf Graphic file (type QTm)
+ <use  "Bayes.pdf" > [1
+
+] (./All_pictures.aux) ) 
 Here is how much of TeX's memory you used:
- 39891 strings out of 493638
- 909115 string characters out of 6146795
- 1107462 words of memory out of 5000000
- 42772 multiletter control sequences out of 15000+600000
- 3906 words of font info for 33 fonts, out of 8000000 for 9000
+ 39874 strings out of 493638
+ 908784 string characters out of 6146795
+ 1108471 words of memory out of 5000000
+ 42750 multiletter control sequences out of 15000+600000
+ 3898 words of font info for 32 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 57i,10n,79p,10398b,683s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,7n,79p,10407b,676s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on zen.pdf (1 page).
+Output written on All_pictures.pdf (1 page).

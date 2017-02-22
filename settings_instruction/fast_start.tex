@@ -16,13 +16,21 @@
 % в) Команды, которые создают новые команды, чтобы удобнее использовать старые команды!
 % г) Ещё какие-нибудь другие команды
 
-\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}  % Тут мы подключаем пакеты для математики!
 
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}  % пакеты для математики
 
 %%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{fontspec}         % пакет для подгрузки шрифтов
-\setmainfont{Roboto}          % задаёт основной шрифт документа
+\setmainfont{Arial}   % задаёт основной шрифт документа
+
+\defaultfontfeatures{Mapping=tex-text}
+
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Arial}
+\newfontfamily{\cyrillicfont}{Arial}
+\newfontfamily{\cyrillicfontsf}{Arial}
 
 \usepackage{unicode-math}     % пакет для установки математического шрифта
 \setmathfont{Asana Math}      % шрифт для математики

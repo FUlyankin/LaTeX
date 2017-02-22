@@ -1,5 +1,7 @@
+%!TEX TS-program = xelatex
 \documentclass[12pt, a4paper]{article}  
 
+\usepackage{etex} % расширение классического tex в частности позволяет подгружать гораздо больше пакетов, чем мы и займёмся далее
 
 %%%%%%%%%% Математика %%%%%%%%%%
 \usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
@@ -9,13 +11,15 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{fontspec}         % пакет для подгрузки шрифтов
-\setmainfont{Linux Libertine O}   % задаёт основной шрифт документа
+\setmainfont{Arial}   % задаёт основной шрифт документа
+
+\defaultfontfeatures{Mapping=tex-text}
 
 % why do we need \newfontfamily:
 % http://tex.stackexchange.com/questions/91507/
-\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
-\newfontfamily{\cyrillicfont}{Linux Libertine O}
-\newfontfamily{\cyrillicfontsf}{Linux Libertine O}
+\newfontfamily{\cyrillicfonttt}{Arial}
+\newfontfamily{\cyrillicfont}{Arial}
+\newfontfamily{\cyrillicfontsf}{Arial}
 
 \usepackage{unicode-math}     % пакет для установки математического шрифта
 \setmathfont{Asana Math}      % шрифт для математики
@@ -32,7 +36,7 @@
 
 %%%%%%%%%% Работа с картинками %%%%%%%%%
 \usepackage{graphicx}                  % Для вставки рисунков
-\usepackage{graphics} 
+\usepackage{graphics}
 \graphicspath{{images/}{pictures/}}    % можно указать папки с картинками
 \usepackage{wrapfig}                   % Обтекание рисунков и таблиц текстом
 \usepackage{subfigure}                 % для создания нескольких рисунков внутри одного
@@ -44,17 +48,23 @@
 \usepackage{array}               % Дополнительная работа с таблицами
 \usepackage{longtable}           % Длинные таблицы
 \usepackage{multirow}            % Слияние строк в таблице
-\usepackage{float}               % возможность позиционировать объекты в нужном месте 
-\usepackage{booktabs}            % таблицы как в книгах!  
+\usepackage{float}               % возможность позиционировать объекты в нужном месте
+\usepackage{booktabs}            % таблицы как в книгах!
 \renewcommand{\arraystretch}{1.3} % больше расстояние между строками
 
-
+% Заповеди из документации к booktabs:
+% 1. Будь проще! Глазам должно быть комфортно
+% 2. Не используйте вертикальные линни
+% 3. Не используйте двойные линии. Как правило, достаточно трёх горизонтальных линий
+% 4. Единицы измерения - в шапку таблицы
+% 5. Не сокращайте .1 вместо 0.1
+% 6. Повторяющееся значение повторяйте, а не говорите "то же"
+% 7. Есть сомнения? Выравнивай по левому краю!
 
 %%%%%%%%%% Графика и рисование %%%%%%%%%%
 \usepackage{tikz, pgfplots}  % язык для рисования графики из latex'a
-\usepackage{amscd}                  %Пакеты для рисования 
+\usepackage{amscd}                  %Пакеты для рисования
 \usepackage[matrix,arrow,curve]{xy} %комунитативных диаграмм
-
 
 
 
@@ -158,6 +168,8 @@
 
 % Нарисовать что-нибудь рандомное!
 % Отдать им одну из глав в TeX!
+
+
 
 
 \end{document} % конец документа

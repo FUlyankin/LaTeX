@@ -1,4 +1,7 @@
+%!TEX TS-program = xelatex
 \documentclass[12pt, a4paper]{article}  
+
+\usepackage{etex} % расширение классического tex в частности позволяет подгружать гораздо больше пакетов, чем мы и займёмся далее
 
 %%%%%%%%%% Математика %%%%%%%%%%
 \usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
@@ -8,13 +11,15 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{fontspec}         % пакет для подгрузки шрифтов
-\setmainfont{Linux Libertine O}   % задаёт основной шрифт документа
+\setmainfont{Arial}   % задаёт основной шрифт документа
+
+\defaultfontfeatures{Mapping=tex-text}
 
 % why do we need \newfontfamily:
 % http://tex.stackexchange.com/questions/91507/
-\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
-\newfontfamily{\cyrillicfont}{Linux Libertine O}
-\newfontfamily{\cyrillicfontsf}{Linux Libertine O}
+\newfontfamily{\cyrillicfonttt}{Arial}
+\newfontfamily{\cyrillicfont}{Arial}
+\newfontfamily{\cyrillicfontsf}{Arial}
 
 \usepackage{unicode-math}     % пакет для установки математического шрифта
 \setmathfont{Asana Math}      % шрифт для математики
@@ -31,7 +36,7 @@
 
 %%%%%%%%%% Работа с картинками %%%%%%%%%
 \usepackage{graphicx}                  % Для вставки рисунков
-\usepackage{graphics} 
+\usepackage{graphics}
 \graphicspath{{images/}{pictures/}}    % можно указать папки с картинками
 \usepackage{wrapfig}                   % Обтекание рисунков и таблиц текстом
 \usepackage{subfigure}                 % для создания нескольких рисунков внутри одного
@@ -43,15 +48,24 @@
 \usepackage{array}               % Дополнительная работа с таблицами
 \usepackage{longtable}           % Длинные таблицы
 \usepackage{multirow}            % Слияние строк в таблице
-\usepackage{float}               % возможность позиционировать объекты в нужном месте 
-\usepackage{booktabs}            % таблицы как в книгах!  
+\usepackage{float}               % возможность позиционировать объекты в нужном месте
+\usepackage{booktabs}            % таблицы как в книгах!
 \renewcommand{\arraystretch}{1.3} % больше расстояние между строками
 
+% Заповеди из документации к booktabs:
+% 1. Будь проще! Глазам должно быть комфортно
+% 2. Не используйте вертикальные линни
+% 3. Не используйте двойные линии. Как правило, достаточно трёх горизонтальных линий
+% 4. Единицы измерения - в шапку таблицы
+% 5. Не сокращайте .1 вместо 0.1
+% 6. Повторяющееся значение повторяйте, а не говорите "то же"
+% 7. Есть сомнения? Выравнивай по левому краю!
 
 %%%%%%%%%% Графика и рисование %%%%%%%%%%
 \usepackage{tikz, pgfplots}  % язык для рисования графики из latex'a
-\usepackage{amscd}                  %Пакеты для рисования 
+\usepackage{amscd}                  %Пакеты для рисования
 \usepackage[matrix,arrow,curve]{xy} %комунитативных диаграмм
+
 
 
 %%%%%%%%%% Теоремы %%%%%%%%%%
@@ -71,6 +85,10 @@
 
 
 % Все свои команды лучше всего определять не по ходу текста, как это сделано в этом документе, а в преамбуле!
+
+% Пакет, который ставит в каждом первом абзаце главы красную строку
+% Просто, чтобы эта pdf-ка нормально смотрелась :)
+\usepackage{indentfirst}
 
 
 \title{Свои команды и макросы}
@@ -232,8 +250,62 @@ $ 1 \le 2 $ и $ 2 \ge 1 $
 \ex{Шестеро друзей пришли в театр! В ложе 6 мест. Среди друзей две девушки, которые не могут сидеть скраю. Сколько способов рассадки существует?}
 
 
+\section{Свои окружения} 
+
+% \newenvironment{name}[num]{before}{after}
+
+
+\newcounter{iexer}
+
+\newenvironment{exercise}{
+\addtocounter{iexer}{1}
+ { 
+   \noindent\ignorespaces
+   \fontspec{GNUTypewriter}
+   \textcolor{blue}{ \large  \textbf{Задача \arabic{iexer}}} 
+ } 
+ 
+\vspace{2mm}
+%\noindent \ignorespaces
+% конец того, что будет перед
+}
+{
+\begin{center}
+\begin{tikzpicture}
+\draw[blue,fill=blue](2,2) circle [radius = 0.3];
+\end{tikzpicture}
+
+\end{center}
+}% конец того, что будет после
+
+\begin{exercise}
+В корзине лежат 12 яблок и 10 апельсинов. Ваня выбирает из неё яблоко или апельсин, после чего Надя берёт и яблоко, и апельсин. В каком случае Надя имеет большую свободу выбора: если Ваня взял яблоко или если он взял апельсин?
+\end{exercise}
+
+
+% Можно придумывать для окружений необязательные аргументы!
+\newenvironment{argument}[1][]{%
+\par
+\noindent
+\textbf{Аргумент в споре #1:}
+\noindent}
+{}
+
+
+\begin{argument}
+Я классный!
+\end{argument}
+
+\begin{argument}[с Машей]
+Она не очень умная!
+\end{argument}
+
+% Свои окружения, как и команды лучше всего прописывать в преамбуле! 
+
+
 
 \section{etoolbox}
+
 % Одно из применений - уничтожение какого-то куска текста!
 \newbool{answers}
 \booltrue{answers}
@@ -246,9 +318,12 @@ $ 1 \le 2 $ и $ 2 \ge 1 $
 \ifbool{answers}{Ответ. #1}{}
 }
 
-\ex[хз]{В корзине лежат 12 яблок и 10 апельсинов. Ваня выбирает из неё яблоко или апельсин, после чего Надя берёт и яблоко, и апельсин. В каком случае Надя имеет большую свободу выбора: если Ваня взял яблоко или если он взял апельсин?}
+\ex{В корзине лежат 12 яблок и 10 апельсинов. Ваня выбирает из неё яблоко или апельсин, после чего Надя берёт и яблоко, и апельсин. В каком случае Надя имеет большую свободу выбора: если Ваня взял яблоко или если он взял апельсин?}
+
 
 \ex[много]{Шестеро друзей пришли в театр! В ложе 6 мест. Среди друзей две девушки, которые не могут сидеть скраю. Сколько способов рассадки существует?}
+
+
 
 \end{document}
 
