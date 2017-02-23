@@ -22,7 +22,7 @@ output: html_document
 
 ### Для тех, кто скучает по вечерам
 
-* [Дополнительное (слово дополнительное в данном контексте означает, что делать задание необязательно) задание](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/sasha/Saha.pdf) от Саши. 
+* [Дополнительное (слово дополнительное в данном контексте означает, что делать задание необязательно) задание](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/sasha/Sasha.pdf) от Саши. 
 
 ### Занятие 2 (16 февраля)
 * Хочу [всё и сразу](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/sem_2.zip)
