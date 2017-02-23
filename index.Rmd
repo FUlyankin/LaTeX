@@ -18,14 +18,14 @@ output: html_document
 
 
 ### Занятие 2 (16 февраля)
+* Хочу [всё и сразу](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/sem_2.zip)
+
 * Уютненькая [Презентация номер два](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/presentation/presa2.pdf)
 * [Теховский файл](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/xetex_fonts.tex) работа со шрифтами в XeLaTeX
 * [Документация к пакету unicode-math](https://www.ctan.org/pkg/unicode-math). Один из pdf-файлов - сравнительная таблица с символами из разных математических шрифтов.
 * Теховский файл [Картинки и таблицы](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/pict_and_tables.tex) в LaTeX. [Папка с картинками](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/images.zip) для файла.
 * Texовский файл [Как не надо делать](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/kak_ne_nado_delat.tex) с ошибками из домашек.
 * [Задание для семинара](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/for%20hw/hw2.pdf)
-
-* Хочу [всё и сразу](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/sem_2.zip)
 
 
 * [Менеджер по шрифтам](https://apps.ubuntu.com/cat/applications/precise/font-manager/) для Linux
@@ -39,14 +39,14 @@ output: html_document
 
 
 ### Занятие 1 (9 февраля)
+* Хочу [всё и сразу](https://github.com/FUlyankin/LaTeX/blob/master/sem_1/sem_1.zip)
+
 * Уютненькая [Презентация номер один](https://github.com/FUlyankin/LaTeX/raw/master/sem_1/presentation/presa.pdf)
 * [Тезисы для презентации](https://github.com/FUlyankin/LaTeX/raw/master/sem_1/tesis_1.pdf)
 * Наш [первый документ](https://github.com/FUlyankin/LaTeX/raw/master/sem_1/Our%20first%20LaTeX%20doc.tex) в LaTeX
 * [Математика в LaTeX](https://github.com/FUlyankin/LaTeX/raw/master/sem_1/math_Latex.tex)
 * [Домашнее задание](https://github.com/FUlyankin/LaTeX/raw/master/sem_1/hw1.pdf) (обратите внимание на дедлайн!)
 * На паре не было интернета. Попробуйте [распознать символ](http://detexify.kirelabs.org/classify.html) и переписать его в свой документ в LaTeX
-* Хочу [всё и сразу](https://github.com/FUlyankin/LaTeX/blob/master/sem_1/sem_1.zip)
-
 
 -----------------------------------------------------------
 
