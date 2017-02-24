@@ -18,7 +18,23 @@ output: html_document
 
 
 ### Занятие 3 (2 марта)
-Будем смотреть как в LaTeX делать красивую графику, рисовать наклеечки и писать свои собственные удобные команды.
+
+### Занятие 3
+* Хочу [всё и сразу](    )
+
+* Теховский файл [Свои команды и макросы](https://github.com/FUlyankin/LaTeX/raw/master/sem_3/%D0%BC%D0%B0%D0%BA%D1%80%D0%BE%D1%81%D1%8B%20%D0%B8%20%D1%81%D1%87%D1%91%D1%82%D1%87%D0%B8%D0%BA%D0%B8.tex)
+* Теховский файл [Графика и Tikz](https://github.com/FUlyankin/LaTeX/raw/master/sem_3/%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0%20%D0%B2%20LaTeX.tex)
+* [Примеры наклеечек]( ) в Tikz
+
+* [Задания для семинара]( )
+
+* [30 страниц с минимальной информацией по TikZ](http://cremeronline.com/LaTeX/minimaltikz.pdf )
+* [Скрипт](http://www.texample.net/tikz/examples/tikzdevice-demo/) графики из R в TikZ (не знаю зачем, но почему бы собственно и нет) 
+*  [Главная страница](https://www.geogebra.org/cms/ru/) проекта Geogebra
+*  [Примеры рисунков в Tikz](http://www.texample.net/tikz/)                
+*  [Куча](http://tex.stackexchange.com/questions/158668/nice-scientific-pictures-show-off) разной безумной анимации и картинок, сделанных с помощью LaTeX
+
+
 
 ### Для тех, кто скучает по вечерам
 
