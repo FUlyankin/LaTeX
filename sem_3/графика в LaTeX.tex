@@ -122,6 +122,7 @@
 \end{figure}
 
 
+\newpage 
 
 \section{Великий и могучий Tikz}
 \subsection{ Основные команды} 
@@ -131,9 +132,9 @@
 % Tikz очень капризен по отношению к этому!
 
 \begin{tikzpicture}
-\draw[green, dashed] (0,1) -- (2,1) (0,2) -- (2,2);
-\draw[->] (0,1) -- (-1,1);
-\draw[blue,fill=yellow](2,2) circle [radius = 0.5];
+% \draw[red, dashed, thick] (0,1) -- (2,1) (0,2) -- (2,2);
+% \draw[->] (0,1) -- (-1,1);
+% \draw[blue,fill=yellow](2,2) circle [radius = 0.5];
 \end{tikzpicture}
 
 \vspace{1cm}
@@ -148,26 +149,36 @@
 % \draw [domain=<xmin>:<xmax>] plot (\x, {function})
 
 \begin{tikzpicture}
-\draw [help lines] (-2,0) grid (2,4); 
-\draw [->] (-2.2,0) -- (2.2,0); 
-\draw [->] (0,0) -- (0,4.2); 
-\draw [green, thick, domain=-2:2] plot (\x, {4-\x*\x}); 
-\draw [domain=-2:2, samples=50] plot (\x, {1+cos(pi*\x r});
+% \draw [help lines] (-2,0) grid (2,4); 
+% \draw [->] (-2.2,0) -- (2.2,0); 
+% \draw [->] (0,0) -- (0,4.2); 
+% \draw [green, thick, domain=-2:2] plot (\x, {4-\x*\x}); 
+% \draw [domain=-2:2, samples=50] plot (\x, {1+cos(pi*\x r});
 \end{tikzpicture}
+
+
+\begin{tikzpicture}[scale=2]
+\draw[fill] (0.5,0.75) circle [radius=0.025];
+\node [below right, red] at (0.5,0.75) {below right};
+\node [above left, green] at (0.5,0.75) {above left};
+\node [below left, purple] at (0.5,0.75) {below left};
+\node [above right, magenta] at (0.5,0.75) {above right};
+\end{tikzpicture}
+% измнение scale не изменяет размер текста
+
 
 \subsection{Tikztempaltes и их редактирование}
 
 % \begin{figure}[h]
 % \begin{center}
-%  Рисунок
+
 % \end{center}
-% \caption{Стимулирующая монетарная политика в открытой экономике}
+% \caption{ }
 % \end{figure}
 
 \subsection{Geogebra}
 
 % Нарисовать что-нибудь рандомное!
-% Отдать им одну из глав в TeX!
 
 
 
