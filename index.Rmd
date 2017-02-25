@@ -19,7 +19,6 @@ output: html_document
 
 ### Занятие 3 (2 марта)
 
-### Занятие 3
 * Хочу [всё и сразу](    )
 
 * Теховский файл [Свои команды и макросы](https://github.com/FUlyankin/LaTeX/raw/master/sem_3/%D0%BC%D0%B0%D0%BA%D1%80%D0%BE%D1%81%D1%8B%20%D0%B8%20%D1%81%D1%87%D1%91%D1%82%D1%87%D0%B8%D0%BA%D0%B8.tex)
@@ -34,11 +33,13 @@ output: html_document
 *  [Примеры рисунков в Tikz](http://www.texample.net/tikz/)                
 *  [Куча](http://tex.stackexchange.com/questions/158668/nice-scientific-pictures-show-off) разной безумной анимации и картинок, сделанных с помощью LaTeX
 
+* [Надстройка для excel](https://www.ctan.org/pkg/excel2latex), которая создаёт таблички для TeXa, а также [инструкция](http://tex.stackexchange.com/questions/24897/using-excel2latex-in-excel-2010) по её активации. Если вкратце, то просто скачайте архив, положите внутренности в удобное вам место и добавьте новую надстройку. 
+* [Словарь](http://extensions.openoffice.org/en/project/slovari-dlya-russkogo-yazyka-dictionaries-russian) для проверки орфографии
 
 
 ### Для тех, кто скучает по вечерам
 
-* [Дополнительное (слово дополнительное в данном контексте означает, что делать задание необязательно) задание](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/sasha/Sasha.pdf) от Саши. Задачу будет проверять Саша. За задание можно получить 20 баллов. За последний пункт можно получить ещё 5 баллов.
+* [Дополнительное (слово дополнительное в данном контексте означает, что делать задание необязательно) задание](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/sasha/Sasha.pdf) от Саши. Задачу будет проверять Саша. За задание можно получить 20 баллов. За последний пункт можно получить ещё 5 баллов. Задание можно сдать в любой момент до окончания курса. 
 
 ### Занятие 2 (16 февраля)
 * Хочу [всё и сразу](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/sem_2.zip)
