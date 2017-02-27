@@ -1,0 +1,57 @@
+FONTLOG for Amiri fonts
+
+This file provides detailed information on the Amiri 
+Font Software.
+
+This information should be distributed along with the 
+Amiri fonts and any derivative works.
+
+Basic Font Information
+
+Amiri is a classical Arabic typeface in Naskh style for typesetting books and
+other running text.
+
+Amiri is a revival of the beautiful typeface pioneered in early 20th century by
+Bulaq Press in Cairo, also known as Amiria Press, after which the font is
+named.
+
+The uniqueness of this typeface comes from its superb balance between the
+beauty of Naskh calligraphy on one hand, the constraints and requirements of
+elegant typography on the other. Also, it is one of the few metal typefaces
+that were used in typesetting the Koran, making it a good source for a digital
+typeface to be used in typesetting Koranic verses.
+
+Amiri project aims at the revival of the aesthetics and traditions of Arabic
+typesetting, and adapting it to the era of digital typesetting, in a publicly
+available form.
+
+Amiri is a free, open source project that everyone is encouraged to use and
+modify. See the license (OFL.txt) for more details.
+
+Amiri is a Unicode typeface family that supports languages 
+that use the Latin script and its variants, and Arabic. It could be 
+expanded to support other scripts.
+
+More specifically, this release supports the following 
+Unicode ranges: Latin 1, Latin A, Latin B, Arabic
+
+Source files are available from http://amirifont.org
+
+To contribute to the project contact Khaled Hosny
+at khaledhosny@eglug.org
+
+ChangeLog
+
+20 June 2012 (Khaled Hosny) Amiri v1.004
+- Initial release on Google Web Fonts
+
+Acknowledgements
+
+If you make modifications be sure to add your name (N), 
+email (E), web-address (if you have one) (W) and 
+description (D). This list is in alphabetical order.
+
+N: Khaled Hosny
+E: khaledhosny@eglug.org
+W: http://amirifont.org
+D: Original Type Designer
