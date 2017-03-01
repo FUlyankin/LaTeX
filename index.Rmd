@@ -28,7 +28,7 @@ output: html_document
 *  [Задания для семинара](https://github.com/FUlyankin/LaTeX/raw/master/sem_3/hw3/hw3.pdf)
 
 *  [30 страниц с минимальной информацией по TikZ](http://cremeronline.com/LaTeX/minimaltikz.pdf )
-*  [Скрипт](http://www.texample.net/tikz/examples/tikzdevice-demo/) графики из R в TikZ (не знаю зачем, но почему бы собственно и нет) 
+*  [Скрипт](http://www.texample.net/tikz/examples/tikzdevice-demo/) графики из R в TikZ
 *  [Главная страница](https://www.geogebra.org/cms/ru/) проекта Geogebra
 *  [Примеры рисунков в Tikz](http://www.texample.net/tikz/)                
 *  [Куча](http://tex.stackexchange.com/questions/158668/nice-scientific-pictures-show-off) разной безумной анимации и картинок, сделанных с помощью LaTeX
