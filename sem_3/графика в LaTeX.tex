@@ -66,9 +66,29 @@
 \usepackage{amscd}                  %Пакеты для рисования
 \usepackage[matrix,arrow,curve]{xy} %комунитативных диаграмм
 
+% Всякие странные команды из Geogebra и с сайта для TikZ
+\usepackage{pgf}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+
+\definecolor{ffzzzz}{rgb}{1.,0.6,0.6}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+
+\usetikzlibrary{calc}
+\usepackage{relsize}
+\newcommand\LM{\ensuremath{\mathit{LM}}}
+\newcommand\IS{\ensuremath{\mathit{IS}}}
+
+
+
 
 \title{Графика в LaTeX, TikZ}
 \date{\today}
+
+
 
 \begin{document} % конец преамбулы, начало документа
 
@@ -131,29 +151,31 @@
 % Никогда не забывать в конце каждой строки ставить ;
 % Tikz очень капризен по отношению к этому!
 
+\begin{center}
 \begin{tikzpicture}
-% \draw[red, dashed, thick] (0,1) -- (2,1) (0,2) -- (2,2);
-% \draw[->] (0,1) -- (-1,1);
-% \draw[blue,fill=yellow](2,2) circle [radius = 0.5];
+\draw[red, dashed, thick] (0,1) -- (2,1) (0,2) -- (2,2);
+\draw[->] (0,1) -- (-1,1);
+\draw[blue,fill=yellow](2,2) circle [radius = 0.5];
 \end{tikzpicture}
+\end{center}
 
 \vspace{1cm}
 
 \begin{tikzpicture}
-\foreach \x in {0,...,9} 
-  \draw (\x,0) circle (0.4);
+\foreach \x in {0,...,9}
+  \draw [->] (\x,0)--(\x,-1);
 \end{tikzpicture}
 
 \vspace{1cm}
 
-% \draw [domain=<xmin>:<xmax>] plot (\x, {function})
+%\draw [domain=<xmin>:<xmax>] plot (\x, {function})
 
 \begin{tikzpicture}
-% \draw [help lines] (-2,0) grid (2,4); 
-% \draw [->] (-2.2,0) -- (2.2,0); 
-% \draw [->] (0,0) -- (0,4.2); 
-% \draw [green, thick, domain=-2:2] plot (\x, {4-\x*\x}); 
-% \draw [domain=-2:2, samples=50] plot (\x, {1+cos(pi*\x r});
+\draw [help lines] (-2,0) grid (2,4); 
+\draw [->] (-2.2,0) -- (2.2,0); 
+\draw [->] (0,0) -- (0,4.2); 
+\draw [green, thick, domain=-2:2] plot (\x, {4-\x*\x}); 
+\draw [domain=-2:2, samples=50] plot (\x, {1+cos(pi*\x r});
 \end{tikzpicture}
 
 
@@ -169,18 +191,133 @@
 
 \subsection{Tikztempaltes и их редактирование}
 
-% \begin{figure}[h]
-% \begin{center}
+% Пример взят отсюда!
+% http://www.texample.net/tikz/examples/is-lm-diagram/
 
-% \end{center}
-% \caption{ }
-% \end{figure}
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}[
+        scale=2,
+        IS/.style={blue, thick},
+        LM/.style={red, thick},
+        axis/.style={very thick, ->, >=stealth', line join=miter},
+        important line/.style={thick}, dashed line/.style={dashed, thin},
+        every node/.style={color=black},
+        dot/.style={circle,fill=black,minimum size=4pt,inner sep=0pt,
+            outer sep=-1pt},
+    ]
+    % axis
+    \draw[axis,<->] (2.5,0) node(xline)[right] {$Y$} -|
+                    (0,2.5) node(yline)[above] {$i$};
+    % IS-LM diagram
+    \draw[LM] (0.2,0.3) coordinate (LM_1) parabola (1.8,1.8)
+        coordinate (LM_2) node[above] {\LM};
+    \draw[IS] (0.2,1.8) coordinate (IS_1) parabola[bend at end]
+         (1.8,.3) coordinate (IS_2) node[right] {\IS};
+    %Intersection is calculated "manually" since Tikz does not offer
+    %intersection calculation for parabolas
+    \node[dot,label=above:$A$] at (1,.68) (int1) {};
+    %shifted IS-LM diagram
+    \draw[xshift=.7cm, LM, red!52] (0.2,0.2) parabola (1.8,1.7)
+        node[above] {\LM'};
+    \draw[xshift=.4cm, yshift=.3cm, IS, blue!60] (0.2,1.8)
+        parabola[bend at end] (1.8,.3)
+        node[right] {\IS'};
+    %Intersection of shifted IS-LM
+    \path[xshift=.36cm, yshift=.35cm] (.98,.7)
+        node[dot,label=above:{$B$}] (int2) {};
+    \path[xshift=.805cm] (1,.68) node[dot,label=above:$C$] (int3) {};
+    %arrows between intersections
+    \draw[->, very thick, black, >=stealth']
+        ($(int1)+1/2*(-.80,1)$) -- ($(int2)+1/2*(-.8,1)$)
+        node[sloped, above, midway] {$\mathsmaller{\Delta G > 0}$};
+    \draw[->, very thick, black, >=stealth']
+        ($(int2)+2*(.14,.2)$) -- ($(int2)!.2cm!270:(int2)+(.9,0)$)
+        node[sloped,above, midway] {$\mathsmaller{\Delta M>0}$};
+        
+    \begin{scope}[xshift=4cm]
+        %E-diagram
+        \draw[axis,<->] (0,2.5) node(eyline)[above] {$i$} |-
+                        (2.5,0) node(exline)[right] {$E$};
+
+        \draw[important line, green, xshift=.5cm]
+            (.2,.2) coordinate (es) -- (1.5,1.5) coordinate (ee)
+            node [above right] {Interest rate parity};
+    \end{scope}
+    %Lines connecting IS LM coordinates and E coordinates
+    \draw[dashed] 
+        let
+            % Store the intersection point in \p1 for later retrieval. 
+            % A convenient feature of the let operation is that we can
+            % access the x and y component of the coordinate directly 
+            % using the \x1 and \y1 syntax. 
+            \p1=(intersection of int2--[xshift=1]int2 and es--ee)
+        in
+            (0,\y1) node[left]{$i'$} -|  (\x1,0)
+            node[pos=0.5,dot,label=above:$B'$] {} node[below] {$E'$};
+
+    \draw[dashed line] let
+        \p1=(intersection of int3--[xshift=1]int3 and es--ee)
+            in
+        (0,\y1) node[left]{$i\phantom{'}$} -| (\x1,0)
+        node[dot,label=above:$C'$,pos=0.5] {} node[below] {$E$};
+
+\end{tikzpicture}
+\end{center}
+\caption{Модель IS-LM }
+\end{figure}
 
 \subsection{Geogebra}
 
-% Нарисовать что-нибудь рандомное!
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
 
-
-
+\clip(-4.3,-5.4) rectangle (17.58,6.3);
+\fill[line width=3.2pt,color=ffzzzz,fill=ffzzzz,fill opacity=0.10000000149011612] (1.08,4.18) -- (8.74,2.34) -- (4.86,-3.76) -- (-1.98,0.16) -- cycle;
+\draw(3.34,0.92) circle (2.135509306933594cm);
+\draw [domain=-4.3:17.58] plot(\x,{(-0.48745752371228157-0.7139786516045719*\x)/-0.7388624070031535});
+\draw [line width=3.2pt,color=ffzzzz] (1.08,4.18)-- (8.74,2.34);
+\draw [line width=3.2pt,color=ffzzzz] (8.74,2.34)-- (4.86,-3.76);
+\draw [line width=3.2pt,color=ffzzzz] (4.86,-3.76)-- (-1.98,0.16);
+\draw [line width=3.2pt,color=ffzzzz] (-1.98,0.16)-- (1.08,4.18);
+\draw [samples=50,domain=-0.99:0.99,rotate around={49.99942546060279:(2.66,1.17)},xshift=2.66cm,yshift=1.17cm] plot ({2.0405506305141534*(1+(\x)^2)/(1-(\x)^2)},{3.600090710566651*2*(\x)/(1-(\x)^2)});
+\draw [samples=50,domain=-0.99:0.99,rotate around={49.99942546060279:(2.66,1.17)},xshift=2.66cm,yshift=1.17cm] plot ({2.0405506305141534*(-1-(\x)^2)/(1-(\x)^2)},{3.600090710566651*(-2)*(\x)/(1-(\x)^2)});
+\draw [samples=50,domain=-0.99:0.99,rotate around={16.7419703852931:(7.55,5.15)},xshift=7.55cm,yshift=5.15cm] plot ({1.2142337390632962*(1+(\x)^2)/(1-(\x)^2)},{0.4188513183941076*2*(\x)/(1-(\x)^2)});
+\draw [samples=50,domain=-0.99:0.99,rotate around={16.7419703852931:(7.55,5.15)},xshift=7.55cm,yshift=5.15cm] plot ({1.2142337390632962*(-1-(\x)^2)/(1-(\x)^2)},{0.4188513183941076*(-2)*(\x)/(1-(\x)^2)});
+\begin{scriptsize}
+\draw [fill=qqqqff] (2.54,-1.06) circle (2.5pt);
+\draw[color=qqqqff] (2.68,-0.69) node {$B$};
+\draw[color=black] (2.32,2.51) node {$c$};
+\draw [fill=xdxdff] (1.9188624070031535,2.513978651604572) circle (2.5pt);
+\draw[color=xdxdff] (2.06,2.89) node {$C$};
+\draw [fill=qqqqff] (1.18,1.8) circle (2.5pt);
+\draw[color=qqqqff] (1.32,2.17) node {$D$};
+\draw[color=black] (-4.14,-2.95) node {$f$};
+\draw [fill=qqqqff] (1.08,4.18) circle (2.5pt);
+\draw[color=qqqqff] (1.22,4.55) node {$E$};
+\draw [fill=qqqqff] (8.74,2.34) circle (2.5pt);
+\draw [fill=qqqqff] (4.86,-3.76) circle (2.5pt);
+\draw[color=qqqqff] (5.,-3.39) node {$G$};
+\draw [fill=qqqqff] (-1.98,0.16) circle (2.5pt);
+\draw[color=qqqqff] (-1.84,0.53) node {$H$};
+\draw[color=ffzzzz] (4.88,3.13) node {$e$};
+\draw[color=ffzzzz] (6.63,-0.3) node {$f_1$};
+\draw[color=ffzzzz] (1.64,-1.35) node {$g$};
+\draw[color=ffzzzz] (-0.14,2.15) node {$h$};
+\draw [fill=qqqqff] (0.,-2.) circle (2.5pt);
+\draw[color=qqqqff] (0.14,-1.63) node {$J$};
+\draw [fill=qqqqff] (1.08,-0.18) circle (2.5pt);
+\draw[color=qqqqff] (1.22,0.19) node {$K$};
+\draw[color=black] (0.96,8.13) node {$d$};
+\draw [fill=qqqqff] (8.78,5.52) circle (2.5pt);
+\draw[color=qqqqff] (8.92,5.89) node {$L$};
+\draw [fill=qqqqff] (6.32,4.78) circle (2.5pt);
+\draw[color=qqqqff] (6.46,5.15) node {$M$};
+\draw [fill=qqqqff] (4.74,3.22) circle (2.5pt);
+\draw[color=qqqqff] (4.88,3.59) node {$N$};
+\draw[color=black] (9.84,6.33) node {$k$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
 
 \end{document} % конец документа

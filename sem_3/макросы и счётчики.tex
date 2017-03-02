@@ -73,6 +73,9 @@
 %%%%%%%%%% Теоремы %%%%%%%%%%
 \theoremstyle{plain}              % Это стиль по умолчанию.  Есть другие стили. 
 \newtheorem{theorem}{Теорема}[section]
+% Вопросы из зала (от Юрия Николаевича)
+\renewcommand{\thetheorem}{\thesection.\Asbuk{theorem}}
+
 \newtheorem{result}{Следствие}[theorem]
 % счётчик подчиняется теоремному, нумерация идёт по главам согласованно между собой
 
@@ -122,7 +125,7 @@
 % ensuremath - при упоминании команды \R по ходу текста сам включает мтематический режим.
 
 % Собственноручная расстановка пробелов
-\newcommand{\iid}{i.\hspace{1.5pt}i.\hspace{1.5pt}d.}
+\newcommand{\iid}{i.\hspace{3pt}i.\hspace{3pt}d.}
 
 $i.i.d.$ или $\iid$
 
@@ -136,9 +139,11 @@ $i.i.d.$ или $\iid$
 
 $4/7$ или $^4/_7$
 
-\newcommand{\fr}[2]{^#1/_#2}
+\newcommand{\fr}[2]{\ensuremath{^#1/_#2}}
 
 $\fr{4}{7}$
+
+\fr{4}{7}
 
 
 \subsection{Переопределение команд}
@@ -149,6 +154,14 @@ $ \phi $ и $ \epsilon $
 \renewcommand{\epsilon}{\varepsilon}
 
 $ \phi $ и $ \epsilon $
+
+
+\renewcommand{\epsilon}{\ensuremath{\mathbb{R}}}
+
+\epsilon
+
+\$
+
 
 \section{Счётчики}
 
@@ -194,6 +207,8 @@ $ \phi $ и $ \epsilon $
 % При этом начнём нумерацию с буквы А
 \setcounter{section}{0}
 
+
+
 % Обратите внимание на то, что для глав счётчик сброшен, а для страниц нет!
 
 % Дефолтные счётчики в LaTeX:  part, chapter, section, subsection, subsubsection, paragraph, subparagraph, page, figure, table, footnote, mpfootnote, equation
@@ -202,6 +217,16 @@ $ \phi $ и $ \epsilon $
 
 
 \section{Списки}
+
+\begin{enumerate}
+\item Первый пункт
+\item Второй пункт
+\item Третий пункт
+\begin{enumerate}
+\item Первый подпункт
+\item Второй подпункт
+\end{enumerate}
+\end{enumerate}
 
 \begin{enumerate}
 	\renewcommand{\labelenumi}{\Roman{enumi}}
@@ -246,7 +271,7 @@ $ \phi $ и $ \epsilon $
 % задаём команду для оформления задач
 \newcommand{\ex}[1]{%
 \addtocounter{i}{1}    % увеличение счетчика на единицу
-\textcolor{blue}{Задача \arabic{i}\\}
+\textcolor{blue}{Задача \thesection.\arabic{i}\\}
 #1\\
 }
 
@@ -302,7 +327,7 @@ $ \phi $ и $ \epsilon $
  
 \vspace{2mm} % расстояние между заголовком и текстом
 
-%\noindent \ignorespaces \color{green} \fontsize{15}{1.2ex}\selectfont
+\noindent \ignorespaces \color{green} \fontsize{15}{12ex}\selectfont
 % можно убрать лишние пробелы, поменять размер, цвет и тп для текста внутри окружения
 } % конец того, что будет перед
 { % то, что будет после:
@@ -363,10 +388,10 @@ $ \phi $ и $ \epsilon $
 
 % Одно из применений - уничтожение какого-то куска текста!
 \newbool{answers}
-\booltrue{answers}
-%\boolfalse{answers}
+%\booltrue{answers}
+\boolfalse{answers}
 
-\renewcommand{\ex}[2][Нет ответа.]{%
+\renewcommand{\ex}[2][16 арбузов]{%
 
 \addtocounter{i}{1}    % увеличение счетчика на единицу
 \textcolor{blue}{Задача \arabic{i}\\}
@@ -379,31 +404,10 @@ $ \phi $ и $ \epsilon $
 
 
 
-\ex{В корзине лежат 12 яблок и 10 апельсинов. Ваня выбирает из неё яблоко или апельсин, после чего Надя берёт и яблоко, и апельсин. В каком случае Надя имеет большую свободу выбора: если Ваня взял яблоко или если он взял апельсин?}
+\ex[ohdslkds]{В корзине лежат 12 яблок и 10 апельсинов. Ваня выбирает из неё яблоко или апельсин, после чего Надя берёт и яблоко, и апельсин. В каком случае Надя имеет большую свободу выбора: если Ваня взял яблоко или если он взял апельсин?}
 
 
 \ex[много]{Шестеро друзей пришли в театр! В ложе 6 мест. Среди друзей две девушки, которые не могут сидеть скраю. Сколько способов рассадки существует?}
-
-
-
-\subsection{Проверяем наличие аргумента} 
-
-\NewDocumentCommand{\alice}{ m g }
- {%
-  \IfNoValueTF{#2}%
-   {%
-    \it \noindent\ignorespaces #1 \\[5pt]
-   \rightline{{Кто-то (Льюис Кэррол) }}
-   }
-   {
-    \it \noindent\ignorespaces #1 \\[5pt]
-    \rightline{{#2 (Льюис Кэррол) }}
-   }%
- }
-
-\alice{Видала я котов без улыбок, но улыбка без кота! Такого я в жизни ещё не встречала!}{Алиса} 
-
-\alice{Видала я котов без улыбок, но улыбка без кота! Такого я в жизни ещё не встречала!} 
 
 
 
