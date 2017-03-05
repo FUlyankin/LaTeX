@@ -146,9 +146,14 @@ Agenda
 [Документы и презентации в LaTeX от ВШЭ](https://www.coursera.org/learn/latex/home/welcome). Введение в LaTeX от Высшей Школы Экономики на русском языке.
 
 
+Лицензия
+----------
+Созданные для данного курса материалы распространяются по лицензии [Do What The Fuck You Want To Public License (WTFPL)](http://www.wtfpl.net/)
+
 <center>
-![alt text](https://github.com/FUlyankin/LaTeX/blob/master/stic/final_versions/lion.png?raw=true)
+![alt text](https://raw.githubusercontent.com/FUlyankin/LaTeX/master/sem_3/stic_v1.0/lion.png)
 </center>
+
 
 
 
