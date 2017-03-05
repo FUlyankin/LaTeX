@@ -1,0 +1,11 @@
+\section{ Сделать так, чтобы в itemize каждый новый пункт шёл после синей точки}
+
+\begin{itemize}
+\item [\textcolor{blue}{$\bullet$}]\textit{Первый пункт}
+\item [\textcolor{blue}{$\bullet$}]\textit{Второй пункт}
+\item [\textcolor{blue}{$\bullet$}]\textit{Третий пункт}
+\end{itemize}
+
+
+
+

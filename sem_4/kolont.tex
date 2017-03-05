@@ -1,4 +1,4 @@
-\documentclass[12pt, a4paper]{article}  
+\documentclass[14pt,a4paper, oneside]{extreport}
 
 %%%%%%%%%% Математика %%%%%%%%%%
 \usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
@@ -8,13 +8,14 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{fontspec}         % пакет для подгрузки шрифтов
-\setmainfont{Linux Libertine O}   % задаёт основной шрифт документа
+\setmainfont{Arial}   % задаёт основной шрифт документа
 
 % why do we need \newfontfamily:
 % http://tex.stackexchange.com/questions/91507/
-\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
-\newfontfamily{\cyrillicfont}{Linux Libertine O}
-\newfontfamily{\cyrillicfontsf}{Linux Libertine O}
+\newfontfamily{\cyrillicfonttt}{Arial}
+\newfontfamily{\cyrillicfont}{Arial}
+\newfontfamily{\cyrillicfontsf}{Arial}
+
 
 \usepackage{unicode-math}     % пакет для установки математического шрифта
 \setmathfont{Asana Math}      % шрифт для математики
@@ -34,7 +35,6 @@
 \usepackage{graphics} 
 \graphicspath{{images/}{pictures/}}    % можно указать папки с картинками
 \usepackage{wrapfig}                   % Обтекание рисунков и таблиц текстом
-\usepackage{subfigure}                 % для создания нескольких рисунков внутри одного
 
 
 %%%%%%%%%% Работа с таблицами %%%%%%%%%%
@@ -50,9 +50,6 @@
 
 %%%%%%%%%% Графика и рисование %%%%%%%%%%
 \usepackage{tikz, pgfplots}  % язык для рисования графики из latex'a
-\usepackage{amscd}                  %Пакеты для рисования 
-\usepackage[matrix,arrow,curve]{xy} %комунитативных диаграмм
-
 
 %%%%%%%%%% Гиперссылки %%%%%%%%%%
 \usepackage{xcolor}              % разные цвета
@@ -143,8 +140,118 @@
 	
 
 
-
 \begin{document}
+
+
+
+%%% Титульный лист!
+    \pagestyle{fancy}
+    \renewcommand{\headrulewidth}{0pt}
+    \thispagestyle{empty}
+
+
+
+
+\begin{titlepage}
+\begin{center}
+\small \bfseries Федеральное бюджетное образовательное учреждение \\
+высшего образования\\
+«РОССИЙСКАЯ АКАДЕМИЯ НАРОДНОГО ХОЗЯЙСТВА и\\
+ГОСУДАРСТВЕННОЙ СЛУЖБЫ\\
+при Президенте Российской Федерации»
+
+\vspace{2ex}
+
+ЭКОНОМИЧЕСКИЙ ФАКУЛЬТЕТ\\
+НАПРАВЛЕНИЕ 38.03.01 ЭКОНОМИКА
+\end{center}
+
+
+
+\vfill
+
+
+\noindent\small Группа ЭО-12-02
+
+
+\hfill\parbox{0.45\linewidth}{
+\parbox[t]{20em}{\centering\small
+Кафедра Макроэкономики
+
+\mbox{ }
+
+\textbf{Допустить к защите}\\
+заведующий кафедрой макроэкономики\\
+\rule{8em}{0.5pt} Н.Л. Шагас\\
+<<\rule{2em}{0.5pt}>> \rule{5em}{0.5pt} 201\rule{1em}{0.5pt} г. }}
+
+\mbox{ }
+
+\mbox{ }
+
+
+\begin{center}\bfseries
+ВЫПУСКНАЯ КВАЛИФИКАЦИОННАЯ РАБОТА
+
+\mbox{ }
+
+\large АНАЛИЗ ЭФФЕКТИВНОСТИ СИГНАЛОВ БАНКА РОССИИ\\
+КАК ИНСТРУМЕНТА МОНЕТАРНОЙ ПОЛИТИКИ
+
+\end{center}
+
+\vfill
+
+
+\noindent\normalsize
+студент-бакалавр
+
+\noindent
+Ульянкин Филипп Валерьевич
+\hfill /\rule{6em}{0.5pt}/\rule{6em}{0.5pt}/
+
+\hfill\makebox[13em]{\hfill\footnotesize (подпись) \hfill\hfill (дата) \hfill}
+
+\noindent
+научный руководитель выпускной
+
+
+\noindent
+квалификационной работы к.э.н.,
+
+
+\noindent
+доцент кафедры микроэкономики
+
+\noindent
+Синельникова Елена Владимировна
+\hfill /\rule{6em}{0.5pt}/\rule{6em}{0.5pt}/
+
+\hfill\makebox[13em]{\hfill\footnotesize (подпись) \hfill\hfill (дата) \hfill}
+
+
+
+%\noindent
+%консультант
+%
+%\noindent
+%д.э.н., профессор Петров Петр Петрович
+%\hfill /\rule{6em}{0.5pt}/\rule{6em}{0.5pt}/
+%
+%\hfill\makebox[13em]{\hfill\footnotesize (подпись) \hfill\hfill (дата) \hfill}
+
+
+
+\vfill
+\vfill\vfill
+\centering
+\normalsize{\textbf{МОСКВА \\ 2016}}
+\end{titlepage}
+
+
+
+
+\newpage
 
 \thispagestyle{empty}
 
@@ -170,11 +277,12 @@
 
 \newpage
 
-
 %автоматическое оглавление
 \tableofcontents
 
 % Задать вопрос про то почему оно красное и как от этого избавиться.
+
+\newpage
 
 \section{Первая часть}
 \subsection{Первый кусок текста в первой части}
