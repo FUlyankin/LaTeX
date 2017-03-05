@@ -25,8 +25,8 @@ output: html_document
 
 * Хочу [всё и сразу](https://github.com/FUlyankin/LaTeX/raw/master/sem_3/sem_3.zip)
 
-* Теховский файл [Свои команды и макросы](https://github.com/FUlyankin/LaTeX/raw/master/sem_3/macros_latex.tex)
-* Теховский файл [Графика и Tikz](https://github.com/FUlyankin/LaTeX/raw/master/sem_3/grathics_latex.tex)
+* Теховский файл [Свои команды и макросы](https://github.com/FUlyankin/LaTeX/blob/master/sem_3/macros_latex.tex)
+* Теховский файл [Графика и Tikz](https://github.com/FUlyankin/LaTeX/blob/master/sem_3/grathics_latex.tex)
 *  [Примеры наклеечек](https://github.com/FUlyankin/LaTeX/raw/master/sem_3/stic_v1.0.zip) в Tikz
 *  [Хинты из второй домашки](https://github.com/FUlyankin/LaTeX/raw/master/sem_3/hw2%20hints.zip)
 
