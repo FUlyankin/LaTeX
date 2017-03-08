@@ -12,21 +12,30 @@ output: html_document
 
 > [Уютная форма](https://docs.google.com/forms/d/1NeXvF2TvweifjkZCqfyUoEI4A_TwswzSTEzgSPH6ZPU/edit) для сдачи домашек.
 
-> [Табличка с баллами.](https://docs.google.com/spreadsheets/d/1Uj-K388K-QihQWUxpbLUI2ys37CckHB9OeUiPvLXWQg/pubhtml?gid=89783374&single=true) Узнать о своих ошибках и о том почему балл именно такой можно на семинаре. Также на нём можно оспорить свой балл у того, кто проверял работу. 
+> [Табличка с баллами.](https://docs.google.com/spreadsheets/d/1Uj-K388K-QihQWUxpbLUI2ys37CckHB9OeUiPvLXWQg/pubhtml?gid=89783374&single=true) Узнать о своих ошибках можно по запросу одному из повинных в ваших бедах.
+
+> Если у вас есть предложения, замечания, наезды, признания в любви, и вы не хотите делиться ими лично, то всегда можно заполнить [уютную анонимку](https://docs.google.com/forms/d/e/1FAIpQLSfn77YbXk-hwept85Tu4y4ZZs5rtCK0kzJDeCRP08Y1_5v3dw/viewform). Мы хотим услышать любую критику и советы!
 
 
 ### Занятие 4 (9 марта)
 
-Наконец то мы начнём создавать в LaTeX нормальные документы! Будем активировать minted, создавать для заключения разные контракты и писать с учётом специальных требований письмо кое-откуда... А ещё я попробую впервые провести нормльный семинар, не переборщить с количеством материала и рассказывать в нормальном темпе :) 
+* Хочу [всё и сразу](https://github.com/FUlyankin/LaTeX/raw/master/sem_4/sem_4.zip)
 
-> Если у вас есть предложения, замечания, наезды, признания в любви, и вы не хотите делиться ими лично, то всегда можно заполнить [уютную анонимку](https://docs.google.com/forms/d/e/1FAIpQLSfn77YbXk-hwept85Tu4y4ZZs5rtCK0kzJDeCRP08Y1_5v3dw/viewform). Мы хотим услышать любую критику и советы!
+* Texовский файл [Оформление документа в целом](https://github.com/FUlyankin/LaTeX/blob/master/sem_4/nabor.tex)
+* Texовский файл [Преамбула](https://github.com/FUlyankin/LaTeX/blob/master/sem_4/svoystva_doc.tex)
+
+* Texовский файл [Разбор домашки с командами](https://github.com/FUlyankin/LaTeX/blob/master/sem_4/hw3_solution.tex)
+* [Архив](https://github.com/FUlyankin/LaTeX/blob/master/sem_4/all_cowsay.zip) с вашими красивыми cowsay окружениями
+
+* [Задания для семинара](https://github.com/FUlyankin/LaTeX/raw/master/sem_4/hw4.pdf)
+* Пример [контракта,](https://github.com/FUlyankin/LaTeX/blob/master/sem_4/hw/contract.pdf) а также [письма из Хогвартса.](https://github.com/FUlyankin/LaTeX/blob/master/sem_4/hw/hogwarts.pdf) Это только пример. Не нужно пытаться воспроизвести его один в один. Нужно просто воспроизвести требования из задания. Не забудьте поставить гиперссылку. В примере она не стоит. 
 
 ### Занятие 3 (2 марта)
 
 * Хочу [всё и сразу](https://github.com/FUlyankin/LaTeX/raw/master/sem_3/sem_3.zip)
 
-* Теховский файл [Свои команды и макросы](https://github.com/FUlyankin/LaTeX/blob/master/sem_3/macros_latex.tex)
-* Теховский файл [Графика и Tikz](https://github.com/FUlyankin/LaTeX/blob/master/sem_3/grathics_latex.tex)
+* Texовский файл [Свои команды и макросы](https://github.com/FUlyankin/LaTeX/blob/master/sem_3/macros_latex.tex)
+* Texовский файл [Графика и Tikz](https://github.com/FUlyankin/LaTeX/blob/master/sem_3/grathics_latex.tex)
 *  [Примеры наклеечек](https://github.com/FUlyankin/LaTeX/raw/master/sem_3/stic_v1.0.zip) в Tikz
 *  [Хинты из второй домашки](https://github.com/FUlyankin/LaTeX/raw/master/sem_3/hw2%20hints.zip)
 
@@ -50,9 +59,9 @@ output: html_document
 * Хочу [всё и сразу](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/sem_2.zip)
 
 * Уютненькая [Презентация номер два](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/presentation/presa2.pdf)
-* [Теховский файл](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/xetex_fonts.tex) работа со шрифтами в XeLaTeX
+* [Texовский файл](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/xetex_fonts.tex) работа со шрифтами в XeLaTeX
 * [Документация к пакету unicode-math](https://www.ctan.org/pkg/unicode-math). Один из pdf-файлов - сравнительная таблица с символами из разных математических шрифтов.
-* Теховский файл [Картинки и таблицы](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/pict_and_tables.tex) в LaTeX. [Папка с картинками](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/images.zip) для файла.
+* Texовский файл [Картинки и таблицы](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/pict_and_tables.tex) в LaTeX. [Папка с картинками](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/images.zip) для файла.
 * Texовский файл [Как не надо делать](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/kak_ne_nado_delat.tex) с ошибками из домашек.
 * [Задание для семинара](https://github.com/FUlyankin/LaTeX/raw/master/sem_2/for%20hw/hw2.pdf)
 
