@@ -1,10 +1,8 @@
 %!TEX TS-program = xelatex
-\documentclass[12pt, a4paper]{article}  
-
-\usepackage{etex} % расширение классического tex в частности позволяет подгружать гораздо больше пакетов, чем мы и займёмся далее
+\documentclass[12pt, a4paper]{article}
 
 %%%%%%%%%% Математика %%%%%%%%%%
-\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
 %\mathtoolsset{showonlyrefs=true}  % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
 %\usepackage{leqno} % Нумерация формул слева
 
@@ -40,7 +38,6 @@
 \graphicspath{{images/}{pictures/}}    % можно указать папки с картинками
 \usepackage{wrapfig}                   % Обтекание рисунков и таблиц текстом
 
-
 %%%%%%%%%% Работа с таблицами %%%%%%%%%%
 \usepackage{tabularx}            % новые типы колонок
 \usepackage{tabulary}            % и ещё новые типы колонок
@@ -61,9 +58,6 @@
 % 7. Есть сомнения? Выравнивай по левому краю!
 
 
-
-
-
 %%%%%%%%%% Графика и рисование %%%%%%%%%%
 \usepackage{tikz, pgfplots}  % язык для рисования графики из latex'a
 \usepackage{amscd}                  %Пакеты для рисования
@@ -71,7 +65,7 @@
 
 
 %%%%%%%%%% Теоремы %%%%%%%%%%
-\theoremstyle{plain}              % Это стиль по умолчанию.  Есть другие стили. 
+\theoremstyle{plain}              % Это стиль по умолчанию.  Есть другие стили.
 \newtheorem{theorem}{Теорема}[section]
 % Вопросы из зала (от Юрия Николаевича)
 \renewcommand{\thetheorem}{\thesection.\Asbuk{theorem}}
@@ -87,16 +81,14 @@
 
 %%%%%%%%%% Свои команды %%%%%%%%%%
 \usepackage{etoolbox}    % логические операторы для своих макросов
-\usepackage{xparse}      % больше команд для создания команд
 
 % Все свои команды лучше всего определять не по ходу текста, как это сделано в этом документе, а в преамбуле!
 
-
 % Пакет, который ставит в каждом первом абзаце главы красную строку
 % Просто, чтобы эта pdf-ка нормально смотрелась :)
-\usepackage{indentfirst}  
+\usepackage{indentfirst}
 \setkeys{russian}{babelshorthands=true}
-% обо всех волшебных строках на следующем семинаре! 
+% обо всех волшебных строках на следующем семинаре!
 
 
 \title{Свои команды и макросы}
@@ -110,13 +102,13 @@
 \section{Новые команды}
 \subsection{Создание простых команд}
 
-% Уже делали вот такие команды! 
+% Уже делали вот такие команды!
 % \DeclareMathOperator{\Var}{Var} можно только в прембуле!
 
 \def \a{\alpha}
-\def \R{\ensuremath{\mathbb{R}}} 
+\def \R{\ensuremath{\mathbb{R}}}
 
-% \newcomand{имя команды}{Что делать} 
+% \newcomand{имя команды}{Что делать}
 
 \newcommand{\RR}{\ensuremath{\mathbb{R}}}
 
@@ -180,7 +172,7 @@ $ \phi $ и $ \epsilon $
 
 \Alph{jtem}
 
-\asbuk{jtem}  %(команда в babel или polyglossia) 
+\asbuk{jtem}  %(команда в babel или polyglossia)
 
 \Asbuk{jtem}
 
@@ -212,7 +204,7 @@ $ \phi $ и $ \epsilon $
 % Обратите внимание на то, что для глав счётчик сброшен, а для страниц нет!
 
 % Дефолтные счётчики в LaTeX:  part, chapter, section, subsection, subsubsection, paragraph, subparagraph, page, figure, table, footnote, mpfootnote, equation
-% Также определены счётчики для списков: enumi, enumii, enumiii, enumiv! 
+% Также определены счётчики для списков: enumi, enumii, enumiii, enumiv!
 
 
 
@@ -291,27 +283,27 @@ $ \phi $ и $ \epsilon $
  \[C_n^0 + C_n^1 + C_n^2 + C_n^3 + \ldots + C_n^n = 2^n \]
 \end{theorem}
 \begin{proof}
-Из Бинома Ньютона очевидно, что 
+Из Бинома Ньютона очевидно, что
 
-\[ 2^n = (1 + 1)^n = \sum_{k=0}^n C_n^k \cdot 1^k \cdot 1^{n-k} = \sum_{k=0}^n C_n^k. \] 
+\[ 2^n = (1 + 1)^n = \sum_{k=0}^n C_n^k \cdot 1^k \cdot 1^{n-k} = \sum_{k=0}^n C_n^k. \]
 \end{proof}
 
-\begin{result} \label{sl:11} 
-Мощность множества всех подмножеств непустого множества равна $2^n$! 
+\begin{result} \label{sl:11}
+Мощность множества всех подмножеств непустого множества равна $2^n$!
 \end{result}
 
 Следствие \ref{sl:11} следует из теоремы \ref{th:1} со страницы \pageref{th:1}.
 
 
 \begin{fignia}
-	 Петя любит Катю, а Катя любит программировать и ботать по ночам! 
+	 Петя любит Катю, а Катя любит программировать и ботать по ночам!
 \end{fignia}
 
 
-\section{Свои окружения} 
-\subsection{Задача} 
+\section{Свои окружения}
+\subsection{Задача}
 
-% \newenvironment{имя}[число аргументов]{что должно быть до}{что должно быть после} 
+% \newenvironment{имя}[число аргументов]{что должно быть до}{что должно быть после}
 
 % новый счётчик, ежели он нужен
 \newcounter{iexer}
@@ -319,12 +311,12 @@ $ \phi $ и $ \epsilon $
 \newenvironment{exercise}
 { % то, что будет перед:
 \addtocounter{iexer}{1}  % счётчик +1
- { 
+ {
    \noindent\ignorespaces   % игнор пробела
    \fontspec{Phorssa} % иной шрифт
-   \textcolor{blue}{ \large  \textbf{Задача \arabic{iexer}}} % синий большой жирный текст 
- } 
- 
+   \textcolor{blue}{ \large  \textbf{Задача \arabic{iexer}}} % синий большой жирный текст
+ }
+
 \vspace{2mm} % расстояние между заголовком и текстом
 
 \noindent \ignorespaces \color{green} \fontsize{15}{12ex}\selectfont
@@ -339,26 +331,26 @@ $ \phi $ и $ \epsilon $
 } % конец того, что будет после
 
 \begin{exercise}
-В корзине лежат 12 яблок и 10 апельсинов. Ваня выбирает из неё яблоко или апельсин, после чего Надя берёт и яблоко, и апельсин. В каком случае Надя имеет большую свободу выбора: если Ваня взял яблоко или если он взял апельсин?  
+В корзине лежат 12 яблок и 10 апельсинов. Ваня выбирает из неё яблоко или апельсин, после чего Надя берёт и яблоко, и апельсин. В каком случае Надя имеет большую свободу выбора: если Ваня взял яблоко или если он взял апельсин?
 \end{exercise}
 
 
-\subsection{Коробка} 
+\subsection{Коробка}
 
 \newenvironment{korob}
     {\renewcommand{\arraystretch}{1}
     \begin{center}
     \begin{tabular}{|p{0.9\textwidth}|}
-    \hline \vspace{1pt} 
-    }{ 
-    \vspace{5pt} \\ \hline 
-    \end{tabular} 
+    \hline \vspace{1pt}
+    }{
+    \vspace{5pt} \\ \hline
+    \end{tabular}
     \end{center}
     }
 
- 
+
 \begin{korob}
-Этот текст будет расположен внутри короба! Коробы это довольно интересные штуки.  
+Этот текст будет расположен внутри короба! Коробы это довольно интересные штуки.
 \end{korob}
 
 
@@ -367,24 +359,24 @@ $ \phi $ и $ \epsilon $
 \newenvironment{korob2}[1]
     {\renewcommand{\arraystretch}{1}
     \begin{center}
-    \addtocounter{ikorob}{1} 
+    \addtocounter{ikorob}{1}
     Короб  \arabic{ikorob} --- #1 \\[1ex]
     \begin{tabular}{|p{0.9\textwidth}|}
-    \hline \vspace{1pt} 
-    }{ 
-    \vspace{5pt} \\ \hline 
-    \end{tabular} 
+    \hline \vspace{1pt}
+    }{
+    \vspace{5pt} \\ \hline
+    \end{tabular}
     \end{center}
     }
- 
+
 \begin{korob2}{Демонстрация короба}
-Этот текст будет расположен внутри короба! Коробы это довольно интересные штуки.  
+Этот текст будет расположен внутри короба! Коробы это довольно интересные штуки.
 \end{korob2}
 
 
 
 \section{etoolbox}
-\subsection{Скрываем кусок текста} 
+\subsection{Скрываем кусок текста}
 
 % Одно из применений - уничтожение какого-то куска текста!
 \newbool{answers}
@@ -395,10 +387,10 @@ $ \phi $ и $ \epsilon $
 
 \addtocounter{i}{1}    % увеличение счетчика на единицу
 \textcolor{blue}{Задача \arabic{i}\\}
-#2 
+#2
 
 \ifbool{answers}{Ответ: #1}{ }
-% {если} {правда} {ложь} 
+% {если} {правда} {ложь}
 }
 
 
@@ -412,4 +404,3 @@ $ \phi $ и $ \epsilon $
 
 
 \end{document}
-

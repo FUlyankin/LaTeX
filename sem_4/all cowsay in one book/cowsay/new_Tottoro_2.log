@@ -1,0 +1,24 @@
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.11.11)  9 MAR 2017 00:28
+entering extended mode
+ \write18 enabled.
+ %&-line parsing enabled.
+**new_Tottoro_2.tex
+(./new_Tottoro_2.tex
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+)
+! Emergency stop.
+<*> new_Tottoro_2.tex
+                     
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 10 strings out of 493638
+ 123 string characters out of 6146795
+ 56222 words of memory out of 5000000
+ 3511 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 1328 hyphenation exceptions out of 8191
+ 8i,0n,10p,316b,8s stack positions out of 5000i,500n,10000p,200000b,80000s
+No pages of output.

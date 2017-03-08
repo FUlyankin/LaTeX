@@ -1,2 +1,0 @@
-\select@language {russian}
-\contentsline {chapter}{\numberline {1}Введение}{3}
