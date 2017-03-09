@@ -30,7 +30,7 @@
 
 - Устанавливаем на компьютер Python. Лучше всего поставить дистрибутив, который называется [Anaconda](https://docs.continuum.io/anaconda/install). С его установкой будут установлены все основные пакеты, Jupyter Notebook (это почти как R-studio, но не оно) и ещё кое-какой хлам. Позволяет избежать головной боли с Windows.
 - Открываем консоль. Для этого жмём `win+R`, вводим в открывшемся окне `cmd`, жмём `enter`. Открывается командная строка.
-- Прописываем `easy_install Pygments`
+- Прописываем `pip install Pygments`
 - Заходим в настройки texmaker и там прописываем в PdfLatex: `pdflatex -shell-escape -synctex=1 -interaction=nonstopmode %.tex`
 
 **Linux (Ubuntu 16):**
@@ -44,22 +44,13 @@
 
 **Mac:**
 
-- Устанавливаем HomeBrew - менеджер недостающих пакетов для macOS, для этого открываем терминал (terminal) и копируем туда следующую строчку:
-
-`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-
-- После того, как установка завершится копируем следующую строчку: ```brew install wget```
-
-- После завершения установки wget, пишем следующее, чтобы выбрать папку с вашими загрузками (надеюсь вы её не удаляли)
-```cd downloads```
-
-- Загружаем миниконду:
-`wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh`
-
-- Устанавливаем миниконду: ```bash Miniconda3-latest-MacOSX-x86_64.sh```
-- Остался последний шаг! ```pip install Pygments```
-- Заходим в настройки texmaker и там прописываем в PdfLatex: `pdflatex -shell-escape -synctex=1 -interaction=nonstopmode %.tex`
-- Во время установки нужно будет следовать инструкциям на экране (нажать ENTER, пролистать соглашение пробелом, согласиться написав yes и нажав ENTER, и ещё раз нажав ENTER чтобы согласиться с использованием стандартного метода установки, и ещё раз напечатать yes нажав ENTER чтобы согласиться с обновлением PATH)
+Оказывается, у вас на macOS уже стоит python.
+поэтому вам нужно:
+1. установить pip: `sudo easy_install pip` вводим пароль, жмём ENTER
+2. установить pygments: `sudo pip install pygments` вводим пароль, жмём ENTER
+3. Готово! Теперь, если вы спросите `which pygmentize`
+   ответ должен быть такой `pygmentize is /usr/local/bin/pygmentize`
+Теперь можно запускать техмейкер/техстудио/техпад, подключать minted и, если вы не забыли подписать —shell-escape, то всё должно работать.
 
 После всех этих действий вы должны почувствовать себя супермега программистом. Дело осталось за малым. Создаём теховский документ, подключаем пакет `\usepackage{minted}` и используем окружение minted.
 

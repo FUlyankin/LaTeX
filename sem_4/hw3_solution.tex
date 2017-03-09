@@ -154,7 +154,7 @@
 
 А ещё можно было прорисовать синенькую точку в TikZ:
 
-\newcommand*{\MyPoint}{\tikz \draw [baseline, fill=blue,draw=blue] circle (2.5pt);}
+\newcommand*{\MyPoint}{\tikz \draw [fill=blue,draw=blue] circle (2.5pt);}
 \renewcommand{\labelitemi}{\MyPoint}
 
 \begin{itemize}
@@ -262,6 +262,7 @@ D=\frac{\rho_{b}}{\rho_{bs}}\times100
 \turnandmirror[true][false]{текст} 
 
 \turnandmirror{текст} 
+ 
 
 \subsection{Перевёртыш два} 
 
@@ -404,6 +405,7 @@ D=\frac{\rho_{b}}{\rho_{bs}}\times100
 
 
 \section{Уродливая нумерация}
+% Автор заголовка: Дуров Илья!
 
 % Для уродливой нумерации добавить в преамбулу:
 
@@ -458,8 +460,8 @@ D=\frac{\rho_{b}}{\rho_{bs}}\times100
 
 
 
-%\renewcommand{\theequation}{\stars{\arabic{equation}}}
-%
+\renewcommand{\theequation}{\stars{\arabic{equation}}}
+
 %\begin{equation} 
 %D=\frac{\rho_{b}}{\rho_{bs}}\times100
 %\label{eq:grau2}
