@@ -21,6 +21,8 @@ output: html_document
 
 ### Занятие 4 (9 марта)
 
+Внимание! Мы обновили инструкцию по установлению minted на Mac. Она стала в 28 раз проще. Если у кого-то всё ещё возникают проблемы, пишите. 
+
 * Хочу [всё и сразу](https://github.com/FUlyankin/LaTeX/raw/master/sem_4/sem_4.zip)
 
 * Texовский файл [Оформление документа в целом](https://github.com/FUlyankin/LaTeX/blob/master/sem_4/nabor.tex)
