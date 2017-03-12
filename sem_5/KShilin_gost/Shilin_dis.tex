@@ -1,10 +1,10 @@
-\documentclass[14pt,a4paper, oneside]{extreport}
+\documentclass[12pt,a4paper, oneside]{extreport}
 \usepackage{amsmath}
 \XeTeXinputencoding "utf8"
 \usepackage{fontspec}
 
 \defaultfontfeatures{Mapping=tex-text}
-\newfontfamily{\cyrillicfont}{Linux Libertine O}
+\newfontfamily{\cyrillicfont}{Times New Roman}
 
 \usepackage{unicode-math}
 \setmathfont[math-style=ISO]{Asana Math}
@@ -40,7 +40,7 @@
 \usepackage{fancyhdr}
 \fancyhead{} % clear all fields
 \fancyfoot{} % clear all fields
-\fancyhead[C]{\thepage}
+\chead{\thepage} % номер страницы
 
 \usepackage{etoolbox}
 \patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
@@ -140,6 +140,12 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[indentfirst]{titlesec}{\raggedleft}    % Заголовки по левому краю    
+
+% В Linux этот пакет сделан косячно. Исправляет это следующий непонятный кусок кода. 
+\makeatletter
+\patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
+\patchcmd{\ttlh@hang}{\noindent}{}{}{}
+\makeatother
 
 \titleformat{\chapter}
       {\normalfont\large\bfseries}
