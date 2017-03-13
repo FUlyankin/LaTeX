@@ -31,7 +31,7 @@
 - Устанавливаем на компьютер Python. Лучше всего поставить дистрибутив, который называется [Anaconda](https://docs.continuum.io/anaconda/install). С его установкой будут установлены все основные пакеты, Jupyter Notebook (это почти как R-studio, но не оно) и ещё кое-какой хлам. Позволяет избежать головной боли с Windows.
 - Открываем консоль. Для этого жмём `win+R`, вводим в открывшемся окне `cmd`, жмём `enter`. Открывается командная строка.
 - Прописываем `pip install Pygments`
-- Заходим в настройки texmaker и там прописываем в PdfLatex: `pdflatex -shell-escape -synctex=1 -interaction=nonstopmode %.tex`
+- Заходим в настройки texmaker и там прописываем в XeLatex: `Xelatex -shell-escape -synctex=1 -interaction=nonstopmode %.tex`
 
 **Linux (Ubuntu 16):**
 
@@ -40,7 +40,7 @@
 - Убеждаемся, что установлен Python `python --version`, а он установлен, потому что половина системы на нём написана.
 - Убеждаемся, что установлен pip `pip --version`. Если он не установлен, то ставим его! `sudo apt-get install python-pip`.
 - Устанавливаем наш пакет `sudo pip install Pygments`
-- Заходим в настройки texmaker и там прописываем в PdfLatex: `pdflatex -shell-escape -synctex=1 -interaction=nonstopmode %.tex`
+- Заходим в настройки texmaker и там прописываем в XeLatex: `Xelatex -shell-escape -synctex=1 -interaction=nonstopmode %.tex`
 
 **Mac:**
 
