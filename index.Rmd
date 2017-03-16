@@ -9,7 +9,7 @@ output: html_document
 ## Преамбулы
 
 * [Преамбула для души](https://github.com/FUlyankin/LaTeX/raw/master/preamble_for_soul.tex)
-* Преамбула по ГОСТ (появится тут на следующей неделе)
+* [Преамбула по ГОСТ](https://github.com/FUlyankin/LaTeX/raw/master/sem_5/GOST/My_gost_diploma.zip)
 
 
 ## Логи семинаров
@@ -19,9 +19,32 @@ output: html_document
 > Если у вас есть предложения, замечания, наезды, признания в любви, и вы не хотите делиться ими лично, то всегда можно заполнить [уютную анонимку.](https://docs.google.com/forms/d/e/1FAIpQLSfn77YbXk-hwept85Tu4y4ZZs5rtCK0kzJDeCRP08Y1_5v3dw/viewform) Мы хотим услышать любую критику и советы!
 
 
+
+### Занятие 6 (23 марта)
+
+Мы будем говорить о презентациях в LaTeX. А также начнём обсуждать связку R+LaTeX и риск-менеджера Винни-Пуха. :)
+
+
 ### Занятие 5 (16 марта)
 
-* Хочу [всё и сразу](https://github.com/FUlyankin/LaTeX/raw/master/sem_5/sem_5.zip)
+* Хочу [всё и сразу](https://github.com/FUlyankin/LaTeX/blob/master/sem_5/sem_5.zip)
+* За найденные в моём поправленном ГОСТ косяки ставятся дополнительные баллы. 
+
+* [Texовский файл](https://github.com/FUlyankin/LaTeX/blob/master/sem_5/Bibliograthy/my_bibliograthy.tex) создание библиографии в ручную
+* [Texовский файл](https://github.com/FUlyankin/LaTeX/blob/master/sem_5/Bibliograthy/biblatex/my_book.tex) для работы в biblatex и [библиография ](https://github.com/FUlyankin/LaTeX/blob/master/sem_5/Bibliograthy/biblatex/ex_biblio.bib) к нему
+* Неплохой [файл о biblatex](https://github.com/FUlyankin/LaTeX/raw/master/sem_5/Bibliograthy/HSE.pdf) от ВШЭ
+* [Несколько примеров](https://ru.sharelatex.com/learn/Biblatex_bibliography_styles) использования разных стилей для biber
+
+* [Материалы по ГИА](http://economy.ranepa.ru/studentam/gia/) на сайте экономического факультета, в том числе [методичка с требованиями](http://economy.ranepa.ru/new/wp-content/uploads/2016/03/Metod-oform-bakalavr-2016.pdf)
+
+* [Магистерская дисертация по ГОСТ](https://github.com/FUlyankin/LaTeX/raw/master/sem_5/GOST/KShilin_gost.zip) в исполнении Шилина Кирилла Юрьевича
+* [Бакалаврский диплом в ГОСТ](https://github.com/FUlyankin/LaTeX/raw/master/sem_5/GOST/My_gost_diploma.zip), а именно ГОСТ Кирилла Юрьевича с моими поправками
+* [Методичка в скорректированном ГОСТ](https://github.com/FUlyankin/LaTeX/raw/master/sem_5/GOST/My_gost_metodichka.zip) без списка литературы. 
+* [Альтернативный ГОСТ](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template)
+
+* [Задания для семинара](https://github.com/FUlyankin/LaTeX/raw/master/sem_5/hw5.pdf)
+
+
 
 ### Занятие 4 (9 марта)
 
@@ -125,6 +148,20 @@ output: html_document
 
 * Онлайн редактор [Sharelatex](https://www.sharelatex.com/)
 * Онлайн редактор [Overleaf](https://www.overleaf.com/)
+
+
+
+Полезные и не очень виньетки
+-----------------------
+* [Пакет](http://www.ctan.org/tex-archive/macros/latex/contrib/booktabs/) Booktabs
+* [Пакет](https://www.ctan.org/pkg/fontspec) fontspec
+* [Пакет](https://www.ctan.org/pkg/unicode-math)  unicode-math
+* [Пакет]( )  для логических операторов, etoolbox
+* [Пакет](http://ctan.altspu.ru/macros/latex/contrib/todonotes/todonotes.pdf) с todo-шками, Todonotes
+* [Пакет](http://mirror.macomnet.net/pub/CTAN/macros/latex/contrib/minted/minted.pdf) для оформления кода, Minted
+* [Пакет](https://www.ctan.org/pkg/cite)  цитирования, Cite
+* [Библиография](http://www.ctan.org/pkg/biblatex)  в bibtex
+* [Пакет](http://www.ctan.org/pkg/biblatex-gost)  biblatex-gost
 
 --------------
 
