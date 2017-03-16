@@ -44,6 +44,7 @@ output: html_document
 
 * [Задания для семинара](https://github.com/FUlyankin/LaTeX/raw/master/sem_5/hw5.pdf)
 
+* Ссылочка на [Google scholar](https://scholar.google.ru/), а также на сервис [sci-hub](http://www.sci-hub.cc/), который позволяет нахаляву скачать любую платную статью. Достаточно просто вставить ссылку на неё в окно поиска. 
 
 
 ### Занятие 4 (9 марта)
