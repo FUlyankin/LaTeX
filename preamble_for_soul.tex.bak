@@ -1,5 +1,5 @@
 %!TEX TS-program = xelatex
-\documentclass[12pt, a4paper]{article}
+\documentclass[12pt, a4paper, oneside]{extreport}
 
 %%%%%%%%%% Програмный код %%%%%%%%%%
 % \usepackage{minted}
@@ -218,23 +218,27 @@
 
 
 
-%%%%%%%%%% Список литературы %%%%%%%%%%
+%Эта часть станет доступна после 5-го занятия ;)
 
-% \usepackage[backend=biber,style=chem-acs,sorting=nty]{biblatex}
+%%%%%%%%%% Список литературы %%%%%%%%%%
+%\usepackage[backend=biber,style=authoryear,sorting=nty]{biblatex}
 % style --- стиль оформления библиографии
 % backend --- Движок для сборки. Просто пишите сюда biber. Trust me.
-% sorting --- Порядок сортировки в списке. nty = сначала по имени, потом по названию, потом по году выхода статьи. В этот же список можно включить 'a' - по алфавиту,  
+% sorting --- Порядок сортировки в списке. nty = сначала по имени, потом по названию, потом по году выхода статьи. В этот же список можно включить a - по алфавиту,
 
-% \addbibresource{sc_biblio.bib} % сюда нужно вписать свой биб-файлик
+% \addbibresource{sc_biblio.bib} % сюда нужно вписать свой файл с литературой
+
 
 
 \begin{document}
 
 \tableofcontents  % содержание
 
-
 Наш документ
 
+% Если хотим поменять название:
+%\renewcommand{\refname}{Чтиво}  % По умолчанию "Список литературы" (article)
+%\renewcommand{\bibname}{Чтиво}  % По умолчанию "Литература" (book и report)
 
 \printbibliography % распечатать список литературы
 

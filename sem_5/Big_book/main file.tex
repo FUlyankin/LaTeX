@@ -1,0 +1,32 @@
+%!TEX TS-program = xelatex
+\documentclass[12pt,a4paper, oneside]{extreport}
+
+\input{gost_preamble}
+
+\addbibresource{diploma_bib.bib} % сюда нужно вписать свой биб-файлик
+
+\includeonly{chapters/ch2,chapters/ch3}
+
+\begin{document}
+
+\include{chapters/title}
+
+\tableofcontents
+
+
+\section*{Введение}
+
+Текст введения
+
+\chapter{Глава 1} 
+\include{chapters/ch1}
+
+\chapter{Глава 2} 
+\include{chapters/ch2}
+
+\chapter{Глава 3} 
+\include{chapters/ch3}
+
+
+\end{document}
+
