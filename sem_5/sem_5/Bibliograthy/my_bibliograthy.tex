@@ -217,52 +217,32 @@
 
 
 
-%%%%%%%%%% Список литературы %%%%%%%%%%
-
-\usepackage[backend=biber,style=chem-acs,sorting=nty]{biblatex}
-% style --- стиль оформления библиографии
-% backend --- Движок для сборки. Просто пишите сюда biber. Trust me.
-% sorting --- Порядок сортировки в списке. nty = сначала по имени, потом по названию, потом по году выхода статьи. В этот же список можно включить 'a' - по алфавиту,  
-
-%\usepackage[backend=biber,style=authoryear]{biblatex}
-%\usepackage[backend=biber,bibstyle=gost-numeric]{biblatex}
-
-% Справка по 4 главным стилям для ленивых: 
-% gost-inline  ссылки внутри теста в круглых скобках
-% gost-footnote подстрочные ссылки
-% gost-numeric затекстовые ссылки
-% gost-authoryear тоже затекстовые ссылки, но немного другие 
-
-% Подробнее смотри страницу 4 документации. Она на русском. 
-
-
-\addbibresource{ex_biblio.bib} % сюда нужно вписать свой биб-файлик
-
 
 \begin{document}
 
-\section{Мой список литературы} 
+\section{Библиография вручную}
 
-Доказательство можно найти в \cite{Shan:sets}. Для знатоков может быть интересен тот факт, что в~этом доказательстве неявно используется аксиома выбора. Без неё можно представить $\R$ как счётное объединение счётных множеств \parencite{williams:wto}. Эта заметка была написана в \citeyear{williams:wto} году. Написали её \citeauthor{williams:wto}.
+Сослаться на какой-нибудь источник можно с помощью команды \verb|\cite|. Например, я люблю ссылаться на~\cite{UDAEVA}.
 
-В данной книжке мы придерживаемся системы аксиом ZFC. Хотя бы просто потому, что авторы (по крайней мере пока) не умеет думать без аксиомы выбора. Подробности можно найти в \footcite{herrlich:axiom}. Также особо любопытные могут прочитать всего лишь сорок страниц заметок о теории множеств в \textcite{Franclin:sets}.
+Можно одновременно сослаться на несколько источников~\cite{UDAEVA,barro1986reputation,3}.
 
-\nocite{*}    место для статьи из гугла!
-
-% Если хотим поменять название, добавляем аргумент!
-
-\printbibliography[title={Чтиво}]
+Существует пакет cite, который делает такой "ручной" подход к библиографии более удобным. Но по сравнению с biblatex его возможности довольно скудны! Тем не менее почитать о нём можно на страничке курса. Возможно, вам захочется написать у себя в преамбуле \verb|\usepackage{cite}|...
 
 
+%Команды для изменения названия у списка литры!
+\renewcommand{\refname}{Чтиво}  % для класса article
+%\renewcommand{\bibname}{Чтиво}  % для классов book и report
+
+
+\begin{thebibliography}{99}
+\addcontentsline{toc}{chapter}{Чтиво} %добавляем в соодержание
+
+\bibitem{UDAEVA} Юдаева, К. В. О денежно-кредитной политике Банка России на современном этапе //Деньги и кредит. --- 2014. --- С. 13.
+
+\bibitem{barro1986reputation} Barro, R. J. Reputation in a model of monetary policy with incomplete information //Journal of Monetary Economics. --- 1986. --- Т. 17. №. 1. С. 3-20.
+
+\bibitem{3} Barro, R. J., Gordon, D. B. A positive theory of monetary policy in a natural-rate model. --- 1981.
+\end{thebibliography}
 
 \end{document}
-
-
-
-
-
-
-
-
-
 
