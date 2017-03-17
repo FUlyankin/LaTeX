@@ -20,8 +20,17 @@ output: html_document
 > Если у вас есть предложения, замечания, наезды, признания в любви, и вы не хотите делиться ими лично, то всегда можно заполнить [уютную анонимку.](https://docs.google.com/forms/d/e/1FAIpQLSfn77YbXk-hwept85Tu4y4ZZs5rtCK0kzJDeCRP08Y1_5v3dw/viewform) Мы хотим услышать любую критику и советы!
 
 
-## Всякие разные домашки
+### Всякие разные домашки
 
+
+
+Если кто-то хочет, чтобы его домашку закинули сюда или удалили, то напишите мне. 
+
+* Текущие [наклейки](https://github.com/FUlyankin/LaTeX/raw/master/your_homeworks/Stickers.zip)
+* [Первая](https://github.com/FUlyankin/LaTeX/raw/master/your_homeworks/Hw_1.zip) домашка
+* [Вторая](https://github.com/FUlyankin/LaTeX/raw/master/your_homeworks/Some_Hw_2.zip) домашка
+* [Коровы](https://github.com/FUlyankin/LaTeX/raw/master/your_homeworks/Hw_3_all_cowsay.zip) из третьей домашки
+* [Четвёртая](https://github.com/FUlyankin/LaTeX/raw/master/your_homeworks/Hw_4.zip) домашка
 
 
 ### Занятие 6 (23 марта)
@@ -61,7 +70,7 @@ output: html_document
 * Texовский файл [Преамбула](https://github.com/FUlyankin/LaTeX/blob/master/sem_4/svoystva_doc.tex)
 
 * Texовский файл [Разбор домашки с командами](https://github.com/FUlyankin/LaTeX/blob/master/sem_4/hw3_solution.tex)
-* [Архив](https://github.com/FUlyankin/LaTeX/raw/master/sem_4/all_cowsay.zip) с вашими красивыми cowsay окружениями
+* [Архив](https://github.com/FUlyankin/LaTeX/raw/master/your_homeworks/Hw_3_all_cowsay.zip) с вашими красивыми cowsay окружениями
 
 * [Задания для семинара](https://github.com/FUlyankin/LaTeX/raw/master/sem_4/hw4.pdf)
 * Пример [контракта,](https://github.com/FUlyankin/LaTeX/blob/master/sem_4/hw/contract.pdf) а также [письма из Хогвартса.](https://github.com/FUlyankin/LaTeX/blob/master/sem_4/hw/hogwarts.pdf) Это только пример. Не нужно пытаться воспроизвести его один в один. Нужно просто воспроизвести требования из задания. Не забудьте поставить гиперссылку. В примере она не стоит. 
@@ -191,8 +200,8 @@ Agenda
 ------------------
 1. Обо всём и ни о чём!  Введение в LaTeX.  Мотивация изучать LaTeX. Немного о разных движках (PdfTex, XeTeX и т.д.). Математика в LaTeX.
 2. XeTeX. Немного подробнее о шрифтах. Что такое юникод? Рисунки и таблицы в LaTeX. Booktabs.
-3. Оформление документа в целом. Некоторые странные пакеты. Minted.
-4. Графика (Tikz). Великая и могучая Geogebra. Собственные команды и макросы.
+3. Графика (Tikz). Великая и могучая Geogebra. Собственные команды и макросы.
+4. Оформление документа в целом. Некоторые странные пакеты. Minted.
 5. Список литературы, bibtex. Преамбула для души и преамбула по ГОСТ. Пакет biblatex-gost.
 6. Сбор одного файла из нескольких разных. R + LaTeX — самая мощная связка в мире! Красивая эконометрика. Пара слов о "Make-файлах" в R.  Markdown.  Несколько слов об Atom. 
 7. R + LaTeX — продолжаем разговор! Автоматизация создания документов. Как создать 100 красивых анкет для игры в киллера в один клик?
