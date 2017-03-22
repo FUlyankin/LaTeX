@@ -25,8 +25,6 @@ output: html_document
 
 ### Всякие разные домашки
 
-
-
 Если кто-то хочет, чтобы его домашку закинули сюда или удалили, то напишите мне. 
 
 * Текущие [наклейки](https://github.com/FUlyankin/LaTeX/raw/master/your_homeworks/Stickers.zip)
@@ -37,19 +35,23 @@ output: html_document
 
 ### Занятие 7 (30 марта)
 
-Будем охотиться за зайцами и убивать одним ударом сразу 70! Наконец то свяжем в единое целое R и LaTeX и научимся правильно оформлять эконометрические отчёты. Будет ~~сложно~~ весело и интересно.
+Будем охотиться за зайцами и убивать одним ударом сразу 70! Решим целую одну практическую задачу. Будет ~~сложно~~ весело и интересно.
 
 ### Занятие 6 (23 марта)
 
-* Я передумал. Если кто-то сейчас на страничке, то ничего не скачивайте! 
-
 * Хочу [всё и сразу](https://github.com/FUlyankin/LaTeX/raw/master/sem_6/sem_6.zip)
 
+#### Презентации:
 * **Утром 23 марта файл с презентацией будет обновлён**
 * [Texовский файл](https://github.com/FUlyankin/LaTeX/blob/master/sem_6/Presentation/beamer.tex) с презентацией
 * [Архив](https://github.com/FUlyankin/LaTeX/raw/master/sem_6/Presentation.zip) с презентацией
+*  [Матрица тем](https://www.hartwork.org/beamer-theme-matrix/) для Beamer
+* Немножечко [Beamer из wiki-книги](https://en.wikibooks.org/wiki/LaTeX/Presentations)
+* [Как создать свою тему](http://hamaluik.com/posts/better-beamer-themes/) инструкция step by step
 
+#### R+LaTeX начало:
 * [Код R+LaTeX](https://github.com/FUlyankin/LaTeX/blob/master/sem_6/R%2BLaTeX_beginner/R%2BLaTeX.Rnw) для начинающих
+* [Опции в R-sweawe и knitr](http://yihui.name/knitr/options/)
 * [Статья Анатольева](http://quantile.ru/04/04-SA.pdf) о том как правильно оформлять эконометрические отчёты
 
 * [Задания для семинара](https://github.com/FUlyankin/LaTeX/raw/master/sem_6/hw6.pdf)
