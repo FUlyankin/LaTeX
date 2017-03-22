@@ -42,12 +42,13 @@ output: html_document
 
 ### Занятие 6 (23 марта)
 
-* Хочу [всё и сразу]( )
+* Хочу [всё и сразу](https://github.com/FUlyankin/LaTeX/raw/master/sem_6/sem_6.zip)
 
-* [Texовский файл]( ) с презентацией
-* [Архив]( ) с презентацией
+* **Утром 23 марта файл с презентацией будет обновлён**
+* [Texовский файл](https://github.com/FUlyankin/LaTeX/blob/master/sem_6/Presentation/beamer.tex) с презентацией
+* [Архив](https://github.com/FUlyankin/LaTeX/raw/master/sem_6/Presentation.zip) с презентацией
 
-* [Код R+LaTeX]( ) для начинающих
+* [Код R+LaTeX](https://github.com/FUlyankin/LaTeX/blob/master/sem_6/R%2BLaTeX_beginner/R%2BLaTeX.Rnw) для начинающих
 * [Статья Анатольева](http://quantile.ru/04/04-SA.pdf) о том как правильно оформлять эконометрические отчёты
 
 * [Задания для семинара](https://github.com/FUlyankin/LaTeX/raw/master/sem_6/hw6.pdf)
