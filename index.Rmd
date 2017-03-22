@@ -47,6 +47,7 @@ output: html_document
 * [Архив](https://github.com/FUlyankin/LaTeX/raw/master/sem_6/Presentation.zip) с презентацией
 *  [Матрица тем](https://www.hartwork.org/beamer-theme-matrix/) для Beamer
 * Немножечко [Beamer из wiki-книги](https://en.wikibooks.org/wiki/LaTeX/Presentations)
+* [Переделанная Стокгольмская тема](https://github.com/FUlyankin/LaTeX/blob/master/sem_6/presentation%20theme.zip)
 * [Как создать свою тему](http://hamaluik.com/posts/better-beamer-themes/) инструкция step by step
 
 #### R+LaTeX начало:
