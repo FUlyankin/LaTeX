@@ -6,11 +6,14 @@ output: html_document
 
 **Кого винить во всех бедах или команда курса:**   [Филя](https://vk.com/ppilif), [Саша](https://vk.com/phenyard), [Костя](https://vk.com/rybakconst) и [Влад](https://vk.com/id20038528)!
 
+Нашёл на этой страничке ошибку? Нашёл какой-то ультраполезный ресурс? Придумал какое-то интересное задание для семинара? Есть конструктивная критика? Не молчи, напиши мне об этом на почту filfonul@gmail.com, в Telegram (@Ppilif) или  [Вконтакте](https://vk.com/ppilif).
+
 
 ## Преамбулы
 
 * [Преамбула для души](https://github.com/FUlyankin/LaTeX/raw/master/preamble_for_soul.tex)
 * [Преамбула по ГОСТ](https://github.com/FUlyankin/LaTeX/raw/master/sem_5/GOST/My_gost_diploma.zip)
+* Презентация по ГОСТ в разработке.
 
 
 ## Логи семинаров
@@ -32,10 +35,23 @@ output: html_document
 * [Коровы](https://github.com/FUlyankin/LaTeX/raw/master/your_homeworks/Hw_3_all_cowsay.zip) из третьей домашки
 * [Четвёртая](https://github.com/FUlyankin/LaTeX/raw/master/your_homeworks/Hw_4.zip) домашка
 
+### Занятие 7 (30 марта)
+
+Будем охотиться за зайцами и убивать одним ударом сразу 70! За пару мы решим одну практическую задачу в связке R+LaTeX и получим для размышлений вторую. Вторую мы решим вместе на последнем семинаре. Будет ~~сложно~~ интересно! 
+
 
 ### Занятие 6 (23 марта)
 
-Мы будем говорить о презентациях в LaTeX. А также начнём обсуждать связку R+LaTeX и риск-менеджера Винни-Пуха. :)
+* Хочу [всё и сразу]( )
+
+* [Texовский файл]( ) с презентацией
+* [Архив]( ) с презентацией
+
+* [Код R+LaTeX]( ) для начинающих
+* [Статья Анатольева](http://quantile.ru/04/04-SA.pdf) о том как правильно оформлять эконометрические отчёты
+
+* [Задания для семинара](https://github.com/FUlyankin/LaTeX/raw/master/sem_6/hw6.pdf)
+* [Код Винни-Пуха](https://github.com/FUlyankin/LaTeX/blob/master/sem_6/hw_script.R)
 
 
 ### Занятие 5 (16 марта)
@@ -170,18 +186,18 @@ output: html_document
 * [Пакет](http://www.ctan.org/tex-archive/macros/latex/contrib/booktabs/) Booktabs
 * [Пакет](https://www.ctan.org/pkg/fontspec) fontspec
 * [Пакет](https://www.ctan.org/pkg/unicode-math)  unicode-math
-* [Пакет]( )  для логических операторов, etoolbox
+* [Пакет](http://mirror.macomnet.net/pub/CTAN/macros/latex/contrib/etoolbox/etoolbox.pdf)  для логических операторов, etoolbox
 * [Пакет](http://ctan.altspu.ru/macros/latex/contrib/todonotes/todonotes.pdf) с todo-шками, Todonotes
 * [Пакет](http://mirror.macomnet.net/pub/CTAN/macros/latex/contrib/minted/minted.pdf) для оформления кода, Minted
 * [Пакет](https://www.ctan.org/pkg/cite)  цитирования, Cite
-* [Библиография](http://www.ctan.org/pkg/biblatex)  в bibtex
+* [Библиография](http://www.ctan.org/pkg/biblatex)  в biblatex
 * [Пакет](http://www.ctan.org/pkg/biblatex-gost)  biblatex-gost
 
 --------------
 
 Благодарности
 ---------------
-Спасибо за помощь в создании этого курса Шилину Кириллу Юрьевичу, Демешеву Борису Борисовичу, Александру Тишину, Рыбаку Константину и Соловью Владу!
+Спасибо за помощь в создании этого курса Шилину Кириллу Юрьевичу, Демешеву Борису Борисовичу, Александру Тишину, Рыбаку Константину, Соловью Владу и Осипову Семёну!
 
 Идеология курса 
 ===================
@@ -192,7 +208,6 @@ output: html_document
 
 На "семинаре" в аудитории 3-5 человек, которые хорошо знают LaTeX. Все проблемы, которые у вас возникают, совместно обсуждаем. Если ты застопорился, зови одного из нас! Есть проблема, зови одного из нас! Появился вопрос, зови одного из нас! 
 
-Нашёл на этой страничке ошибку? Нашёл какой-то ультраполезный ресурс? Придумал какое-то интересное задание для семинара? Есть конструктивная критика? Не молчи, напиши мне об этом на почту filfonul@gmail.com, в Telegram (@Ppilif) или  [Вконтакте](https://vk.com/ppilif).
 
 -------------------------------------------------
 
