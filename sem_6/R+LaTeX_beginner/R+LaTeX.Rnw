@@ -68,6 +68,7 @@ library(knitr)                     # взаимодействие R-Latex
 library(quantmod)                  # загрузка котировок с yahoo.finance, google.finance
 library(ggplot2)                   # симпатявые графики
 library(dplyr)
+library(xtable)
 
 invisible(Sys.setlocale("LC_MESSAGES", "C"))  # установка локали потенциально решает проблему 
 invisible(Sys.setlocale("LC_TIME", "C"))      # с отсутствием дат в getSymbols с гугла :)
@@ -98,9 +99,13 @@ opts_chunk$set(warning=FALSE,message=FALSE,dev='png',dpi=300,fig.align='center')
 Всё совсем как в \LaTeX! Но у нас нет на это времени! Пора создавать чанк!
 
 
-% СОЗДАТЬ ЧАНК, сделать ченить, показать \Sexpr, поставить у чанка echo = TRUE 
-% Наверн хи квадрат сделать я хз...
-% не забыть обновить репозиторий
+<<echo=TRUE>>=
+x <- rnorm(100)
+x_mean <- mean(x)
+x_mean
+@
+
+Мы видим, что наши вычисления прошли усспешно и среднее составило \Sexpr{x_mean}
 
 
 
@@ -133,6 +138,7 @@ model <- lm(data=df,formula)
 Оценки, которые мы заслужили приведены в таблице \ref{tab:regress}. 
 
 <<echo=FALSE,results='asis'>>=
+library(xtable)
 floating = getOption("xtable.floating", TRUE)
 table.placement = getOption("xtable.table.placement", "H")
 latex.environments = getOption("xtable.latex.environments", c("center"))
@@ -140,6 +146,14 @@ latex.environments = getOption("xtable.latex.environments", c("center"))
 xtable(summary(model), caption = "Оценки, которые мы заслужили!",label="tab:regress",digits=2)
 @
 
+
+<<echo=FALSE,results='asis'>>=
+floating = getOption("xtable.floating", TRUE)
+table.placement = getOption("xtable.table.placement", "H")
+latex.environments = getOption("xtable.latex.environments", c("center"))
+
+xtable(summary(model), caption = "Оценки, которые мы заслужили!",label="tab:regress2",digits=2)
+@
 
 Графики можно построить совсем разными. Например, вот такой! 
 
