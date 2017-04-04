@@ -1,0 +1,174 @@
+% Это шапочка для наших анкеточек. Документам, в их холодных директориях нельзя без шапочек! Здесь расположена преамбуда для нашего документа. И это хорошо. 
+
+\documentclass[a4paper]{article}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+
+%XeLaTeX позволяет очень гибко работать со шрифтами.
+\usepackage{fontspec}
+\setmainfont{GNUTypewriter}   % шрифт как на печатной машинке!
+
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+
+\usepackage[paper=a4paper,top=10mm, bottom=5mm, left=15mm, right=7mm, includefoot]{geometry}
+\usepackage[colorlinks=true,urlcolor=black,hyperindex,breaklinks]{hyperref}
+
+
+%%%%%%%%%% Работа с картинками %%%%%%%%%
+\usepackage{graphicx}                  % Для вставки рисунков
+\usepackage{graphics} 
+\graphicspath{{images/}{pictures/}}    % можно указать папки с картинками
+\usepackage{wrapfig}                   % Обтекание рисунков и таблиц текстом
+\usepackage{subfigure}                 % для создания нескольких рисунков внутри одного
+
+
+%%%%%%%%%% Работа с таблицами %%%%%%%%%%
+\usepackage{tabularx}            % новые типы колонок
+\usepackage{tabulary}            % и ещё новые типы колонок
+\usepackage{array}               % Дополнительная работа с таблицами
+\usepackage{longtable}           % Длинные таблицы
+\usepackage{multirow}            % Слияние строк в таблице
+\usepackage{float}               % возможность позиционировать объекты в нужном месте 
+
+\usepackage{xcolor}              % разные цвета
+\usepackage{hyperref}
+\usepackage{multicol}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Грфика в LaTeX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{tikz, pgfplots}  % язык для рисования графики из latex'a
+\usepackage{amscd}                  %Пакеты для рисования 
+\usepackage[matrix,arrow,curve]{xy} %комунитативных диаграмм
+
+\usepackage{setspace}  
+\setstretch{1}  % Межстрочный интервал
+\setlength{\parindent}{0em} % Красная строка.
+\pagestyle{empty}   % отключаем нумерацию страниц
+
+\flushbottom                            % Эта команда заставляет LaTeX чуть растягивать строки, чтобы получить идеально прямоугольную страницу
+\righthyphenmin=2                       % Разрешение переноса двух и более символов
+\widowpenalty=300                     % Небольшое наказание за вдовствующую строку (одна строка абзаца на этой странице, остальное --- на следующей)
+\clubpenalty=3000                     % Приличное наказание за сиротствующую строку (омерзительно висящая одинокая строка в начале страницы)
+\tolerance=1000     % Ещё какое-то наказание.
+
+%%%%%%%%%% Свои команды %%%%%%%%%%
+\usepackage{etoolbox}       % логические операторы для своих макросов
+
+
+\usepackage{qrcode}
+\usepackage{url}
+
+
+\begin{document}
+
+<<include=FALSE,message=FALSE>>=
+
+# загружаем библиотеки:
+library(knitr)                     # вязание TeX
+library(brew)                      # варка Rnw
+library(tools)
+library(curl)
+library(dplyr)
+
+# Опции для кода можно настраивать либо глобально (для всех окон с кодом сразу) либо локально отдельно для каждого окна. Глобальные опции задаются следующим способом: 
+
+opts_chunk$set(cache=TRUE) # cache=TRUE ускоряет работу, но на сложных проектах может глючить
+opts_chunk$set(echo=FALSE,warning=FALSE,message=FALSE,results='hide',dev='png',dpi=300,fig.align='center')
+
+Sys.setenv(PDFLATEX = "xelatex")
+
+@
+
+
+<<results='hide'>>=
+# Делаем предобработку наших данных, собранных для анкет
+# Подгружаем табличку с информацией
+df <- read.csv(file='base.csv',sep='\t',header=FALSE)
+
+# Создаём вектор для названий картинок, имён, фамилий, отчеств, которые 
+# мы будем добавлять в наш датафрейм! 
+newcol <- c()
+nm <- c()
+fam <- c()
+otch <- c()
+
+# В датафрейме лежит куча ссылок на фоточки из вк. В нашей папочке после того как 
+# мы применили через терминал к файлу urls команду wget лежит куча фоток, которые
+# называются также как окончание ссылок на них.
+#
+# Ссылка на фото:  https://pp.vk.me/c633329/v633329859/27c80/m7RgpfCSuvs.jpg
+# Название картинки в папке: m7RgpfCSuvs.jpg
+#
+# Нам нужно вытащить концовку. Для этого с помощью команды strsplit разобьём ссылку 
+# на части по значку / 
+# название картинки в полученном векторе будет идти седьмым.
+# Вытащим все названия в вектор newcol 
+
+for(item in df$V7){
+  newcol <- append(newcol,strsplit(as.character(item),"/")[[1]][7])
+}
+
+# Берём из каждой строки кусок с именем, фамилией и отчеством. Рассекаем каждый 
+# объект на три кусочка и каждый из них загружаем в свой вектор.
+
+for(item in df$V1){
+  nm <- append(nm,strsplit(as.character(item)," ")[[1]][2])
+  fam <- append(fam,strsplit(as.character(item)," ")[[1]][1])
+  otch <- append(otch,strsplit(as.character(item)," ")[[1]][3])
+}
+
+# Немного подредактируем датафрейм, добавив в него новые объекты. 
+df = mutate(df,V9 = newcol,V10 = nm, V11=fam, V12=otch,V6 =  as.character(df$V6))  
+@
+
+% Функцтя - шаблон для каждой анкеты. 
+% Как же хорошо, что максимальное количество аргументов у функции - 9. А у нас их... 9! 
+\newcounter{j} % Заводим для анкет новый счётчик
+\newcommand{\delo}[9]{%  % Заводим новую команжу \delo
+\addtocounter{j}{1}      % Увеличиваем значение счётчика на один
+\section*{Досье номер \Roman{j}}   % В заголвоке для каждого человека будет указываться 
+                                   % римскими цифрами номер досье
+\Large
+
+\begin{multicols}{2}   % Разместим текст в две колонки 
+
+\includegraphics[width=0.75\linewidth]{#7}  % В первой колонке будет фото человека
+
+\columnbreak
+
+\textbf{Фамилия:} #9   % Во второй колонке будет всё остальное
+
+\textbf{Имя:} #1
+
+\textbf{Курс:} #2      
+
+\textbf{Группа:}  #3   
+
+\textbf{Возраст:} #4   
+
+\textbf{vk:} \url{#5} 
+
+\textbf{email:}  \url{#6} 
+
+\end{multicols}
+
+% Сразу же под фото будет идти характеристика нашей жертвы! 
+\textbf{Характеристика жертвы:} \\ #8   
+
+\mbox{ }
+
+\begin{center}
+\LARGE{УДАЧНОЙ ОХОТЫ!}  % Под характеристикой будет расположена надпись...
+\end{center} 
+
+\vfill  % К самому низу и к самому праву страницы будет прижат qrсode 
+        % Если сфоткать его, то телефон вас перекинет на vk-страничку жертвы
+\hfill \qrcode[hyperlink,height=1.2in]{#5}
+
+}
+
+
+
+
