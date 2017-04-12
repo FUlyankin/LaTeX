@@ -34,8 +34,14 @@ output: html_document
 * [Четвёртая](https://github.com/FUlyankin/LaTeX/raw/master/your_homeworks/Hw_4.zip) домашка
 
 
-### Занятие 8 (вроде бы 6 апреля)
-Это будет последнее занятие по LaTeX. На нём мы обсудим решение последних домашек, обсудим как добавлять в LaTeX формулы из Wolfram, поговорим о Markdown, Git и ультрановомодном редакторе всего Atom. А после мы разбежимся до Python. 
+### Занятие 8 (13 апреля)
+
+* Хочу [вольфрамовские блокноты](https://github.com/FUlyankin/LaTeX/raw/master/sem_8/sem_8.zip)
+
+* [Инструкция по установке Atom](https://github.com/FUlyankin/LaTeX/wiki/Atom_install)
+* [Хороший туториал](http://www.markdowntutorial.com/) по Markdown. Если у вас есть свободные 10 минут, то их хватит, чтобы изучить его
+* Ещё немножечко Markdown на русском можно найти [тут](http://opp.psy.msu.ru/help.php?file=markdown.html) и [здесь](http://opp.psy.msu.ru/help.php?file=advanced_markdown.html)!
+* [Уроки](http://rmarkdown.rstudio.com/) по Markdown в R! Это шикарная страница. Обязательно посмотрите её!
 
 
 ### Занятие 7 (30 марта)
@@ -55,7 +61,6 @@ output: html_document
 * Хочу [всё и сразу](https://github.com/FUlyankin/LaTeX/raw/master/sem_6/sem_6.zip)
 
 #### Презентации:
-* **Утром 23 марта файл с презентацией будет обновлён**
 * [Texовский файл](https://github.com/FUlyankin/LaTeX/blob/master/sem_6/Presentation/beamer.tex) с презентацией
 * [Архив](https://github.com/FUlyankin/LaTeX/raw/master/sem_6/Presentation.zip) с презентацией
 *  [Матрица тем](https://www.hartwork.org/beamer-theme-matrix/) для Beamer
@@ -94,8 +99,6 @@ output: html_document
 
 
 ### Занятие 4 (9 марта)
-
-Внимание! Мы обновили инструкцию по установлению minted на Mac. Она стала в 28 раз проще. Если у кого-то всё ещё возникают проблемы, пишите. 
 
 * Хочу [всё и сразу](https://github.com/FUlyankin/LaTeX/raw/master/sem_4/sem_4.zip)
 
