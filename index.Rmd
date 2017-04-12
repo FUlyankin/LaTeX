@@ -37,6 +37,7 @@ output: html_document
 ### Занятие 8 (13 апреля)
 
 * Хочу [вольфрамовские блокноты](https://github.com/FUlyankin/LaTeX/raw/master/sem_8/sem_8.zip)
+* [Задания для семинара](https://github.com/FUlyankin/LaTeX/raw/master/sem_8/hw8.pdf)
 
 * [Инструкция по установке Atom](https://github.com/FUlyankin/LaTeX/wiki/Atom_install)
 * [Хороший туториал](http://www.markdowntutorial.com/) по Markdown. Если у вас есть свободные 10 минут, то их хватит, чтобы изучить его
