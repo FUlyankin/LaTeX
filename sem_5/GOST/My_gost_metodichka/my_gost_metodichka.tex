@@ -175,6 +175,10 @@
 \titleformat{\section}{\bfseries}{\thesection}{0.5 em}{}
 \titleformat{\subsection}{\bfseries}{\thesubsection}{0.5 em}{}
 
+% Одинаковые отступы для подзаголовков
+\titlespacing*{\section}{0pt}{15 pt}{15 pt}
+\titlespacing*{\subsection}{0pt}{15 pt}{15 pt}
+
 
 % Содержание. Команды ниже изменяют отступы и рисуют точечки!
 \usepackage{titletoc}
@@ -354,9 +358,9 @@ sorting=ntvy, %тип сортировки в библиографии
 \vfill
 
 
-\noindent\small Группа ЭФ-13-02
+\noindent  Группа ЭФ-13-02
 \hfill
-\parbox[t]{20em}{\centering\small
+\parbox[t]{20em}{\centering
 Кафедра <<Макроэкономики>>
 
 \mbox{ }
