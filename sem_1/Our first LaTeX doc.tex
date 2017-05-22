@@ -1,0 +1,85 @@
+%!TEX TS-program = xelatex
+\documentclass[12pt, a4paper]{article}  
+
+%         Классы: 
+% article   ---   статья
+% report    ---   отчет
+% book      ---   книга
+% beamer    ---   презентация
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}  % пакеты для математики
+
+%%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Arial}   % задаёт основной шрифт документа
+
+\defaultfontfeatures{Mapping=tex-text}
+
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Arial}
+\newfontfamily{\cyrillicfont}{Arial}
+\newfontfamily{\cyrillicfontsf}{Arial}
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+\setmathfont{Asana Math}      % шрифт для математики
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+
+\begin{document} % тут заканчивается преамбула и начинается документ
+
+
+% Элементы структуры:
+% part -> chapter -> section -> subsection -> subsubsection -> paragraph -> subparagraph 
+% chapter есть в классах book и report
+
+\tableofcontents
+
+\section{Приветсивие миру}
+Привет, мир! 
+
+\section{Команды}
+
+Хэй, чувак сделай ка мне слово \textbf{дождь} жирным, а слово \textit{причиной} курсивным!
+
+\subsection{Эксперименты!}
+
+Володя любит          Аню, а Аня любит   кушать мороженое! 
+
+Если случилось так, что один Братан пообещал (навсегда) место на переднем сиденье своей машины одновременно двум своим Братанам, то Второй Пилот определяется следующими способами:
+
+
+% Здесь расположен список того как определяется второй пилот!
+% Надо бы добавить ещё пару способов.
+
+\begin{enumerate}
+\item забег до машины
+\item аукцион; а в случае если поездка превышает 700 км ---
+\item бой без правил насмерть.  % этот способ не очень хороший
+\end{enumerate}
+
+
+
+% Плевать на колчество пробелов и пропущенных строк!
+
+
+
+Кроме того можно определить первого пилота с помощью скоростного интегрирования. Кто первым возьмёт интеграл 
+
+\[ \int_{-\infty}^{+\infty} e^{-x^2} dx \] 
+
+тот и победит. Будет позорно забыть, что это $\sqrt{\pi}$!
+
+\end{document}
+
+
+
+
+
+
+
+
+

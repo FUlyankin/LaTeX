@@ -1,0 +1,39 @@
+%!TEX TS-program = xelatex
+\documentclass[12pt,a4paper, oneside]{extreport}
+
+% Можно вставить разную преамбулу
+\input{gost_preamble}
+%\input{soul_preamble}
+
+\addbibresource{diploma_bib.bib} % сюда нужно вписать свой биб-файлик
+
+
+%%%%%%%%% Свои команды %%%%%%%%%%%
+
+%\includeonly{chapters/ch2,chapters/ch3}
+
+
+\begin{document}
+
+\include{chapters/title}
+
+\tableofcontents
+
+
+\chapter*{Введение}
+% Добавляем введение в содержание
+\addcontentsline{toc}{chapter}{Введение}
+
+Текст введения
+
+\include{chapters/ch1}
+
+\include{chapters/ch2}
+
+\include{chapters/ch3}
+
+\nocite{*}
+\printbibliography
+
+\end{document}
+

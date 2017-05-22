@@ -1,0 +1,64 @@
+%!TEX TS-program = xelatex
+\documentclass[12pt, a4paper]{article}  
+
+%%%%%%%%%% Математика %%%%%%%%%%
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+%\mathtoolsset{showonlyrefs=true}  % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+%\usepackage{leqno} % Нумерация формул слева
+
+
+%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Arial}   % задаёт основной шрифт документа
+
+\defaultfontfeatures{Mapping=tex-text}
+
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Arial}
+\newfontfamily{\cyrillicfont}{Arial}
+\newfontfamily{\cyrillicfontsf}{Arial}
+% Грубо говоря иногда polyglossia начинает балбесничать и не видит структуры кириллических шрифтов. Эти трое бравых парней спасают ситуацию и доопределяют те куски, которые Тех не увидел.
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+\setmathfont{Phorssa}      % шрифт для математики
+%\setmathfont[math-style=ISO]{Asana Math}
+% Можно делать смену начертания с помощью разных стилей
+
+% Конкретный символ из конкретного шрифта
+\setmathfont[range=\int]{Asana Math}
+
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+
+
+% Заголовок
+\author{Уютный факультатив} 
+\title{Xe\LaTeX. Работа со шрифтами.}
+\date{\today}
+
+
+\begin{document}
+
+\maketitle
+
+%автоматическое оглавление
+\tableofcontents
+
+
+\section{Xe\LaTeX}
+
+Панграмма (c греч. «все буквы») или разнобуквица — короткий текст, использующий все или почти все буквы алфавита. Например, популярной панграммой для русского языка является «В чащах юга жил бы цитрус? Да, но фальшивый экземпляр!».
+
+\fontspec{GNUTypewriter}{The quick brown fox jumps over the lazy dog.}
+
+\Large{\fontspec{Phorssa}{Съешь же ещё этих мягких французских булок, да выпей чаю!}}
+
+\[ 9 + 9 = 18 \] 
+
+\[ \int_{0}^{1} x^2 dx  \]
+
+
+\end{document}
