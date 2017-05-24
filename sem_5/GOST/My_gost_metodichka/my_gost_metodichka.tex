@@ -267,21 +267,21 @@
 % Первый тип списков. Большая буква. 
 \newlist{Enumerate}{enumerate}{1}
 \setlist[Enumerate,1]{labelsep=0.5em,leftmargin=1.25em,labelwidth=1.25em,
-parsep=0em,itemsep=0em,topsep=0.75ex, before={\parskip=-1em},label=\arabic{Enumeratei}.}
+parsep=0em,itemsep=0em,topsep=0ex, before={\parskip=-1em},label=\arabic{Enumeratei}.}
 
 
 % Второй тип списков. Маленькая буква.
-\setlist[enumerate]{label=\arabic{enumi}),parsep=0em,itemsep=0em,topsep=0.75ex, before={\parskip=-1em}}
+\setlist[enumerate]{label=\arabic{enumi}),parsep=0em,itemsep=0em,topsep=0ex, before={\parskip=-1em}}
 
 
 % Третий тип списков. Два уровня. 
 \newlist{twoenumerate}{enumerate}{2}
-\setlist[twoenumerate,1]{itemsep=0mm,parsep=0em,topsep=0.75ex,, before={\parskip=-1em},label=\asbuk{twoenumeratei})}
+\setlist[twoenumerate,1]{itemsep=0mm,parsep=0em,topsep=0ex,, before={\parskip=-1em},label=\asbuk{twoenumeratei})}
 \setlist[twoenumerate,2]{leftmargin=1.3em,itemsep=0mm,parsep=0em,topsep=0ex, before={\parskip=-1em},label=\arabic{twoenumerateii})}
 
 
 % Четвёртый тип списков. Список с тире.
-\setlist[itemize]{label=--,parsep=0em,itemsep=0em,topsep=0.75ex, before={\parskip=-1em},after={\parskip=-1em}}
+\setlist[itemize]{label=--,parsep=0em,itemsep=0em,topsep=0ex, before={\parskip=-1em},after={\parskip=-1em}}
 
 
 %%% WARNING WARNING WARNIN!
@@ -463,7 +463,6 @@ sorting=ntvy, %тип сортировки в библиографии
 \item Текст списка выравнивается по ширине. В тексте используются переносы. Левая граница второй и последующих строк внутри текста пункта выравниваются по первой букве текста первой строки.
 \item Все первые буквы текста первых строк пунктов списка должны быть выровнены между собой.
 \end{Enumerate}
-
 
 Приведем пример нумерованного списка, содержащего в одном пункте одно предложение:
 	\begin{enumerate}

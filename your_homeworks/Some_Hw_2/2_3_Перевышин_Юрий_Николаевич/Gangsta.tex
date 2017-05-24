@@ -1,0 +1,61 @@
+
+%!TEX TS-program = xelatex
+\documentclass[12pt, a4paper]{article}  
+
+%%%%%%%%%% Математика %%%%%%%%%%
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+%\mathtoolsset{showonlyrefs=true}  % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+%\usepackage{leqno} % Нумерация формул слева
+
+
+%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Phorssa}   % задаёт основной шрифт документа
+
+\defaultfontfeatures{Mapping=tex-text}
+
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Phorssa}
+\newfontfamily{\cyrillicfont}{Phorssa}
+\newfontfamily{\cyrillicfontsf}{Phorssa}
+% Грубо говоря иногда polyglossia начинает балбесничать и не видит структуры кириллических шрифтов. Эти трое бравых парней спасают ситуацию и доопределяют те куски, которые Тех не увидел.
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+\setmathfont{Phorssa}      % шрифт для математики
+% \setmathfont[math-style=ISO]{Asana Math}
+% Можно делать смену начертания с помощью разных стилей
+
+% Конкретный символ из конкретного шрифта
+% \setmathfont[range=\int]{Neo Euler}
+
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+
+
+% Заголовок
+%\author{Уютный факультатив} 
+%\title{Xe\LaTeX. Работа со шрифтами.}
+%\date{\today}
+
+
+\begin{document}
+	
+\setcounter{section}{2}
+	\section{Угроза Тишину Александру}
+	
+Александр! Если вы и дальше будете придумывать такие сложные домашки, то мне придется забрать у вас самое дорогое - ваши баллы за дипломную работу. Будем считать, что стандартное домшнее задание можно делать не более двух часов. Если вы будете жестить, придумывая сложные д/з, то я буду отрезать по три балла от вашей итоговой оценки за каждый дополнительный час, потраченный на \LaTeX, и присылать их вам в конверте.
+ 
+Формула усечения имеет вид: $$f=100-3(t-2),$$ где $f$ (от слова fatal) - итоговый балл за ВКР, $t\ge2$ - время, затраченное мною на выполнение ваших домашек (в часах).
+
+Считаю излишним напоминать, что обращаться в полицию бессмысленно.
+
+С уважением, ваш научрук.
+
+Ха-ха-ха!
+
+	
+	
+\end{document}
