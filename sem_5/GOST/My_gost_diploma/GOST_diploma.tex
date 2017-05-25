@@ -76,12 +76,6 @@
 % 6. Повторяющееся значение повторяйте, а не говорите "то же"
 % 7. Есть сомнения? Выравнивай по левому краю!
 
-%  вычисляемые колонки по tabularx
-\newcolumntype{C}{>{\centering\arraybackslash}X}
-\newcolumntype{L}{>{\raggedright\arraybackslash}X}
-\newcolumntype{Y}{>{\arraybackslash}X}
-\newcolumntype{Z}{>{\centering\arraybackslash}X}
-
 
 %%%%%%%%%% Графика и рисование %%%%%%%%%%
 \usepackage{tikz, pgfplots}      % язык для рисования графики из latex'a
@@ -99,11 +93,10 @@
 	breaklinks              % если ссылка не умещается в одну строку, разбивать ли ее на две части?
 }
 
-
 %%%%%%%%%% Другие приятные пакеты %%%%%%%%%
 \usepackage{multicol}       % несколько колонок
 \usepackage{verbatim}       % для многострочных комментариев
-\usepackage{cmap} % для кодировки шрифтов в pdf
+\usepackage{cmap}           % для кодировки шрифтов в pdf
 
 \usepackage{enumitem} % дополнительные плюшки для списков
 %  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
@@ -116,16 +109,18 @@
 
 
 %%%%%%%%%%%%%% ГОСТОВСКИЕ ПРИБАМБАСЫ %%%%%%%%%%%%%%%
-
 %%% размер листа бумаги
-\usepackage[paper=a4paper,top=15mm, bottom=15mm,left=35mm,right=10mm,includehead,includefoot]{geometry}
+% Сверху сделан отступ в 12mm, чтобы расстояние от верхней границы листа до низа цифры (именно так считает word) было 15 mm. 
+\usepackage[paper=a4paper,top=12mm, bottom=15mm,left=35mm,right=10mm,includehead]{geometry}
 
 \usepackage{setspace}
 \setstretch{1.33}     % Межстрочный интервал
 \setlength{\parindent}{1.5em} % Красная строка.
 
 
-\flushbottom       % Эта команда заставляет LaTeX чуть растягивать строки, чтобы получить идеально прямоугольную страницу
+% Эта команда изменяет все расстояния, положенные по ГОСТ и ты получаешь по шее за свою страсть к эстетике... Жертвуем эстетикой в пользу ГОСТА.
+% \flushbottom     % Эта команда заставляет LaTeX чуть растягивать строки, чтобы получить идеально прямоугольную страницу
+
 \righthyphenmin=2  % Разрешение переноса двух и более символов
 \widowpenalty=10000  % Наказание за вдовствующую строку (одна строка абзаца на этой странице, остальное --- на следующей)
 \clubpenalty=10000  % Наказание за сиротствующую строку (омерзительно висящая одинокая строка в начале страницы)
@@ -152,8 +147,6 @@
 % Заголовки по левому краю    
 % опция identfirst устанавливает отступ в первом абзаце 
 
-
-
 % В Linux этот пакет сделан косячно. Исправляет это следующий непонятный кусок кода. 
 \makeatletter
 \patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
@@ -163,12 +156,12 @@
 
 % Редактирования Глав и названий
 \titleformat{\chapter}
-      {\normalfont\large\bfseries}
+      {\normalfont\bfseries}
       {\thechapter }{0.5 em}{}
 
 % Редактирование ненумеруемых глав chapter* (Введение и тп) 
 \titleformat{name=\chapter,numberless}
-{\centering\normalfont\bfseries\large}{}{0.25em}{\normalfont}
+{\centering\normalfont\bfseries}{}{0.25em}{\normalfont}
  
 % Убирает чеканутые отступы вверху страницы
 \titlespacing{\chapter}{0pt}{-20pt}{15 pt} 
@@ -177,7 +170,7 @@
 \titleformat{\section}{\bfseries}{\thesection}{0.5 em}{}
 \titleformat{\subsection}{\bfseries}{\thesubsection}{0.5 em}{}
 
-% Одинаковые отступы сверху и снизу у подзаголовков
+% Одинаковые отступы для подзаголовков
 \titlespacing*{\section}{0pt}{15 pt}{15 pt}
 \titlespacing*{\subsection}{0pt}{15 pt}{15 pt}
 
@@ -232,10 +225,8 @@
    \captionsetup*[table]{style=tab01,labelsep=gost,labelformat=gosttable,format=hang}
 
 
-
 % межстрочный отступ в таблице
  \renewcommand{\arraystretch}{1.2}
-
 
 
 % многостраничные таблицы под РОССИЙСКИЙ СТАНДАРТ
@@ -259,34 +250,30 @@
 \makeatother
 
 
-%Более гибкие спсики
-\usepackage{enumitem}
+%%% ГОСТОВСКИЕ СПИСКИ
 % сообщаем окружению о том, что существует такая штук как нумерация русскими буквами.
 \makeatletter
 \AddEnumerateCounter{\asbuk}{\russian@alph}{щ}
 \makeatother
 
-
-%%% ГОСТОВСКИЕ СПИСКИ
-
 % Первый тип списков. Большая буква. 
 \newlist{Enumerate}{enumerate}{1}
 \setlist[Enumerate,1]{labelsep=0.5em,leftmargin=1.25em,labelwidth=1.25em,
-parsep=0em,itemsep=0em,topsep=0.75ex, before={\parskip=-1em},label=\arabic{Enumeratei}.}
+parsep=0em,itemsep=0em,topsep=0ex, before={\parskip=-1em},label=\arabic{Enumeratei}.}
 
 
 % Второй тип списков. Маленькая буква.
-\setlist[enumerate]{label=\arabic{enumi}),parsep=0em,itemsep=0em,topsep=0.75ex, before={\parskip=-1em}}
+\setlist[enumerate]{label=\arabic{enumi}),parsep=0em,itemsep=0em,topsep=0ex, before={\parskip=-1em}}
 
 
 % Третий тип списков. Два уровня. 
 \newlist{twoenumerate}{enumerate}{2}
-\setlist[twoenumerate,1]{itemsep=0mm,parsep=0em,topsep=0.75ex,, before={\parskip=-1em},label=\asbuk{twoenumeratei})}
+\setlist[twoenumerate,1]{itemsep=0mm,parsep=0em,topsep=0ex,, before={\parskip=-1em},label=\asbuk{twoenumeratei})}
 \setlist[twoenumerate,2]{leftmargin=1.3em,itemsep=0mm,parsep=0em,topsep=0ex, before={\parskip=-1em},label=\arabic{twoenumerateii})}
 
 
 % Четвёртый тип списков. Список с тире.
-\setlist[itemize]{label=--,parsep=0em,itemsep=0em,topsep=0.75ex, before={\parskip=-1em},after={\parskip=-1em}}
+\setlist[itemize]{label=--,parsep=0em,itemsep=0em,topsep=0ex, before={\parskip=-1em},after={\parskip=-1em}}
 
 
 %%% WARNING WARNING WARNIN!
@@ -296,29 +283,35 @@ parsep=0em,itemsep=0em,topsep=0.75ex, before={\parskip=-1em},label=\arabic{Enume
 
 
 %%%%%%%%%% Список литературы %%%%%%%%%%
+% Внимание! Чтобы работал бибер, в настройках надо заменить поле bibtex на поле biber. Также необходимо включить опцию shell-escape (подробнее про это в самом начале преамбулы). 
 
-%\usepackage[% 
-%backend=biber, %подключение пакета biber (тоже нужен)
-%bibstyle=gost-numeric, %подключение одного из четырех главных стилей biblatex-gost 
-%sorting=ntvy, %тип сортировки в библиографии
-%]{biblatex}
-
-\usepackage[backend=biber,style=gost-numeric]{biblatex}
+\usepackage[% 
+backend=biber, % подключение пакета biber (тоже нужен)
+bibstyle=gost-numeric, %подключение одного из четырех главных стилей biblatex-gost 
+sorting=ntvy,  % тип сортировки в библиографии
+maxbibnames=3, % макстмальное число авторов в списке литературы, если их >3, будет написано "и другие"
+uniquelist=false, 
+babel=other    % для того, чтобы правильно воспринимались языки
+]{biblatex}
 
 % Справка по 4 главным стилям для ленивых: 
 % gost-inline  ссылки внутри теста в круглых скобках
 % gost-footnote подстрочные ссылки
 % gost-numeric затекстовые ссылки
-% gost-authoryear тоже затекстовые ссылки, но немного другие 
 
 % Подробнее смотри страницу 4 документации. Она на русском. 
 
 % Ещё немного настроек
 \DeclareFieldFormat{postnote}{#1} %убирает с. и p.
 \renewcommand*{\mkgostheading}[1]{#1} % только лишь убираем курсив с авторов
+\DefineBibliographyStrings{english}{%
+pages = {P\adddot}, % заменяем Pp на P. 
+number = {№}        % заменяем no на №
+}
 
 
-\addbibresource{diploma_bib.bib} % сюда нужно вписать свой bib-файлик.
+% Откройте файл биб и посмотрите как он заполняется!
+\addbibresource{diploma.bib} % сюда нужно вписать свой bib-файлик.
 
 % Этот кусок кода выносит русские источники на первое место. Костыль описали авторы пакета в руководстве к нему. Подробнее смотри: 
 % https://github.com/odomanov/biblatex-gost/wiki/Как-сделать%2C-чтобы-русскоязычные-источники-предшествовали-остальным
@@ -336,17 +329,70 @@ parsep=0em,itemsep=0em,topsep=0.75ex, before={\parskip=-1em},label=\arabic{Enume
 }
 
 
+%%%%%%%%% Свои команды %%%%%%%%%%%
+% Сюда можно добавлять свои команды. Изучите этот раздел!!!
+
+% Можно переопределить начертания эпсилон и фи на русский манер
+\renewcommand{\phi}{\varphi}
+\renewcommand{\epsilon}{\varepsilon}
+
+% Можно ввести удобные сокращения для греческих букв
+\def \a{\alpha}
+\def \b{\beta}
+\def \t{\tau}
+\def \dt{\delta}
+\def \e{\varepsilon}
+\def \ga{\gamma}
+\def \kp{\varkappa}
+\def \la{\lambda}
+\def \sg{\sigma}
+\def \tt{\theta}
+\def \Dt{\Delta}
+\def \La{\Lambda}
+\def \Sg{\Sigma}
+\def \Tt{\Theta}
+\def \Om{\Omega}
+\def \om{\omega}
+
+% Более того, можно определить новые математические операторы.
+\newcommand{\E}{\mathbb{E}}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Corr}{Corr}
+
+% Можно определить специальные команды для красивых букв
+\def \N{\mathbb N}
+
+% Можно задать команды со своими собственными расстояниями
+\newcommand{\iid}{i.\hspace{3pt}i.\hspace{3pt}d.}
+\newcommand{\mydot}{\hspace{0.7mm} \cdot \hspace{0.7mm}}
+
+% Можно ввести новый тип дробей
+\newcommand{\fr}[2]{\ensuremath{^#1/_#2}}
+
+% Можно подключить пакет умная запятая. если вы используеие в качестве разделителя запятую, а не точку. В таком случае числа нужно будет писать как 0{,}5. В этом случае при сборке после запятой не будет ставится лишний пробел. 
+% \usepackage{icomma}
+
+% Перенос формул по Львовскому: 
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}{\hbox{$\mathsurround=0pt #1$}}{}}
+
+%  Вычисляемые колонки по tabularx
+%  Эти типы колонк позволяют в окружении tabularx всё центрировать и не только. 
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{Y}{>{\arraybackslash}X}
 
 
 
-\begin{document}
+
+
+\begin{document} % Начала документа
 
 \thispagestyle{empty} % Чтобы избежать нумерации титульника
 
 % Если для какой-то страницы хочется сделать своё уникальное оформление, как например для титульника или списка литературы, то можно использовать окружение \begingroup ... \endgroup. 
-
 \begingroup
-\setstretch{1}  
+\setstretch{1}   % Убираем полторашные интервалы на титульнике
 \begin{center}
 \small \bfseries Федеральное государственное бюджетное образовательное учреждение высшего образования
 
@@ -364,16 +410,16 @@ parsep=0em,itemsep=0em,topsep=0.75ex, before={\parskip=-1em},label=\arabic{Enume
 \vfill
 
 
-\noindent Группа ЭФ-13-02
+\noindent  Группа ЭО-13-02
 \hfill
 \parbox[t]{20em}{\centering
-Кафедра <<Макроэкономики>>
+Кафедра макроэкономики
 
 \mbox{ }
 
 \textbf{Допустить к защите}
 
-заведующий кафедрой <<Макроэкономики>>
+заведующий кафедрой макроэкономики
 
 \mbox{ }
 
@@ -432,14 +478,13 @@ parsep=0em,itemsep=0em,topsep=0.75ex, before={\parskip=-1em},label=\arabic{Enume
 \begin{center}
 \normalsize \bfseries МОСКВА \\ 2017 г.
 \end{center}
-\endgroup 
+\endgroup
 
 
 
 %%%%%%%%%%%%%%%%%%% ОГЛАВЛЕНИЕ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \tableofcontents  % Команда, которая создаёт оглавление
-
 
 
 %%%%%%% ВВЕДЕНИЕ %%%%%%
@@ -506,7 +551,7 @@ parsep=0em,itemsep=0em,topsep=0.75ex, before={\parskip=-1em},label=\arabic{Enume
 \begingroup
 \setstretch{1}
 \addcontentsline{toc}{chapter}{Список литературы}
-\printbibliography[title = Список использованных источников]
+\printbibliography[title = Список литературы]
 \endgroup
 
 
