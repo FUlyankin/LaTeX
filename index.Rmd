@@ -12,7 +12,7 @@ output: html_document
 ## Преамбулы
 
 * [Преамбула для души](https://github.com/FUlyankin/LaTeX/raw/master/preamble_for_soul.tex)
-* [Преамбула по ГОСТ](https://github.com/FUlyankin/LaTeX/raw/master/sem_5/GOST/My_gost_diploma.zip)
+* [Преамбула по ГОСТ](https://github.com/FUlyankin/LaTeX/raw/master/sem_5/GOST/My_gost_metodichka.zip) (Версия от 25.05.17)
 * Презентация по ГОСТ в разработке.
 
 
@@ -27,7 +27,7 @@ output: html_document
 
 Если кто-то хочет, чтобы его домашку закинули сюда или удалили, то напишите мне. 
 
-* Текущие [наклейки](https://github.com/FUlyankin/LaTeX/raw/master/your_homeworks/Stickers.zip)
+* Итоговые [наклейки](https://github.com/FUlyankin/LaTeX/raw/master/stic_v2.0.zip)
 * [Первая](https://github.com/FUlyankin/LaTeX/raw/master/your_homeworks/Hw_1.zip) домашка
 * [Вторая](https://github.com/FUlyankin/LaTeX/raw/master/your_homeworks/Some_Hw_2.zip) домашка
 * [Коровы](https://github.com/FUlyankin/LaTeX/raw/master/your_homeworks/Hw_3_all_cowsay.zip) из третьей домашки
