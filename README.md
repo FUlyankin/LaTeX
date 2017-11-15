@@ -1,8 +1,3 @@
----
-title: Уютный факультатив по LaTeX
-output: html_document
----
-
 
 **Кого винить во всех бедах или команда курса:**   [Филя](https://vk.com/ppilif), [Саша](https://vk.com/phenyard), [Костя](https://vk.com/rybakconst) и [Влад](https://vk.com/id20038528)!
 
