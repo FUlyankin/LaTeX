@@ -1,5 +1,5 @@
 {
-    "name": "carte",
+    "name": "LaTeX course RANEPA",
     "description": "Simple API reference",
     "version": "0.0.1",
     "local": ["boot"],
