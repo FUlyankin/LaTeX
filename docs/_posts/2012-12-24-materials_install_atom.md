@@ -6,28 +6,80 @@ type: 'POST'
 layout: nil
 ---
 
-На просторах интернета можно найти кучу разных полезных ссылок и сервисов! 
+Что такое Atom
+----------------
 
-*  [Куча различных примеров](http://www.latextemplates.com/) использования LaTeX, шаблоны
-*  [Ещё куча примеров](https://www.overleaf.com/latex/templates) использования LaTeX, шаблоны
-*  Нарисуй символ мышкой [в окошечке](http://detexify.kirelabs.org/classify.html) и получи для него TeX-овскую команду
-*  [Сервис](http://latex2png.com/) для конвертации TeX-овского кода в картинку
-*  [Главная страница](https://www.geogebra.org/cms/ru/) проекта Geogebra
-*  [Примеры рисунков в Tikz](http://www.texample.net/tikz/)                
-*  [Куча](http://tex.stackexchange.com/questions/158668/nice-scientific-pictures-show-off) разной безумной анимации и картинок, сделанных с помощью LaTeX
-*  [Темы для презентаций](https://www.hartwork.org/beamer-theme-matrix/) в Beamer
-*  [Три базовые открытые презентации](https://www.overleaf.com/latex/learn/free-online-introduction-to-latex-part-1#.V_o9Bh8xDqN), из которых я кое-что спёр для курса
+* [Официальный сайт проекта](https://atom.io/packages/list) со списком пакетов, тем, документацией и блогом.
 
-**Свои вопросы по LaTeX** лучше всего задать на [tex.stackexchange.com](http://tex.stackexchange.com/)
+Atom - это бесплатный открытый текстовый редактор, созданый ребятами с Github, на котором вы читаете эту страничку. Atom подходит для редактирования абсолютно всего. Единственное, что от вас требуется, установить парочку пакетов. Для начала посмотрите видео от создателей Atom. Для этого нажмите на картиночку ниже :)
 
-* Онлайн редактор [Sharelatex](https://www.sharelatex.com/)
-* Онлайн редактор [Overleaf](https://www.overleaf.com/)
+[![git_video](https://img.youtube.com/vi/Y7aEiVwBAdk/0.jpg)](https://www.youtube.com/watch?v=Y7aEiVwBAdk)
+
+-----------------------------------------------
 
 
-Другие курсы по LaTeX
--------------
+Установка Atom и работа с ним
+-----------------
 
-[Документы и презентации в LaTeX от ВШЭ](https://www.coursera.org/learn/latex/home/welcome). Введение в LaTeX от Высшей Школы Экономики на русском языке.
+* Скачайте [Atom](https://atom.io/) и установите его. Ничего нестандартного.
+* После запуска Atom откроется приветственный гайд. Его можно открыть при любом запуске через вкладку Help.
+* Пришло время научиться запускать LaTeX. Откроем в нём уже знакомый нам стартовый файл [Hello, world]
+(https://github.com/FUlyankin/LaTeX/raw/master/settings_instruction/fast_start.tex). 
+
+Настройка LaTeX на Atom
+-------------------------
+
+* Что мы видим? Во-первых, нет подсветки синтаксиса, как в Texmakere. Строки очень неудобно уходят за рамки экрана. И как вообще собирать pdf? 
+
+![atom_1]( https://raw.githubusercontent.com/FUlyankin/LaTeX/master/settings_instruction/atom_1.png) 
+
+* Тыкаем `Install a Package`. Находим пакет для подсветки кода **language-latex**. Выглядит симпатично. Жмём `Install`.
+
+![atom_2]( https://raw.githubusercontent.com/FUlyankin/LaTeX/master/settings_instruction/atom_2.png) 
+
+* Как только закончится установка, открываем меню с настройками. Выбираем всё так, как хочет ваша душа. Отлично! У нашего кода появились красивости. Рекомендую поставить галочку у Soft Wrap, это решит проблему с пробиванием строками границы экрана. Точно также можно поставить галочку у Soft Wrap во вкладке Editor. Это решит проблему с пробиванием границы экрана для абсолютно всех программ, которые вы будете открывать в Atom, а не только для LaTeX. Там же можно переместить или вообще отключить подозрительную черту. Она используется в Atom как красная строка в школьных тетрадях. Вы сами ставите её где хотите, чтобы не писать код за её границей. 
+
+![atom_5](https://github.com/FUlyankin/LaTeX/blob/master/settings_instruction/atom_5.png)
+
+* Находим пакет **latex** - самый главный пакет, который отвечает за компиляцию и связь с Texlive. Устанавливаем его. Переходим в настройки. В Engine выбираем в качестве движка xelatex. Ставим галочку под Enable Shell Escape. 
+
+![atom_3](https://raw.githubusercontent.com/FUlyankin/LaTeX/master/settings_instruction/atom_3.png)
+
+Во вкладке Opener выбираем pdf-view. Видим несколько жизненно-важных сочетаний клавиш. `ctrl-alt-b` заставляет файл скомпилироваться, `ctrl-alt-c` удаляет всякий хлам. Если интересно, то читаем инструкцию.
+
+![atom_4](https://github.com/FUlyankin/LaTeX/blob/master/settings_instruction/atom_4.png)
+
+* Устанавливаем пакет **pdf-view**. Он позволяет открывать pdf прямо в Atom.
+* Во вкладке Themes можно подобрать тему по вкусу.
+
+>Все готово для запуска. Жмём `ctrl-alt-b` либо тыкаем  наверху Packages, выбираем среди них LaTeX и жмём build. 
+ 
+* На линукс все работает, на винде с вероятностью 0.5. Но это вообще меня не удивляет...
 
 
+Настройка Markdown в Atom
+--------------------------
 
+* Для настройки маркдаун надо установить пакеты **markdown-pdf**, который позволяет компилировать из маркдаунской разметки pdf-файл, **markdown-preview-plus**, который помогает делать предпросмотр markdown файла. В настройках ставим галочку у Use GitHub.com style, если очень хочется.  
+* Создаём новый документ с расширением .md, открываем его в Atom. Жмём сверху Packages/Markdown preview/Toggle Preview. Справа открывается предпросмотр. Набираем что-нибудь и видим как это выглядит в итоговом файле. 
+* Жмём Packages/Markdown to PDF/Convert. Получаем Pdfку. 
+
+![atom_6](https://github.com/FUlyankin/LaTeX/blob/master/settings_instruction/atom_6.png)
+
+
+Другие полезные пакеты 
+-------------------------
+
+Atom очень гибкая штука, для которой существует довольно большое количество пакетов. Можно ставить их через менюшку, а можно через консоль, прописывая `apm install packagename`. 
+
+* **atom-beautify** - подсветка для разных других языков программирования
+* **file-icons** - пакет благодаря которому появляются красивые иконки для разных файлов
+* **minimap** - классная штука, которая открывает карту документа около этого документа
+* **language-knitr** - подсветка для R+LaTeX 
+* **language-python** - подсветка для питоновского кода
+
+На [сайте Atom](https://atom.io/packages) можно посмотреть какие пакеты были популярны на этой неделе. 
+
+<center>
+![pic_at](https://github.com/FUlyankin/LaTeX/blob/master/settings_instruction/atom_logo.png?raw=true)
+</center>
