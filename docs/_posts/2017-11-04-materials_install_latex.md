@@ -50,8 +50,7 @@ layout: nil
 
 * Этот пункт только дл windows: В опциях выбираем "Настроить Texstudio" и меняем во вкладке Editor кодировку c windows-1251 на utf-8.
 
-* Создайте новый файл, сохраните его в отдельную папку и скопируйте в него содержимое файла [Hello, world.]
-(https://github.com/FUlyankin/LaTeX/raw/master/settings_instruction/fast_start.tex)
+* Создайте новый файл, сохраните его в отдельную папку и скопируйте в него содержимое файла [Hello, world.](https://github.com/FUlyankin/LaTeX/raw/master/settings_instruction/fast_start.tex)
 
 * Внимательно просмотрите то, что вы скопировали и нажмите на зелёную кнопочку с двумя стрелочками, которая запустит сборку нашего файла. 
 

@@ -12,7 +12,13 @@ layout: nil
 * Львовский, [Набор и вёрстка в системе LaTeX](http://www.mccme.ru/free-books/llang/newllang.pdf)
 * [Wiki-книга](https://en.wikibooks.org/wiki/LaTeX) о LaTeX c кучей примеров, но на английском. 
 
-> Замечание ко всем книжкам! Следует использовать кодировку utf-8 для файлов. Если в книге есть строчка ```\usepackage[cp1251]{inputenc}```, то её нужно заменить на ```\usepackage[utf8]{inputenc}```.
+Замечание ко всем книжкам! Следует использовать кодировку utf-8 для файлов. Если в книге есть строчка
+
+```\usepackage[cp1251]{inputenc}``` 
+
+то её нужно заменить на 
+
+```\usepackage[utf8]{inputenc}```
 
 
 ## Полезные и не очень виньетки
