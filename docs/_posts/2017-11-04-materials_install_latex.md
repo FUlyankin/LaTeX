@@ -32,15 +32,13 @@ layout: nil
 
 ## Linux (Ubuntu)
 
-* Установите Texlive и Texstudio:
-
-Нажмите `Ctrl+Alt+T`, пропишите в консоли
+* Установите Texlive и Texstudio. Для этого нажмите `Ctrl+Alt+T` и пропишите в консоли
 
        sudo apt-get install texlive-full texstudio
        
 Немного подождите. LaTeX на вашем компе. Вы восхитительны!
 
-* Установите R.  `sudo apt-get install r-base` 
+* Установите R   `sudo apt-get install r-base` 
 * Установите [RStudio](http://www.rstudio.com/products/rstudio/download/)
 * Примечания: 
   * Если у вас имеются проблемы с установкой пакетов, то, скорее всего, вам не хватает "подгружателя". Проблему, скорее всего, вылечат команды: `sudo apt-get install gfortran` и  `sudo apt-get install libcurl4-openssl-dev libssl-dev`.

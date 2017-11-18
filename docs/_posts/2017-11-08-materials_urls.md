@@ -5,8 +5,6 @@ title: 'Полезные ссылки'
 layout: nil
 ---
 
-На просторах интернета можно найти кучу разных полезных ссылок и сервисов! 
-
 *  [Куча различных примеров](http://www.latextemplates.com/) использования LaTeX, шаблоны
 *  [Ещё куча примеров](https://www.overleaf.com/latex/templates) использования LaTeX, шаблоны
 *  Нарисуй символ мышкой [в окошечке](http://detexify.kirelabs.org/classify.html) и получи для него TeX-овскую команду

@@ -4,6 +4,8 @@ title: 'Книги и виньетки'
 layout: nil
 ---
 
+<br>
+
 ## Неплохие книги о LaTeX
 
 * Воронцов, [LaTeX в примерах](http://www.ccas.ru/voron/download/voron05latex.pdf)
