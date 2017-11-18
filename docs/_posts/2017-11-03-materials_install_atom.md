@@ -29,17 +29,17 @@ Atom - это бесплатный открытый текстовый реда�
 
 * Как только закончится установка, открываем меню с настройками. Выбираем всё так, как хочет ваша душа. Отлично! У нашего кода появились красивости. Рекомендую поставить галочку у Soft Wrap, это решит проблему с пробиванием строками границы экрана. Точно также можно поставить галочку у Soft Wrap во вкладке Editor. Это решит проблему с пробиванием границы экрана для абсолютно всех программ, которые вы будете открывать в Atom, а не только для LaTeX. Там же можно переместить или вообще отключить подозрительную черту. Она используется в Atom как красная строка в школьных тетрадях. Вы сами ставите её где хотите, чтобы не писать код за её границей. 
 
-<img align="center" src="https://github.com/FUlyankin/LaTeX/blob/master/settings_instruction/atom_5.png" height="700"> 
+<img align="center" src="https://raw.githubusercontent.com/FUlyankin/LaTeX/master/settings_instruction/atom_5.png" height="700"> 
 
 
 * Находим пакет **latex** - самый главный пакет, который отвечает за компиляцию и связь с Texlive. Устанавливаем его. Переходим в настройки. В Engine выбираем в качестве движка xelatex. Ставим галочку под Enable Shell Escape. 
 
-<img align="center" src="https://raw.githubusercontent.com/FUlyankin/LaTeX/master/settings_instruction/atom_3.png" height="400"> 
+<img align="center" src="https://raw.githubusercontent.com/FUlyankin/LaTeX/master/settings_instruction/atom_3.png" height="450"> 
 
 
 Во вкладке Opener выбираем pdf-view. Видим несколько жизненно-важных сочетаний клавиш. `ctrl-alt-b` заставляет файл скомпилироваться, `ctrl-alt-c` удаляет всякий хлам. Если интересно, то читаем инструкцию.
 
-<img align="center" src="https://github.com/FUlyankin/LaTeX/blob/master/settings_instruction/atom_4.png" height="400"> 
+<img align="center" src="https://raw.githubusercontent.com/FUlyankin/LaTeX/master/settings_instruction/atom_4.png" height="450"> 
 
 
 * Устанавливаем пакет **pdf-view**. Он позволяет открывать pdf прямо в Atom.
@@ -56,7 +56,7 @@ Atom - это бесплатный открытый текстовый реда�
 * Создаём новый документ с расширением .md, открываем его в Atom. Жмём сверху Packages/Markdown preview/Toggle Preview. Справа открывается предпросмотр. Набираем что-нибудь и видим как это выглядит в итоговом файле. 
 * Жмём Packages/Markdown to PDF/Convert. Получаем Pdfку. 
 
-<img align="center" src="https://github.com/FUlyankin/LaTeX/blob/master/settings_instruction/atom_6.png" height="400"> 
+<img align="center" src="https://raw.githubusercontent.com/FUlyankin/LaTeX/master/settings_instruction/atom_6.png" height="450"> 
 
 ## Другие полезные пакеты 
 
@@ -70,6 +70,6 @@ Atom очень гибкая штука, для которой существу�
 
 На [сайте Atom](https://atom.io/packages) можно посмотреть какие пакеты были популярны на этой неделе. 
 
-<img align="center" src="https://github.com/FUlyankin/LaTeX/blob/master/settings_instruction/atom_logo.png" height="200">
+<img align="center" src="https://raw.githubusercontent.com/FUlyankin/LaTeX/master/settings_instruction/atom_logo.png" height="200">
 
 
