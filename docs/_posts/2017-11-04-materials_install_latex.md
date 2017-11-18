@@ -57,7 +57,7 @@ layout: nil
 
 * Внимательно просмотрите то, что вы скопировали и нажмите на зелёную кнопочку с двумя стрелочками, которая запустит сборку нашего файла. 
 
-<img align="center" src="https://raw.githubusercontent.com/FUlyankin/LaTeX/master/settings_instruction/options_1.jpg" height="250" width="500"> 
+<img align="center" src="https://raw.githubusercontent.com/FUlyankin/LaTeX/master/settings_instruction/options_1.jpg" height="300" width="500"> 
 
 
 * Попробуйте поэкспериментировать со сменой шрифтов! Найдите шрифт своей мечты! Если что-то не работает и google вам не помогает, то пишите мне куда угодно!
