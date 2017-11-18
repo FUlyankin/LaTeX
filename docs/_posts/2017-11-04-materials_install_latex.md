@@ -32,7 +32,7 @@ layout: nil
 
 ## Linux (Ubuntu)
 
-* Установите Texlive и Texstudio. Для этого нажмите `Ctrl+Alt+T` и пропишите в консоли
+* Установите Texlive и Texstudio. Для этого нажмите Ctrl+Alt+T и пропишите в консоли
 
        sudo apt-get install texlive-full texstudio
        
