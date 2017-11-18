@@ -4,7 +4,7 @@ title: 'Книги и виньетки'
 layout: nil
 ---
 
-<br>
+* [Весь репозиторий как на ладони](https://github.com/FUlyankin/LaTeX) с папочками да файликами
 
 ## Неплохие книги о LaTeX
 
