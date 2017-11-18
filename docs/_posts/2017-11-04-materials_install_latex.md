@@ -46,7 +46,7 @@ layout: nil
   * Если у вас имеются проблемы с установкой пакетов, то, скорее всего, вам не хватает "подгружателя". Проблему, скорее всего, вылечат команды: `sudo apt-get install gfortran` и  `sudo apt-get install libcurl4-openssl-dev libssl-dev`.
   * Если у вас возникли проблемы с установкой самого нового R в ubuntu 16.04 LTS, то прочтите [туториал](https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-16-04-2), который их решит.
 
-# Настройка XeLaTeX и сборка первого файла!
+## Настройка XeLaTeX и сборка первого файла!
 
 Чтобы собрать в LaTeX свой первый документ, нужно проделать следующие действия:  
 
@@ -55,9 +55,9 @@ layout: nil
 * Создайте новый файл, сохраните его в отдельную папку и скопируйте в него содержимое файла [Hello, world.]
 (https://github.com/FUlyankin/LaTeX/raw/master/settings_instruction/fast_start.tex)
 
-* Внимательно проглядить то, что вы скопировали и нажмите на зелёную кнопочку с двумя стрелочками, которая запустит сборку нашего файла. 
+* Внимательно просмотрите то, что вы скопировали и нажмите на зелёную кнопочку с двумя стрелочками, которая запустит сборку нашего файла. 
 
-<img align="center" src="https://raw.githubusercontent.com/FUlyankin/LaTeX/master/settings_instruction/options_1.jpg" height="500" width="500"> 
+<img align="center" src="https://raw.githubusercontent.com/FUlyankin/LaTeX/master/settings_instruction/options_1.jpg" 
 
 
 * Попробуйте поэкспериментировать со сменой шрифтов! Найдите шрифт своей мечты! Если что-то не работает и google вам не помогает, то пишите мне куда угодно!
