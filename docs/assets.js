@@ -9712,7 +9712,7 @@ $('#content').prepend(hide);
 // Making our navigation sticky
 new Filter($('#sidebar > ul'));
 });
-require.alias("boot/index.js", "carte/deps/boot/index.js");
+require.alias("boot/index.js", "LaTeX/deps/boot/index.js");
 
 require.alias("component-jquery/index.js", "boot/deps/jquery/index.js");
 
