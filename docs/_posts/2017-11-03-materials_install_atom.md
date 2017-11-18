@@ -20,7 +20,7 @@ Atom - это бесплатный открытый текстовый реда�
 
 * Что мы видим? Во-первых, нет подсветки синтаксиса, как в Texmakere. Строки очень неудобно уходят за рамки экрана. И как вообще собирать pdf? 
 
-<img align="center" src="https://raw.githubusercontent.com/FUlyankin/LaTeX/master/settings_instruction/atom_1.png" height="400" width="500">
+<img align="center" src="https://raw.githubusercontent.com/FUlyankin/LaTeX/master/settings_instruction/atom_1.png" height="500" width="750">
 
 
 * Тыкаем `Install a Package`. Находим пакет для подсветки кода **language-latex**. Выглядит симпатично. Жмём `Install`.
