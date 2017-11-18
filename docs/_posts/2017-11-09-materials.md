@@ -6,7 +6,7 @@ type: 'POST'
 layout: nil
 ---
 
-### Неплохие книги о LaTeX
+## Неплохие книги о LaTeX
 
 * Воронцов, [LaTeX в примерах](http://www.ccas.ru/voron/download/voron05latex.pdf)
 * Львовский, [Набор и вёрстка в системе LaTeX](http://www.mccme.ru/free-books/llang/newllang.pdf)
@@ -15,7 +15,7 @@ layout: nil
 > Замечание ко всем книжкам! Следует использовать кодировку utf-8 для файлов. Если в книге есть строчка `\usepackage[cp1251]{inputenc}`, то её нужно заменить на `\usepackage[utf8]{inputenc}`.
 
 
-### Полезные и не очень виньетки
+## Полезные и не очень виньетки
 
 * [Пакет](http://www.ctan.org/tex-archive/macros/latex/contrib/booktabs/) Booktabs
 * [Пакет](https://www.ctan.org/pkg/fontspec) fontspec
