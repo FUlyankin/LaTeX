@@ -1,0 +1,49 @@
+\documentclass[a4paper,oneside,titlepage,10pt]{extbook} 
+\usepackage{hyperref}
+\usepackage{amsmath, amsthm}
+\usepackage{indentfirst}
+\usepackage[dvipdf]{graphicx}
+\usepackage{subfigure}
+\usepackage{anysize}
+\usepackage[english,russian,ukrainian]{babel}
+\usepackage{wrapfig} %пакет для текста в оборку вокруг рисунка
+
+\usepackage{fontspec}
+\usepackage{multicol}
+\usepackage{xecyr}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage[cm-default]{fontspec} %смотрите также параметры fontspec
+\setmainfont{Phorssa}
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+\setmathfont{Phorssa}
+
+\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm,bindingoffset=0cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing % one-and-half spacing globally
+
+\begin{document}
+\subsection*{Любимые формулы из 1-ой домашки, о-хо-хо!}
+ \begin{align}
+\mathrm{e}(\hat{\theta_n})=\dfrac{1}{n*\textsci(\theta)*\mathcal{D}(\hat{\theta_n})} \tag{\ae\ae\ae}\label{aster3}
+ \end{align}
+ \begin{align}
+Var(s)=Var(E(s|r))+E(Var(s|r))  \tag{\ae\ae\ae\ae}\label{aster4}
+ \end{align}
+ \begin{align}
+\begin{vmatrix} 
+a_1 & b_1 & c_1 \\ 
+a_2 & b_2 & c_2\\ 
+a_3 & b_3 & c_3 \end{vmatrix}=a_1*b_2*c_3−a_1*b_3*c_2+b_1*c_2*a_3 − b_1*c_3*a_2+ c_1*a_2* b_3−c_1* a_3* b_2  \tag{\ae\ae\ae\ae\ae}\label{aster5}
+ \end{align} 
+ 
+\subsection*{Ненавистная формула}
+ \begin{multline}
+ \sum_{n=2}^{N} \dfrac{1}{n^p} < \int_1^N \dfrac{\mathrm{d}x}{x^p}=\int_1^N x^{-p}\mathrm{d}x=\left.\dfrac{x^{1-p}}{1-p}\right|_1^N = \\
+ = \dfrac{N^{1-p}-1}{1-p}=\dfrac{1-N^{1-p}}{p-1}<\dfrac{1}{p-1} \tag{\ae\ae\ae\ae\ae\ae}
+ \end{multline}
+ 
+ Не знаю, почему не работают Var и E, я их набивала вручную. 
+ И символы из матрицы тоже не знаю, почему не отражаются, вроде есть в списке шрифта. 
+ Быть может сам мат. шрифт по умолчанию делает курсив
+  \end{document}

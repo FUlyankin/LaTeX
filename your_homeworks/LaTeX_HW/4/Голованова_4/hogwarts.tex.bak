@@ -1,0 +1,80 @@
+\documentclass[14pt,a4paper]{article}
+\usepackage{etex}
+
+\usepackage{extsizes}
+\setlength{\parindent}{0em}
+\usepackage{fontspec}        
+\setmainfont{Signerica Medium}
+\newfontfamily{\cyrillicfont}{Arial} 
+
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+%\newfontfamily{\cyrillicfonttt}{Arial}
+%\newfontfamily{\cyrillicfontsf}{Arial}
+
+\usepackage[top=10mm,
+bottom=10mm,
+left=35mm,
+right=35mm]{geometry}
+\setlength{\parskip}{4mm} 
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+
+
+
+%%%%%%%%%% Работа с картинками %%%%%%%%%
+\usepackage{graphicx}                  % Для вставки рисунков
+\usepackage{graphics}
+\graphicspath{{Pics/}}    
+
+
+\defaultfontfeatures{Mapping=tex-text}
+
+\usepackage{hyperref}
+\hypersetup{
+    unicode=true,          
+    colorlinks=true,       	
+    urlcolor=blue}
+
+\usepackage{csquotes}
+
+ \begin{document}
+% \setstretch{1.0} 
+\pagestyle{empty}
+ \begin{figure}
+ \begin{center} 
+ \includegraphics[width=0.4\linewidth, height=6cm]{gerb.png}
+ \end{center} 
+ \end{figure}
+ \vspace{1cm}
+
+ 
+{\fontsize{12}{1.33}\selectfont Dear Mrs Golovanova-The-Youngest}
+
+ 
+ \vspace{2.5cm}
+
+We are pleased to inform you that you have been accepted at Hogwarts School of Witchcraft and Wizardry. 
+
+Students shall be required to report to the Chamber of Reception upon arrival, the dates for which shall be duly advised.
+ 
+Please ensure that the utmost attention be made to the list of requirements attached herewith. 
+
+We very much look forward to receiving you as part of the new generation of Hogwarts' heritage. 
+
+ \vfill
+ 
+Yours sincerely,
+
+{\fontspec{Signerica Medium}{Prf. McGonagall}}
+
+Professor McGonagall 
+
+Deputy Headmistress \url{http://www.hogwartsishere.com/}
+
+\begin{center} 
+\footnotesize Look for more on %\url{http://www.hogwartsishere.com/}
+\end{center}
+ \end{document}

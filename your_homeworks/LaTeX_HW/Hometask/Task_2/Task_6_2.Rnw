@@ -1,0 +1,162 @@
+\documentclass [12pt, a4paper]{article}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+\usepackage{etoolbox}
+
+%%Шрифты%%
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Arial}   % задаёт основной шрифт документа
+
+% Чтобы пропечатывались длинные тире, непрерывные пробелы и тп
+\defaultfontfeatures{Mapping=tex-text}
+
+\newfontfamily{\cyrillicfonttt}{Arial}
+\newfontfamily{\cyrillicfont}{Arial}
+\newfontfamily{\cyrillicfontsf}{Arial}
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+\setmathfont{Asana Math}      % шрифт для математики
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+% Разные мелочи для русского языка из пакета babel
+\setkeys{russian}{babelshorthands=true}
+
+\usepackage{indentfirst} % установка отступа в первом абзаце главы!!!
+\usepackage{booktabs} 
+\usepackage{float}
+
+\usepackage[paper=a4paper,top=13.5mm, bottom=13.5mm, left=16.5mm, right=13.5mm, includefoot]{geometry}
+
+\title{Отчёт о расчёте VaR по ПАО "Альфа-Банк"}
+%А где ещё Винни работать, кроме как Альфа-Банка?! В Сбере, я думаю, не всё так просто.
+\author{Винни-Пух}
+\date{\today}
+
+\begin{document}
+
+\title{\vspace{10cm} Отчёт о расчёте VaR по ПАО "Альфа-Банк"}
+%А где ещё Винни работать, кроме как в Альфа-Банке?! В Сбере, я думаю, не всё так просто, чтобы народ полдня прохлаждался.
+
+\author{Винни-Пух}
+\date{\today}
+
+\maketitle
+
+\thispagestyle{empty}
+
+\newpage
+
+\section{VaR}
+
+ В данном отчёте расчитываются VaR. Делается это с помощью нормального распределения. Реалистичность расчётов проверяется с помощью теста Купика.
+\vspace{3cm}
+<<download_data, include=FALSE>>=
+opts_chunk$set(echo=FALSE, warning=FALSE,message=FALSE,dev='png',dpi=300,fig.align='center')
+
+library("knitr")
+library("ggplot2")
+library("ghyp")
+library("dplyr")
+library('quantmod')
+library('tseries')
+
+invisible(Sys.setlocale("LC_MESSAGES", "C"))
+invisible(Sys.setlocale("LC_TIME", "C"))
+getSymbols(Symbols="TSLA",from="2015-01-01",to="2017-01-01")
+df <- data.frame(t=time(TSLA),coredata(TSLA))
+@
+
+<<plot, fig.height=3>>=
+ggplot(df) +
+  geom_line(aes(x = t, y = TSLA.Open), colour = 'blue') +
+  xlab('Время') + ylab('Стоимость')+
+  ggtitle("Изменение стоимости акций Tesla")
+@
+\vspace{2cm}
+<<rate_of_return_plot, fig.height=3>>=
+doh <- c()
+for(i in 2:nrow(df)){
+  doh[i] <- (df$TSLA.Open[i]-df$TSLA.Open[i-1])/df$TSLA.Open[i-1]
+}
+df <- mutate(df,doh=doh)
+
+ggplot(df) +
+  geom_line(aes(x = t, y = doh), colour = 'red') +
+  xlab('Время') + ylab('Доходность')+
+  ggtitle("Изменение доходностей акций Tesla")
+sample = df$doh[-1]
+@
+
+\vfill
+ \begin{center}
+ \textbf {\Large VaR = \Sexpr{qnorm(0.05, mean=mean(sample), sd=sd(sample))}}
+ \end{center}
+ 
+\clearpage
+\section {Адекватность расчёта VaR}
+ 
+ 
+<<Var_curve, fig.height=3>>=
+N <- 200
+test <- sample[(N+1):length(sample)]
+VaR <- rep(0, length(test))
+for (i in (N+1):length(sample)){
+  train <- sample[(i-N):(i-1)]
+  VaR[i-N] <- qnorm(0.05, mean=mean(train), sd=sd(train))
+}
+
+t <- 1: length(test)
+df <- data.frame(test=test,VaR=VaR,t=t)
+
+ggplot(df) +
+  geom_line(aes(x = t, y = test), colour = 'black') +
+  geom_line(aes(x = t, y = VaR), colour = 'red') +
+  ggtitle("Кривая VaR")
+
+@
+
+<<Kupik_test>>=
+L <- length(test)
+K <- sum(test < VaR)
+a0 <- K/L
+a <- 0.05
+S <- 2*log( (1-a0)^(L-K) * a0^K ) - 2*log( (1-a)^(L-K) * a^K )
+pval <- (1 - pchisq(S, 1))*100
+if (pval>5) {ans="good"} else {ans="bad"}
+@
+
+$p-value$ для теста Купика равно \Sexpr{round(pval,2)} \%. \ifstrequal{\Sexpr{ans}}{good}{Наш прогноз хороший, так как гипотеза о том, что число пробитий не превышает 5\%, не отвергается. Прогноз заверен Купиком!}{Наш прогноз плохой, так как гипотеза о том, что число пробитий не превышает 5\%, отвергается.}
+
+\vspace{5cm}
+\section{Проверка гипотезы единичного корня. Расширенный тест Дики-Фуллера}
+
+<<stationary>>=
+tst <- adf.test(doh[-1])
+tst[[1]][[1]]<-round(tst[[1]][[1]],2)
+a<-rep(NA,(length(tst)-2))
+for (i in 1:(length(tst)-2)) {
+  if (typeof(tst[[i]])=="double") {a[i]<-tst[[i]][[1]]
+  } else {
+    a[i]<-tst[[i]]}
+}
+testk<-data.frame(parametr=c("statistic", "lag order", 
+                            "alternative", "p-value"),
+                 value=a)
+gtestk<-kable(testk)
+@
+
+\begin{table}[h!]
+ \caption{Результаты теста}
+ \begin{center}
+  \Sexpr{gtestk}
+ \end{center}
+\end{table}
+
+\vfill
+
+ \begin{flushright}
+ \rule{5em}{0.5pt} Пятачок
+ \end{flushright}
+\end{document}

@@ -1,0 +1,190 @@
+%!TEX TS-program = xelatex
+\documentclass[12pt, a4paper]{article}  
+
+\usepackage{etex} % расширение классического tex в частности позволяет подгружать гораздо больше пакетов, чем мы и займёмся далее
+
+%%%%%%%%%% Математика %%%%%%%%%%
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+%\mathtoolsset{showonlyrefs=true}  % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+%\usepackage{leqno} % Нумерация формул слева
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Arial}   % задаёт основной шрифт документа
+
+\defaultfontfeatures{Mapping=tex-text}
+
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Arial}
+\newfontfamily{\cyrillicfont}{Arial}
+\newfontfamily{\cyrillicfontsf}{Arial}
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+\setmathfont{Asana Math}      % шрифт для математики
+% \setmathfont[math-style=ISO]{Asana Math}
+% Можно делать смену начертания с помощью разных стилей
+
+% Конкретный символ из конкретного шрифта
+% \setmathfont[range=\int]{Neo Euler}
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+
+
+%%%%%%%%%% Работа с картинками %%%%%%%%%
+\usepackage{graphicx}                  % Для вставки рисунков
+\usepackage{graphics}
+\graphicspath{{images/}{pictures/}}    % можно указать папки с картинками
+\usepackage{wrapfig}                   % Обтекание рисунков и таблиц текстом
+
+
+%%%%%%%%%% Работа с таблицами %%%%%%%%%%
+\usepackage{tabularx}            % новые типы колонок
+\usepackage{tabulary}            % и ещё новые типы колонок
+\usepackage{array}               % Дополнительная работа с таблицами
+\usepackage{longtable}           % Длинные таблицы
+\usepackage{multirow}            % Слияние строк в таблице
+\usepackage{float}               % возможность позиционировать объекты в нужном месте
+\usepackage{booktabs}            % таблицы как в книгах!
+\renewcommand{\arraystretch}{1.3} % больше расстояние между строками
+
+% Заповеди из документации к booktabs:
+% 1. Будь проще! Глазам должно быть комфортно
+% 2. Не используйте вертикальные линни
+% 3. Не используйте двойные линии. Как правило, достаточно трёх горизонтальных линий
+% 4. Единицы измерения - в шапку таблицы
+% 5. Не сокращайте .1 вместо 0.1
+% 6. Повторяющееся значение повторяйте, а не говорите "то же"
+% 7. Есть сомнения? Выравнивай по левому краю!
+
+
+
+
+
+%%%%%%%%%% Графика и рисование %%%%%%%%%%
+\usepackage{tikz, pgfplots}  % язык для рисования графики из latex'a
+\usepackage{amscd}                  %Пакеты для рисования
+\usepackage[matrix,arrow,curve]{xy} %комунитативных диаграмм
+
+
+
+
+%%%%%%%%%% Свои команды %%%%%%%%%%
+\usepackage{etoolbox}    % логические операторы для своих макросов
+\usepackage{xparse}      % больше команд для создания команд
+\usepackage{babel}
+% Все свои команды лучше всего определять не по ходу текста, как это сделано в этом документе, а в преамбуле!
+
+
+
+% Просто, чтобы эта pdf-ка нормально смотрелась :)
+
+\setkeys{russian}{babelshorthands=true}
+
+
+
+\usepackage{pifont}
+\usepackage{xcolor}
+\definecolor{myblue}{RGB}{0,29,119}
+
+\usepackage{rotating}
+
+
+\renewcommand{\labelitemi}{\color[named]{myblue}{$\bullet$}}
+
+\newcommand{\bsquare}{\item[\large\color{myblue}\bullet]}
+
+
+
+
+
+
+
+\DeclareMathOperator{\Var}{\ensuremath{\mathbb{Var}}}
+\newcommand{\Cov}[2]{\ensuremath{\mathbb{Cov(#1;#2)}}}
+\newcommand {\sq} {\ensuremath{\mathbb{X_1 \ldots X_n}}}
+\newcommand{\sqq}[2]{\ensuremath{\mathbb{X_{#1} \ldots X_{#2}}}}
+
+\newcommand{\llim}[3]{\ensuremath{\lim\limits_{#1 \to #2} #3}}
+
+\renewcommand{\thefigure}{\thesection : \arabic{figure}}
+% через точку как-то красивее вроде 
+% без переобозначений через \numberwithin{figure}{section} c пакетом chngcntr
+\newcommand{\rttb}[1]{\rotatebox{180}{#1}}
+\renewcommand{\theequation}{Eq. (\arabic{equation})}
+\makeatother
+
+
+\def \Bin{\ensuremath{\mathbb{Bin}}}
+\def \Y{\ensuremath{\mathbb{Y}}}
+\def \g{\ensuremath{\mathbb{\gamma}}}
+\def \s {\ensuremath{\mathbb{\sigma}}}
+\def \O {\ensuremath{\mathbb{\Omega}}}
+\def \F {\ensuremath{\mathbb{F}}}
+
+
+
+\title{Свои собственные}
+\date{\today}
+\author{Darina}
+\begin{document}
+
+\maketitle
+\section {Математические операторы}
+
+$\Var (\Bin)$ = $n \cdot p \cdot q$ \\
+\Cov{\Y_{t}}{\Y_{t-1}} =$ \g_{1}$
+
+\section {Здравствуй, Сигма}
+Пересечение произвольного количества \s-алгебр - \s-алгебра.\\
+Объединение даже двух \s-алгебр может не быть \s-алгеброй!
+
+\section {Выдай последовательность иксиков}
+ Пусть \sq- это последовательность из 0 и 1. 
+ 
+ \section {Сделал раз, сделай лучше}
+ $\sqq{a}{z}$\\
+$\sqq{1}{6}$\\
+$\sqq{(a,b)}{(c,d)}$
+ \newpage
+
+\section {Синие пункты}
+
+\begin{itemize}
+  \item Первый пункт
+  \item Второй пункт
+  \item Третий пункт
+\end{itemize}
+\subsection {Или так}
+\begin{itemize}
+  \bsquare{ Первый пункт}
+  \bsquare {Второй пункт}
+  \bsquare {Третий пункт}
+\end{itemize}
+
+\section {Беспредел}
+\llim{x}{0} {\frac{\sin{x}}{x}}
+
+\section{Рисунок}
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width = 5 cm]{image.jpg}  
+    \caption{добра!} 
+    \end{center}
+\end{figure}
+
+\section{Формула}
+\begin{equation}
+ D=\frac{\rho_\textnormal{b}}{\rho_\textnormal{bs}}\times100
+\label{eq:1}
+\end{equation}
+
+\section {Перевертыш}
+
+\rttb{Что-то странное и загадочное}
+
+
+\end{document}

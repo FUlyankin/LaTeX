@@ -1,0 +1,47 @@
+\documentclass[12pt, a4paper]{article}  
+
+%%%%%%%%%% Математика %%%%%%%%%%
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+%\mathtoolsset{showonlyrefs=true}  % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+%\usepackage{leqno} % Нумерация формул слева
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Arial}   % задаёт основной шрифт документа
+
+\defaultfontfeatures{Mapping=tex-text}
+
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Arial}
+\newfontfamily{\cyrillicfont}{Arial}
+\newfontfamily{\cyrillicfontsf}{Arial}
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+\setmathfont{Asana-Math.otf}      % шрифт для математики
+% \setmathfont[math-style=ISO]{Asana Math}
+% Можно делать смену начертания с помощью разных стилей
+
+% Конкретный символ из конкретного шрифта
+% \setmathfont[range=\int]{Neo Euler}
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+\usepackage{minted}
+\begin{document}
+\begin{minted}[breaklines,linenos]{R}
+library(BCDating)
+
+setwd("/Users/kirashemyakina/Documents/")
+t<- read.csv(file="BBQ1.csv",header=F,sep=";",dec=",")
+head(t)
+str(t)
+tts<-ts(t, start = c(1947, 1), frequency =4)
+data1 <- BBQ(tts,mincycle = 5, minphase=2, name="Dating Business Cycles of Kira")
+show(data1)
+summary(data1)
+plot(data1)
+\end{minted}
+\end{document}

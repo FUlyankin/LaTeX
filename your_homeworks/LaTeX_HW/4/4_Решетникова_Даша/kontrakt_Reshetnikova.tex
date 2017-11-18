@@ -1,0 +1,100 @@
+%!TEX TS-program = xelatex
+\documentclass[12pt, a4paper]{article}
+
+
+%%%%%%%%%% Математика %%%%%%%%%%
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+%\mathtoolsset{showonlyrefs=true}  % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+%\usepackage{leqno} % Нумерация формул слева
+
+\pagenumbering{gobble} 
+
+%%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Arial}   % задаёт основной шрифт документа
+
+% Команда, которая нужна для корректного отображения длинных тире и некоторых других символов.
+\defaultfontfeatures{Mapping=tex-text}
+
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Arial}
+\newfontfamily{\cyrillicfont}{Arial}
+\newfontfamily{\cyrillicfontsf}{Arial}
+
+% готический шрифт для заголовка 
+\newfontfamily\myfont{Deutsch Gothic}
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+
+
+%%%%%%%%%% Работа с картинками %%%%%%%%%
+\usepackage{graphicx}                  % Для вставки рисунков
+\usepackage{graphics}
+\graphicspath{{images/}{pictures/}}    % можно указать папки с картинками
+\usepackage{wrapfig}                   % Обтекание рисунков и таблиц текстом
+
+
+
+
+%%%%%%%%%% Графика и рисование %%%%%%%%%%
+\usepackage{tikz, pgfplots}  % язык для рисования графики из latex'a
+
+
+\usepackage{indentfirst} % установка отступа в первом абзаце главы!!!
+
+% Разные мелочи для русского языка из пакета babel
+\setkeys{russian}{babelshorthands=true}
+
+\usepackage[charter]{mathdesign}
+
+\usepackage{psvectorian}
+
+\usepackage[top=2cm, bottom=2cm, outer=0cm, inner=0cm]{geometry}
+\begin{document}
+	\newenvironment{gfont}{\myfont}{\par}
+	
+\begin{gfont}
+	\begin{center}
+\Huge \rput[r](-4pt,6pt){\psvectorian[color=black,height=1.5cm]{21}}
+\space \space Контракт \rput[l](-0.5,5pt){\psvectorian[color=black,height=1.5cm]{23}} 
+	\end{center}
+\end{gfont}
+	
+\vspace{8cm}
+
+\begin{center}
+\Large	Я согласна выполнить эту работу.
+\end{center}
+
+\vspace{5cm}
+
+
+
+\begin{center}
+	
+\begin{figure}[h] 
+	\centering
+	\includegraphics[scale=0.6]{blood.jpg}
+	 
+\end{figure}
+
+		\Large Место для крови \\
+		\vspace{2cm}
+		\noindent\rule{8cm}{0.4pt} \\
+		\Large Подпись
+\end{center}
+
+
+\tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{old-paper.jpg}};
+
+\usetikzlibrary{calc}
+\begin{tikzpicture}[remember picture, overlay]
+\draw[line width = 4pt] ($(current page.north west) + (1cm,-1cm)$) rectangle ($(current page.south east) + (-1cm,1cm)$);
+\end{tikzpicture}
+
+\end{document}

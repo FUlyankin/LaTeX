@@ -1,0 +1,34 @@
+	\appendix
+ 	\renewcommand{\thechapter}{\Asbuk{chapter}}
+ 	
+ 	%%%%%%%%%% titlesec для приложений
+ 	\titleformat{\chapter}
+ 	{\normalfont\bfseries\large}{\chaptertitlename~\thechapter}{0.25em}{\normalfont}
+ 	
+ 	
+ 	\titlecontents{chapter}
+ 	[0 em] % 
+ 	{\normalsize}
+ 	{\makebox[7em][l]{Приложение \thecontentslabel}}
+ 	{Приложение }
+ 	{\titlerule*[10pt]{.}\contentspage}
+ 	
+ 	
+ \chapter [Код на Вольфраме для извлечения рейтинга S\&P]{Код на Вольфраме, который вытаскивает из рейтингов компаний только рейтинг S\&P}
+ 
+ Чтобы хорошо заработала подсветка, надо поколдовать с пакетами. Как именно, написано \href{http://mathematica.stackexchange.com/questions/42793/highlighting-mathematica-code-in-latex-document}{здесь}.
+ 
+ \begin{minted}[breaklines,linenos]{wolfram}
+ AI = Import[
+ "D:/RANEPA/NIR/Third_year/Data/All_industries_with_RBK_500/All_\
+ industries_with_RBK_500.xlsx"];
+ BI = AI;
+ Ranks = StringTake[#, {2, StringLength[#] - 1}] & /@ 
+ StringCases[Ranks[[#]], "/" ~~ __ ~~ "/"] & /@
+ Range[1, Length[Ranks]];
+ Ranks = Ranks[[#]][[1]] & /@ Range[1, Length[Ranks]];
+ BI[[1]][[All, 4]] = Ranks;
+ Export["D:/RANEPA/NIR/Third_year/Data/From_Wolfram/101_All_industries_\
+ with_RBK_500_from_w.xlsx",
+ BI]
+ \end{minted}

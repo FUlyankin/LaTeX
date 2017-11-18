@@ -1,0 +1,143 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{etex}
+
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+
+\usepackage{enumitem}
+
+\newcommand*{\textitplusparen}[1]{\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.04929577464788733cm,y=0.04358353510895907cm]
+\clip(0.,-1.96) rectangle (6.06,6.3);
+\fill[line width=0.4pt,color=ffffqq,fill=ffffqq,fill opacity=0.7599999904632568] (2.24,4.72) -- (2.5994744525547597,4.3794452554744385) -- (2.3492452830188677,3.8726415094339623) -- (3.02,4.06) -- (3.4287924528301916,3.597886792452827) -- (3.4476923076923063,4.1415384615384605) -- (3.955384615384615,4.243076923076923) -- (3.3961933085501834,4.572148698884759) -- (3.221538461538459,5.2076923076923025) -- (2.932307692307692,4.70153846153846) -- cycle;
+\draw [line width=0.4pt,color=xfqqff] (3.02,4.06)-- (0.96,0.72);
+\draw [color=ffqqff] (3.02,4.06)-- (2.32,3.82)-- (2.62,4.36)-- (2.24,4.72)-- (2.92,4.68)-- (3.24,5.24)-- (3.38,4.58)-- (4.04,4.26)-- (3.44,4.14)-- (3.48,3.54);
+\draw [line width=1.2pt,color=ffqqff] (3.48,3.54)-- (3.02,4.06);
+\draw [line width=0.4pt,color=ffffqq] (2.24,4.72)-- (2.5994744525547597,4.3794452554744385);
+\draw [line width=0.4pt,color=ffffqq] (2.5994744525547597,4.3794452554744385)-- (2.3492452830188677,3.8726415094339623);
+\draw [line width=0.4pt,color=ffffqq] (2.3492452830188677,3.8726415094339623)-- (3.02,4.06);
+\draw [line width=0.4pt,color=ffffqq] (3.02,4.06)-- (3.4287924528301916,3.597886792452827);
+\draw [line width=0.4pt,color=ffffqq] (3.4287924528301916,3.597886792452827)-- (3.4476923076923063,4.1415384615384605);
+\draw [line width=0.4pt,color=ffffqq] (3.4476923076923063,4.1415384615384605)-- (3.955384615384615,4.243076923076923);
+\draw [line width=0.4pt,color=ffffqq] (3.955384615384615,4.243076923076923)-- (3.3961933085501834,4.572148698884759);
+\draw [line width=0.4pt,color=ffffqq] (3.3961933085501834,4.572148698884759)-- (3.221538461538459,5.2076923076923025);
+\draw [line width=0.4pt,color=ffffqq] (3.221538461538459,5.2076923076923025)-- (2.932307692307692,4.70153846153846);
+\draw [line width=0.4pt,color=ffffqq] (2.932307692307692,4.70153846153846)-- (2.24,4.72);
+\end{tikzpicture}}
+
+\usepackage{extsizes}
+\usepackage{fancyhdr}
+\setlength{\parindent}{0em}
+\usepackage{fontspec}  
+    
+\setmainfont{Arial}
+\usepackage[top=10mm,
+bottom=10mm,
+left=35mm,
+right=35mm]{geometry}
+\setlength{\parskip}{4mm} 
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+
+
+
+%%%%%%%%%% Работа с картинками %%%%%%%%%
+\usepackage{graphicx}                  % Для вставки рисунков
+\usepackage{graphics}
+\graphicspath{{Pics/}}    
+
+
+\defaultfontfeatures{Mapping=tex-text}
+
+%\usepackage{csquotes}
+
+\renewcommand{\thesection}{Application~\Alph{section}}
+\setcounter{section}{0}
+\flushbottom 
+
+
+ \begin{document}
+ \pagestyle{headings}
+\headheight=1.33cm
+
+ \definecolor{ffffqq}{rgb}{1.,1.,0.}
+\definecolor{ffqqff}{rgb}{1.,0.,1.}
+\definecolor{xfqqff}{rgb}{0.4980392156862745,0.,1.}
+% \setstretch{1.0} 
+\section{THE LIST OF NECESSARY BOOKS AND ITEMS}
+  \vspace{1cm}
+  
+  UNIFORM 
+  
+\begin{description}[font=\normalfont\textitplusparen]
+\item  Three sets of plain work robes (black)
+\item  One plain pointed hat (black) for day wear
+\item  One pair of protective gloves (dragon hide or similar)
+\item  One winter cloak (black, with silver fastenings)
+\end{description}
+Please note that all pupil's clothes should carry name tags.
+\vspace{1cm} 
+
+COURSE BOOKS
+
+\begin{description}[font=\normalfont\textitplusparen]
+\item  The Standard Book of Spells (Grade 1)
+by Miranda Goshawk
+
+\item  A History of Magic
+by Bathilda Bagshot
+
+\item  Magical Theory
+by Adalbert Waffling
+
+\item  A Beginner's Guide to Transfiguration
+by Emeric Switch
+
+\item  One Thousand Magical Herbs and Fungi
+by Phyllida Spore
+
+\item Magical Drafts and Potions
+by Arsenius Jigger
+
+\item Fantastic Beasts and Where to Find Them
+by Newt Scamander
+
+\item The Dark Forces: A Guide to Self-Protection
+by Quentin Trimble
+\end{description}
+\vspace{1cm} 
+
+OTHER EQUIPMENT
+\begin{description}[font=\normalfont\textitplusparen]
+\item 1 wand
+\item 1 cauldron (pewter, standard size 2)
+\item 1 set glass or crystal phials
+\item 1 telescope
+\item 1 set brass scales
+\end{description}
+
+Students may also bring, if they desire, an owl OR a cat OR a toad.
+
+PARENTS ARE REMINDED THAT FIRST YEARS
+ARE NOT ALLOWED THEIR OWN BROOMSTICK
+
+
+\newpage
+\pagestyle{headings} 
+
+\section{THE LIST OF COMPULSORY SUBJECTS}
+ \vspace{1cm} 
+COMPULSORY SUBJECTS
+\begin{description}[font=\normalfont\textitplusparen]
+\item Spells
+\item Defense against the dark arts
+\item Potions
+\item History of magic
+\item The science of herbs
+\item Transfiguration
+\item Flying on broomsticks
+\end{description}
+\end{document}

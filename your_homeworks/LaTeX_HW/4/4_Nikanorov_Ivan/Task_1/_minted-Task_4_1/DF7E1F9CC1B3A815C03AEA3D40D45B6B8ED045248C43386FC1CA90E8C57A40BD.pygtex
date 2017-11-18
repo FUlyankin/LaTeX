@@ -1,0 +1,25 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+set.seed \PYG{p}{(}\PYG{l+m}{23}\PYG{p}{)}
+x\PYG{o}{\PYGZlt{}\PYGZhy{}}sample \PYG{p}{(}\PYG{l+m}{\PYGZhy{}100}\PYG{o}{:}\PYG{l+m}{100}\PYG{p}{,} \PYG{l+m}{10}\PYG{p}{,} \PYG{n+nb+bp}{T}\PYG{p}{,} \PYG{k+kc}{NULL}\PYG{p}{)}
+print \PYG{p}{(}x\PYG{p}{)}
+n\PYG{o}{\PYGZlt{}\PYGZhy{}}length \PYG{p}{(}x\PYG{p}{)}
+s\PYG{o}{\PYGZlt{}\PYGZhy{}}\PYG{l+m}{0}
+\PYG{k+kr}{for} \PYG{p}{(}j \PYG{k+kr}{in} \PYG{l+m}{1}\PYG{o}{:}\PYG{p}{(}n\PYG{l+m}{\PYGZhy{}1}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+  s\PYG{o}{\PYGZlt{}\PYGZhy{}}\PYG{l+m}{0}
+  \PYG{k+kr}{for} \PYG{p}{(}i \PYG{k+kr}{in} \PYG{l+m}{1}\PYG{o}{:}\PYG{p}{(}n\PYG{o}{\PYGZhy{}}j\PYG{p}{))} \PYG{p}{\PYGZob{}}
+    \PYG{k+kr}{if} \PYG{p}{(}x\PYG{p}{[}i\PYG{p}{]}\PYG{o}{\PYGZgt{}}x\PYG{p}{[}i\PYG{l+m}{+1}\PYG{p}{])} \PYG{p}{\PYGZob{}}
+      \PYG{k+kp}{t}\PYG{o}{\PYGZlt{}\PYGZhy{}}x\PYG{p}{[}i\PYG{p}{]}
+      x\PYG{p}{[}i\PYG{p}{]}\PYG{o}{\PYGZlt{}\PYGZhy{}}x\PYG{p}{[}i\PYG{l+m}{+1}\PYG{p}{]}
+      x\PYG{p}{[}i\PYG{l+m}{+1}\PYG{p}{]}\PYG{o}{\PYGZlt{}\PYGZhy{}}\PYG{k+kp}{t}
+      s\PYG{o}{\PYGZlt{}\PYGZhy{}}s\PYG{l+m}{+1}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k+kr}{if} \PYG{p}{(}s\PYG{o}{==}\PYG{l+m}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}\PYG{k+kr}{break}\PYG{p}{\PYGZcb{}}
+  \PYG{k+kr}{else} \PYG{p}{\PYGZob{}\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+f\PYG{o}{\PYGZlt{}\PYGZhy{}}j
+k\PYG{o}{\PYGZlt{}\PYGZhy{}}f\PYG{o}{*}n
+print \PYG{p}{(}x\PYG{p}{)}
+print \PYG{p}{(}f\PYG{p}{)}
+print \PYG{p}{(}k\PYG{p}{)}
+\end{Verbatim}

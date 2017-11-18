@@ -1,0 +1,80 @@
+\documentclass[14pt,a4paper, oneside]{extreport}
+
+%%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Arial}   % задаёт основной шрифт документа
+\newfontfamily{\cyrillicfonttt}{Arial}
+\newfontfamily{\cyrillicfont}{Arial}
+\newfontfamily{\cyrillicfontsf}{Arial}
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+
+%%%%%%%%%% Работа с картинками %%%%%%%%%
+\usepackage{graphicx}                  % Для вставки рисунков
+
+%%%%%%%%%% Гиперссылки %%%%%%%%%%
+\usepackage{xcolor}              % разные цвета
+\usepackage{hyperref}
+\hypersetup{
+    unicode=true,           % позволяет использовать юникодные символы
+    colorlinks=true,       	% true - цветные ссылки, false - ссылки в рамках
+    urlcolor=blue,          % цвет ссылки на url
+    linkcolor=red,          % внутренние ссылки
+    citecolor=green,        % на библиографию
+	pdfnewwindow=true,      % при щелчке в pdf на ссылку откроется новый pdf
+	breaklinks              % если ссылка не умещается в одну строку, разбивать ли ее на две части?
+}
+
+%%%% Оформление %%%%%%%
+\usepackage{extsizes} % Возможность сделать 14-й шрифт
+\usepackage[paper=a4paper,top=10mm, bottom=10mm,left=35mm,right=35mm,includefoot,includehead]{geometry} %поля
+\usepackage{setspace}
+\setstretch{1}  % Межстрочный интервал
+\setlength{\parindent}{0em} % Красная строка.
+\setlength{\parskip}{4mm}   % Расстояние между абзацами
+
+\usepackage{afterpage}  % Пакет, который позволяет настраивать параметры отдельной страницы
+
+
+\begin{document}
+
+\afterpage{
+
+\pagenumbering{gobble}
+
+\begin{center}
+\includegraphics[height=6cm]{Hogwarts.jpg}
+\end{center}
+
+\vspace{1cm}
+
+\small Дорогой мистер Борисов,
+
+\vspace{2.5cm}
+
+Мы рады проинформировать вас,что вам предоставлено место в Школе Чародейства и Волшебства «Хогвартс».
+
+Занятия начинаются 1 сентября 2007 года.
+
+Ждем вашу сову не позднее 31 июля 2007 года.
+
+Искренне ваша, 
+
+{\Large\fontspec{LirussTYGRA}{Minerva McGonagall}}
+
+Минерва МакГонагалл
+
+заместитель директора
+
+\vfill
+
+\begin{center}
+Школа Чародейства и Волшебства «\href{https://www.pottermore.com/explore-the-story/hogwarts}{Хогвартс}» 
+
+Директор:Альбус Дамблдор (Кавалер ордена Мерлина первой степени,основатель Ордена Феникса,председатель Международной Конфедерации Магов)
+\end{center}
+}
+
+\end{document}

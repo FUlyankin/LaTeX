@@ -1,0 +1,111 @@
+%!TEX TS-program = xelatex
+\documentclass[14pt,a4paper]{report}
+%%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Arial}   % задаёт основной шрифт документа
+% Команда, которая нужна для корректного отображения длинных тире и некоторых других символов.
+\defaultfontfeatures{Mapping=tex-text}
+\newfontfamily{\cyrillicfonttt}{Arial}
+\newfontfamily{\cyrillicfont}{Arial}
+\newfontfamily{\cyrillicfontsf}{Arial}
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+% Разные мелочи для русского языка из пакета babel
+\setkeys{russian}{babelshorthands=true}
+%%%%%%%%%% Работа с картинками %%%%%%%%%
+\usepackage{graphicx}                  % Для вставки рисунков
+\usepackage{graphics}
+
+
+\usepackage{hyperref}
+\hypersetup{
+    unicode=true,           % позволяет использовать юникодные символы
+    colorlinks=true,       	% true - цветные ссылки, false - ссылки в рамках
+    urlcolor=blue,       % на библиографию
+	pdfnewwindow=true,      % при щелчке в pdf на ссылку откроется новый pdf
+	breaklinks              % если ссылка не умещается в одну строку, разбивать ли ее на две части?
+}
+
+%%%% Оформление %%%%%%%
+\usepackage{extsizes} % Возможность сделать 14-й шрифт
+
+% размер листа бумаги
+\usepackage[paper=a4paper,top=10mm, bottom=10mm,left=35mm,right=35mm,includefoot,includehead]{geometry}
+
+
+\usepackage{setspace}
+\setstretch{1}  % Межстрочный интервал
+\setlength{\parindent}{0mm} % Красная строка.
+\setlength{\parskip}{4mm}   % Расстояние между абзацами
+% Разные длины в латехе https://en.wikibooks.org/wiki/LaTeX/Lengths
+\usepackage{fancyhdr} % Колонтитулы
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.2pt}  % Толщина линий, отчеркивающих верхний
+\renewcommand{\footrulewidth}{0.2pt}  % и нижний колонтитулы
+\cfoot{Школа Чародейства и Волшебства <<Хогвартс>>}
+\rhead{\thepage}
+ 
+\flushbottom                            % Эта команда заставляет LaTeX чуть растягивать строки, чтобы получить идеально прямоугольную страницу
+\righthyphenmin=2                       % Разрешение переноса двух и более символов
+
+
+
+\newcommand*{\MyPoint}{\includegraphics[height=7mm]{w.png}}
+\renewcommand{\labelitemi}{\MyPoint}
+\renewcommand{\thesection}{Приложение \Asbuk{section}}
+\setcounter{section}{0}
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+\includegraphics[height=6cm]{h.jpg}
+\end{center}
+
+\vspace{1cm}
+
+{ \fontsize{12}{1}\selectfont Мистеру Поттеру}
+
+\vspace{2.5cm}
+Дорогой мистер Поттер!
+
+Мы рады проиинформироать Вас, что Вам предоставлено место в~Школе~Чародейтва~и~Волшебства~<<Хогвартс>>.
+
+Пожалуйста,ознакомтесь с приложением к данному письму (списком необходимых книг и предметов).
+
+Занятия начинаются 1 сентября.
+
+Искрене Ваша,
+
+{\fontspec{SANTOS DUMONT}{Minevra MacGonagall}}
+
+Минерва МакГонагалл \\
+заместитель директора
+
+\vfill
+
+\begin{center}
+Школа~Чародейтва~и~Волшебства~<<Хогвартс>> \\
+{ \fontsize{10}{1}\selectfont Директор: Альбус Дамблдор}\\{\fontsize{10}{1}\selectfont (Кавалер магических орденов)}\\
+\href{http://economy.ranepa.ru/}{Cайт школы}
+\end{center}
+
+
+\newpage
+\section{Список необходимых книг и предметов}
+\begin{itemize}
+\item Мантия
+\item Волшебная палочка
+\item Микроэкономика Вэриан
+\item Задакник Демидовича
+\end{itemize}
+
+
+\newpage
+\section{Список изучаемых предметов}
+\begin{itemize}
+\item Математический анализ
+\item История Магии
+\item Микроэкономика
+\end{itemize}
+\end{document}

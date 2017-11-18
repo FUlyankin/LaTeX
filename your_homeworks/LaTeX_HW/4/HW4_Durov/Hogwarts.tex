@@ -1,0 +1,142 @@
+\documentclass[14pt,a4paper]{extreport}
+
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Arial}   % задаёт основной шрифт документа
+
+% Команда, которая нужна для корректного отображения длинных тире и некоторых других символов.
+\defaultfontfeatures{Mapping=tex-text}
+
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Arial}
+\newfontfamily{\cyrillicfont}{Arial}
+\newfontfamily{\cyrillicfontsf}{Arial}
+
+
+
+
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+% Разные мелочи для русского языка из пакета babel
+\setkeys{russian}{babelshorthands=true}
+
+
+%%%%%%%%%% Работа с картинками %%%%%%%%%
+\usepackage{graphicx}                  % Для вставки рисунков
+\usepackage{graphics}
+
+\usepackage{tikz, pgfplots}  % язык для рисования графики из latex'a
+
+
+%%%%%%%%%% Гиперссылки %%%%%%%%%%
+\usepackage{xcolor}              % разные цвета
+\usepackage{hyperref}
+\hypersetup{
+    unicode=true,           % позволяет использовать юникодные символы
+    colorlinks=true,       	% true - цветные ссылки, false - ссылки в рамках
+    urlcolor=black,          % цвет ссылки на url
+    linkcolor=black,          % внутренние ссылки
+    citecolor=green,        % на библиографию
+	pdfnewwindow=true,      % при щелчке в pdf на ссылку откроется новый pdf
+	breaklinks              % если ссылка не умещается в одну строку, разбивать ли ее на две части?
+}
+
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+
+
+
+%%%% Оформление %%%%%%%
+\usepackage{extsizes} % Возможность сделать 14-й шрифт
+
+\usepackage[paper=a4paper,top=10mm, bottom=10mm,left=35mm,right=35mm,includefoot,includehead]{geometry}
+
+\usepackage{setspace}
+\setstretch{1.33}  % Межстрочный интервал
+\setlength{\parindent}{0pt} % Красная строка.
+\setlength{\parskip}{4mm}   % Расстояние между абзацам
+
+\flushbottom                            % Эта команда заставляет LaTeX чуть растягивать строки, чтобы получить идеально прямоугольную страницу
+
+\usepackage{fancyhdr} % Колонтитулы
+\pagestyle{fancy}{
+\renewcommand{\headrulewidth}{0.2pt}  % Толщина линий, отчеркивающих верхний
+	\rhead{\thepage}
+ 	\chead{}
+	\lhead{Приложение \rightmark }
+	\cfoot{\href{https://vk.com/kshilin}{Школа Чародейства, Волшебства и Джедайства <<Хогвартс>>}} 
+}
+
+% Переопрделил plain
+\fancypagestyle{plain}{%
+\renewcommand{\headrulewidth}{0.0pt} 
+	\rhead{}
+ 	\chead{}
+	\lhead{}
+	\cfoot{\href{https://vk.com/kshilin}{Школа Чародейства, Волшебства и Джедайства <<Хогвартс>>}}
+}
+
+
+% Редактирование заголовков
+\usepackage{titlesec}  
+\usepackage{afterpage} % Пакет, который позволяет настраивать параметры отдельной страницы
+\usetikzlibrary{calc}
+
+\newcommand{\fr}[2]{\ensuremath{^#1/_#2}}
+\usepackage{aurical} % Каллигрфический шрифт
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome} % Волшебная палочка
+\renewcommand\labelitemi{\faMagic}
+
+% Нумерация и формат приложений
+\renewcommand{\thesection}{\Asbuk{section}}
+\titleformat{\section}{\Large\bfseries}{Приложение \thesection:}{.5em}{}
+
+\begin{document}
+\thispagestyle{plain}
+\begin{center}
+{\includegraphics[height=6cm]{Hogwarts.png}}
+\end{center}
+\vskip 1cm
+\small {Мистеру Скайвокеру}
+\vskip 2.5cm
+\noindent
+\normalsize
+Дорогой мистер Скайвокер,
+\par
+Рады проинформировать, что в Вас Силу чувствуем мы и поэтому Вам место  в школе Чародейства, Волшебства и Джедайства  <<Хогвартс>> предоставлено.
+\par
+Ознакомиться с приложенными к письму данному списками предметов и книг должны Вы.
+\par
+Тысячелетия Сокол отправится в школу 31 августа с платформы 9\fr{3}{4} вокзала Алдераана. Ждем вашего дройда не позднее 31 июля.
+\par 
+Искренне ваша, \\ {\Fontauri{Minevra McGonagall-Yoda}} \\
+Миневра МакГонагалл-Йода \\ заместитель Директора школы, член Совета Джедаев 
+
+\newpage
+
+\section{Книги и предметы}
+\begin{itemize}
+\item Волшебная палочка-световой меч
+\item Учебник по истории магии и Силы
+\item ПБУ и план счетов бухгалтерского учета
+\item Маховик времени
+\item Запас механических рук
+\item Два друга, которые всегда будут делать за вас всю грязную работу
+\item Разрешается брать с собой одно домашнее животное или дройда-помощника. Вуки домашними животными не считаются!!!
+\end{itemize}
+
+\newpage
+
+\section{Изучаемые предметы}
+\begin{itemize}
+\item Защита от Темной стороны Силы
+\item Трансфигуметрика (теперь ясно зачем маховик времени?)
+\item Инструментальные методы в магии
+\item Эльфийско-гунганский язык
+\item Практический факультатив: как вернуть родственников на светлую сторону Силы 
+\end{itemize}
+
+\end{document}

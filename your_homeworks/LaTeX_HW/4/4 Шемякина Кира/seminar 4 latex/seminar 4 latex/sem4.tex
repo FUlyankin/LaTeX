@@ -1,0 +1,122 @@
+\documentclass[12pt, a4paper]{article}
+
+
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Arial}   % задаёт основной шрифт документа
+
+% Команда, которая нужна для корректного отображения длинных тире и некоторых других символов.
+\defaultfontfeatures{Mapping=tex-text}
+
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Arial}
+\newfontfamily{\cyrillicfont}{Arial}
+\newfontfamily{\cyrillicfontsf}{Arial}
+\usepackage{extsizes}
+
+  
+
+
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+
+
+%%%%%%%%%% Работа с картинками %%%%%%%%%
+\usepackage{graphicx}                  % Для вставки рисунков
+\usepackage{graphics}
+
+
+
+
+\renewcommand{\arraystretch}{1.3} % больше расстояние между строками
+
+
+
+
+
+%%%%%%%%%% Графика и рисование %%%%%%%%%%
+\usepackage{tikz, pgfplots}  % язык для рисования графики из latex'a
+
+
+%%%%%%%%%% Гиперссылки %%%%%%%%%%
+\usepackage{xcolor}              % разные цвета
+
+
+
+
+
+\usepackage{wallpaper}
+
+
+
+
+
+\usepackage{framed}
+
+
+
+\usetikzlibrary{calc}
+\newcommand\irregularcircle[2]{% radius, irregularity
+  let \n1 = {(#1)+rand*(#2)} in
+  +(0:\n1)
+  \foreach \a in {10,20,...,350}{
+    let \n1 = {(#1)+rand*(#2)} in
+    -- +(\a:\n1)
+  } -- cycle
+}
+\usepackage{lipsum}
+
+
+\begin{document}\pagestyle{empty}\TileWallPaper{210mm}{297mm}{Old-Paper-2.jpg}
+% конец преамбулы, нача
+\newcommand{\newsize}[1]
+{{\fontsize{90}{1}\selectfont #1 }}
+\begin{center}
+
+\begin{tikzpicture}[overlay,remember picture]
+    \draw [line width=1mm,decorate,decoration={zigzag
+        %,segment length=<length>,amplitude=<length>
+        }]
+        (-9.5cm,4cm)
+        rectangle
+        (9.5cm,-24);
+    \draw [line width=1mm,decorate,decoration={zigzag
+        %,segment length=<length>,amplitude=<length>
+        }]
+        (-9cm,3.5cm)
+        rectangle
+        (9cm,-23.5);
+		
+%		\node at (0, 0) {Контракт}
+        
+  \coordinate (ccc) at (0,-16);
+  \draw[black,dashed, rounded corners=.5mm] (ccc)     \irregularcircle{0.5cm}{2mm};    
+
+ \coordinate (d) at (-1.5,-17);
+ \coordinate (e) at (2.5,-12);
+ \coordinate (f) at (0,-14);
+
+\draw[black,dashed, rounded corners=.5mm] (d) \irregularcircle{1cm}{3mm};
+  \draw[black,dashed, rounded corners=.5mm] (e) \irregularcircle{1.5cm}{3mm};
+\draw[black,dashed, rounded corners=.5mm] (f) \irregularcircle{1cm}{3mm};
+\node [below] at (0,-18.5) {\large{Место для крови}};
+\draw [ultra thick] (-5,-21.5) -- (5,-21.5);
+\node [below] at (0,-21.75) {Подпись};
+
+\node [below] at (0,0) {\newsize{\fontspec{Victorian Gothic One}{Контракт}}};
+\node [below] at (0,-7) {\Large{Я согласен выполнить эту работу}};
+
+
+\end{tikzpicture}	
+\end{center}
+
+
+
+\end{document}

@@ -1,0 +1,120 @@
+\documentclass[10pt, a4paper]{article}
+
+
+%%%%%%%%%% Програмный код %%%%%%%%%%
+\usepackage{minted}
+% Включает подсветку команд в программах!
+% Нужно, чтобы на компе стоял питон, надо поставить пакет Pygments, в котором он сделан, через pip.
+
+% Для Windows: Жмём win+r, вводим cmd, жмём enter. Открывается консоль.
+% Прописываем easy_install Pygments
+% Заходим в настройки texmaker и там прописываем в PdfLatex:
+% pdflatex -shell-escape -synctex=1 -interaction=nonstopmode %.tex
+
+
+%%%%%%%%%% Математика %%%%%%%%%%
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+%\mathtoolsset{showonlyrefs=true}  % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+%\usepackage{leqno} % Нумерация формул слева
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Arial}   % задаёт основной шрифт документа
+
+% Команда, которая нужна для корректного отображения длинных тире и некоторых других символов.
+\defaultfontfeatures{Mapping=tex-text}
+
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Arial}
+\newfontfamily{\cyrillicfont}{Arial}
+\newfontfamily{\cyrillicfontsf}{Arial}
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+\setmathfont{Asana Math}      % шрифт для математики
+% \setmathfont[math-style=ISO]{Asana Math}
+
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+
+
+%%%%%%%%%% Работа с картинками %%%%%%%%%
+\usepackage{graphicx}                  % Для вставки рисунков
+\usepackage{graphics}
+\graphicspath{{images/}{pictures/}}    % можно указать папки с картинками
+\usepackage{wrapfig}                   % Обтекание рисунков и таблиц текстом
+
+
+
+%%%%%%%%%% Графика и рисование %%%%%%%%%%
+\usepackage{tikz, pgfplots}  % язык для рисования графики из latex'a
+
+
+%%%%%%%%%% Гиперссылки %%%%%%%%%%
+\usepackage{xcolor}              % разные цвета
+
+% Два способа включить в пакете какие-то опции:
+%\usepackage[опции]{пакет}
+%\usepackage[unicode,colorlinks=true,hyperindex,breaklinks]{hyperref}
+
+
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет Последний день Помпеи}
+% \listoftodos --- печатает все поставленные \todo'шки
+
+
+% Разные мелочи для русского языка из пакета babel
+\setkeys{russian}{babelshorthands=true}
+
+\begin{document}
+\title{(Homework_4)}
+\date{\today}
+\author{(Liza Golovanova)}
+\section{Задания на minted}
+\subsection{Интерактивный Python}
+\begin{minted}[mathescape,
+               linenos,
+               numbersep=4pt,
+               frame=lines,
+               framesep=2.5mm]{python}
+name = input("Как Вас зовут? ")
+print("Привет,", name)
+\end{minted}
+
+\subsection{Фибоначчи, привет!}
+\begin{minted}[mathescape,
+               linenos,
+               numbersep=4pt,
+               frame=lines,
+               framesep=2.5mm]{python}
+a, b = 0, 1
+while b<100:
+     print (b, end=' ')
+     a, b=b, a+b
+\end{minted}
+
+\subsection{Сортировка пузырьком}
+\begin{minted}[mathescape,
+               linenos,
+               numbersep=4pt,
+               frame=lines,
+               framesep=2.5mm]{python}
+def bubble_sort(arrayToSort):
+    a = arrayToSort
+    for i in range(len(a),0,-1):
+        for j in range(1, i):
+            if a[j-1] > a[j]:
+                tmp = a[j-1]
+                a[j-1] = a[j]
+                a[j] = tmp
+                print (a)
+    return a
+ary = [5, 0, 10, 4, 1, 5, 8, 4, 3, 12, 41]
+print (bubble_sort(ary))
+\end{minted}
+\end{document}

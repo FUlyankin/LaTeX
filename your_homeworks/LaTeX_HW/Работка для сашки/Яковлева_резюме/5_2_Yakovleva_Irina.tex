@@ -1,0 +1,44 @@
+\documentclass[11pt,a4paper]{moderncv}
+\usepackage[utf8x]{inputenc}
+\usepackage{fontspec}        
+\setmainfont{Arial}
+\defaultfontfeatures{Mapping=tex-text}
+\newfontfamily{\cyrillicfonttt}{Arial}
+\newfontfamily{\cyrillicfont}{Arial}
+\newfontfamily{\cyrillicfontsf}{Arial}
+
+% включаем поддержку русского языка
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+% Разные мелочи для русского языка из пакета babel
+\usepackage{xpatch}
+\xpatchcmd{\cventry}{.\strut}{\strut}{}{}
+\renewcommand{\sfdefault}{\rmdefault}
+\setkeys{russian}{babelshorthands=true}
+\moderncvtheme[blue]{classic}
+\firstname{Ирина}
+\familyname{Яковлева}
+\mobile{+7 916 133 81 80}
+\email{irinaiyakovleva@gmail.com}
+
+\begin{document}
+\makecvtitle
+\section{Образование}
+\cventry{2014--Настоящее время}{Бакалавр экономики}{Экономический факультет РАНХиГС}{}{}{}
+\cventry{2016--Настоящее время}{Licence Économie et Gestion}{
+Faculté~d'économie de L'Université~Grenoble-Alpes}{}{}{}
+\section{Опыт работы}
+
+\cventry{2016--Настоящее время}{Институт прикладных экономических исследований РАНХиГС}{Младший научный сотрудник}{}{}{}
+
+\section{Профессиональное развитие}
+\cventry{2017--Настоящее время}{Bloomberg Market Concepts (BMC)}{онлайн-курс}{}{}{}
+\section{Компьютерные навыки}
+\cvitem{Начальный уровень}{Latex ,Visual Basic}
+\cvitem{Средний уровень}{R ,Wolfram, EViews, MS Office}
+
+\section{Другие навыки и интересы}
+\cvitem{Языки}{Русский (родной), Английский (B2), Французский (B1), Немецкий (А2)}
+\cvitem{Интересы}{Статискика, эконометрика, рынки энергоресурсов}
+\end{document}

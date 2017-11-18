@@ -1,0 +1,55 @@
+\documentclass[12pt,a4paper,academicons]{altacv}
+
+\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1cm,bottom=1cm}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato}
+
+\definecolor{VividPurple}{HTML}{2b5b5c}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{333333}
+\colorlet{heading}{VividPurple}
+\colorlet{accent}{VividPurple}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+\begin{document}
+\name{Olga Malikova}
+\tagline{Student of Economic Faculty\\
+20 years old}
+\photo{5cm}{1}
+\personalinfo{%
+  \email{malikova2410@gmail.com}
+  \phone{+79779651096}
+  \location{Moscow, RU}}
+
+\begin{adjustwidth}{}{-8cm}
+\makecvheader
+\end{adjustwidth}
+
+
+\cvsection[page1sidebar]{Main goals}
+\begin{itemize}
+\item To apply  theoretical knowledge and skills in practice
+\item To obtain a intern-ship within my chosen field
+\item To get an interesting experience and new knowledge
+\item To show myself as a capable young specialist
+\end{itemize}
+
+\cvsection{Higher Education}
+\cvevent{B.S.\ in Economic and Finance}{The Russian Presidential Academy of National Economy and Public Administration (RANEPA)}{Sept 2014 -- Ongoing}{}
+
+\cvsection{Interests}
+
+\wheelchart{1cm}{0.5cm}{%
+  10/10em/accent!30/Photography, 
+  30/7em/accent!60/Finance,
+  20/12em/accent!10/Research and analysis of data, 
+  20/8em/accent!40/Learning languages,
+  20/8em/accent!20/Self-management}
+
+\end{document}

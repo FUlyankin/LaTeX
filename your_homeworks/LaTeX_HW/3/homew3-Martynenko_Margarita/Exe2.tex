@@ -1,0 +1,212 @@
+%!TEX TS-program = xelatex
+\documentclass[12pt, a4paper]{article}  
+
+\usepackage{etex} % расширение классического tex в частности позволяет подгружать гораздо больше пакетов, чем мы и займёмся далее
+
+%%%%%%%%%% Математика %%%%%%%%%%
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+%\mathtoolsset{showonlyrefs=true}  % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+%\usepackage{leqno} % Нумерация формул слева
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Arial}   % задаёт основной шрифт документа
+
+\defaultfontfeatures{Mapping=tex-text}
+
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Arial}
+\newfontfamily{\cyrillicfont}{Arial}
+\newfontfamily{\cyrillicfontsf}{Arial}
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+\setmathfont{Asana Math}      % шрифт для математики
+% \setmathfont[math-style=ISO]{Asana Math}
+% Можно делать смену начертания с помощью разных стилей
+
+% Конкретный символ из конкретного шрифта
+% \setmathfont[range=\int]{Neo Euler}
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+
+
+%%%%%%%%%% Работа с картинками %%%%%%%%%
+\usepackage{graphicx}                  % Для вставки рисунков
+\usepackage{graphics}
+\graphicspath{{images/}{pictures/}}    % можно указать папки с картинками
+\usepackage{wrapfig}                   % Обтекание рисунков и таблиц текстом
+\usepackage{subfigure}                 % для создания нескольких рисунков внутри одного
+
+
+%%%%%%%%%% Работа с таблицами %%%%%%%%%%
+\usepackage{tabularx}            % новые типы колонок
+\usepackage{tabulary}            % и ещё новые типы колонок
+\usepackage{array}               % Дополнительная работа с таблицами
+\usepackage{longtable}           % Длинные таблицы
+\usepackage{multirow}            % Слияние строк в таблице
+\usepackage{float}               % возможность позиционировать объекты в нужном месте
+\usepackage{booktabs}            % таблицы как в книгах!
+\renewcommand{\arraystretch}{1.3} % больше расстояние между строками
+
+% Заповеди из документации к booktabs:
+% 1. Будь проще! Глазам должно быть комфортно
+% 2. Не используйте вертикальные линни
+% 3. Не используйте двойные линии. Как правило, достаточно трёх горизонтальных линий
+% 4. Единицы измерения - в шапку таблицы
+% 5. Не сокращайте .1 вместо 0.1
+% 6. Повторяющееся значение повторяйте, а не говорите "то же"
+% 7. Есть сомнения? Выравнивай по левому краю!
+
+%%%%%%%%%% Графика и рисование %%%%%%%%%%
+\usepackage{tikz, pgfplots}  % язык для рисования графики из latex'a
+\usepackage{amscd}                  %Пакеты для рисования
+\usepackage[matrix,arrow,curve]{xy} %комунитативных диаграмм 
+
+\usetikzlibrary{calc}
+\usepackage{keyval}
+
+\makeatletter
+
+% We're not using pgfkeys, and we've chosen to use keyval
+% for option parsing. The following define the keys for a
+% pig keyval family. The main purpose of the keys and
+% default values is that we want to be able to draw pigs
+% with predefined colours for certain parts and predefined
+% scaling factors for line thickness.
+
+\def\pig@draw@thick@width{0.85}
+\def\pig@draw@thin@width{0.20}
+\def\pig@label{pig label}
+\tikzset{draw thick/.style={draw=black,line width=0.85}}
+\tikzset{draw thin/.style={draw=black,line width=0.20}}
+\tikzset{fill colour/.style={fill=pink}}
+\tikzset{nose hole fill colour/.style={fill=purple!50!gray}}
+\tikzset{eye fill colour/.style={fill=white}}
+\tikzset{pupil fill colour/.style={fill=black}}
+
+\define@key{pig}{draw thick}{\def\draw@pig@thick@width{#1}}
+\define@key{pig}{draw thin}{\def\draw@pig@thin@width{#1}}
+\define@key{pig}{fill colour}{\tikzset{fill colour/.style={fill=#1}}}
+\define@key{pig}{nose hole fill colour}{\tikzset{nose hole fill colour/.style={fill=#1}}}
+\define@key{pig}{eye fill colour}{\tikzset{eye fill colour/.style={fill=#1}}}
+\define@key{pig}{pupil fill colour}{\tikzset{pupil fill colour/.style={fill=#1}}}
+\define@key{pig}{pig label}{\def\pig@label{#1}}
+\def\pig@scale{1}
+
+\def\pig{\@ifnextchar[\draw@pig{\draw@pig[]}}
+\def\draw@pig[#1]#2{%
+   % Set the relative line width for thick lines.
+   \def\draw@pig@thick@width{0.85}
+   % Set the relative line width for thin lines.
+   \def\draw@pig@thin@width{0.20}
+   % Set the relative scale of the pig.
+   \def\pig@scale{#2}
+   \setkeys{pig}{#1}
+   \begin{tikzpicture}[scale=#2,
+                       draw thick/.style={draw=black,line width=\draw@pig@thick@width*\pig@scale},
+                       draw thin/.style={draw=black,line width=\draw@pig@thin@width*\pig@scale}]
+   \path (0,0)            coordinate (\pig@label head)
+         + (-0.005,-0.20) coordinate (\pig@label nose)
+         + (-0.010,+0.05) coordinate (\pig@label body)
+         + (-0.010,+0.45) coordinate (\pig@label tail);
+   % Define points for tail.
+   \foreach \number/\point in {1/{+0.000,+0.055},%
+                               2/{-0.058,+0.075},%
+                               3/{+0.044,+0.094},%
+                               4/{-0.072,+0.137},%
+                               5/{+0.048,+0.170},%
+                               6/{-0.078,+0.206}} {
+       \path (\pig@label tail) +(\point) coordinate (tail \number);
+   }
+   % Define points for ears and legs.
+   \foreach \offset in {-1,1} {
+       \path (\pig@label head)
+                    ++ (+0.12*\offset,+0.00) coordinate (ear pt 1 \offset)
+                    +  (-0.04*\offset,+0.07) coordinate (ear pt 2 \offset)
+                    +  (-0.02*\offset,+0.25) coordinate (ear pt 3 \offset)
+                    +  (+0.11*\offset,+0.25) coordinate (ear pt 4 \offset)
+                    +  (+0.14*\offset,+0.13) coordinate (ear pt 5 \offset)
+                    +  (+0.09*\offset,-0.06) coordinate (ear pt 6 \offset)
+             (\pig@label head)
+                    ++ (+0.09*\offset,-0.30) coordinate (leg 1 \offset)
+                    ++ (+0.01*\offset,-0.24) coordinate (leg 2 \offset)
+                    ++ (+0.04*\offset,+0.08) coordinate (leg 3 \offset)
+                    ++ (+0.04*\offset,-0.08) coordinate (leg 4 \offset)
+                    ++ (+0.02*\offset,+0.30) coordinate (leg 5 \offset);
+   }
+   % draw legs.
+   \foreach \number in {-1,1} {
+      \filldraw[fill colour,draw thick]
+         (leg 1 \number) --
+         (leg 2 \number) --
+         (leg 3 \number) --
+         (leg 4 \number) --
+         (leg 5 \number) -- cycle;
+   }
+   % draw tail.
+   \draw[draw thick,line join=round,line cap=round]
+         (\pig@label tail) \foreach \num in {1,...,6} { -- (tail \num)};
+   % draw body.
+   \draw[fill colour,draw thick]
+         (\pig@label body) ellipse (4.50mm and 4.10mm);
+   % draw ears.
+   \foreach \number in {-1,1} {
+      % ears
+      \filldraw[fill colour,draw thick]
+         (ear pt 1 \number) .. controls
+         (ear pt 2 \number) and
+         (ear pt 3 \number) ..
+         (ear pt 4 \number) .. controls
+         (ear pt 5 \number) and
+         (ear pt 6 \number) .. (ear pt 1 \number);
+   }
+   % draw nose.
+   \filldraw[fill colour,draw thick]
+         (\pig@label head) ellipse (1.42mm and 1.40mm);
+   \foreach \offset in {-1,1} {
+       \filldraw[draw thin,eye fill colour]
+                (\pig@label head) ++ (-0.006,0.00) ++ (0.055*\offset,+0.03)
+                coordinate (eye \offset)
+                ellipse (0.04 and 0.060);
+       \fill[pupil fill colour]
+            (eye \offset) ellipse (0.020 and 0.035);
+   }
+   \filldraw[fill colour,draw thick]
+         (\pig@label nose) ellipse (2.60mm and 1.72mm);
+   % Draw nose holes
+   \foreach \offset in {-1,1} {
+       \filldraw[draw thick,nose hole fill colour]
+                (\pig@label nose) ++ (\offset*0.080,0)
+                 ellipse (0.50mm and 0.85mm);
+   }
+   \end{tikzpicture}
+}
+
+
+\title{Уютная домашка: CowSay}
+\date{\today}
+
+\begin{document}
+\maketitle
+\newpage
+
+\newenvironment{PigsSay}{\hfill \break}{\\
+ \begin{tikzpicture}
+ 
+   \draw (0,0) node[anchor=south]{\pig{3}}
+         (4,0) node[anchor=south]{\pig[nose hole fill colour=purple!20,fill colour=blue!40]{5}};
+       
+\end{tikzpicture}}
+
+\begin{center}
+\begin{PigsSay}
+Привет! Мы поросячий дуэт! Привет! Мы поросячий дуэт!  Привет! Мы поросячий дуэт!  Привет! Мы поросячий дуэт!  Привет! Мы поросячий дуэт!  Привет! Мы поросячий дуэт!  Привет! Мы поросячий дуэт!  Привет! Мы поросячий дуэт!  Привет! Мы поросячий дуэт!  Привет! Мы поросячий дуэт!  Привет! Мы поросячий дуэт! 
+\end{PigsSay}
+\end{center}
+
+
+\end{document}

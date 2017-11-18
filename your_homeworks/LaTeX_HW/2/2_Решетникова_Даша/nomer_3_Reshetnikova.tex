@@ -1,0 +1,39 @@
+%!TEX TS-program = xelatex
+\documentclass[12pt, a4paper]{article}  
+
+\usepackage{etex} % расширение классического tex в частности позволяет подгружать гораздо больше пакетов, чем мы и займёмся далее
+
+%%%%%%%%%% Математика %%%%%%%%%%
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+%\mathtoolsset{showonlyrefs=true}  % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+%\usepackage{leqno} % Нумерация формул слева
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Phorssa}   % задаёт основной шрифт документа
+
+\defaultfontfeatures{Mapping=tex-text}
+
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Phorssa}
+\newfontfamily{\cyrillicfont}{Phorssa}
+\newfontfamily{\cyrillicfontsf}{Phorssa}
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+\setmathfont{Asana Math}      % шрифт для математики
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+
+\begin{document}
+\huge
+\begin{center}
+	НЕ ВЫХОДИ ИЗ КОМНАТЫ! \\ НЕ СОВЕРШАЙ ОШИБКУ! \\ РЕПТИЛОИДЫ УЖЕ ЗАХВАТИЛИ ЗЕМЛЮ! \\ СКОРО ОНИ ДОБЕРУТСЯ ДО ТЕБЯ! \\ МУА-ХА-ХА...
+\end{center}
+\begin{flushright}
+Д.Р. 	
+\end{flushright}
+\end{document}

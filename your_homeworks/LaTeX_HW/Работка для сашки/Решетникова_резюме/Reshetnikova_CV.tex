@@ -1,0 +1,62 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+\usepackage[utf8]{inputenc}
+
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Arial}   % задаёт основной шрифт документа
+\defaultfontfeatures{Mapping=tex-text}
+
+\newfontfamily{\cyrillicfonttt}{Arial}
+\newfontfamily{\cyrillicfont}{Arial}
+\newfontfamily{\cyrillicfontsf}{Arial}
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+% Разные мелочи для русского языка из пакета babel
+\setkeys{russian}{babelshorthands=true}
+
+\moderncvstyle{classic}                        % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{orange}                          % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+% \usepackage[usenames]{xcolor}  %%% this does not work = thanks to idiots from modernCV package.
+% 
+\usepackage[scale=0.87]{geometry}
+\setlength{\hintscolumnwidth}{2.5cm}           % if you want to change the width of the column with the dates
+
+\firstname{Дарья}
+\familyname{Решетникова}
+
+\address{Университетский пр-т, 4 }{Москва, Россия}
+\phone{+7915455****}
+\email{dashareshetnikova2507@gmail.com}
+
+\renewcommand\refname{Selected publications}
+\nopagenumbers{} 
+
+\begin{document}
+\makecvtitle
+
+
+\section{Образование}
+\cventry{2014-настоящее время}{Студент Бакалавриата}{\newline Российская Академия Народного Хозяйства и Государственной Службы при Президенте Российской Федерации, Россия}{\newline \textit{Факультет}: Экономический факультет, Отделение Экономики}{\newline \textit{Курс}: 3}{}
+
+
+\section{Профессиональные навыки}
+
+\cvitem{Владение компьютером}{Уверенное пользование ПК, MS Office, MAC OS.}
+
+\cvitem{Языки программирования}{R, Wolfram Mathematica.}
+
+\cvitem{Tools}{LaTeX, Bloomberg (basic).}
+
+\cvitem{Языки}{Английский (Upper Intermediate), Русский (родной), Немецкий (A2).}
+
+\section{Личная информация}
+
+\cventry{Дата рождения}{25 Июля 1996г.}{}{РФ}{}{}
+
+\cvitem{Личные качества}{Ответственность, коммуникабельность, целеустремленность, быстрая обучаемость, умение работать в команде, нацеленность на результат.}
+
+
+
+\end{document}

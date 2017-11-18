@@ -1,0 +1,111 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[paper=a4paper,top=10mm, bottom=10mm,left=35mm,right=35mm,includefoot,includehead]{geometry}
+
+%%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Arial}   % задаёт основной шрифт документа
+
+% Команда, которая нужна для корректного отображения длинных тире и некоторых других символов.
+\defaultfontfeatures{Mapping=tex-text}
+
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Arial}
+\newfontfamily{\cyrillicfont}{Arial}
+\newfontfamily{\cyrillicfontsf}{Arial}
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+\setmathfont{Asana Math}      % шрифт для математики
+% \setmathfont[math-style=ISO]{Asana Math}
+% Можно делать смену начертания с помощью разных стилей
+
+% Конкретный символ из конкретного шрифта
+% \setmathfont[range=\int]{Neo Euler}
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+
+
+%%%%%%%%%% Работа с картинками %%%%%%%%%
+\usepackage{graphicx}                  % Для вставки рисунков
+\usepackage{graphics}
+\graphicspath{{images/}{pictures/}}    % можно указать папки с картинками
+\usepackage{wrapfig}                   % Обтекание рисунков и таблиц текстом
+
+
+%%%%%%%%%% Графика и рисование %%%%%%%%%%
+\usepackage{tikz, pgfplots}  % язык для рисования графики из latex'a
+
+
+% Два способа включить в пакете какие-то опции:
+%\usepackage[опции]{пакет}
+%\usepackage[unicode,colorlinks=true,hyperindex,breaklinks]{hyperref}
+
+\usepackage{hyperref}
+\hypersetup{
+    unicode=true,           % позволяет использовать юникодные символы
+    colorlinks=true,       	% true - цветные ссылки, false - ссылки в рамках
+    urlcolor=blue,          % цвет ссылки на url
+    linkcolor=black,          % внутренние ссылки
+    citecolor=green,        % на библиографию
+	pdfnewwindow=true,      % при щелчке в pdf на ссылку откроется новый pdf
+	breaklinks              % если ссылка не умещается в одну строку, разбивать ли ее на две части?
+}
+\usepackage{csquotes}            % Еще инструменты для ссылок
+\usepackage{extsizes} % Возможность сделать 14-й шрифт
+
+% Разные мелочи для русского языка из пакета babel
+\setkeys{russian}{babelshorthands=true}
+\usepackage{weva}
+
+
+\setlength{\parskip}{4mm}
+
+%\usepackage{fancyhdr} % Колонтитулы
+%\pagestyle{fancy}
+%
+%\renewcommand{\headrulewidth}{0.2pt}  % Толщина линий, отчеркивающих верхний
+%\renewcommand{\footrulewidth}{0.2pt}  % и нижний колонтитулы
+%	\rhead{\thepage}
+% 	\lhead{\thechapter}
+%	\cfoot{Школа чародейства и волшебства "Хогвартс"}
+
+
+%%% Редактирование заголовков
+\usepackage{titlesec}  
+
+\titleformat{\chapter}
+      {\Huge\bfseries}
+      {Приложение \thechapter }{0.5 em}{:} 
+
+
+\usepackage{afterpage}  % Пакет, который позволяет настраивать параметры отдельной страницы
+
+
+\begin{document} 
+\pagenumbering{gobble}
+\fontsize{14}{1}\selectfont
+
+\begin{center}
+\includegraphics[height=6cm]{Hogwarts.png}
+\end{center}
+
+\vspace{1cm}
+
+{ \fontsize{12}{1.33}\selectfont Мистеру Поттеру}
+
+\vspace{2.5cm}
+
+Мы рады Вам сообщить, что вы зачислены в Школу чародейства и волшебства "Хогвартc" и отныне свободны от тягот жизни простого маггла.
+
+Просьба ознакомиться с приложениями в конце письма.
+
+С уважением,\\
+{\weva Professor McGonagall}
+
+\vfill
+
+\parbox[b]{20cm}{\centering\small Школа чародейства и волшебства \href{https://www.pottermore.com/explore-the-story/hogwarts}{"Хогвартс"}}
+
+\end{document}
