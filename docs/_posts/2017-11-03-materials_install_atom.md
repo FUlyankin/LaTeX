@@ -70,8 +70,4 @@ Atom очень гибкая штука, для которой существу�
 
 На [сайте Atom](https://atom.io/packages) можно посмотреть какие пакеты были популярны на этой неделе. 
 
-<br>
 
-<img align="center" src="https://raw.githubusercontent.com/FUlyankin/LaTeX/master/settings_instruction/atom_logo.png" height="50">
-
-<br>
