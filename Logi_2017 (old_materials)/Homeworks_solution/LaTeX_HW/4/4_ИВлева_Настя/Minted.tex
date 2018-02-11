@@ -1,0 +1,40 @@
+%!TEX TS-program = xelatex
+\documentclass[12pt, a4paper]{article}
+\usepackage{minted}
+
+\usepackage{fontspec}
+\setmainfont{Arial}
+
+\begin{document}
+\section{Пакет minted}
+\begin{minted}{latex}
+\begin{figure}[h!]
+\begin{center}
+\begin{minipage}{0.3\linewidth}
+\includegraphics[width=7 cm, angle=270]{pop1.pdf}
+\end{minipage}
+\hfill
+\begin{minipage}{0.3\linewidth}
+\includegraphics[width=53 mm, height=7 cm, angle=180]{pop2.pdf}
+\end{minipage}
+\hfill
+\begin{minipage}{0.3\linewidth}
+\includegraphics[width=52 mm, height=7 cm]{pop3.pdf}
+\end{minipage}
+\hfill
+\begin{minipage}{0.3\linewidth}
+\includegraphics[width=70 mm,height=7 cm]{pop8.pdf}
+\end{minipage}
+\hfill
+\begin{minipage}{0.3\linewidth}
+\includegraphics[width=50 mm,height=7 cm]{pop5.pdf}
+\end{minipage}
+\hfill
+\begin{minipage}{0.3\linewidth}
+\includegraphics[width=52 mm,height=7 cm, angle= 180]{pop10.pdf}
+\end{minipage}
+\end{center}
+\end{figure}
+\end{minted}
+
+\end{document}

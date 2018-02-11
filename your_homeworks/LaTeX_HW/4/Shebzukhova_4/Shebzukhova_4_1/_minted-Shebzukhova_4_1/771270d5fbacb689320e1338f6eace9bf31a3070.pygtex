@@ -1,4 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-letterCloud\PYG{p}{(} demoFreq\PYG{p}{,} word \PYG{o}{=} \PYG{l+s}{\PYGZdq{}R\PYGZdq{}}\PYG{p}{,} color\PYG{o}{=}\PYG{l+s}{\PYGZsq{}random\PYGZhy{}light\PYGZsq{}} \PYG{p}{,} backgroundColor\PYG{o}{=}\PYG{l+s}{\PYGZdq{}black\PYGZdq{}}\PYG{p}{)}
-letterCloud\PYG{p}{(} demoFreq\PYG{p}{,} word \PYG{o}{=} \PYG{l+s}{\PYGZdq{}PEACE\PYGZdq{}}\PYG{p}{,} color\PYG{o}{=}\PYG{l+s}{\PYGZdq{}white\PYGZdq{}}\PYG{p}{,} backgroundColor\PYG{o}{=}\PYG{l+s}{\PYGZdq{}pink\PYGZdq{}}\PYG{p}{)}
-\end{Verbatim}

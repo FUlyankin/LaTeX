@@ -1,0 +1,81 @@
+\documentclass[12pt, a4paper]{article}
+%Преамбула
+\usepackage[utf8]{inputenc}
+\usepackage{fontspec} %шрифты
+\setmainfont{CyrillicGoth Medium} %основной шрифт
+\newfontfamily{\cyrillicfonttt}{CyrillicGoth Medium}
+\newfontfamily{\cyrillicfont}{CyrillicGoth Medium}
+\newfontfamily{\cyrillicfontsf}{CyrillicGoth Medium}
+
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+
+\usepackage[usenames]{color} %закрашивает страничку
+
+\usepackage[paper=a4paper,top=20mm, bottom=15mm,left=30mm,right=30mm]{geometry} %делает поля
+
+\usepackage{tikz} %нужы для рисования
+\usetikzlibrary{calc}
+\usepackage{eso-pic} %нужен для рамочки
+
+
+
+%рисуем рамочку
+\AddToShipoutPictureBG{%
+\begin{tikzpicture}[overlay,remember picture]
+\draw[line width=3pt]
+    ($ (current page.north west) + (1cm,-1cm) $)
+    rectangle
+    ($ (current page.south east) + (-1cm,1cm) $);
+\draw[line width=1.5pt]
+    ($ (current page.north west) + (1.2cm,-1.2cm) $)
+    rectangle
+    ($ (current page.south east) + (-1.2cm,1.2cm) $);
+\end{tikzpicture}
+}
+
+
+\definecolor{mycolor}{rgb}{0.9647,0.937,0.8353} %определяем цвет постаревшей бумаги
+
+
+
+\begin{document}
+\pagecolor{mycolor}
+\pagestyle{empty} %убрали колонтитул первой страницы
+
+\begin{center}
+
+
+{\fontsize{64}{1.33}\selectfont Контракт}
+
+\vspace{8cm}
+\fontspec{Arial}
+{\fontsize{14}{1.33}\selectfont Я согласен выполнить эту работу.}
+
+\vspace{2cm}
+
+\def\blob#1#2{\draw[fill=mycolor,rounded corners=#1*3mm, dashed] (#2) +($(0:#1*2+#1*rnd)$)
+\foreach \a in {20,40,...,350} {  -- +($(\a: #1*2+#1*rnd)$) } -- cycle;} %Команда для крови, какие-то добрые люди придумали
+%рисую кровь
+\begin{tikzpicture}
+\blob{0.4}{0,0}
+\blob{0.2}{-2,0.5}
+\blob{0.3}{-1.5,-1.5}
+\blob{0.2}{1,2}
+\blob{0.1}{2,0}
+\end{tikzpicture}
+
+\vspace{1cm}
+
+\footnotesize Место для крови
+
+\vspace{5cm}
+
+\hfill /\rule{14em}{0.5pt}/\rule{20em}{0.5pt}/
+
+\hfill\makebox[34em]{\hfill\footnotesize подпись \hfill\hfill расшифровка \hfill}
+\end{center}
+
+
+
+\end{document}

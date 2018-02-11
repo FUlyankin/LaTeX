@@ -1,0 +1,9 @@
+[1] Config.pm:354> INFO - This is Biber 2.7
+[2] Config.pm:357> INFO - Logfile is 'Lishchuk Diana . Homework 5.1.aux.blg'
+[343] biber-MSWIN32:303> INFO - === 
+[581] Biber.pm:359> INFO - Reading 'Lishchuk Diana . Homework 5.1.aux.bcf'
+[1778] Biber.pm:835> INFO - Found 0 citekeys in bib section 0
+[1857] Utils.pm:164> WARN - The file 'Lishchuk Diana . Homework 5.1.aux.bcf' does not contain any citations!
+[1900] bbl.pm:608> INFO - Writing 'Lishchuk Diana . Homework 5.1.aux.bbl' with encoding 'UTF-8'
+[1902] bbl.pm:712> INFO - Output to Lishchuk Diana . Homework 5.1.aux.bbl
+[1927] Biber.pm:109> INFO - WARNINGS: 1

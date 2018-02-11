@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{ }\PYG{n+nv}{AI}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{Import}\PYG{p}{[}
+\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}D:/RANEPA/NIR/Third\PYGZus{}year/Data/All\PYGZus{}industries\PYGZus{}with\PYGZus{}RBK\PYGZus{}500/All\PYGZus{}\PYGZbs{}}
+\PYG{l+s}{ industries\PYGZus{}with\PYGZus{}RBK\PYGZus{}500.xlsx\PYGZdq{}}\PYG{p}{]}\PYG{o}{;}
+\PYG{+w}{ }\PYG{n+nv}{BI}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nv}{AI}\PYG{o}{;}
+\PYG{+w}{ }\PYG{n+nv}{Ranks}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{StringTake}\PYG{p}{[}\PYG{n+nf}{\PYGZsh{}}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{l+m}{2}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nb}{StringLength}\PYG{p}{[}\PYG{n+nf}{\PYGZsh{}}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m}{1}\PYG{p}{\PYGZcb{}]}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{o}{/@}
+\PYG{+w}{ }\PYG{n+nb}{StringCases}\PYG{p}{[}\PYG{n+nv}{Ranks}\PYG{p}{[[}\PYG{n+nf}{\PYGZsh{}}\PYG{p}{]],}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}/\PYGZdq{}}\PYG{+w}{ }\PYG{o}{\PYGZti{}\PYGZti{}}\PYG{+w}{ }\PYG{o}{\PYGZus{}\PYGZus{}}\PYG{+w}{ }\PYG{o}{\PYGZti{}\PYGZti{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}/\PYGZdq{}}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{o}{/@}
+\PYG{+w}{ }\PYG{n+nb}{Range}\PYG{p}{[}\PYG{l+m}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nb}{Length}\PYG{p}{[}\PYG{n+nv}{Ranks}\PYG{p}{]]}\PYG{o}{;}
+\PYG{+w}{ }\PYG{n+nv}{Ranks}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nv}{Ranks}\PYG{p}{[[}\PYG{n+nf}{\PYGZsh{}}\PYG{p}{]][[}\PYG{l+m}{1}\PYG{p}{]]}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{o}{/@}\PYG{+w}{ }\PYG{n+nb}{Range}\PYG{p}{[}\PYG{l+m}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nb}{Length}\PYG{p}{[}\PYG{n+nv}{Ranks}\PYG{p}{]]}\PYG{o}{;}
+\PYG{+w}{ }\PYG{n+nv}{BI}\PYG{p}{[[}\PYG{l+m}{1}\PYG{p}{]][[}\PYG{n+nb}{All}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m}{4}\PYG{p}{]]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nv}{Ranks}\PYG{o}{;}
+\PYG{+w}{ }\PYG{n+nb}{Export}\PYG{p}{[}\PYG{l+s}{\PYGZdq{}D:/RANEPA/NIR/Third\PYGZus{}year/Data/From\PYGZus{}Wolfram/101\PYGZus{}All\PYGZus{}industries\PYGZus{}\PYGZbs{}}
+\PYG{l+s}{ with\PYGZus{}RBK\PYGZus{}500\PYGZus{}from\PYGZus{}w.xlsx\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{ }\PYG{n+nv}{BI}\PYG{p}{]}
+\end{Verbatim}

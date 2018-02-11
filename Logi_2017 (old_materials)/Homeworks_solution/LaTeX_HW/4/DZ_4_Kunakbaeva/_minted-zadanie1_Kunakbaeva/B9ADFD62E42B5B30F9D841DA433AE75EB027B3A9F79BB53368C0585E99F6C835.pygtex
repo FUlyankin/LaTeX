@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{library}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}forecast\PYGZdq{}}\PYG{p}{)}
+\PYG{k+kn}{library}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}bsts\PYGZdq{}}\PYG{p}{)}
+\PYG{k+kn}{library}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}sophisthse\PYGZdq{}}\PYG{p}{)}
+\PYG{k+kn}{library}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}bvarsv\PYGZdq{}}\PYG{p}{)}
+
+z \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{k+kt}{c}\PYG{p}{(}\PYG{l+m}{2}\PYG{p}{,}\PYG{l+m}{3}\PYG{p}{,}\PYG{l+m}{1}\PYG{p}{,}\PYG{l+m}{3}\PYG{p}{)}
+w \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{k+kt}{c}\PYG{p}{(}\PYG{l+m}{2}\PYG{p}{,}\PYG{l+m}{1}\PYG{p}{,}\PYG{l+m}{2}\PYG{p}{,}\PYG{l+m}{2}\PYG{p}{)}
+r \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{k+kt}{c}\PYG{p}{(}\PYG{l+m}{1}\PYG{p}{,}\PYG{l+m}{1}\PYG{p}{,}\PYG{l+m}{4}\PYG{p}{,}\PYG{l+m}{2}\PYG{p}{)}
+
+\PYG{k+kp}{mean}\PYG{p}{(}z\PYG{p}{)}
+\PYG{k+kp}{sum}\PYG{p}{((}z\PYG{o}{\PYGZhy{}}\PYG{k+kp}{mean}\PYG{p}{(}z\PYG{p}{))}\PYG{o}{\PYGZca{}}\PYG{l+m}{2}\PYG{p}{)}\PYG{o}{/}\PYG{l+m}{3}
+\PYG{k+kp}{sum}\PYG{p}{((}z\PYG{o}{\PYGZhy{}}\PYG{k+kp}{mean}\PYG{p}{(}z\PYG{p}{))}\PYG{o}{*}\PYG{p}{(}w\PYG{o}{\PYGZhy{}}\PYG{k+kp}{mean}\PYG{p}{(}w\PYG{p}{)))}\PYG{o}{/}\PYG{l+m}{3}
+
+m1 \PYG{o}{\PYGZlt{}\PYGZhy{}} lm\PYG{p}{(}w\PYG{o}{\PYGZti{}}z\PYG{p}{)}
+\PYG{k+kp}{summary}\PYG{p}{(}m1\PYG{p}{)}
+\end{Verbatim}

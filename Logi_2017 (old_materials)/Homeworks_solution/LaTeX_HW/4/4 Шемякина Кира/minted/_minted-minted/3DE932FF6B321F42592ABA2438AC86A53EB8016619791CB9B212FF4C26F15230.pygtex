@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{library}\PYG{p}{(}BCDating\PYG{p}{)}
+
+\PYG{k+kp}{setwd}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}/Users/kirashemyakina/Documents/\PYGZdq{}}\PYG{p}{)}
+\PYG{k+kp}{t}\PYG{o}{\PYGZlt{}\PYGZhy{}} read.csv\PYG{p}{(}file\PYG{o}{=}\PYG{l+s}{\PYGZdq{}BBQ1.csv\PYGZdq{}}\PYG{p}{,}header\PYG{o}{=}\PYG{n+nb+bp}{F}\PYG{p}{,}sep\PYG{o}{=}\PYG{l+s}{\PYGZdq{};\PYGZdq{}}\PYG{p}{,}dec\PYG{o}{=}\PYG{l+s}{\PYGZdq{},\PYGZdq{}}\PYG{p}{)}
+\PYG{k+kp}{head}\PYG{p}{(}\PYG{k+kp}{t}\PYG{p}{)}
+str\PYG{p}{(}\PYG{k+kp}{t}\PYG{p}{)}
+tts\PYG{o}{\PYGZlt{}\PYGZhy{}}ts\PYG{p}{(}\PYG{k+kp}{t}\PYG{p}{,} start \PYG{o}{=} \PYG{k+kt}{c}\PYG{p}{(}\PYG{l+m}{1947}\PYG{p}{,} \PYG{l+m}{1}\PYG{p}{),} frequency \PYG{o}{=}\PYG{l+m}{4}\PYG{p}{)}
+data1 \PYG{o}{\PYGZlt{}\PYGZhy{}} BBQ\PYG{p}{(}tts\PYG{p}{,}mincycle \PYG{o}{=} \PYG{l+m}{5}\PYG{p}{,} minphase\PYG{o}{=}\PYG{l+m}{2}\PYG{p}{,} name\PYG{o}{=}\PYG{l+s}{\PYGZdq{}Dating Business Cycles of Kira\PYGZdq{}}\PYG{p}{)}
+show\PYG{p}{(}data1\PYG{p}{)}
+\PYG{k+kp}{summary}\PYG{p}{(}data1\PYG{p}{)}
+plot\PYG{p}{(}data1\PYG{p}{)}
+\end{Verbatim}

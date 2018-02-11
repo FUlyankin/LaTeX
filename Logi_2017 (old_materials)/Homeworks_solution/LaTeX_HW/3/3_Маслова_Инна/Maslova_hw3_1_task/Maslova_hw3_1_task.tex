@@ -1,0 +1,124 @@
+\documentclass[12pt, a4paper]{article}  
+
+\usepackage{etex} % расширение классического tex в частности позволяет подгружать гораздо больше пакетов
+
+%%%%%%%%%% Математика %%%%%%%%%%
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Arial}   % задаёт основной шрифт документа
+
+\defaultfontfeatures{Mapping=tex-text}
+
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Arial}
+\newfontfamily{\cyrillicfont}{Arial}
+\newfontfamily{\cyrillicfontsf}{Arial}
+
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+\setmathfont{Asana Math}      % шрифт для математики
+
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+
+
+%%%%%%%%%% Работа с картинками %%%%%%%%%
+\usepackage{graphicx}                  % Для вставки рисунков
+\usepackage{graphics}
+\usepackage{wrapfig}                   % Обтекание рисунков и таблиц текстом
+
+
+%%%%%%%%%% Работа с таблицами %%%%%%%%%%
+\usepackage{tabularx}            % новые типы колонок
+\usepackage{tabulary}            % и ещё новые типы колонок
+\usepackage{array}               % Дополнительная работа с таблицами
+\usepackage{longtable}           % Длинные таблицы
+\usepackage{multirow}            % Слияние строк в таблице
+\usepackage{float}               % возможность позиционировать объекты в нужном месте
+\usepackage{booktabs}            % таблицы как в книгах!
+\renewcommand{\arraystretch}{1.3} % больше расстояние между строками
+
+
+%%%%%%%%%% Графика и рисование %%%%%%%%%%
+\usepackage{tikz, pgfplots}  % язык для рисования графики из latex'a
+\usepackage{amscd}                  %Пакеты для рисования
+\usepackage[matrix,arrow,curve]{xy} %комунитативных диаграмм
+
+
+%%%%%%%%%% Свои команды %%%%%%%%%%
+\usepackage{etoolbox}    % логические операторы для своих макросов
+\usepackage{xparse}      % больше команд для создания команд
+\DeclareMathOperator{\Var}{Var} 
+\DeclareMathOperator{\Cov}{Cov}
+\usepackage{ccaption}
+
+% Пакет, который ставит в каждом первом абзаце главы красную строку
+% Просто, чтобы эта pdf-ка нормально смотрелась :)
+\usepackage{indentfirst}  
+\setkeys{russian}{babelshorthands=true}
+
+
+
+\begin{document}
+
+\section{Создание операторов}
+\subsection{Математические операторы}
+$\Cov$ \\
+
+$\Var$
+\subsection{$\sigma$-алгебра}
+\def \s {\ensuremath{\sigma}}
+\s-алгебра
+\subsection{Последовательность}
+
+\def \p {\ensuremath{x_1 \ldots x_n}}
+\p
+
+\section{Усовершенствование}
+\newcommand{\com}[2]{\ensuremath{x_#1 \ldots x_#2}}
+\com{a}{z} \\
+
+\com{1}{6} \\
+
+\com{{a,b}}{{c,d}}
+\renewcommand{\labelitemi}{\LARGE{\textcolor{blue}{\textbullet}}}
+\section{Перечисление}
+\begin{itemize}
+\item Первый пункт
+\item Второй пункт
+\item Третий пункт
+\end{itemize}
+\subsection{Переопределение}
+\newcommand{\llim}{\lim\limits}
+$\llim_{x \to 0} \frac{\sin{x}}{x}$
+
+\renewcommand{\thefigure}{\thesection:\arabic{figure}}
+\captiondelim{ } 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.3\textheight]{i.jpg}
+\end{center}
+\caption{}
+\end{figure}
+
+\renewcommand{\theequation}{Eq.~(\arabic{equation})}
+\section{Нумерация формул}
+\begin{equation}
+ D= \frac{\rho_b}{\rho_{bs}}\times 100
+\end{equation}
+\begin{equation}
+a+b=c
+\end{equation}
+\subsection{Перевороты с текстом}
+\newcommand{\goods} [2] {\ifstrequal{#1}{Зеркально}{\reflectbox{#2}}{\ifstrequal{#1}{Поворот}{\rotatebox{180}{#2}}{\reflectbox{\rotatebox{180}{#2}}}}}
+\goods{Зеркально}{Привет}
+\goods{Поворот}{Hello}
+
+
+\end{document}

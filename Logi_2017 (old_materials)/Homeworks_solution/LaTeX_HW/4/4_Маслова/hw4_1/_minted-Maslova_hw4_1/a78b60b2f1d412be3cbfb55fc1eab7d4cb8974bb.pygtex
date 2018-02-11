@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+delete.dub\PYG{o}{\PYGZlt{}\PYGZhy{}}\PYG{k+kr}{function}\PYG{p}{(}k\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  h\PYG{o}{\PYGZlt{}\PYGZhy{}}\PYG{k+kt}{c}\PYG{p}{()}
+  \PYG{k+kr}{if} \PYG{p}{(}\PYG{k+kp}{length}\PYG{p}{(}k\PYG{p}{)}\PYG{o}{!=}\PYG{l+m}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k+kr}{for} \PYG{p}{(}i \PYG{k+kr}{in} \PYG{l+m}{1}\PYG{o}{:}\PYG{p}{(}\PYG{k+kp}{nrow}\PYG{p}{(}k\PYG{p}{)}\PYG{l+m}{\PYGZhy{}1}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+      \PYG{k+kr}{for} \PYG{p}{(}j \PYG{k+kr}{in} \PYG{p}{(}i\PYG{l+m}{+1}\PYG{p}{)}\PYG{o}{:}\PYG{k+kp}{nrow}\PYG{p}{(}k\PYG{p}{))} \PYG{p}{\PYGZob{}}
+        a\PYG{o}{\PYGZlt{}\PYGZhy{}}\PYG{k+kp}{sort}\PYG{p}{(}k\PYG{p}{[}i\PYG{p}{,])}
+        b\PYG{o}{\PYGZlt{}\PYGZhy{}}\PYG{k+kp}{sort}\PYG{p}{(}k\PYG{p}{[}j\PYG{p}{,])}
+        \PYG{k+kr}{if} \PYG{p}{((}\PYG{k+kp}{all}\PYG{p}{(}a\PYG{o}{==}b\PYG{p}{))}\PYG{o}{\PYGZam{}}\PYG{p}{(}\PYG{o}{!}\PYG{p}{(}j\PYG{o}{\PYGZpc{}in\PYGZpc{}}h\PYG{p}{)))} \PYG{p}{\PYGZob{}}
+          h\PYG{o}{\PYGZlt{}\PYGZhy{}}\PYG{k+kt}{c}\PYG{p}{(}h\PYG{p}{,}j\PYG{p}{)\PYGZcb{}\PYGZcb{}\PYGZcb{}}
+    k\PYG{o}{\PYGZlt{}\PYGZhy{}}k\PYG{p}{[}\PYG{o}{\PYGZhy{}}h\PYG{p}{,]\PYGZcb{}} \PYG{k+kr}{else} \PYG{p}{\PYGZob{}}k\PYG{o}{\PYGZlt{}\PYGZhy{}}\PYG{l+s}{\PYGZdq{}нет данной фигуры в графе\PYGZdq{}}\PYG{p}{\PYGZcb{}}
+  \PYG{k+kr}{return}\PYG{p}{(}k\PYG{p}{)\PYGZcb{}}
+\end{Verbatim}

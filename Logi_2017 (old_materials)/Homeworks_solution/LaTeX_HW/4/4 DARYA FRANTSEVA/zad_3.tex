@@ -1,0 +1,116 @@
+%!TEX TS-program = xelatex
+\documentclass[14pt,a4paper, oneside]{report}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+%\mathtoolsset{showonlyrefs=true}  % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+%\usepackage{leqno} % Нумерация формул слева
+
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Arial}   % задаёт основной шрифт документа
+\defaultfontfeatures{Mapping=tex-text}
+
+\newfontfamily{\cyrillicfonttt}{Arial}
+\newfontfamily{\cyrillicfont}{Arial}
+\newfontfamily{\cyrillicfontsf}{Arial}
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+\setkeys{russian}{babelshorthands=true}
+\usepackage{graphicx}                  % Для вставки рисунков
+\usepackage{graphics}
+\graphicspath{{images/}{pictures/}}    % можно указать папки с картинками
+\usepackage{hyperref}
+\hypersetup{
+    unicode=true,           % позволяет использовать юникодные символы
+    colorlinks=true,       	% true - цветные ссылки, false - ссылки в рамках
+    urlcolor=black,          % цвет ссылки на url
+    linkcolor=black,          % внутренние ссылки
+    citecolor=green,        % на библиографию
+	pdfnewwindow=true,      % при щелчке в pdf на ссылку откроется новый pdf
+	breaklinks              % если ссылка не умещается в одну строку, разбивать ли ее на две части?
+}
+
+\usepackage{extsizes} 
+\usepackage[paper=a4paper,top=10mm, bottom=10mm,left=35mm,right=35mm,includefoot,includehead]{geometry}
+
+\usepackage{setspace}
+\setstretch{1.33}  % Межстрочный интервал
+\setlength{\parindent}{0em} % Красная строка.
+\setlength{\parskip}{5mm}   % Расстояние 
+\flushbottom                            % 
+\righthyphenmin=2                       % Разрешение переноса двух и более символов
+\widowpenalty=300                     % Небольшое наказание за вдовствующую строку (одна строка абзаца на этой странице, остальное --- на следующей)
+\clubpenalty=3000                     % Приличное наказание за сиротствующую строку (омерзительно висящая одинокая строка в начале страницы)
+\tolerance=1000     % Ещё какое-то наказание.
+
+\newcounter{i}
+\newcommand{\pr}[1]{%
+\addtocounter{i}{1}    % увеличение счетчика на единицу
+\textbf{\large{Приложение \Asbuk{i}:}}
+#1}
+\usepackage{fancyhdr} % Колонтитулы
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.2pt}  
+ 	\chead{}
+	\lhead{Приложение \Asbuk{i}}
+	\rhead{\thepage} % номер страницы
+	\cfoot{}
+
+\usepackage{afterpage}  
+\renewcommand{\labelitemi}{\includegraphics[height=8mm]{123.jpg}}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+\includegraphics[height=6cm]{hogv.png}
+\end{center}
+
+\vspace{1cm}
+
+{\fontsize{12}{1.33}\selectfont Мистеру Даши Ешиеву.}
+
+\vspace{2.5cm}
+
+Мистер Даши!
+\\
+
+Рады сообщить Вам, что по~результатам предварительного тестирования вы набрали достаточное количество баллов для~поступления на~первый курс "Хогвартса".Просим Вас отправить через~Вашу сову ответное письмо с~согласием на~зачисление не~позднее 25~августа 2017~года, а~также изучить приложения к~данному письму.
+\\
+
+Ваш куратор по борьбе с темной магией, Аластор Грюм.
+\\ 
+
+{\fontspec{Silver Age Queens}{Alastor Moody}}
+
+\vfill
+\begin{center}
+\href{http://vhogwarts.ru}{Школа Чародейства и Волшебства "Хогвартс"}
+\end{center}
+\newpage
+\pr{\textbf{\large{Список необходимых книг и предметов.}}}
+\begin{itemize}
+\item Волшебная палочка
+\item Телескоп
+\item Остроконечная шляпа
+\item Котел
+\item Учебник по астрономии
+\end{itemize}
+\vfill
+\begin{center}
+\href{http://vhogwarts.ru}{Школа Чародейства и Волшебства "Хогвартс"}
+\end{center}
+\newpage
+\pr{\textbf{\large{Список изучаемых предметов.}}}
+\begin{itemize}
+\item Астрономия
+\item Зельеварение
+\item Защита от темных искусств
+\item Травология
+\item Заклинания
+\end{itemize}
+\vfill
+\begin{center}
+\href{http://vhogwarts.ru}{Школа Чародейства и Волшебства "Хогвартс"}
+\end{center}
+\end{document}

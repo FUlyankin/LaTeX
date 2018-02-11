@@ -1,0 +1,40 @@
+\documentclass[12pt, a4paper]{article}  
+
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+
+\usepackage{leqno}
+
+
+
+\usepackage{fontspec}   
+\setmainfont{Arial}
+\defaultfontfeatures{Mapping=tex-text}
+\newfontfamily{\cyrillicfonttt}{Arial}
+\newfontfamily{\cyrillicfont}{Arial}
+\newfontfamily{\cyrillicfontsf}{Arial}
+
+\usepackage{unicode-math}     
+\setmathfont{Asana Math}      
+
+\usepackage{polyglossia}      
+\setdefaultlanguage{russian}  
+\setotherlanguage{english}    
+
+
+\author{Ивлева Анастасия Владимировна} 
+\title{Домашняя работа №2}
+
+
+\begin{document}
+\maketitle
+\section{Письмо с угрозой}
+
+\Large{\fontspec{Phorssa}{Дорогие и Наши Любимые преподаватели!Не задавайте нам много домашней работы и будьте к нам дружелюбными. Иначе хоть мы и младше вас, но сумеем отомстить и купим вам кучу вкусняшек. И тогда вы потолстеете, но хоть будете милыми... :)Конец угрозы.}}
+
+\section{Формулы}
+
+\Large{\fontspec{Phorssa}{\[ 9 + 9 = 18 \]}
+
+
+\end{document}

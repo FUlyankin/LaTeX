@@ -1,0 +1,5 @@
+[0] Config.pm:340> INFO - This is Biber 2.4
+[0] Config.pm:343> INFO - Logfile is 'hogwarts.blg'
+[54] biber:287> INFO - === Чт мар 23, 2017, 19:55:55
+[132] Utils.pm:163> ERROR - Cannot find control file 'hogwarts.bcf'! - did you pass the "backend=biber" option to BibLaTeX?
+[132] Biber.pm:113> INFO - ERRORS: 1
