@@ -1,0 +1,4 @@
+\select@language {russian}
+\beamer@sectionintoc {1}{Картинки}{2}{0}{1}
+\beamer@sectionintoc {2}{Таблицы}{7}{0}{2}
+\beamer@sectionintoc {3}{TikZ и Geogebra}{13}{0}{3}

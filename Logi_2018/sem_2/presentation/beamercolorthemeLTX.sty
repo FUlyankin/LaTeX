@@ -1,0 +1,246 @@
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	COLOR PALETTE
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\ProvidesPackage{beamercolorthemeLTX}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	OPTIONS
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\newif\if@beamer@LTX@cblock
+\@beamer@LTX@cblockfalse
+\DeclareOptionBeamer{cblock}{\@beamer@LTX@cblocktrue}
+
+\newif\if@beamer@LTX@greybg
+\@beamer@LTX@greybgfalse
+\DeclareOptionBeamer{greybg}{\@beamer@LTX@greybgtrue}
+
+\DeclareOptionBeamer*{%
+  \PackageWarning{beamercolorthemeLTX}{Unknown option `\CurrentOption'}%
+}
+
+\ProcessOptionsBeamer
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	STOCKHOLMS COLOR THEME
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%== BLUE
+	\definecolor{LTXLightBlue}{RGB}{214,237,252} % HEX #d6edfc
+		\newcommand{\cLTXLightBlue}[1]{{\color{LTXLightBlue}{#1}}}
+	\definecolor{LTXBlue}{RGB}{0,110,191} % HEX #006ebf
+		\newcommand{\cLTXBlue}[1]{{\color{LTXBlue}{#1}}}
+	%\definecolor{LTXDarkBlue}{RGB}{} %HEX #
+		%\newcommand{\cLTXDarkBlue}[1]{{\color{LTXDarkBlue}{#1}}}
+
+%== GREEN
+
+	\definecolor{LTXLightGreen}{RGB}{213,247,244} % HEX #0d5f7f4
+		\newcommand{\cLTXLightGreen}[1]{{\color{LTXLightGreen}{#1}}}
+	\definecolor{LTXGreen}{RGB}{0,134,127} % #00867f
+		\newcommand{\cLTXGreen}[1]{{\color{LTXGreen}{#1}}}
+
+%== GREY
+	%\definecolor{LTXLightGrey}{RGB}{}
+		%\newcommand{\cLTXLightGrey}[1]{{\color{LTXLightGrey}{#1}}}
+	\definecolor{LTXGrey}{RGB}{245,243,238} % HEX #f5f3ee
+		\newcommand{\cLTXGrey}[1]{{\color{LTXGrey}{#1}}}
+	\definecolor{LTXDarkGrey}{RGB}{51,51,51} % HEX #333333
+		\newcommand{\cLTXDarkGrey}[1]{{\color{LTXDarkGrey}{#1}}}
+
+%== ORANGE
+	\definecolor{LTXLightOrange}{RGB}{255,215,210} % HEX #ffd7d2
+		\newcommand{\cLTXLightOrange}[1]{{\color{LTXLightOrange}{#1}}}
+	\definecolor{LTXOrange}{RGB}{221,74,44} % HEX #dd4a2c
+		\newcommand{\cLTXOrange}[1]{{\color{LTXOrange}{#1}}}
+
+%== PURPLE
+
+	\definecolor{LTXLightPurple}{RGB}{241,230,252} % HEX #f1e6fc
+		\newcommand{\cLTXLightPurple}[1]{{\color{LTXLightPurple}{#1}}}
+	\definecolor{LTXPurple}{RGB}{93,35,125} % HEX #5d237d
+		\newcommand{\cLTXPurple}[1]{{\color{LTXPurple}{#1}}}
+
+%== RED
+
+	\definecolor{LTXLightRed}{RGB}{254,222,237} % HEX #c40064
+		\newcommand{\cLTXLightRed}[1]{{\color{LTXLightRed}{#1}}}
+	\definecolor{LTXRed}{RGB}{196,0,100} % HEX #fedeed
+		\newcommand{\cLTXRed}[1]{{\color{LTXRed}{#1}}}
+	%\definecolor{LTXDarkRed}{RGB}{} % HEX #
+		%\newcommand{\cLTXDarkRed}[1]{{\color{LTXDarkRed}{#1}}}
+
+%== YELLOW
+
+	%\definecolor{LTXLightYellow}{RGB}{}
+		%\newcommand{\cLTXLightYellow}[1]{{\color{LTXLightYellow}{#1}}}
+	\definecolor{LTXYellow}{RGB}{252,191,10} % HEX #fcbf0a
+		\newcommand{\cLTXYellow}[1]{{\color{LTXYellow}{#1}}}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	ISSR COLORS
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%== BLUE
+	\definecolor{issrBlue}{RGB}{0,111,174} % HEX #0066cc
+		\newcommand{\cissrBlue}[1]{{\color{issrBlue}{#1}}}
+
+%== GREY
+	\definecolor{issrGrey}{RGB}{167,169,172} % HEX #999999
+		\newcommand{\cissrGrey}[1]{{\color{issrGrey}{#1}}}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	GLOBAL COLOR THEME
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%== BLUE
+
+	\newcommand{\cLightBlue}[1]{{\color{LTXLightBlue}{#1}}}
+	\newcommand{\crLightBlue}{\color{LTXLightBlue}}
+	\newcommand{\cnLightBlue}{LTXLightBlue}
+	\newcommand{\cBlue}[1]{{\color{LTXBlue}{#1}}}
+	\newcommand{\crBlue}{\color{LTXBlue}}
+	\newcommand{\cnBlue}{LTXBlue}
+	%\newcommand{\cDarkBlue}[1]{{\color{}{#1}}}
+	%\newcommand{\crDarkBlue}{\color{}}
+	%\newcommand{\cnDarkBlue}{}
+
+%== GREEN
+
+	%\newcommand{\cLightGreen}[1]{{\color{}{#1}}}
+	%\newcommand{\crLightGreen}{\color{}}
+	\newcommand{\cnLightGreen}{LTXLightGreen}
+	\newcommand{\cGreen}[1]{{\color{LTXGreen}{#1}}}
+	\newcommand{\crGreen}{\color{LTXGreen}}
+	\newcommand{\cnGreen}{LTXGreen}
+	%\newcommand{\cDarkGreen}[1]{{\color{}{#1}}}
+	%\newcommand{\crDarkGreen}{\color{}}
+	%\newcommand{\cnDarkGreen}{LTXDarkGreen}
+
+%== GREY
+
+	\newcommand{\cLightGrey}[1]{{\color{LTXLightGrey}{#1}}}
+	\newcommand{\crLightGrey}{\color{LTXLightGrey}}
+	\newcommand{\cnLightGrey}{LTXLightGrey}
+	\newcommand{\cGrey}[1]{{\color{LTXGrey}{#1}}}
+	\newcommand{\crGrey}{\color{LTXGrey}}
+	\newcommand{\cnGrey}{LTXGrey}
+	\newcommand{\cDarkGrey}[1]{{\color{LTXDarkGrey}{#1}}}
+	\newcommand{\crDarkGrey}{\color{LTXDarkGrey}}
+	\newcommand{\cnDarkGrey}{LTXDarkGrey}
+
+%== ORANGE
+
+	\newcommand{\cLightOrange}[1]{{\color{LTXLightOrange}{#1}}}
+	\newcommand{\crLightOrange}{\color{LTXLightOrange}}
+	\newcommand{\cnLightOrange}{LTXLightOrange}
+	\newcommand{\cOrange}[1]{{\color{}{#1}}}
+	\newcommand{\crOrange}{\color{LTXOrange}}
+	\newcommand{\cnOrange}{LTXOrange}
+	%\newcommand{\cDarkOrange}[1]{{\color{}{#1}}}
+	%\newcommand{\crDarkOrange}{\color{}}
+	%\newcommand{\cnDarkOrange}{}
+
+%== PURPLE
+
+	\newcommand{\cLightPurple}[1]{{\color{LTXLightPurple}{#1}}}
+	\newcommand{\crLightPurple}{\color{LTXLightPurple}}
+	\newcommand{\cnLightPurple}{LTXLightPurple}
+	\newcommand{\cPurple}[1]{{\color{LTXPurple}{#1}}}
+	\newcommand{\crPurple}{\color{LTXPurple}}
+	\newcommand{\cnPurple}{LTXPurple}
+	%\newcommand{\cDarkPurple}[1]{{\color{}{#1}}}
+	%\newcommand{\crDarkPurple}{\color{}}
+	%\newcommand{\cnDarkPurple}{}
+
+%== RED
+
+	\newcommand{\cLightRed}[1]{{\color{LTXLightRed}{#1}}}
+	\newcommand{\crLightRed}{\color{LTXLightRed}}
+	\newcommand{\cnLightRed}{LTXLightRed}
+	\newcommand{\cRed}[1]{{\color{LTXRed}{#1}}}
+	\newcommand{\crRed}{\color{LTXRed}}
+	\newcommand{\cnRed}{LTXRed}
+	\newcommand{\cDarkRed}[1]{{\color{LTXDarkRed}{#1}}}
+	\newcommand{\crDarkRed}{\color{LTXDarkRed}}
+	\newcommand{\cnDarkRed}{LTXDarkRed}
+
+%== YELLOW
+
+	%\newcommand{\cLightYellow}[1]{{\color{}{#1}}}
+	%\newcommand{\crLightYellow}{\color{}}
+	%\newcommand{\cnLightYellow}{LTXLightYellow}
+	\newcommand{\cYellow}[1]{{\color{LTXYellow}{#1}}}
+	\newcommand{\crYellow}{\color{LTXYellow}}
+	\newcommand{\cnYellow}{LTXYellow}
+	%\newcommand{\cDarkYellow}[1]{{\color{}{#1}}}
+	%\newcommand{\crDarkYellow}{\color{}}
+	%\newcommand{\cnDarkYellow}{}
+
+
+% General
+\setbeamercolor{normal text}{fg=LTXDarkGrey}
+\setbeamercolor{structure}{fg=LTXDarkGrey}
+\setbeamercolor{alerted text}{fg=LTXRed}
+\setbeamercolor{example text}{fg=LTXGreen}
+\setbeamercolor{copyright text}{fg=LTXPurple}
+
+% Palettes
+\setbeamercolor{palette primary}{fg=LTXGrey, bg=LTXDarkGrey}
+\setbeamercolor{palette secondary}{fg=LTXDarkGrey,bg=LTXGrey}
+\setbeamercolor{palette tertiary}{fg=LTXLightBlue, bg=LTXDarkGrey}
+\setbeamercolor{palette quaternary}{fg=LTXGrey, bg=LTXBlue}
+\setbeamercolor{mini frame}{bg=LTXGrey}
+\setbeamercolor{section in head/foot}{fg=LTXDarkGrey, bg=LTXGrey}
+
+% Titlepage
+\setbeamercolor{title}{parent=normal text}
+\setbeamercolor{subtitle}{fg=LTXBlue}
+\setbeamercolor{institute}{parent=normal text}
+
+% Content
+\setbeamercolor{frametitle}{parent=palette primary}
+
+% Blocks
+\setbeamercolor{block title}{fg=white,bg=LTXBlue}
+\setbeamercolor{block body}{fg=LTXDarkGrey, bg=LTXGrey}
+\setbeamercolor{block title example}{fg=white, bg=LTXGreen}
+\setbeamercolor{block body example}{fg=LTXDarkGrey, bg=LTXLightGreen}
+\setbeamercolor{block title alerted}{fg=white, bg=LTXRed}
+\setbeamercolor{block body alerted}{fg=LTXDarkGrey, bg=LTXLightRed}
+
+% Notes
+\setbeamercolor{note page}{fg=LTXDarkGrey,bg=LTXGrey}
+\setbeamercolor{note title}{fg=white, bg=LTXDarkGrey}
+\setbeamercolor{note date}{parent=note title}
+
+% Page Number
+\setbeamercolor{page number in head/foot}{fg=LTXDarkGrey}
+\setbeamercolor{qed}{fg=LTXGreen}
+\setbeamercolor{itemize item}{fg=LTXBlue}
+\setbeamercolor{itemize subitem}{fg=LTXRed}
+\setbeamercolor{itemize subsubitem}{fg=LTXPurple}
+
+\if@beamer@LTX@greybg
+% General
+\setbeamercolor{normal text}{fg=LTXDarkGrey,bg=LTXGrey}
+\setbeamercolor{block body}{fg=LTXDarkGrey, bg=LTXLightBlue}
+\fi
+
+\if@beamer@LTX@cblock
+
+\setbeamercolor{block title}{fg=white,bg=LTXBlue}
+\setbeamercolor{block body}{fg=LTXDarkGrey, bg=LTXLightBlue}
+\setbeamercolor{block title example}{fg=white, bg=LTXGreen}
+\setbeamercolor{block body example}{fg=LTXDarkGrey, bg=LTXLightGreen}
+\setbeamercolor{block title alerted}{fg=white, bg=LTXRed}
+\setbeamercolor{block body alerted}{fg=LTXDarkGrey, bg=LTXLightRed}
+
+\setbeamercolor{qed}{fg=LTXDarkGrey}
+\setbeamercolor{itemize item}{fg=LTXBlue}
+\setbeamercolor{itemize subitem}{fg=LTXRed}
+\setbeamercolor{itemize subsubitem}{fg=LTXDarkGrey}
+\fi
+
+\mode<all>

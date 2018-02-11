@@ -1,0 +1,128 @@
+%!TEX TS-program = xelatex
+\documentclass[12pt, a4paper]{article}  
+
+\usepackage{etex} % расширение классического tex в частности позволяет подгружать гораздо больше пакетов, чем мы и займёмся далее
+
+%%%%%%%%%% Математика %%%%%%%%%%
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+%\mathtoolsset{showonlyrefs=true}  % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+%\usepackage{leqno} % Нумерация формул слева
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Arial}   % задаёт основной шрифт документа
+
+\defaultfontfeatures{Mapping=tex-text}
+
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Arial}
+\newfontfamily{\cyrillicfont}{Arial}
+\newfontfamily{\cyrillicfontsf}{Arial}
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+\setmathfont{Asana Math}      % шрифт для математики
+% \setmathfont[math-style=ISO]{Asana Math}
+% Можно делать смену начертания с помощью разных стилей
+
+% Конкретный символ из конкретного шрифта
+% \setmathfont[range=\int]{Neo Euler}
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+
+
+%%%%%%%%%% Работа с картинками %%%%%%%%%
+\usepackage{graphicx}                  % Для вставки рисунков
+\usepackage{graphics}
+\graphicspath{{images/}{pictures/}}    % можно указать папки с картинками
+\usepackage{wrapfig}                   % Обтекание рисунков и таблиц текстом
+\usepackage{subfigure}                 % для создания нескольких рисунков внутри одного
+
+
+%%%%%%%%%% Работа с таблицами %%%%%%%%%%
+\usepackage{tabularx}            % новые типы колонок
+\usepackage{tabulary}            % и ещё новые типы колонок
+\usepackage{array}               % Дополнительная работа с таблицами
+\usepackage{longtable}           % Длинные таблицы
+\usepackage{multirow}            % Слияние строк в таблице
+\usepackage{float}               % возможность позиционировать объекты в нужном месте
+\usepackage{booktabs}            % таблицы как в книгах!
+\renewcommand{\arraystretch}{1.3} % больше расстояние между строками
+
+% Заповеди из документации к booktabs:
+% 1. Будь проще! Глазам должно быть комфортно
+% 2. Не используйте вертикальные линни
+% 3. Не используйте двойные линии. Как правило, достаточно трёх горизонтальных линий
+% 4. Единицы измерения - в шапку таблицы
+% 5. Не сокращайте .1 вместо 0.1
+% 6. Повторяющееся значение повторяйте, а не говорите "то же"
+% 7. Есть сомнения? Выравнивай по левому краю!
+
+%%%%%%%%%% Графика и рисование %%%%%%%%%%
+\usepackage{tikz, pgfplots}  % язык для рисования графики из latex'a
+\usepackage{amscd}                  %Пакеты для рисования
+\usepackage[matrix,arrow,curve]{xy} %комунитативных диаграмм
+
+% Всякие странные команды из Geogebra и с сайта для TikZ
+\usepackage{pgf}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+
+\definecolor{ffzzzz}{rgb}{1.,0.6,0.6}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+
+\usetikzlibrary{calc}
+\usepackage{relsize}
+\newcommand\LM{\ensuremath{\mathit{LM}}}
+\newcommand\IS{\ensuremath{\mathit{IS}}}
+
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+
+\title{Домашнее задание 3. Упражнение 2.}
+\author{Людмила Гадий}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\newenvironment{snowman}[1]{
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+
+\node[draw,text width=4cm] at (5.2,3.1) {#1};}
+{
+\draw (5.34,2.04)-- (6.1,1.42);
+\draw (6.28,1.26)-- (6.98,0.7);
+\draw(8.299840890790964,0.5839330335282897) circle (0.7722058918750973cm);
+\draw(8.293793766899329,-1.3671007258917371) circle (1.1640908580637006cm);
+\draw(8.257743336036732,-3.829340274936169) circle (1.3056002801443876cm);
+\draw [line width=1.2pt] (7.3232182237131465,-0.980178347120372)-- (6.046793680051667,-1.6867705052186903);
+\draw [line width=1.2pt] (9.21506174378284,-1.0029716425428983)-- (10.514279582866846,-1.8235302777538485);
+\draw [shift={(8.287553717848194,0.44433597283579024)}] plot[domain=3.1031500635686053:6.244742717158399,variable=\t]({1.*0.2965319258022498*cos(\t r)+0.*0.2965319258022498*sin(\t r)},{0.*0.2965319258022498*cos(\t r)+1.*0.2965319258022498*sin(\t r)});
+\begin{scriptsize}
+\draw [fill=qqqqff] (7.9318669688745,0.7820728376371557) circle (2.5pt);
+\draw [fill=qqqqff] (8.611203440104898,0.7820728376371557) circle (2.5pt);
+\end{scriptsize}
+\end{tikzpicture}
+}
+
+\begin{snowman}
+{Ради некоторых не жалко и растаять}
+\end{snowman}
+
+
+\begin{snowman}
+{Ради некоторых не жалко и растаять Ради некоторых не жалко и растаять  Ради некоторых не жалко и растаять  Ради некоторых не жалко и растаять  Ради некоторых не жалко и растаять}  
+\end{snowman}
+
+\end{document}

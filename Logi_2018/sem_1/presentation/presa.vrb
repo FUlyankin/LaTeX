@@ -1,0 +1,9 @@
+\frametitle{Старый путь}
+\large Самые первые строки в другом движке будут:
+\begin{block}{Движок pdf-LaTeX}
+\begin{verbatim}
+\usepackage[british,russian]{babel}  % выбор языка
+\usepackage[utf8]{inputenc}          % utf8 кодировка
+\usepackage[X2,T2A]{fontenc}         % ещё кодировка
+\end{verbatim}
+\end{block}

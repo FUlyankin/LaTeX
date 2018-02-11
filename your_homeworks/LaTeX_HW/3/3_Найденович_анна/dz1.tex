@@ -1,0 +1,143 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{etex} % расширение классического tex в частности позволяет подгружать гораздо больше пакетов, чем мы и займёмся далее
+
+%%%%%%%%%% Математика %%%%%%%%%%
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+%\mathtoolsset{showonlyrefs=true}  % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+%\usepackage{leqno} % Нумерация формул слева
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Arial}   % задаёт основной шрифт документа
+
+\defaultfontfeatures{Mapping=tex-text}
+
+\newfontfamily{\cyrillicfonttt}{Arial}
+\newfontfamily{\cyrillicfont}{Arial}
+\newfontfamily{\cyrillicfontsf}{Arial}
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+\setmathfont{Asana Math}      % шрифт для математики
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+
+
+%%%%%%%%%% Работа с картинками %%%%%%%%%
+\usepackage{graphicx}                  % Для вставки рисунков
+\usepackage{graphics}
+\graphicspath{{images/}{pictures/}}    % можно указать папки с картинками
+\usepackage{wrapfig}                   % Обтекание рисунков и таблиц текстом
+
+
+%%%%%%%%%% Графика и рисование %%%%%%%%%%
+\usepackage{tikz, pgfplots}  % язык для рисования графики из latex'a
+\usepackage{amscd}                  %Пакеты для рисования
+\usepackage[matrix,arrow,curve]{xy} %комунитативных диаграмм
+
+
+%%%%%%%%%% Теоремы %%%%%%%%%%
+\theoremstyle{plain}              % Это стиль по умолчанию.  Есть другие стили. 
+\newtheorem{theorem}{Теорема}[section]
+\newtheorem{result}{Следствие}[theorem]
+% счётчик подчиняется теоремному, нумерация идёт по главам согласованно между собой
+
+\theoremstyle{definition}         % убирает курсив и что-то еще наверное делает ;)
+\newtheorem*{defin}{Определение}  % нумерация не идёт вообще
+
+\newtheorem{fignia}{Какая-то фигня}
+
+
+%%%%%%%%%% Свои команды %%%%%%%%%%
+\usepackage{etoolbox}    % логические операторы для своих макросов
+
+% Пакет, который ставит в каждом первом абзаце главы красную строку
+% Просто, чтобы эта pdf-ка нормально смотрелась :)
+\usepackage{indentfirst}
+\setkeys{russian}{babelshorthands=true}
+
+
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+
+
+\begin{document}
+
+\section{Часть 1}
+
+\[\Var(X) \qquad \text{VS} \qquad Var(X) \]
+\[\Cov(X,Y) \qquad \text{VS} \qquad Cov(X,Y) \]
+
+\begin {center}
+
+\def\s{\ensuremath{\sigma}}
+$\sigma$-алгебра \quad VS \quad \s-алгебра 
+
+
+\newcommand{\co}{x\_1  \backslash ldots x\_n}
+\co
+
+\newcommand{\com}[2]{x\_#1  \backslash ldots x\_#2}
+\com{a}{z} \\
+\com{1}{6} \\
+\com{(a,b)}{(c,d)}
+
+\end{center}
+
+
+\def\tk{
+\begin{tikzpicture}
+\draw[blue,fill=blue](2,2) circle [radius = 0.1];
+\end{tikzpicture}
+}
+
+\begin {itemize}
+\item [\tk] Первый пункт
+\item [\tk] Второй пункт
+\item [\tk] Третий пункт
+\end {itemize}
+
+
+\newcommand{\llim}[2]{\lim\limits_{n \to #1} #2}
+$\llim {\infty} {\frac{n+1}{n}}$
+
+
+\renewcommand\thefigure{\thesection.\arabic{figure}}    
+\setcounter{figure}{0}   
+ 
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.3\textheight]{doge.png}
+\caption{Хаски}
+\end{center}
+\end{figure}
+
+
+\section{Часть 2. Картиночки}
+\setcounter{figure}{0}    
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.4\textheight]{doge.png}
+\caption{Больше хаски}
+\end{center}
+\end{figure}
+  
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.5\textheight]{doge.png}
+\caption{Еще больше хаски}
+\end{center}
+\end{figure}
+
+\newcounter{i}
+\newcommand{\eq}{%
+\addtocounter{i}{1}   
+Eq. (\arabic{i})\\}
+
+\begin{equation}
+    E=mc^2\tag{\eq}
+  \end{equation}
+    
+\end{document}

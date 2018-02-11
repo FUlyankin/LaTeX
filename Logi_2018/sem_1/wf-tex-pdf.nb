@@ -1,0 +1,142 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4198,        134]
+NotebookOptionsPosition[      3853,        117]
+NotebookOutlinePosition[      4191,        132]
+CellTagsIndexPosition[      4148,        129]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "Wolfram Language and ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    RowBox[{"L", 
+     StyleBox[
+      AdjustmentBox["A",
+       BoxBaselineShift->-0.4,
+       BoxMargins->{{-0.5, -0.3}, {0, 0}}],
+      FontSize->Smaller], "T", 
+     AdjustmentBox["E",
+      BoxBaselineShift->0.5,
+      BoxMargins->{{-0.3, 0}, {0, 0}}], "X"}],
+    SingleLetterItalics->False], TraditionalForm]]],
+ "..."
+}], "Title",
+ CellChangeTimes->{{3.6969611962261543`*^9, 3.696961219511788*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"mat", " ", "=", " ", 
+   RowBox[{"MatrixForm", "[", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"Sin", "[", 
+       RowBox[{
+        RowBox[{"j", " ", 
+         RowBox[{"x", "^", "i"}]}], " ", "+", 
+        RowBox[{"i", " ", 
+         RowBox[{"y", "^", "j"}]}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"j", ",", "1", ",", "5"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "1", ",", "5"}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", "mat", "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.696959543003284*^9, 3.696959597730195*^9}, {
+  3.696959639610323*^9, 3.6969596398354053`*^9}, {3.696960802745158*^9, 
+  3.696960803053458*^9}, {3.696960857974181*^9, 3.696960873738254*^9}}],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Clear", "[", 
+    RowBox[{"x", ",", "y", ",", "z"}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"picture", " ", "=", " ", 
+    RowBox[{"Show", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"ContourPlot3D", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"z", "\[Equal]", 
+           RowBox[{"x", " ", "y"}]}], ",", 
+          RowBox[{
+           RowBox[{"x", "+", "y"}], "\[Equal]", "1"}], ",", 
+          RowBox[{"z", "\[Equal]", "0"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", 
+          RowBox[{"-", "1"}], ",", "2"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"y", ",", 
+          RowBox[{"-", "1"}], ",", "2"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"z", ",", 
+          RowBox[{"-", "1"}], ",", "2"}], "}"}]}], "]"}], ",", 
+      RowBox[{"RegionPlot3D", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"z", "<=", " ", 
+          RowBox[{"x", " ", "y"}]}], "&&", 
+         RowBox[{
+          RowBox[{"x", "+", "y"}], "\[LessEqual]", " ", "1"}], "&&", 
+         RowBox[{"x", "\[GreaterEqual]", "0"}], "&&", 
+         RowBox[{"y", "\[GreaterEqual]", "0"}], "&&", 
+         RowBox[{"z", "\[GreaterEqual]", " ", "0"}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", 
+          RowBox[{"-", "1"}], ",", "2"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"y", ",", 
+          RowBox[{"-", "1"}], ",", "2"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"z", ",", 
+          RowBox[{"-", "1"}], ",", "2"}], "}"}], ",", 
+        RowBox[{"PlotPoints", "\[Rule]", "50"}]}], "]"}]}], 
+     "\[IndentingNewLine]", "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.6969602908796787`*^9, 3.696960298174547*^9}, {
+  3.696960406221903*^9, 3.696960431831666*^9}, {3.696960475131723*^9, 
+  3.696960484445477*^9}, {3.6969608190406713`*^9, 3.696960819320116*^9}}]
+}, Open  ]]
+},
+WindowSize->{1315, 744},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.0 for Linux x86 (64-bit) (September 21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 486, 17, 97, "Title"],
+Cell[1069, 41, 798, 21, 57, "Input"],
+Cell[1870, 64, 1967, 50, 146, "Input"]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,167 @@
+%!TEX TS-program = xelatex
+\documentclass[12pt, a4paper]{article}
+
+\input{preamble}
+
+
+% Специальный пакет для оформления задач! 
+\newtheorem{problem}{Задача}
+
+\usepackage{answers}
+\Newassociation{sol}{solution}{solution_file}
+% sol --- имя окружения внутри задач
+% solution --- имя окружения внутри solution_file
+% solution_file --- имя файла в который будет идти запись решений
+
+
+\begin{document}
+
+% Открываем файл, куда будут записываться решения. 
+\Opensolutionfile{solution_file}[all_solutions]
+
+
+\begin{problem}
+Решить следующие однородное рекурентное уравнение:
+\[y_{n+2} = 5 y_{n+1} - 6 y_n, \text{ если } y_0 = 0, y_1 = 1\]
+\begin{sol}
+
+\end{sol}
+\end{problem}
+
+
+
+\begin{problem}
+Решить следующие однородное рекурентное уравнение:
+\[y_{n+2} = 4 y_{n+1} - 4 y_n, \text{ если } y_1 = 2, y_2 = 4\] 
+\begin{sol}
+
+\end{sol}
+\end{problem}
+
+
+
+\begin{problem}
+Решить следующие однородное рекурентное уравнение:
+\[2y_{n+2} = 5 y_{n+1} - 3 y_n, \text{ если } y_0 = 0, y_1 = 1\]
+\begin{sol}
+
+\end{sol}
+\end{problem}
+
+
+
+\begin{problem}
+Решить следующие неоднородное рекурентное уравнение:
+\[2y_{n+2} - 5 y_{n+1} + 3 y_n = 2 + 3n, \text{ если } y_0 = 0, y_1 = 1\]
+\begin{sol}
+
+\end{sol}
+\end{problem}
+
+
+
+\begin{problem}
+Решить следующие неоднородное рекурентное уравнение:
+\[y_{n+2} - 5 y_{n+1} + 6 y_n = 2^n, \text{ если } y_0 = 0, y_1 = 1\]
+\begin{sol}
+
+\end{sol}
+\end{problem}
+
+
+
+\begin{problem}
+Решить следующие неоднородное рекурентное уравнение:
+\[y_{n+2} - 5 y_{n+1} + 6 y_n = 2 + 3n, \text{ если } y_0 = 0, y_1 = 1\]
+\begin{sol}
+
+\end{sol}
+\end{problem}
+
+
+
+\begin{problem}
+Решить следующие неоднородное рекурентное уравнение:
+\[y_{n+2} - 4 y_{n+1} + 4 y_n = 2^n, \text{ если } y_1 = 2, y_2 = 4\] 
+\begin{sol}
+
+\end{sol}
+\end{problem}
+
+
+
+\begin{problem}
+Решить следующее рекурентное уравнение:
+\[y_{n+4} = 5 y_{n+3} - 6 y_{n+2} - 4 y_{n+1} + 8 y_n\]
+\begin{sol}
+
+\end{sol}
+\end{problem}
+
+
+\begin{problem}
+Решить следующее рекурентное уравнение:
+\[y_{n+2} = 2 y_{n+1} - 2 y_n\]
+\begin{sol}
+
+\end{sol}
+\end{problem}
+
+
+\begin{problem}
+Решить следующее рекурентное уравнение:
+\[y_{n+2} + 9 y_{n} = 0\]
+\begin{sol}
+
+\end{sol}
+\end{problem}
+
+
+
+\begin{problem}
+Решить следующее рекурентное уравнение:
+\[y_{n+2} - 2 y_{n+1} \cos{\varphi} + y_n = 0, \text{ если } y_1 = \cos{\varphi}, y_2 = \cos{2\varphi}\]
+\begin{sol}
+
+\end{sol}
+\end{problem}
+
+
+
+\begin{problem}
+Решить следующее рекурентное уравнение:
+\[y_{n+k} - C_k^1 y_{n+k-1} + C_k^2 y_{n+k-2} - \ldots + (-1)^k C_k^k y_k = 0\] 
+Будет ли последовательность $y_n = n^t$ решением этого рекурентного соотношения?
+\begin{sol}
+
+\end{sol}
+\end{problem}
+
+
+
+\begin{problem}
+Пара кроликов раз в месяц приносит приплод из двух крольчат (самец и самка), при этом новорождённые крольчата через два месяца после рождения уже приносят приплод. Сколько пар кроликов появится через год, если в начале года была одна новорождённая пара кроликов. В течение года кролики не погибали.
+\begin{sol}
+
+\end{sol}
+\end{problem}
+
+
+
+\begin{problem}
+На доску выписаны числа $a_1, a_2, a_3, \ldots, a_200$. Известно, что $a_1 = 3$, $a_2 = 9$. Найдите $a_{200}$, если для любого натурального числа $n$ справедливо равенство $a_{n+2} = a_{n+1} - a_n$.
+\begin{sol}
+
+\end{sol}
+\end{problem}
+
+
+
+% Закрываем файл, куда мы записывали решения и вставляем его в конце списка задач. 
+\Closesolutionfile{solution_file}
+
+% Вставляем решения. Можно их не вставлять или настроить пакет так, чтобы они шли непосредственно после каждой задачи.
+% \input{all_solutions}
+
+
+\end{document}

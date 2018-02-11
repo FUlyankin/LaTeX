@@ -1,0 +1,6 @@
+\select@language {russian}
+\beamer@sectionintoc {1}{Наш первый файл}{26}{0}{1}
+\beamer@sectionintoc {2}{Мотивация}{34}{0}{2}
+\beamer@sectionintoc {3}{Шрифты}{46}{0}{3}
+\beamer@sectionintoc {4}{Подробнее о математике в \LaTeX {}}{54}{0}{4}
+\beamer@sectionintoc {5}{Домашка}{55}{0}{5}

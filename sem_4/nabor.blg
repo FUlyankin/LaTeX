@@ -1,5 +1,0 @@
-[0] Config.pm:340> INFO - This is Biber 2.4
-[0] Config.pm:343> INFO - Logfile is 'nabor.blg'
-[83] biber:287> INFO - === Пт июн 16, 2017, 19:01:47
-[193] Utils.pm:163> ERROR - Cannot find control file 'nabor.bcf'! - did you pass the "backend=biber" option to BibLaTeX?
-[193] Biber.pm:113> INFO - ERRORS: 1
