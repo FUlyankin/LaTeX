@@ -1,7 +1,0 @@
-\select@language {russian}
-\beamer@sectionintoc {1}{Актуальность}{3}{0}{1}
-\beamer@sectionintoc {2}{Цели и задачи исследования}{5}{0}{2}
-\beamer@sectionintoc {3}{Классификация облигаций}{7}{0}{3}
-\beamer@sectionintoc {4}{Эмпирика}{20}{0}{4}
-\beamer@subsectionintoc {4}{1}{Собранные данные}{21}{0}{4}
-\beamer@subsectionintoc {4}{2}{Распределение кредитных рейтингов по отраслям}{23}{0}{4}

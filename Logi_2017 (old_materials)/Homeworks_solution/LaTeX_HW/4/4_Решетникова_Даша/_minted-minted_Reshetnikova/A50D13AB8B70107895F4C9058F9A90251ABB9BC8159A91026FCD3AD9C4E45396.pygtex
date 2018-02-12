@@ -1,7 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
-\PYG{c+c1}{\PYGZsh{} Код ниже здоровается с лектором}
-
-\PYG{k}{def} \PYG{n+nf}{greet}\PYG{p}{(}\PYG{n}{name}\PYG{p}{):}
-\PYG{k}{print} \PYG{l+s+s1}{\PYGZsq{}Привет\PYGZsq{}}\PYG{p}{,} \PYG{n}{name}
-\PYG{n}{greet}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Филипп\PYGZsq{}}\PYG{p}{)}
-\end{Verbatim}

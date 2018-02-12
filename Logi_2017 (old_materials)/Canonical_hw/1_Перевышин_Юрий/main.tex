@@ -1,0 +1,81 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts,amssymb, amsthm,mathtools}
+\usepackage{fontspec} %шрифты
+\setmainfont{Times New Roman} %основной шрифт
+\usepackage{unicode-math}
+\usepackage{polyglossia}
+\usepackage{graphics}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+
+
+\author{Перевышин Юрий}
+\title{Домашняя работа №1}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+
+\section{10 фактов о себе}
+\begin{enumerate}
+\item Я преподаватель макроэкономики
+\item Я занимаюсь экономическими исследованиями
+\item Меня интересуют проблемы долгосрочного экономического роста и денежно-кредитной политики
+\item Мне нравится учиться чему-то новому, что затем можно использовать в повседневной жизни
+\item После того, как я разберусь в чем-то интересном и полезном, мне хочется научить этому других
+\item Мне очень нравится путешествовать
+\item Меня привлекают циклические виды спорта: бег, лыжи, велосипед, плавание
+\item Я хочу освоить слепой метод набора текстов на английском языке, так как этот навык пригодится при задании команд в \LaTeX
+\item Однажды мы с товарищем доехали из Омска до Москвы за 36 часов на автомобиле
+\item Последний раз я делал домашнюю работу в 2010 г.
+\end{enumerate}
+
+\section{Моя фотография}
+\includegraphics{perevyshin.jpg}
+
+\section{Формулы}
+\begin{equation} \label{eq:KB}
+Y=AK^\alpha L^{1-\alpha} \tag{æ}
+\end{equation}
+В уравнении \ref{eq:KB} представлена функция Кобба-Дугласа. Мне она очень нравится, так как она является однородной по Эйлеру первой степени, демонстрирует убывающую предельную отдачу от каждого из факторов производства, получена на основе эмпирических данных о реальной экономике.
+
+\begin{equation} \label{eq:prod_final_good}
+\Pi_t=p_t\left(\int\limits_0^1 y_{it}^\frac{\varepsilon-1}{\varepsilon}di\right)^\frac{\varepsilon}{\varepsilon-1}-\int\limits_0^1 (p_{it} y_{it})di. \tag{ææ}
+\end{equation}
+Уравнение \ref{eq:prod_final_good} задает функцию прибыли производителя конечной продукции. Неординарная, на первый взгляд, производственная функция производителя композитного товара позволяет вытворять чудеса при дальнейшем решении модели Диксита-Стиглица!
+
+\begin{multline} \label{househ_task}
+L = E_0 \sum_{\tau=0}^\infty [ \beta^\tau (\ln c_\tau + \theta\ln (1-l_\tau)+\xi\ln m_\tau) -\lambda_\tau \left(c_\tau+k_{\tau+1}-k_\tau(1-\delta)+m_\tau-\right. \\ \left. \left.-w_\tau l_\tau-k_\tau r_\tau-d_\tau-tr_\tau-\frac{m_ {\tau-1}}{1+\pi_\tau}\right)\right]. \tag{æææ}
+\end{multline}
+
+Думаю, что ты, уважаемый проверяющий, уже догадался, что уравнение \ref{househ_task} не что иное, как функция Лагранжа для решения задачи домохозяйства в неокейнсианской модели с деньгами в функции полезности.
+
+\begin{align} \label{trans_cond}
+\lim\limits_{t\to\infty}\beta^t\lambda_tx_t=0 \tag{ææææ}
+\end{align}
+Уравнение \ref{trans_cond} называется условием трансверсальности. Экономический смысл его в том, что нельзя бесконечно долго финансировать текущие обязательства за счет новых займов. Чарльз Понци решил проигнорировать условие \ref{trans_cond}, ценой чему стало 5 лет лишения свободы. За аналогичные упущения Сергей Мавроди получил 4,5 года. Не стоит недооценивать кажущуюся простоту этой формулы.
+
+\begin{equation} \label{B_K_method}
+E\left(\begin{matrix}
+Y^P(t+1)\\
+Y^F(t+1)
+\end{matrix}\right)=\left(\begin{matrix}
+A_{11} & A_{12}\\
+A_{21} & A_{22}
+\end{matrix}\right)
+\left(\begin{matrix}
+Y^P(t)\\
+Y^F(t)
+\end{matrix} \right) \tag{æææææ}
+\end{equation}
+Уравнение \ref{B_K_method} задает динамику предопределенных и впередсмотрящих переменных в методе Бланшара-Кана. Это очень изящный метод решения динамических стохастических моделей общего равновесия.
+
+\begin{equation} \label{Euler}
+\frac{u_{c_t}'(c_t,m_t)}{u_{c_{t+1}}'(c_{t+1},m_{t+1})}=\frac{\beta (1-\delta+f_{k_{t+1}}'(k_{t+1}))}{1+n} \tag{ææææææ}
+\end{equation}
+Соотношение \ref{Euler} называется уравнением Эйлера в модели Сидрауского. Мне оно не очень нравится, так как при его выводе легко ошибиться с подстрочными индексами, по которым надо брать производные. Будь внимателен!
+
+\end{document}

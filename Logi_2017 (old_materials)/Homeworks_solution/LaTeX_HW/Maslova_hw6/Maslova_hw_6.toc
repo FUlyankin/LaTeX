@@ -1,6 +1,0 @@
-\select@language {russian}
-\beamer@sectionintoc {1}{Просеивание}{3}{0}{1}
-\beamer@subsectionintoc {1}{1}{Понятие просеивания}{3}{0}{1}
-\beamer@sectionintoc {2}{Примеры применения просеивания}{6}{0}{2}
-\beamer@subsectionintoc {2}{1}{Рынок заработной платы}{6}{0}{2}
-\beamer@subsectionintoc {2}{2}{Влияние правила на рынок поддержанных товаров}{8}{0}{2}
