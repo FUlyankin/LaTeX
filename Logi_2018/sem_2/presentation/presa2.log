@@ -1,6 +1,6 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.11.14)  11 FEB 2018 14:43
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.11.14)  15 FEB 2018 13:17
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
 **presa2.tex
 (./presa2.tex
@@ -1997,53 +1997,105 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  TU/lmtt/bx/n --> TU/lmtt/bx/n on input line 93.
 (./presa2.nav)
+File: images/font.jpg Graphic file (type QTm)
+ <use  "images/font.jpg" > [1
+
+]
 File: Latex.png Graphic file (type QTm)
  <use  "Latex.png" >
 
 LaTeX Font Warning: Font shape `TU/Helvetica(1)/m/sc' undefined
-(Font)              using `TU/Helvetica(1)/m/n' instead on input line 96.
+(Font)              using `TU/Helvetica(1)/m/n' instead on input line 102.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 96.
+LaTeX Font Info:    Try loading font information for U+msa on input line 102.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 96.
+LaTeX Font Info:    Try loading font information for U+msb on input line 102.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+wasy on input line 96.
+LaTeX Font Info:    Try loading font information for U+wasy on input line 102.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 )
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <20.74> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 96.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 102.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <14.4> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 96.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 102.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <12> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 96.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 102.
 File: pero.png Graphic file (type QTm)
 
-<use  "pero.png" > [1
+<use  "pero.png" > [2
 
-] [2
+] [3
 
 ]
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 115.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 115.
-File: images/rv.jpg Graphic file (type QTm)
- <use  "images/rv.jpg" >
+File: images/codirovka.png Graphic file (type QTm)
+ <use  "images/codirovka.png" >
 File: Latex.png Graphic file (type QTm)
- <use  "Latex.png" > [3
+ <use  "Latex.png" >
+[4
+
+]
+File: images/krakozabr.jpg Graphic file (type QTm)
+ <use  "images/krakozabr.jpg" >
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 124.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 124.
+File: Latex.png Graphic file (type QTm)
+ <use  "Latex.png" > [5
+
+]
+File: images/stdcom.jpg Graphic file (type QTm)
+
+<use  "images/stdcom.jpg" >
+File: Latex.png Graphic file (type QTm)
+ <use  "Latex.png" > [6
+
+]
+File: images/cuputf8.jpg Graphic file (type QTm)
+
+<use  "images/cuputf8.jpg" >
+File: Latex.png Graphic file (type QTm)
+ <use  "Latex.png" > [7
 
 ]
 \openout4 = `presa2.vrb'.
 
+ (./presa2.vrb)
+File: Latex.png Graphic file (type QTm)
 
-(./presa2.vrb) [4
+<use  "Latex.png" > [8
+
+]
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 174.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 174.
+File: Latex.png Graphic file (type QTm)
+ <use  "Latex.png" >
+File: images/bakcfont.jpg Graphic file (type QTm)
+ <use  "images/bakcfont.jpg" >
+[9
+
+] [10
+
+]
+File: images/rv.jpg Graphic file (type QTm)
+ <use  "images/rv.jpg" >
+File: Latex.png Graphic file (type QTm)
+ <use  "Latex.png" > [11
+
+]
+\openout4 = `presa2.vrb'.
+
+ (./presa2.vrb)
+[12
 
 ]
 \openout4 = `presa2.vrb'.
@@ -2052,50 +2104,50 @@ File: Latex.png Graphic file (type QTm)
 
 LaTeX Warning: \verb may be unreliable inside tabularx/y on input line 12.
 
-) [5
+) [13
 
 ]
 \openout4 = `presa2.vrb'.
 
- (./presa2.vrb) [6
+ (./presa2.vrb) [14
 
-] [7
+] [15
 
-] [8
+] [16
 
 ]
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 243.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 323.
 File: Latex.png Graphic file (type QTm)
- <use  "Latex.png" > [9
+ <use  "Latex.png" > [17
 
 ]
-LaTeX Font Info:    Try loading font information for U+euf on input line 274.
+LaTeX Font Info:    Try loading font information for U+euf on input line 354.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
 File: Latex.png Graphic file (type QTm)
 
-<use  "Latex.png" > [10
+<use  "Latex.png" > [18
 
 ]
 File: Latex.png Graphic file (type QTm)
- <use  "Latex.png" > [11
+ <use  "Latex.png" > [19
 
 ]
 File: images/excel2latex.png Graphic file (type QTm)
 
 <use  "images/excel2latex.png" >
 File: Latex.png Graphic file (type QTm)
- <use  "Latex.png" > [12
+ <use  "Latex.png" > [20
 
-] [13
+] [21
 
 ]
 File: images/wearlatex.png Graphic file (type QTm)
 
-<use  "images/wearlatex.png" > [14
+<use  "images/wearlatex.png" > [22
 
 ]
 \tf@nav=\write7
@@ -2107,23 +2159,23 @@ File: images/wearlatex.png Graphic file (type QTm)
 \tf@snm=\write9
 \openout9 = `presa2.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 313.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 313.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 393.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 393.
  (./presa2.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 313.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 313.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 393.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 393.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 47469 strings out of 493005
- 1077371 string characters out of 6134595
- 1327410 words of memory out of 5000000
- 50552 multiletter control sequences out of 15000+600000
- 16639 words of font info for 99 fonts, out of 8000000 for 9000
+ 47526 strings out of 493005
+ 1078209 string characters out of 6134595
+ 1327651 words of memory out of 5000000
+ 50595 multiletter control sequences out of 15000+600000
+ 18168 words of font info for 112 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 75i,12n,134p,10404b,878s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 75i,13n,134p,10404b,1012s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on presa2.pdf (14 pages).
+Output written on presa2.pdf (22 pages).

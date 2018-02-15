@@ -92,8 +92,88 @@
 
 \begin{document}
 
+\begingroup
+\setbeamercolor{background canvas}{bg = LTXDarkGrey}
+\begin{frame}[plain]
+\centering  \includegraphics[width=0.63\linewidth]{font.jpg}	
+\end{frame}
+\endgroup 
 
 \maketitle
+
+\section{Шрифты}  
+
+
+
+\begin{frame}{Кодировка} 
+Кодировка - способ представления в памяти компьютера цифр, букв и всех остальных знаков. 
+
+\centering \includegraphics[width=0.68\linewidth]{codirovka.png}	
+\end{frame}
+
+\begin{frame}{Откуда берутся кракозябры} 
+\centering \includegraphics[width=0.7\linewidth]{krakozabr.jpg}	
+\vspace{0.3cm}
+
+\begin{itemize}
+\item Мало памяти, 7 бит достаточно для всего (256 ячеек)
+\item 127 ячеек - основа: символы, цифры, латиница
+\item 128 ячеек - другое: кириллица, немецкий и т.п.
+\item Каждое новое заполнение 128 символов $\Rightarrow$ новая кодировка
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Юникод} 
+\begin{itemize}
+\item Собрались великие умы в 1991 году и юникод придумали!
+\end{itemize}
+
+\centering  \includegraphics[width=0.7\linewidth]{stdcom.jpg}	
+\end{frame}
+
+
+\begin{frame}{Мольба к аудитории}
+\begin{columns}
+\begin{column}{.66\linewidth}
+\Large Весь мир уже давно перешёл на utf-8! Будьте прогрессивными! Плиз... 
+\end{column}
+\begin{column}{.33\linewidth}
+\hfill \includegraphics[width=\linewidth]{cuputf8.jpg}	
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}[fragile]{Самые первые строки}
+\begin{block}{  }
+\begin{verbatim}
+\usepackage[british,russian]{babel}   % выбор языка
+\usepackage[utf8]{inputenc}               % utf8 кодировка
+\usepackage[X2,T2A]{fontenc}           % ещё кодировка
+\end{verbatim}
+\end{block}
+\end{frame}
+
+% Показываю файл со шрифтами и их подключением, виньетки для fontspect и для math-unicode
+% Показать ссылки на документацию пакетов
+% https://www.ctan.org/pkg/fontspec
+% https://www.ctan.org/pkg/unicode-math
+
+{
+\usebackgroundtemplate{%
+\tikz\node[opacity=0.15] {\includegraphics[width=\paperwidth]{bakcfont.jpg}};}
+\begin{frame}{Откуда берутся шрифты}
+\Large
+\begin{itemize}
+\item Шрифты скачиваются из интернета \ldots
+\item Хорошая идея - установить на комп шрифтовый менеджер для безболезненного просмотра шрифтов
+%\item Хороший \href{https://apps.ubuntu.com/cat/applications/precise/font-manager/}{ шрифтовый менеджер} для Linux 
+\item Наверное, неплохой \href{http://fontba.se/}{ шрифтовый менеджер}
+\end{itemize}
+\end{frame}
+}
+
  
 \section{Картинки} 
 

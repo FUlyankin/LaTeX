@@ -117,8 +117,8 @@
 \item что-то неясно $\Rightarrow$ \alert{ ПЕРЕБЕЙ И СПРОСИ}
 \item на семинаре присутствуют 3-5 человек, которые хорошо знают \LaTeX{} и помогают вам
 \item есть проблема $\Rightarrow$ \alert{ЗОВИ ОДНОГО ИЗ НАС} 
-\item пять обязательных заданий и два необязательных 
-\item все по 20 баллов, для зачёта надо 70\% 
+\item несколько заданий с баллами
+\item формально нужно 70\%  от "обязательной части"
 \end{itemize}
 \end{frame}
 
@@ -236,7 +236,7 @@
 
 
 \begin{frame}{Популярность языков программирования}
-\centering \includegraphics[width=0.6\linewidth]{lang.png}\\
+\centering \includegraphics[width=0.55\linewidth]{langpop2018.png}\\
 \vspace{0.2cm}
 Подробнее на {\url{http://www.tiobe.com/tiobe-index/}}
 \end{frame}
@@ -270,7 +270,7 @@
 
 
 \begin{frame}
-\frametitle{Особенности \LaTeX}
+\frametitle{Назад, к  \LaTeX}
 \LaTeX{} не WYSIWYG (What You See Is What You GET)
 В WYSIWYG системах что автор видит на экране, то и получается на печати.
 
@@ -287,14 +287,14 @@
 Вы пишите свой текст с различными \alert{командами}, описывающими структуру текста, а \LaTeX{} преобразует их в красиво отформатированный pdf-документ!
 
 \begin{mdframed}[backgroundcolor=LTXLightGreen]
-В Португалии \verb|\textbf|\{дождь\} является \verb|\textit|\{причиной\}  не выходить на работу.
+В Португалии \verb|\textbf|\{дождь\} является \verb|\textit|\{причиной\}  не  работать.
 \end{mdframed}
 
 \centering
    \includegraphics[scale=0.3]{fuc.png}%}
 
 \begin{mdframed}[backgroundcolor=LTXLightGreen]
-В Португалии \textbf{дождь} является \textit{причиной} не выходить на работу.
+В Португалии \textbf{дождь} является \textit{причиной} не работать.
 \end{mdframed}
 \end{frame}
 
@@ -364,12 +364,12 @@
 \begin{frame}[fragile]
 \frametitle{Хорошие мысли о \LaTeX!}
 \begin{itemize}
-\item Каждый документ состоит из преамбулы и основной части; \pause
-\item \textbf{Не надо каждый раз писать преамбулу с нуля!}
-\item Все \alert{комнады} начинаются с знака \verb|\|; \pause
-\item Аргументы команд стоят в фигурных скобках \{ \}; \pause
-\item С помощью знака \% можно закомментировать какую-то часть документа, \LaTeX{} проигнорирует закомментированную часть; \pause
-\item Неважно сколько строк я оставил между абзацами и сколько пробелов я оставил между словами;
+\item Каждый документ состоит из преамбулы и основной части
+\item \textbf{Не надо каждый раз писать преамбулу с нуля!}\pause
+\item Все \alert{комнады} начинаются с знака \verb|\| \pause
+\item Аргументы команд стоят в фигурных скобках \{ \} \pause
+\item С помощью знака \% можно закомментировать какую-то часть документа, \LaTeX{} проигнорирует закомментированную часть \pause
+\item Неважно сколько строк я оставил между абзацами и сколько пробелов я оставил между словами
 \end{itemize}
 \end{frame}
 
@@ -396,7 +396,7 @@
 \frametitle{Формулы в \LaTeX!}
 \begin{itemize}
 \item С помощью символа \$ мы можем перейти внутри текста в математический режим! Один \$ открывает математический режим, второй закрывает его!  \pause
-\item С помощью символов \$\$ или \verb|\[| и \verb|\]| можно написать выключную формулу. Выключной объект --- такой объект, для которого необходима отдельная строка! \pause
+\item С помощью символов \$\$ или \verb|\[| и \verb|\]| можно написать выключную формулу. Выключной объект — такой объект, для которого необходима отдельная строка! \pause
 \item Внутри математического режима \LaTeX{} сам расставляет пробелы. Все ваши пробелы игнорируются.
 \end{itemize}
 \end{frame}
@@ -537,83 +537,6 @@
 \end{frame}
 
 
-\section{Шрифты}  
-
-\begingroup
-\setbeamercolor{background canvas}{bg = LTXDarkGrey}
-\begin{frame}[plain]
-\centering  \includegraphics[width=0.63\linewidth]{font.jpg}	
-\end{frame}
-\endgroup 
-
-\begin{frame}{Кодировка} 
-Кодировка - способ представления в памяти компьютера цифр, букв и всех остальных знаков. 
-
-\centering \includegraphics[width=0.68\linewidth]{codirovka.png}	
-\end{frame}
-
-\begin{frame}{Откуда берутся кракозябры} 
-\centering \includegraphics[width=0.7\linewidth]{krakozabr.jpg}	
-\vspace{0.3cm}
-
-\begin{itemize}
-\item Мало памяти, 7 бит достаточно для всего (256 ячеек)
-\item 127 ячеек - основа: символы, цифры, латиница
-\item 128 ячеек - другое: кириллица, немецкий и т.п.
-\item Каждое новое заполнение 128 символов $\Rightarrow$ новая кодировка
-\end{itemize}
-\end{frame}
-
-
-\begin{frame}{Юникод} 
-\begin{itemize}
-\item Собрались великие умы в 1991 году и юникод придумали!
-\end{itemize}
-
-\centering  \includegraphics[width=0.7\linewidth]{stdcom.jpg}	
-\end{frame}
-
-
-\begin{frame}{Мольба к аудитории}
-\begin{columns}
-\begin{column}{.66\linewidth}
-\Large Весь мир уже давно перешёл на utf-8! Будьте прогрессивными! Плиз... 
-\end{column}
-\begin{column}{.33\linewidth}
-\hfill \includegraphics[width=\linewidth]{cuputf8.jpg}	
-\end{column}
-\end{columns}
-\end{frame}
-
-
-\begin{frame}[fragile]{Самые первые строки}
-\begin{block}{  }
-\begin{verbatim}
-\usepackage[british,russian]{babel}  % выбор языка
-\usepackage[utf8]{inputenc}          % utf8 кодировка
-%\usepackage[X2,T2A]{fontenc}         % ещё кодировка
-\end{verbatim}
-\end{block}
-\end{frame}
-
-% Показываю файл со шрифтами и их подключением, виньетки для fontspect и для math-unicode
-% Показать ссылки на документацию пакетов
-% https://www.ctan.org/pkg/fontspec
-% https://www.ctan.org/pkg/unicode-math
-
-{
-\usebackgroundtemplate{%
-\tikz\node[opacity=0.15] {\includegraphics[width=\paperwidth]{bakcfont.jpg}};}
-\begin{frame}{Откуда берутся шрифты}
-\Large
-\begin{itemize}
-\item Шрифты скачиваются из интернета \ldots
-\item Хорошая идея - установить на комп шрифтовый менеджер для безболезненного просмотра шрифтов
-%\item Хороший \href{https://apps.ubuntu.com/cat/applications/precise/font-manager/}{ шрифтовый менеджер} для Linux 
-\item Наверное, неплохой \href{http://fontba.se/}{ шрифтовый менеджер}
-\end{itemize}
-\end{frame}
-}
 
 
 \section{Подробнее о математике в \LaTeX{}}
