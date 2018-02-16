@@ -11,7 +11,7 @@ layout: nil
 Очная часть
 
 # Филя Ульянкин
-## Лектор, главный идеолог, создатель, руководитель этого курса
+## Лектор, просто хороший человек
 <img src="https://github.com/FUlyankin/LaTeX/blob/master/docs/_includes/photo1.jpg?raw=true" style="width:20%">
 * [Vk.com](https://vk.com/ppilif)   
 * [Telegram](//telegram.me/ppilif)   
