@@ -17,7 +17,7 @@ layout: nil
 * [Telegram](//telegram.me/ppilif)   
 
 # Костя Рыбак
-## Семинарист, проверяет ваши домашки, готов поставить зачет за Гиннес
+## Семинарист, готов поставить зачет за Гиннес
 <img src="https://github.com/FUlyankin/LaTeX/blob/master/docs/_includes/photo2.jpg?raw=true" style="width:20%">
 * [Vk.com](https://vk.com/rybakconst)   
 * [Telegram](//telegram.me/rybakconst)   
