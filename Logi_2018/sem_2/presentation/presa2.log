@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.11.14)  15 FEB 2018 13:17
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.11.14)  15 FEB 2018 21:32
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2065,37 +2065,41 @@ File: Latex.png Graphic file (type QTm)
  <use  "Latex.png" > [7
 
 ]
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 159.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 159.
+File: Latex.png Graphic file (type QTm)
+ <use  "Latex.png" >
+File: images/bakcfont.jpg Graphic file (type QTm)
+
+<use  "images/bakcfont.jpg" > [8
+
+]
 \openout4 = `presa2.vrb'.
 
  (./presa2.vrb)
 File: Latex.png Graphic file (type QTm)
-
-<use  "Latex.png" > [8
+ <use  "Latex.png" > [9
 
 ]
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 174.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 174.
 File: Latex.png Graphic file (type QTm)
- <use  "Latex.png" >
-File: images/bakcfont.jpg Graphic file (type QTm)
- <use  "images/bakcfont.jpg" >
-[9
 
-] [10
+<use  "Latex.png" > [10
+
+] [11
 
 ]
 File: images/rv.jpg Graphic file (type QTm)
  <use  "images/rv.jpg" >
 File: Latex.png Graphic file (type QTm)
- <use  "Latex.png" > [11
+ <use  "Latex.png" >
+[12
 
 ]
 \openout4 = `presa2.vrb'.
 
- (./presa2.vrb)
-[12
+ (./presa2.vrb) [13
 
 ]
 \openout4 = `presa2.vrb'.
@@ -2104,50 +2108,56 @@ File: Latex.png Graphic file (type QTm)
 
 LaTeX Warning: \verb may be unreliable inside tabularx/y on input line 12.
 
-) [13
+) [14
 
 ]
 \openout4 = `presa2.vrb'.
 
- (./presa2.vrb) [14
-
-] [15
+ (./presa2.vrb) [15
 
 ] [16
 
-]
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 323.
-File: Latex.png Graphic file (type QTm)
- <use  "Latex.png" > [17
+] [17
 
 ]
-LaTeX Font Info:    Try loading font information for U+euf on input line 354.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 337.
+File: Latex.png Graphic file (type QTm)
+ <use  "Latex.png" > [18
+
+]
+LaTeX Font Info:    Try loading font information for U+euf on input line 368.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
 File: Latex.png Graphic file (type QTm)
 
-<use  "Latex.png" > [18
+<use  "Latex.png" > [19
 
 ]
-File: Latex.png Graphic file (type QTm)
- <use  "Latex.png" > [19
-
-]
-File: images/excel2latex.png Graphic file (type QTm)
-
-<use  "images/excel2latex.png" >
 File: Latex.png Graphic file (type QTm)
  <use  "Latex.png" > [20
 
-] [21
+]
+File: Latex.png Graphic file (type QTm)
+ <use  "Latex.png" > [21
+
+]
+[22
+
+]
+File: Latex.png Graphic file (type QTm)
+ <use  "Latex.png" >
+Overfull \hbox (0.38663pt too wide) in paragraph at lines 413--413
+[][]  
+ []
+
+[23
 
 ]
 File: images/wearlatex.png Graphic file (type QTm)
-
-<use  "images/wearlatex.png" > [22
+ <use  "images/wearlatex.png" > [24
 
 ]
 \tf@nav=\write7
@@ -2159,11 +2169,11 @@ File: images/wearlatex.png Graphic file (type QTm)
 \tf@snm=\write9
 \openout9 = `presa2.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 393.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 393.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 423.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 423.
  (./presa2.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 393.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 393.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 423.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 423.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -2171,11 +2181,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
  ) 
 Here is how much of TeX's memory you used:
  47526 strings out of 493005
- 1078209 string characters out of 6134595
- 1327651 words of memory out of 5000000
- 50595 multiletter control sequences out of 15000+600000
+ 1078188 string characters out of 6134595
+ 1327675 words of memory out of 5000000
+ 50596 multiletter control sequences out of 15000+600000
  18168 words of font info for 112 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  75i,13n,134p,10404b,1012s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on presa2.pdf (22 pages).
+Output written on presa2.pdf (24 pages).

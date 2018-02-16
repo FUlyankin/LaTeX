@@ -145,21 +145,6 @@
 \end{frame}
 
 
-\begin{frame}[fragile]{Самые первые строки}
-\begin{block}{  }
-\begin{verbatim}
-\usepackage[british,russian]{babel}   % выбор языка
-\usepackage[utf8]{inputenc}               % utf8 кодировка
-\usepackage[X2,T2A]{fontenc}           % ещё кодировка
-\end{verbatim}
-\end{block}
-\end{frame}
-
-% Показываю файл со шрифтами и их подключением, виньетки для fontspect и для math-unicode
-% Показать ссылки на документацию пакетов
-% https://www.ctan.org/pkg/fontspec
-% https://www.ctan.org/pkg/unicode-math
-
 {
 \usebackgroundtemplate{%
 \tikz\node[opacity=0.15] {\includegraphics[width=\paperwidth]{bakcfont.jpg}};}
@@ -173,6 +158,35 @@
 \end{itemize}
 \end{frame}
 }
+
+% Показываю файл со шрифтами и их подключением, виньетки для fontspect и для math-unicode
+% Показать ссылки на документацию пакетов
+% https://www.ctan.org/pkg/fontspec
+% https://www.ctan.org/pkg/unicode-math
+
+\begin{frame}[fragile]{Самые первые строки}
+\begin{block}{  }
+\verb|   \usepackage[british,russian]{babel}   % выбор языка| \newline
+\verb|   \usepackage[utf8]{inputenc}               % utf8 кодировка| \newline
+\verb|   \usepackage[X2,T2A]{fontenc}           % ещё кодировка|
+\end{block}
+
+\begin{itemize}
+\item Если вы где-то увидели \verb|\usepackage[cp1251]{inputenc}|,  замените  на  \verb|\usepackage[utf8]{inputenc}|!
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Задание 1} 
+\begin{enumerate}
+	\item  Установить словари!
+	\item  Открыть файлик  xetex fonts.tex 
+	\item  Скачать и установить все требуемые шрифты
+	\item  Убедиться, что документ создаётся
+	\item  Попробовать поставить шрифт бандитов как математический  
+\end{enumerate}
+\end{frame}
+
 
  
 \section{Картинки} 
@@ -369,11 +383,17 @@ $m$ & $\Re\{\underline{\mathfrak{X}}(m)\}$ &$-\Im\{\underline{\mathfrak{X}}(m)\}
 \end{frame}
 
 
-\begin{frame}[plain]{Excel2LaTeX} 
-\begin{center} \includegraphics[width=0.45\linewidth]{excel2latex.png}	
-\end{center}
+\begin{frame}[plain]{Задание 2} 
+%\begin{center} \includegraphics[width=0.45\linewidth]{excel2latex.png}	
+%\end{center}
 
-\begin{block}{Ссылка на макрос:}
+\begin{enumerate}
+	\item  Установить надстройку
+	\item  Создать любую таблицу и перенести её в \LaTeX
+	\item  Обсудить возникшие проблемы 
+\end{enumerate}
+
+\begin{block}{Ссылка на макрос Excel2LaTeX:}
 	\vspace{3mm}
 	\centerline {\url{https://ctan.org/tex-archive/support/excel2latex}}
 	\vspace{3mm}
@@ -382,6 +402,22 @@ $m$ & $\Re\{\underline{\mathfrak{X}}(m)\}$ &$-\Im\{\underline{\mathfrak{X}}(m)\}
 
 
 \section{TikZ и Geogebra} 
+
+\begin{frame}[plain]{Задание 3} 
+
+\begin{enumerate}
+	\item  Установить Geogebra
+	\item  Нарисовать любой рисунок
+	\item  Экспортировать его в формате TikZ в \LaTeX
+\end{enumerate}
+
+\begin{block}{Ссылка на Geogebra:}
+	\vspace{3mm}
+	\centerline {\url{    }}
+	\vspace{3mm}
+\end{block}
+\end{frame}
+
 
 
 \begingroup
