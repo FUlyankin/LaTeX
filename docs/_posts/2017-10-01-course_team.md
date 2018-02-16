@@ -19,13 +19,13 @@ layout: nil
 ## Костя Рыбак
 # Сминарист, проверяет ваши домашки, любит пиво
 * <img src="https://github.com/FUlyankin/LaTeX/blob/master/docs/_includes/kQ_gS50EB3I.jpg" style="width:50%">
-* [Vk.com](https://vk.com/ppilif)   
-* [Telegram](//telegram.me/ppilif)   
+* [Vk.com](https://vk.com/rybakconst)   
+* [Telegram](//telegram.me/rybakconst)   
 
 * Заочная часть
 
 ## Саша Тишин
-# Семинарист, научный редактор курса 
+# Семинарист, научный редактор курса
 * <img src="https://github.com/FUlyankin/LaTeX/blob/master/docs/_includes/IMG_3642.JPG" style="width:50%">
 * [Vk.com](https://vk.com/bolshoyti)   
 * [Telegram](//telegram.me/Huge_Ti)   
