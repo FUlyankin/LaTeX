@@ -12,13 +12,13 @@ layout: nil
 
 # Филя Ульянкин
 ## Лектор, главный идеолог, создатель, руководитель этого курса
-* <img src="https://github.com/FUlyankin/LaTeX/blob/master/docs/_includes/3FmS5FZth5c.jpg?raw=true" style="width:50%">
+* <img src="https://github.com/FUlyankin/LaTeX/blob/master/docs/_includes/3FmS5FZth5c.jpg?raw=true" style="width:20%">
 * [Vk.com](https://vk.com/ppilif)   
 * [Telegram](//telegram.me/ppilif)   
 
 # Костя Рыбак
 ## Сминарист, проверяет ваши домашки, любит пиво
-* <img src="https://github.com/FUlyankin/LaTeX/blob/master/docs/_includes/kQ_gS50EB3I.jpg?raw=true" style="width:50%">
+* <img src="https://github.com/FUlyankin/LaTeX/blob/master/docs/_includes/kQ_gS50EB3I.jpg?raw=true" style="width:20%">
 * [Vk.com](https://vk.com/rybakconst)   
 * [Telegram](//telegram.me/rybakconst)   
 
@@ -26,6 +26,6 @@ layout: nil
 
 # Саша Тишин
 ## Семинарист, научный редактор курса
-* <img src="https://github.com/FUlyankin/LaTeX/blob/master/docs/_includes/IMG_3642.JPG?raw=true" style="width:50%">
+* <img src="https://github.com/FUlyankin/LaTeX/blob/master/docs/_includes/IMG_3642.JPG?raw=true" style="width:20%">
 * [Vk.com](https://vk.com/bolshoyti)   
 * [Telegram](//telegram.me/Huge_Ti)   
