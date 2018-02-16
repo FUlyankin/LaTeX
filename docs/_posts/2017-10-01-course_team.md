@@ -25,7 +25,7 @@ layout: nil
 Заочная часть
 
 # Саша Тишин
-## Семинарист, научный редактор курса
+## Семинарист, "научный" редактор курса
 <img src="https://github.com/FUlyankin/LaTeX/blob/master/docs/_includes/photo3.jpg?raw=true" style="width:20%">
 * [Vk.com](https://vk.com/bolshoyti)   
 * [Telegram](//telegram.me/Huge_Ti)   
