@@ -3,4 +3,4 @@ exclude: ['README.markdown']
 permalink: ':title'
 pygments: true
 safe: false
-title: 'LaTeX RANEPA'
+title: 'LaTeX'
