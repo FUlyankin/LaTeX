@@ -9,17 +9,8 @@
 \usepackage[british,russian]{babel} % выбор языка для документа
 \usepackage[utf8]{inputenc} % задание utf8 кодировки исходного tex файла
 
-
 \usepackage{fontspec}         % пакет для подгрузки шрифтов
 \setmainfont{Arial}   % задаёт основной шрифт документа
-
-\defaultfontfeatures{Mapping=tex-text}
-
-% why do we need \newfontfamily:
-% http://tex.stackexchange.com/questions/91507/
-\newfontfamily{\cyrillicfonttt}{Arial}
-\newfontfamily{\cyrillicfont}{Arial}
-\newfontfamily{\cyrillicfontsf}{Arial}
 
 \usepackage{unicode-math}     % пакет для установки математического шрифта
 %\setmathfont{Asana Math}      % шрифт для математики
@@ -46,7 +37,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%% Оформление %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage[paper=a4paper,top=15mm, bottom=15mm,left=35mm,right=10mm,includefoot]{geometry}
-
  \usepackage{indentfirst}       % установка отступа в первом абзаце главы
 
 
@@ -89,7 +79,7 @@
 % ex  высота бувы х используемого шрифта
 % 
 % \pagewidth   ширина страницы     \pageheight   высота страницы
-% \textwidth   ширина текста       \textheight   высота текста
+% \textwidth   ширина текста             \textheight   высота текста
 %
 % \linewidth   длина текста в текущем окружении
 
@@ -109,7 +99,7 @@
 % H - в 100 случаях из 100 рисунок будет там где нам надо (нужен пакет float)
 
 \begin{figure}[H]
-%\caption{Заголовок мог быть и здесь}
+%\caption{Заголовок можно сунуть и сюда}
 \begin{center}
 \includegraphics[width=0.3\textheight]{doge.png}
 \end{center}
@@ -137,6 +127,7 @@
 \end{figure}
 
 
+\newpage
 
 
 \section{Таблицы}
@@ -235,7 +226,7 @@ $P(\ldots)$ & 0.1 & 0.2 & 0.4 & 0.2 & 0.1 \\
 \end{center}
 
 
-\section{Таблицы для истиных Леди и Джентельменов. Booktabs.}
+\section{Таблицы для истиных Леди и Джентельменов.}
 
 \begin{table}[H]
 \centering

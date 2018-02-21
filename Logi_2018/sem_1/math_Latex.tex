@@ -12,16 +12,8 @@
 \usepackage[british,russian]{babel} % выбор языка для документа
 \usepackage[utf8]{inputenc} % задание utf8 кодировки исходного tex файла
 
-
 \usepackage{fontspec}         % пакет для подгрузки шрифтов
 \setmainfont{Arial}   % задаёт основной шрифт документа
-
-
-% why do we need \newfontfamily:
-% http://tex.stackexchange.com/questions/91507/
-\newfontfamily{\cyrillicfonttt}{Arial}
-\newfontfamily{\cyrillicfont}{Arial}
-\newfontfamily{\cyrillicfontsf}{Arial}
 
 \usepackage{unicode-math}     % пакет для установки математического шрифта
 %\setmathfont{Asana Math}      % шрифт для математики
@@ -211,9 +203,14 @@ $\sin x = 0$, $ \cos x = 1$, $\ln x = 5$,$\sqrt x = 1$
 \subsection{Несколько формул}
 
 \begin{align}
-	2 \cdot 2 &= 4 & 3  \cdot 3 &= 9 \\
+	2 \cdot 2 &= 4 & 3  \cdot 3 &= 9 \tag{1} \\ 
 	4 \cdot 4 &= 16 & 5 \cdot 5 &= 25 \\
 	6 \cdot 6 &= 36 & 7 \cdot 7 &= 49
+\end{align}
+
+\begin{align}
+\lim_{\triangle{x} \to 0} \frac{F(x+\triangle{x})-F(x)}{\triangle{x}} &= F'(x) \tag{ææ} \\
+\int_{-\infty}^{\infty}f(x)dx&=1 \tag{æææ}
 \end{align}
 
 \begin{equation}

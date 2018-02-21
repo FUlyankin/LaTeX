@@ -1,12 +1,7 @@
 %!TEX TS-program = xelatex
 \documentclass[12pt, a4paper]{article}  
 
-\usepackage{etex} % расширение классического tex в частности позволяет подгружать гораздо больше пакетов, чем мы и займёмся далее
-
-%%%%%%%%%% Математика %%%%%%%%%%
-\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
-%\mathtoolsset{showonlyrefs=true}  % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
-%\usepackage{leqno} % Нумерация формул слева
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}  % пакеты для математики
 
 
 %%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -14,17 +9,8 @@
 \usepackage[british,russian]{babel} % выбор языка для документа
 \usepackage[utf8]{inputenc} % задание utf8 кодировки исходного tex файла
 
-
 \usepackage{fontspec}         % пакет для подгрузки шрифтов
 \setmainfont{Arial}   % задаёт основной шрифт документа
-
-\defaultfontfeatures{Mapping=tex-text}
-
-% why do we need \newfontfamily:
-% http://tex.stackexchange.com/questions/91507/
-\newfontfamily{\cyrillicfonttt}{Arial}
-\newfontfamily{\cyrillicfont}{Arial}
-\newfontfamily{\cyrillicfontsf}{Arial}
 
 \usepackage{unicode-math}     % пакет для установки математического шрифта
 %\setmathfont{Asana Math}      % шрифт для математики
@@ -39,10 +25,7 @@
 
 \begin{document} 
 
-\section{Мои косяки} 
-\subsection{Шрифты}
-
-Поняли как и почему на лекции :)
+\section{Наши общие косяки} 
 
 \subsection{Ссылки}
 
@@ -64,8 +47,6 @@ a^2+b^2=c^2\label{eq:1}
 Читателю должна понравиться формула \eqref{eq:5}. 
 
 Важно: две сборки, чтобы появились все сноски! 
-
-\section{Наши общие косяки} 
 
 \subsection{Фактические ошибки}
 

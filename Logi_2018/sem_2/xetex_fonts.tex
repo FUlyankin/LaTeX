@@ -16,22 +16,21 @@
 \setmainfont{Arial}   % задаёт основной шрифт документа
 
 
-% why do we need \newfontfamily:
-% http://tex.stackexchange.com/questions/91507/
-\newfontfamily{\cyrillicfonttt}{Arial}
-\newfontfamily{\cyrillicfont}{Arial}
-\newfontfamily{\cyrillicfontsf}{Arial}
-% Грубо говоря иногда polyglossia начинает балбесничать и не видит структуры кириллических шрифтов. Эти трое бравых парней спасают ситуацию и доопределяют те куски, которые Тех не увидел.
-
 \usepackage{unicode-math}     % пакет для установки математического шрифта
 % шрифт для математики
-\setmathfont{Asana-Math.otf}
+%\setmathfont{Asana-Math.otf}
 %\setmathfont{Phorssa}      
 
 % Можно делать смену начертания с помощью разных стилей
 
 % Конкретный символ из конкретного шрифта
-%\setmathfont[range=\int]{Asana-Math.otf}
+% \setmathfont[range=\int]{Asana-Math.otf}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% Оформление %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[paper=a4paper,top=15mm, bottom=15mm,left=35mm,right=10mm,includefoot]{geometry}
+\usepackage{indentfirst}       % установка отступа в первом абзаце главы
 
 
 % Заголовок
@@ -43,9 +42,6 @@
 \begin{document}
 
 \maketitle
-
-%автоматическое оглавление
-\tableofcontents
 
 
 \section{Xe\LaTeX}

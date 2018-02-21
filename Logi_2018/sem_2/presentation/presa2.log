@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.11.14)  15 FEB 2018 21:32
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.11.14)  21 FEB 2018 23:20
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2148,16 +2148,18 @@ File: Latex.png Graphic file (type QTm)
 
 ]
 File: Latex.png Graphic file (type QTm)
- <use  "Latex.png" >
-Overfull \hbox (0.38663pt too wide) in paragraph at lines 413--413
-[][]  
- []
+ <use  "Latex.png" > [23
 
-[23
+] [24
+
+]
+File: Latex.png Graphic file (type QTm)
+ <use  "Latex.png" > [25
 
 ]
 File: images/wearlatex.png Graphic file (type QTm)
- <use  "images/wearlatex.png" > [24
+
+<use  "images/wearlatex.png" > [26
 
 ]
 \tf@nav=\write7
@@ -2169,23 +2171,23 @@ File: images/wearlatex.png Graphic file (type QTm)
 \tf@snm=\write9
 \openout9 = `presa2.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 423.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 423.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 445.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 445.
  (./presa2.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 423.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 423.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 445.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 445.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 47526 strings out of 493005
- 1078188 string characters out of 6134595
- 1327675 words of memory out of 5000000
- 50596 multiletter control sequences out of 15000+600000
+ 47536 strings out of 493005
+ 1078286 string characters out of 6134595
+ 1327810 words of memory out of 5000000
+ 50606 multiletter control sequences out of 15000+600000
  18168 words of font info for 112 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  75i,13n,134p,10404b,1012s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on presa2.pdf (24 pages).
+Output written on presa2.pdf (26 pages).
