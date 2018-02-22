@@ -19,12 +19,12 @@
 \usepackage{unicode-math}     % пакет для установки математического шрифта
 % шрифт для математики
 %\setmathfont{Asana-Math.otf}
-%\setmathfont{Phorssa}      
+\setmathfont{Phorssa}      
 
 % Можно делать смену начертания с помощью разных стилей
 
 % Конкретный символ из конкретного шрифта
-% \setmathfont[range=\int]{Asana-Math.otf}
+ \setmathfont[range=\int, range=\sum]{Asana-Math.otf}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%% Оформление %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -50,7 +50,7 @@
 
 \fontspec{GNUTypewriter}{The quick brown fox jumps over the lazy dog.}
 
-\Large{\fontspec{Phorssa}{Съешь же ещё этих мягких французских булок, да выпей чаю!}}
+{\Large  \fontspec{Phorssa}{Съешь же ещё этих мягких французских булок, да выпей чаю!}}
 
 \[ 9 + 9 = 18 \] 
 
