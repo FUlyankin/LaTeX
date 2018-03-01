@@ -1,0 +1,386 @@
+%!TEX TS-program = xelatex
+\documentclass[12pt, a4paper]{article}
+
+%%%%%%%%%% Математика %%%%%%%%%%
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+%\mathtoolsset{showonlyrefs=true}  % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+%\usepackage{leqno} % Нумерация формул слева
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[british,russian]{babel} % выбор языка для документа
+\usepackage[utf8]{inputenc} % задание utf8 кодировки исходного tex файла
+\usepackage[X2,T2A]{fontenc}        % кодировка
+
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Arial}   % задаёт основной шрифт документа
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+%\setmathfont{Asana Math}      % шрифт для математики
+% \setmathfont[math-style=ISO]{Asana Math}
+% Можно делать смену начертания с помощью разных стилей
+
+% Конкретный символ из конкретного шрифта
+% \setmathfont[range=\int]{Neo Euler}
+
+
+%%%%%%%%%% Работа с картинками %%%%%%%%%
+\usepackage{graphicx}                  % Для вставки рисунков
+\usepackage{graphics} 
+\graphicspath{{images/}{pictures/}}    % можно указать папки с картинками
+\usepackage{wrapfig}                   % Обтекание рисунков и таблиц текстом
+
+%%%%%%%%%% Работа с таблицами %%%%%%%%%%
+\usepackage{tabularx}            % новые типы колонок
+\usepackage{tabulary}            % и ещё новые типы колонок
+\usepackage{array}               % Дополнительная работа с таблицами
+\usepackage{longtable}           % Длинные таблицы
+\usepackage{multirow}            % Слияние строк в таблице
+\usepackage{float}               % возможность позиционировать объекты в нужном месте 
+\usepackage{booktabs}            % таблицы как в книгах!  
+\renewcommand{\arraystretch}{1.3} % больше расстояние между строками
+
+% Заповеди из документации к booktabs:
+% 1. Будь проще! Глазам должно быть комфортно
+% 2. Не используйте вертикальные линни
+% 3. Не используйте двойные линии. Как правило, достаточно трёх горизонтальных линий
+% 4. Единицы измерения - в шапку таблицы
+% 5. Не сокращайте .1 вместо 0.1
+% 6. Повторяющееся значение повторяйте, а не говорите "то же"
+% 7. Есть сомнения? Выравнивай по левому краю!
+
+%%%%%%%%%% Графика и рисование %%%%%%%%%%
+\usepackage{tikz, pgfplots}  % язык для рисования графики из latex'a
+
+%%%%%%%%%% Гиперссылки %%%%%%%%%%
+\usepackage{xcolor}              % разные цвета
+
+% Два способа включить в пакете какие-то опции:
+%\usepackage[опции]{пакет}
+%\usepackage[unicode,colorlinks=true,hyperindex,breaklinks]{hyperref}
+
+\usepackage{hyperref}
+\hypersetup{
+	unicode=true,           % позволяет использовать юникодные символы
+	colorlinks=true,       	% true - цветные ссылки, false - ссылки в рамках
+	urlcolor=blue,          % цвет ссылки на url
+	linkcolor=red,          % внутренние ссылки
+	citecolor=green,        % на библиографию
+	pdfnewwindow=true,      % при щелчке в pdf на ссылку откроется новый pdf
+	breaklinks              % если ссылка не умещается в одну строку, разбивать ли ее на две части?
+}
+
+\usepackage{csquotes}            % Еще инструменты для ссылок
+
+
+%%%%%%%%%% Другие приятные пакеты %%%%%%%%%
+\usepackage{multicol}       % несколько колонок
+\usepackage{verbatim}       % для многострочных комментариев
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет Последний день Помпеи}
+% \listoftodos --- печатает все поставленные \todo'шки
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% Оформление %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[paper=a4paper,top=15mm, bottom=15mm,left=35mm,right=10mm,includefoot]{geometry}
+\usepackage{indentfirst}       % установка отступа в первом абзаце главы
+
+
+%%%%%%%%%% Теоремы %%%%%%%%%%
+
+\theoremstyle{plain}              % Это стиль по умолчанию.  Есть другие стили.
+\newtheorem{theorem}{Теорема}[section]
+% Вопросы из зала (от Юрия Николаевича)
+\renewcommand{\thetheorem}{\thesection.\Asbuk{theorem}}
+
+\newtheorem{result}{Следствие}[theorem]
+% счётчик подчиняется теоремному, нумерация идёт по главам согласованно между собой
+
+\theoremstyle{definition}         % убирает курсив и что-то еще наверное делает ;)
+\newtheorem*{defin}{Определение}  % нумерация не идёт вообще
+
+\newtheorem{fignia}{Какая-то фигня}
+
+
+%%%%%%%%%% Свои команды %%%%%%%%%%
+\usepackage{etoolbox}    % логические операторы для своих макросов
+
+% Все свои команды лучше всего определять не по ходу текста, как это сделано в этом документе, а в преамбуле!
+
+
+
+\title{Свои команды и макросы}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+
+\section{Новые команды}
+\subsection{Создание простых команд}
+
+% Уже делали вот такие команды!
+% \DeclareMathOperator{\Var}{Var} можно только в прембуле!
+
+\def \a{\alpha}
+\def \R{\ensuremath{\mathbb{R}}}
+
+% \newcomand{имя команды}{Что делать}
+
+\newcommand{\RR}{\ensuremath{\mathbb{R}}}
+
+Неважно как написать \R или \RR. По факту это будет одно и то же.
+
+% ensuremath - при упоминании команды \R по ходу текста сам включает мтематический режим.
+
+% Собственноручная расстановка пробелов
+\newcommand{\iid}{i.\hspace{3pt}i.\hspace{3pt}d.}
+
+$i.i.d.$ или $\iid$
+
+\subsection{Команды с аргументами}
+% \newcomand{имя команды}[количество аргументов]{Что делать}
+
+\newcommand{\bb}[1]{\ensuremath{\mathbb{#1}} }
+
+\bb{R} или \bb{Z} или \bb{Q}
+
+
+$4/7$ или $^4/_7$
+
+\newcommand{\fr}[2]{\ensuremath{^#1/_#2}}
+
+$\fr{4}{7}$
+
+\fr{4}{7}
+
+
+\subsection{Переопределение команд}
+
+$ \phi $ и $ \epsilon $
+
+\renewcommand{\phi}{\varphi}
+\renewcommand{\epsilon}{\varepsilon}
+
+$ \phi $ и $ \epsilon $
+
+
+\renewcommand{\epsilon}{\ensuremath{\mathbb{R}}}
+
+\epsilon
+
+\$
+
+
+\section{Счётчики}
+
+% Можно объявить счётчик вот так:
+% \newcounter{имя счётчика}[то чему подчиняется счётчик (не обязательно)]
+
+\newcounter{jtem}[section]
+
+% Счётчик можно установить на любую величину:
+\setcounter{jtem}{13}
+
+% Cчётчик можно вывести в любой из форм!
+\arabic{jtem}
+
+\alph{jtem}
+
+\Alph{jtem}
+
+\asbuk{jtem}  %(команда в babel или polyglossia)
+
+\Asbuk{jtem}
+
+\roman{jtem}
+
+\Roman{jtem}
+
+% Можно выяснить какой номер у текущей главы или страницы
+\arabic{section}
+
+\arabic{page}
+
+\Roman{page}
+
+% вывести счётчики можно ещё и вот так
+\thesection --- \thepage
+
+% Можно поменять тип счётчика в нумерации!
+% Сделаем номера страниц римскими
+\renewcommand{\thepage}{\roman{page}}
+
+% Сделаем номера глав буевенными
+\renewcommand{\thesection}{\Asbuk{section}}
+% При этом начнём нумерацию с буквы А
+\setcounter{section}{0}
+
+
+% Обратите внимание на то, что для глав счётчик сброшен, а для страниц нет!
+
+% Дефолтные счётчики в LaTeX:  part, chapter, section, subsection, subsubsection, paragraph, subparagraph, page, figure, table, footnote, mpfootnote, equation
+% Также определены счётчики для списков: enumi, enumii, enumiii, enumiv!
+
+
+
+\section{Списки}
+
+\begin{enumerate}
+\item Первый пункт
+\item Второй пункт
+\item Третий пункт
+\begin{enumerate}
+\item Первый подпункт
+\item Второй подпункт
+\end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+	\renewcommand{\labelenumi}{\Roman{enumi}}
+	\renewcommand{\labelenumii}{\asbuk{enumii}}
+\item Первый пункт
+\item Второй пункт
+\item Третий пункт
+\begin{enumerate}
+\item Первый подпункт
+\item Второй подпункт
+\end{enumerate}
+\end{enumerate}
+
+
+\begin{enumerate}
+\item Первый элемент
+  \begin{enumerate}
+  \item Первый вложенный элемент
+  \item Второй вложенный элемент
+  \end{enumerate}
+\end{enumerate}
+
+% Внутри списка другие не видят этого
+% Тут или в преамбуле - видит только текущий список
+\renewcommand{\labelenumi}{\arabic{enumi}}
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
+
+\begin{enumerate}
+\item Первый элемент
+  \begin{enumerate}
+  \item Первый вложенный элемент
+  \item Второй вложенный элемент
+  \end{enumerate}
+\end{enumerate}
+
+
+
+\section{Задача}
+
+% объявляем новый счётчик!
+\newcounter{i}
+% задаём команду для оформления задач
+\newcommand{\ex}[1]{%
+\addtocounter{i}{1}    % увеличение счетчика на единицу
+\textcolor{blue}{Задача \thesection.\arabic{i}\\}
+#1\\
+}
+
+
+\ex{В корзине лежат 12 яблок и 10 апельсинов. Ваня выбирает из неё яблоко или апельсин, после чего Надя берёт и яблоко, и апельсин. В каком случае Надя имеет большую свободу выбора: если Ваня взял яблоко или если он взял апельсин?}
+
+\ex{Шестеро друзей пришли в театр! В ложе 6 мест. Среди друзей две девушки, которые не могут сидеть с краю. Сколько способов рассадки существует?}
+
+
+
+\section{Теоремы}
+\begin{defin}
+\textbf{ Биномиальным коэффициентом} называется выражение $C_n^k = \frac{n!}{k!(n-k)!}$
+\end{defin}
+
+\begin{theorem}[Комбинаторное тождество]\label{th:1}
+ \[C_n^0 + C_n^1 + C_n^2 + C_n^3 + \ldots + C_n^n = 2^n \]
+\end{theorem}
+\begin{proof}
+Из Бинома Ньютона очевидно, что
+
+\[ 2^n = (1 + 1)^n = \sum_{k=0}^n C_n^k \cdot 1^k \cdot 1^{n-k} = \sum_{k=0}^n C_n^k. \]
+\end{proof}
+
+\begin{result} \label{sl:11}
+Мощность множества всех подмножеств непустого множества равна $2^n$!
+\end{result}
+
+Следствие \ref{sl:11} следует из теоремы \ref{th:1} со страницы \pageref{th:1}.
+
+\begin{fignia}
+	 Петя любит Катю, а Катя любит программировать и ботать по ночам!
+\end{fignia}
+
+
+\section{Свои окружения}
+\subsection{Задача}
+
+% \newenvironment{имя}[число аргументов]{что должно быть до}{что должно быть после}
+
+% новый счётчик, ежели он нужен
+\newcounter{iexer}
+
+\newenvironment{exercise}
+{ % то, что будет перед:
+\addtocounter{iexer}{1}  % счётчик +1
+ {
+   \noindent\ignorespaces   % игнор пробела
+   \fontspec{Phorssa} % иной шрифт
+   \textcolor{blue}{ \large  \textbf{Задача \arabic{iexer}}} % синий большой жирный текст
+ }
+
+\vspace{2mm} % расстояние между заголовком и текстом
+
+\noindent \ignorespaces \color{green} \fontsize{15}{12ex}\selectfont
+% можно убрать лишние пробелы, поменять размер, цвет и тп для текста внутри окружения
+} % конец того, что будет перед
+{ % то, что будет после:
+\begin{center}
+\begin{tikzpicture}
+\draw[blue,fill=blue](2,2) circle [radius = 0.3];
+\end{tikzpicture}
+\end{center}
+} % конец того, что будет после
+
+\begin{exercise}
+В корзине лежат 12 яблок и 10 апельсинов. Ваня выбирает из неё яблоко или апельсин, после чего Надя берёт и яблоко, и апельсин. В каком случае Надя имеет большую свободу выбора: если Ваня взял яблоко или если он взял апельсин?
+\end{exercise}
+
+
+
+\section{etoolbox}
+\subsection{Скрываем кусок текста}
+
+% Одно из применений - уничтожение какого-то куска текста!
+\newbool{answers}
+%\booltrue{answers}
+\boolfalse{answers}
+
+\renewcommand{\ex}[2][16 арбузов]{%
+
+\addtocounter{i}{1}    % увеличение счетчика на единицу
+\textcolor{blue}{Задача \arabic{i}\\}
+#2
+
+\ifbool{answers}{Ответ: #1}{ }
+% {если} {правда} {ложь}
+}
+
+
+\ex[ohdslkds]{В корзине лежат 12 яблок и 10 апельсинов. Ваня выбирает из неё яблоко или апельсин, после чего Надя берёт и яблоко, и апельсин. В каком случае Надя имеет большую свободу выбора: если Ваня взял яблоко или если он взял апельсин?}
+
+
+\ex[много]{Шестеро друзей пришли в театр! В ложе 6 мест. Среди друзей две девушки, которые не могут сидеть скраю. Сколько способов рассадки существует?}
+
+
+\end{document}
