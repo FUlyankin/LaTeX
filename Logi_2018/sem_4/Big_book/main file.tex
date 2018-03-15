@@ -1,0 +1,46 @@
+%!TEX TS-program = xelatex
+\documentclass[12pt,a4paper, oneside]{extreport}
+
+% Можно вставить разную преамбулу
+%\input{gost_preamble}
+\input{soul_preamble}
+
+\addbibresource{diploma.bib} % сюда нужно вписать свой биб-файлик
+
+
+%%%%%%%%% Свои команды %%%%%%%%%%%
+
+%\includeonly{chapters/ch2,chapters/ch3}
+
+
+\begin{document}
+
+\include{chapters/title}
+
+\tableofcontents
+
+
+\chapter*{Введение}
+% Добавляем введение в содержание
+\addcontentsline{toc}{chapter}{Введение}
+
+Текст введения
+
+\include{chapters/ch1}
+
+\include{chapters/ch2}
+
+\include{chapters/ch3}
+
+
+\nocite{*}  %Чтобы в список литературы напечаталичь все источники из bib-файла
+
+% Если нам хочется, чтобы в списке литературы были не полуторные интервалы можно воспользоваться следующим приёмом: 
+\begingroup
+\setstretch{1}
+\addcontentsline{toc}{chapter}{Список литературы}
+\printbibliography[title = Список литературы]
+\endgroup
+
+\end{document}
+

@@ -1,45 +1,19 @@
 %!TEX TS-program = xelatex
-\documentclass[12pt, a4paper]{article}  
+\documentclass[12pt, a4paper]{article}
 
-%%%%%%%%%% Програмный код %%%%%%%%%%
-% \usepackage{minted}
-% Включает подсветку команд в программах!
-% Нужно, чтобы на компе стоял питон, надо поставить пакет Pygments, в котором он сделан, через pip.
-
-% Для Windows: Жмём win+r, вводим cmd, жмём enter. Открывается консоль.
-% Прописываем pip install Pygments
-% Заходим в настройки texmaker и там прописываем в PdfLatex:
-% pdflatex -shell-escape -synctex=1 -interaction=nonstopmode %.tex
-
-% Для Linux: Открываем консоль. Убеждаемся, что у вас установлен pip командой pip --version
-% Если он не установлен, ставим его: sudo apt-get install python-pip
-% Ставим пакет sudo pip install Pygments
-
-% Для Mac: Всё то же самое, что на Linux, но через brew.
-
-% После всего этого вы должны почувствовать себя тру-программистами!
-% Документация по пакету хорошая. Сам читал, погуглите!
-
-
-\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}  % пакеты для математики
+%%%%%%%%%% Математика %%%%%%%%%%
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+%\mathtoolsset{showonlyrefs=true}  % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+%\usepackage{leqno} % Нумерация формул слева
 
 
 %%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \usepackage[british,russian]{babel} % выбор языка для документа
 \usepackage[utf8]{inputenc} % задание utf8 кодировки исходного tex файла
-
+\usepackage[X2,T2A]{fontenc}        % кодировка
 
 \usepackage{fontspec}         % пакет для подгрузки шрифтов
 \setmainfont{Arial}   % задаёт основной шрифт документа
-
-\defaultfontfeatures{Mapping=tex-text}
-
-% why do we need \newfontfamily:
-% http://tex.stackexchange.com/questions/91507/
-\newfontfamily{\cyrillicfonttt}{Arial}
-\newfontfamily{\cyrillicfont}{Arial}
-\newfontfamily{\cyrillicfontsf}{Arial}
 
 \usepackage{unicode-math}     % пакет для установки математического шрифта
 %\setmathfont{Asana Math}      % шрифт для математики
@@ -55,7 +29,6 @@
 \usepackage{graphics} 
 \graphicspath{{images/}{pictures/}}    % можно указать папки с картинками
 \usepackage{wrapfig}                   % Обтекание рисунков и таблиц текстом
-
 
 %%%%%%%%%% Работа с таблицами %%%%%%%%%%
 \usepackage{tabularx}            % новые типы колонок
@@ -76,10 +49,8 @@
 % 6. Повторяющееся значение повторяйте, а не говорите "то же"
 % 7. Есть сомнения? Выравнивай по левому краю!
 
-%%%%%%%%%%%%%%%%%%%%%%%% Графики и рисование %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Графика и рисование %%%%%%%%%%
 \usepackage{tikz, pgfplots}  % язык для рисования графики из latex'a
-
-
 
 %%%%%%%%%% Гиперссылки %%%%%%%%%%
 \usepackage{xcolor}              % разные цвета
@@ -116,47 +87,44 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%% Оформление %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{extsizes} % Возможность сделать 14-й шрифт
 
 \usepackage[paper=a4paper,top=15mm, bottom=15mm,left=35mm,right=10mm,includefoot]{geometry}
-
 \usepackage{indentfirst}       % установка отступа в первом абзаце главы
 
-\usepackage{setspace}
-\setstretch{1.3}  % Межстрочный интервал
-\setlength{\parindent}{1.5em} % Красная строка.
-\setlength{\parskip}{4mm}   % Расстояние между абзацами
-% Разные длины в латехе https://en.wikibooks.org/wiki/LaTeX/Lengths
 
-\flushbottom                            % Эта команда заставляет LaTeX чуть растягивать строки, чтобы получить идеально прямоугольную страницу
-\righthyphenmin=2                       % Разрешение переноса двух и более символов
-\widowpenalty=300                     % Небольшое наказание за вдовствующую строку (одна строка абзаца на этой странице, остальное --- на следующей)
-\clubpenalty=3000                     % Приличное наказание за сиротствующую строку (омерзительно висящая одинокая строка в начале страницы)
-\tolerance=1000     % Ещё какое-то наказание.
+%%%%%%%%%% Теоремы %%%%%%%%%%
+
+\theoremstyle{plain}              % Это стиль по умолчанию.  Есть другие стили.
+\newtheorem{theorem}{Теорема}[section]
+% Вопросы из зала (от Юрия Николаевича)
+\renewcommand{\thetheorem}{\thesection.\Asbuk{theorem}}
+
+\newtheorem{result}{Следствие}[theorem]
+% счётчик подчиняется теоремному, нумерация идёт по главам согласованно между собой
+
+\theoremstyle{definition}         % убирает курсив и что-то еще наверное делает ;)
+\newtheorem*{defin}{Определение}  % нумерация не идёт вообще
+
+\newtheorem{fignia}{Какая-то фигня}
 
 
-%\usepackage{fancyhdr} % Колонтитулы
-%\pagestyle{fancy}
-
-%\renewcommand{\headrulewidth}{0.4pt}  % Толщина линий, отчеркивающих верхний
-%\renewcommand{\footrulewidth}{0.4pt}  % и нижний колонтитулы
-%\lfoot{Нижний левый}
-%\rfoot{Нижний правый}
-%\rhead{Верхний правый}
-%\chead{Верхний в центре}
-%\lhead{Верхний левый}
-%\cfoot{\thepage}    % номер страницы
+%%%%%%%%%% Свои команды %%%%%%%%%%
+\usepackage{etoolbox}    % логические операторы для своих макросов
 
 
 %%%%%%%%%% Список литературы %%%%%%%%%%
 
-\usepackage[backend=biber,style=chem-acs,sorting=nty]{biblatex}
+%\usepackage[backend=biber,style=chem-acs,sorting=nty]{biblatex}
 % style --- стиль оформления библиографии
 % backend --- Движок для сборки. Просто пишите сюда biber. Trust me.
 % sorting --- Порядок сортировки в списке. nty = сначала по имени, потом по названию, потом по году выхода статьи. В этот же список можно включить 'a' - по алфавиту,  
 
 %\usepackage[backend=biber,style=authoryear]{biblatex}
-%\usepackage[backend=biber,bibstyle=gost-numeric]{biblatex}
+
+%\usepackage[backend=biber,bibstyle=gost-inline]{biblatex}
+%\usepackage[backend=biber,bibstyle=gost-footnote]{biblatex}
+\usepackage[backend=biber,bibstyle=gost-numeric]{biblatex}
+%\usepackage[backend=biber,bibstyle=gost-authoryear]{biblatex}
 
 % Справка по 4 главным стилям для ленивых: 
 % gost-inline  ссылки внутри теста в круглых скобках
@@ -174,7 +142,7 @@
 
 \section{Мой список литературы} 
 
-Доказательство можно найти в \cite{Shan:sets}. Для знатоков может быть интересен тот факт, что в~этом доказательстве неявно используется аксиома выбора. Без неё можно представить $\R$ как счётное объединение счётных множеств \parencite{williams:wto}. Эта заметка была написана в \citeyear{williams:wto} году. Написали её \citeauthor{williams:wto}.
+Доказательство можно найти в \cite{Shan:sets}. Для знатоков может быть интересен тот факт, что в~этом доказательстве неявно используется аксиома выбора. Без неё можно представить $\mathbb{R}$ как счётное объединение счётных множеств \parencite{williams:wto}. Эта заметка была написана в \citeyear{williams:wto} году. Написали её \citeauthor{williams:wto}.
 
 В данной книжке мы придерживаемся системы аксиом ZFC. Хотя бы просто потому, что авторы (по крайней мере пока) не умеет думать без аксиомы выбора. Подробности можно найти в \footcite{herrlich:axiom}. Также особо любопытные могут прочитать всего лишь сорок страниц заметок о теории множеств в \textcite{Franclin:sets}.
 
@@ -182,8 +150,8 @@
 
 % Если хотим поменять название, добавляем аргумент!
 
-\printbibliography[title={Чтиво}]
-
+% \printbibliography[title={Чтиво}]
+\printbibliography
 
 
 \end{document}

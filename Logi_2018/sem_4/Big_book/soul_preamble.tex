@@ -1,5 +1,4 @@
-%!TEX TS-program = xelatex
-\documentclass[12pt, a4paper]{extreport}  
+
 
 \usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}  % пакеты для математики
 
@@ -60,11 +59,11 @@
 
 \usepackage{hyperref}
 \hypersetup{
-    unicode=true,           % позволяет использовать юникодные символы
-    colorlinks=true,       	% true - цветные ссылки, false - ссылки в рамках
-    urlcolor=blue,          % цвет ссылки на url
-    linkcolor=red,          % внутренние ссылки
-    citecolor=green,        % на библиографию
+	unicode=true,           % позволяет использовать юникодные символы
+	colorlinks=true,       	% true - цветные ссылки, false - ссылки в рамках
+	urlcolor=blue,          % цвет ссылки на url
+	linkcolor=red,          % внутренние ссылки
+	citecolor=green,        % на библиографию
 	pdfnewwindow=true,      % при щелчке в pdf на ссылку откроется новый pdf
 	breaklinks              % если ссылка не умещается в одну строку, разбивать ли ее на две части?
 }
@@ -110,86 +109,70 @@
 
 %\renewcommand{\headrulewidth}{0.4pt}  % Толщина линий, отчеркивающих верхний
 %\renewcommand{\footrulewidth}{0.4pt}  % и нижний колонтитулы
-	%\lfoot{Нижний левый}
-	%\rfoot{Нижний правый}
-	%\rhead{Верхний правый}
- 	%\chead{Верхний в центре}
-	%\lhead{Верхний левый}
-	%\cfoot{\thepage}    % номер страницы
+%\lfoot{Нижний левый}
+%\rfoot{Нижний правый}
+%\rhead{Верхний правый}
+%\chead{Верхний в центре}
+%\lhead{Верхний левый}
+%\cfoot{\thepage}    % номер страницы
 
 
 
-  %%%%%%%%%% Свои команды %%%%%%%%%%
-  \usepackage{etoolbox}    % логические операторы для своих макросов
+%%%%%%%%%% Свои команды %%%%%%%%%%
+\usepackage{etoolbox}    % логические операторы для своих макросов
 
-  %Можно определить любой мат. оператор:
-  \DeclareMathOperator{\Cov}{Cov}
-  \DeclareMathOperator{\Var}{Var}
-  \DeclareMathOperator{\Corr}{Corr}
-  \DeclareMathOperator{\E}{\mathop{E}}
+%Можно определить любой мат. оператор:
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Corr}{Corr}
+\DeclareMathOperator{\E}{\mathop{E}}
 
-  %Можно задать любую команду, например:
-  \newcommand{\iid}{\text{i.\hspace{2pt}i.\hspace{2pt}d.}}
-  \newcommand{\fr}[2]{\ensuremath{^#1/_#2}}
+%Можно задать любую команду, например:
+\newcommand{\iid}{\text{i.\hspace{2pt}i.\hspace{2pt}d.}}
+\newcommand{\fr}[2]{\ensuremath{^#1/_#2}}
 
-  %Можно определить новый символ, например для множества действительных чисел! Команда \ensuremath автоматически проверяет наличие математического режима:
-  \def\R{\ensuremath{\mathbb{R}{ }}}
+%Можно определить новый символ, например для множества действительных чисел! Команда \ensuremath автоматически проверяет наличие математического режима:
+\def\R{\ensuremath{\mathbb{R}{ }}}
 
-  %Можно ввести свои собственные сокращения:
-  \def \a{\alpha}
-  \def \b{\beta}
-  \def \t{\tau}
-  \def \dt{\delta}
-  \def \e{\varepsilon}
-  \def \ga{\gamma}
-  \def \kp{\varkappa}
-  \def \la{\lambda}
-  \def \sg{\sigma}
-  \def \tt{\theta}
-  \def \Dt{\Delta}
-  \def \La{\Lambda}
-  \def \Sg{\Sigma}
-  \def \Tt{\Theta}
-  \def \Om{\Omega}
-  \def \om{\omega}
+%Можно ввести свои собственные сокращения:
+\def \a{\alpha}
+\def \b{\beta}
+\def \t{\tau}
+\def \dt{\delta}
+\def \e{\varepsilon}
+\def \ga{\gamma}
+\def \kp{\varkappa}
+\def \la{\lambda}
+\def \sg{\sigma}
+\def \tt{\theta}
+\def \Dt{\Delta}
+\def \La{\Lambda}
+\def \Sg{\Sigma}
+\def \Tt{\Theta}
+\def \Om{\Omega}
+\def \om{\omega}
 
-  %Можно переделать старые команды:
-  \renewcommand{\phi}{\varphi}
+%Можно переделать старые команды:
+\renewcommand{\phi}{\varphi}
 
 
-  %%%%%%%%%% Теоремы %%%%%%%%%%
-  \theoremstyle{plain}              % Это стиль по умолчанию.  Есть другие стили.
-  \newtheorem{theorem}{Теорема}[section]
-  \newtheorem{result}{Следствие}[theorem]
-  % счётчик подчиняется теоремному, нумерация идёт по главам согласованно между собой
+%%%%%%%%%% Теоремы %%%%%%%%%%
+\theoremstyle{plain}              % Это стиль по умолчанию.  Есть другие стили.
+\newtheorem{theorem}{Теорема}[section]
+\newtheorem{result}{Следствие}[theorem]
+% счётчик подчиняется теоремному, нумерация идёт по главам согласованно между собой
 
-  \theoremstyle{definition}         % убирает курсив и что-то еще наверное делает ;)
-  \newtheorem*{defin}{Определение}  % нумерация не идёт вообще
+\theoremstyle{definition}         % убирает курсив и что-то еще наверное делает ;)
+\newtheorem*{defin}{Определение}  % нумерация не идёт вообще
 
-  \newtheorem{fignia}{Какая-то фигня}
+\newtheorem{fignia}{Какая-то фигня}
 
 
 %%%%%%%%%% Список литературы %%%%%%%%%%
-% \usepackage[backend=biber,style=chem-acs,sorting=nty]{biblatex}
+
+\usepackage[backend=biber,style=chem-acs,sorting=nty]{biblatex}
 % style --- стиль оформления библиографии
 % backend --- Движок для сборки. Просто пишите сюда biber. Trust me.
-% sorting --- Порядок сортировки в списке. nty = сначала по имени, потом по названию, потом по году выхода статьи. В этот же список можно включить 'a' - по алфавиту,
-
-% \addbibresource{sc_biblio.bib} % сюда нужно вписать свой биб-файлик
+% sorting --- Порядок сортировки в списке. nty = сначала по имени, потом по названию, потом по году выхода статьи. В этот же список можно включить 'a' - по алфавиту,  
 
 
-\begin{document} % Тут заканчиваются служебные команды и начинается документ!
-
-\tableofcontents  % содержание
-
-
-Наш документ
-
-
-\nocite{*}    место для статьи из гугла!
-
-% Если хотим поменять название, добавляем аргумент!
-
-\printbibliography[title={Чтиво}] % распечатать список литературы
-
-\end{document}
