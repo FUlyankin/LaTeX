@@ -44,24 +44,25 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>"main file".bcf</file>
+      <file>GOST_diploma.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>"main file".bbl</file>
+      <file>GOST_diploma.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
+      <file>gost-numeric.dbx</file>
+      <file>biblatex-gost.dbx</file>
       <file>blx-compat.def</file>
       <file>biblatex.def</file>
-      <file>chem-acs.bbx</file>
-      <file>numeric-comp.bbx</file>
-      <file>numeric.bbx</file>
-      <file>standard.bbx</file>
-      <file>chem-acs.cbx</file>
-      <file>numeric-comp.cbx</file>
+      <file>gost-numeric.bbx</file>
+      <file>gost-standard.bbx</file>
+      <file>biblatex-gost.def</file>
+      <file>numeric.cbx</file>
       <file>biblatex.cfg</file>
+      <file>russian-gost.lbx</file>
       <file>russian.lbx</file>
-      <file>british.lbx</file>
+      <file>english-gost.lbx</file>
       <file>english.lbx</file>
     </requires>
   </internal>
@@ -69,19 +70,19 @@
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>"main file"</infile>
+      <infile>GOST_diploma</infile>
     </cmdline>
     <input>
-      <file>"main file".bcf</file>
+      <file>GOST_diploma.bcf</file>
     </input>
     <output>
-      <file>"main file".bbl</file>
+      <file>GOST_diploma.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>"main file".bbl</file>
+      <file>GOST_diploma.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>"main file".bcf</file>
+      <file>GOST_diploma.bcf</file>
     </requires>
     <requires type="editable">
       <file>diploma.bib</file>

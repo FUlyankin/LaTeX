@@ -18,7 +18,33 @@
 
 
 \refsection{0}
-  \sortlist[entry]{nty/global/}
+  \sortlist[entry]{ntvy/global/}
+    \entry{UDAEVA}{article}{}
+      \name{author}{1}{}{%
+        {{hash=0733d8fd1a89cdb3f17f248a4a4ba9a8}{%
+           family={Юдаевa},
+           familyi={Ю\bibinitperiod},
+           given={КВ},
+           giveni={К\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {russian}%
+      }
+      \strng{namehash}{0733d8fd1a89cdb3f17f248a4a4ba9a8}
+      \strng{fullhash}{0733d8fd1a89cdb3f17f248a4a4ba9a8}
+      \strng{authornamehash}{0733d8fd1a89cdb3f17f248a4a4ba9a8}
+      \strng{authorfullhash}{0733d8fd1a89cdb3f17f248a4a4ba9a8}
+      \field{sortinit}{Ю}
+      \field{sortinithash}{40880c5487a51f0afd63afe9f97c7dea}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Деньги и кредит}
+      \field{langid}{russian}
+      \field{title}{О денежно-кредитной политике Банка России на современном этапе}
+      \field{year}{2014}
+      \field{pages}{13}
+      \range{pages}{1}
+    \endentry
     \entry{barro1986reputation}{article}{}
       \name{author}{1}{}{%
         {{hash=88cdc2da258c0abd9cb399a2c2cb9a1d}{%
@@ -43,12 +69,14 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Monetary Economics}
       \field{langid}{english}
-      \field{number}{1}
       \field{title}{Reputation in a model of monetary policy with incomplete information}
-      \field{volume}{17}
       \field{year}{1986}
+      \field{number}{1}
+      \range{number}{1}
       \field{pages}{3\bibrangedash 20}
       \range{pages}{18}
+      \field{volume}{17}
+      \range{volume}{1}
     \endentry
     \entry{guthrie2000open}{article}{}
       \name{author}{2}{}{%
@@ -79,12 +107,14 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Monetary Economics}
       \field{langid}{english}
-      \field{number}{2}
       \field{title}{Open mouth operations}
-      \field{volume}{46}
       \field{year}{2000}
+      \field{number}{2}
+      \range{number}{1}
       \field{pages}{489\bibrangedash 516}
       \range{pages}{28}
+      \field{volume}{46}
+      \range{volume}{1}
     \endentry
     \entry{kydland1977rules}{article}{}
       \name{author}{2}{}{%
@@ -144,9 +174,9 @@
       \list{publisher}{1}{%
         {Brookings Institution Press}%
       }
-      \strng{namehash}{a1353752cc919204ad1fa98f1ca67245}
+      \strng{namehash}{1679d0df5ea4aa241cba29e51ac1f59d}
       \strng{fullhash}{1679d0df5ea4aa241cba29e51ac1f59d}
-      \strng{authornamehash}{a1353752cc919204ad1fa98f1ca67245}
+      \strng{authornamehash}{1679d0df5ea4aa241cba29e51ac1f59d}
       \strng{authorfullhash}{1679d0df5ea4aa241cba29e51ac1f59d}
       \field{sortinit}{M}
       \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
@@ -154,38 +184,14 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{Brookings Papers on Economic Activity}
       \field{langid}{english}
-      \field{number}{2}
       \field{title}{Central bank transparency and the signal value of prices}
-      \field{volume}{2005}
       \field{year}{2005}
+      \field{number}{2}
+      \range{number}{1}
       \field{pages}{1\bibrangedash 66}
       \range{pages}{66}
-    \endentry
-    \entry{UDAEVA}{article}{}
-      \name{author}{1}{}{%
-        {{hash=0733d8fd1a89cdb3f17f248a4a4ba9a8}{%
-           family={Юдаевa},
-           familyi={Ю\bibinitperiod},
-           given={КВ},
-           giveni={К\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {russian}%
-      }
-      \strng{namehash}{0733d8fd1a89cdb3f17f248a4a4ba9a8}
-      \strng{fullhash}{0733d8fd1a89cdb3f17f248a4a4ba9a8}
-      \strng{authornamehash}{0733d8fd1a89cdb3f17f248a4a4ba9a8}
-      \strng{authorfullhash}{0733d8fd1a89cdb3f17f248a4a4ba9a8}
-      \field{sortinit}{Ю}
-      \field{sortinithash}{40880c5487a51f0afd63afe9f97c7dea}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Деньги и кредит}
-      \field{langid}{russian}
-      \field{title}{О денежно-кредитной политике Банка России на современном этапе}
-      \field{year}{2014}
-      \field{pages}{13}
-      \range{pages}{1}
+      \field{volume}{2005}
+      \range{volume}{1}
     \endentry
   \endsortlist
 \endrefsection
