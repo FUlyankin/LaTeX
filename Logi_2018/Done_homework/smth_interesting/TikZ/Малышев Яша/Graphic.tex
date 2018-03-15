@@ -1,0 +1,165 @@
+%!TEX TS-program = xelatex
+\documentclass[12pt, a4paper,usename,dvipsnames]{article}  
+
+
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}  % пакеты для математики
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[british,russian]{babel} % выбор языка для документа
+\usepackage[utf8]{inputenc} % задание utf8 кодировки исходного tex файла
+
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Arial}   % задаёт основной шрифт документа
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+%\setmathfont{Asana Math}      % шрифт для математики
+
+%%%%%%%%%% Работа с картинками %%%%%%%%%
+\usepackage{graphicx}                  % Для вставки рисунков
+\usepackage{graphics} 
+\graphicspath{{images/}{pictures/}}    % можно указать папки с картинками
+\usepackage{wrapfig}                   % Обтекание рисунков и таблиц текстом
+\usepackage{pst-poly}
+\usepackage{pst-fill}
+\usepackage{pgfplots}
+%%%%%%%%%% Работа с таблицами %%%%%%%%%%
+\usepackage{tabularx}            % новые типы колонок
+\usepackage{tabulary}            % и ещё новые типы колонок
+\usepackage{array}               % Дополнительная работа с таблицами
+\usepackage{longtable}           % Длинные таблицы
+\usepackage{multirow}            % Слияние строк в таблице
+\usepackage{float}               % возможность позиционировать объекты в нужном месте 
+\usepackage{booktabs}            % таблицы как в книгах!  
+\renewcommand{\arraystretch}{1.3} % больше расстояние между строками
+
+% Заповеди из документации к booktabs:
+% 1. Будь проще! Глазам должно быть комфортно
+% 2. Не используйте вертикальные линни
+% 3. Не используйте двойные линии. Как правило, достаточно трёх горизонтальных линий
+% 4. Единицы измерения - в шапку таблицы
+% 5. Не сокращайте .1 вместо 0.1
+% 6. Повторяющееся значение повторяйте, а не говорите "то же"
+% 7. Есть сомнения? Выравнивай по левому краю!
+
+%%%%%%%%%%%%%%%%%%%%%%%% Оформление %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[paper=a4paper,top=15mm, bottom=15mm,left=35mm,right=10mm,includefoot]{geometry}
+
+\usepackage{indentfirst}       % установка отступа в первом абзаце главы
+\usepackage{xcolor}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% Графики и рисование %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz, pgfplots}  % язык для рисования графики из latex'a
+\usepackage{amscd}                  %Пакеты для рисования
+\usepackage[matrix,arrow,curve]{xy} %комунитативных диаграмм
+ %чет делает с цветами 
+% Всякие странные команды из Geogebra и с сайта для TikZ
+\usepackage{pgf}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+
+\definecolor{ffzzzz}{rgb}{1.,0.6,0.6}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+
+\usetikzlibrary{calc}
+\usepackage{relsize}
+
+\title{График}
+\author{Малышев Яков}
+\date{}
+
+\begin{document}
+\maketitle
+
+\def\Ctil{\widetilde{C}}
+%Код для штриковки 
+	% defining the new dimensions
+\newlength{\hatchspread}
+\newlength{\hatchthickness}
+\newlength{\hatchshift}
+\newcommand{\hatchcolor}{}
+% declaring the keys in tikz
+\tikzset{hatchspread/.code={\setlength{\hatchspread}{#1}},
+	hatchthickness/.code={\setlength{\hatchthickness}{#1}},
+	hatchshift/.code={\setlength{\hatchshift}{#1}},% must be >= 0
+hatchcolor/.code={\renewcommand{\hatchcolor}{#1}}}
+% setting the default values
+\tikzset{hatchspread=.3cm,
+	hatchthickness=0.5pt,
+	hatchshift=0pt,% must be >= 0
+    hatchcolor = black};
+% declaring the pattern
+\pgfdeclarepatternformonly[\hatchspread,\hatchthickness,\hatchshift,\hatchcolor]% variables
+{custom north east lines}% name
+{\pgfqpoint{\dimexpr-2\hatchthickness}{\dimexpr-2\hatchthickness}}% lower left corner
+{\pgfqpoint{\dimexpr\hatchspread+2\hatchthickness}{\dimexpr\hatchspread+2\hatchthickness}}% upper right corner
+{\pgfqpoint{\dimexpr\hatchspread}{\dimexpr\hatchspread}}% tile size
+{% shape description
+	\pgfsetlinewidth{\hatchthickness}
+	\pgfpathmoveto{\pgfqpoint{\dimexpr\hatchshift-0.15pt}{-0.15pt}}
+	\pgfpathlineto{\pgfqpoint{\dimexpr\hatchspread+0.15pt}{\dimexpr\hatchspread-\hatchshift+0.15pt}}
+	\ifdim \hatchshift > 0pt
+	\pgfpathmoveto{\pgfqpoint{-0.15pt}{\dimexpr\hatchspread-\hatchshift-0.15pt}}
+	\pgfpathlineto{\pgfqpoint{\dimexpr\hatchshift+0.15pt}{\dimexpr\hatchspread+0.15pt}}
+	\fi
+	\pgfsetstrokecolor{\hatchcolor}
+	%    \pgfsetdash{{1pt}{1pt}}{0pt}% dashing cannot work correctly in all situation this way
+	\pgfusepath{stroke}
+}
+
+	\begin{tikzpicture}
+%Оси
+\draw[very thick,->] (0,0) -- (0,11);
+\draw[very thick,->] (0,0) -- (12,0);
+%графики
+\draw[thick] (0,8) -- (6,0);
+\draw[thick,blue,dashed] (0,6) -- (10,0);
+\draw[Magenta,dashed,thick] (2,5.4) -- (2,0);
+\draw[Magenta, dashed, thick] (0,5.4) -- (2,5.4);
+\draw[Magenta, dashed, thick] (4,0) -- (4,3.6);
+\draw[Magenta, dashed, thick] (0,3.6) -- (4,3.6);
+\draw (4,8.8) node {\Large{\fontspec{Miama} Equilibrium at rate r'}};
+\draw (7,6.5) node {\Large{\fontspec{Miama} Equilibrium at rate r''}};
+%Arrow 
+\draw [->,Plum,thick] (7,6.1) arc [start angle=-10, end angle=-90, radius=3];
+\draw [->,Plum,thick] (3.48,8.55) arc [start angle=120, end angle=190, radius=3];
+% К сожалению не работает в tikz((((((((( 
+\begin{pspicture}
+\pspolygon[hatchcolor = red] (8,0) (6,0) (2.6,4.5) (8,0);
+\end{pspicture}
+\usetikzlibrary{patterns}
+\draw[pattern=custom north east lines, hatchcolor = blue] (0,8) -- (0,6) --  (2.7,4.4) -- (0,8);
+\begin{scope} 
+\clip (6.9,8.9) circle [radius = 6cm]; % не знаю как оставить часть под кругом ((( 
+\draw[pattern=custom north east lines, hatchcolor = red] (4,3.6) -- (7,1.8) -- (7,3.6);
+\end{scope}
+\begin{scope}
+\clip (1,2) rectangle (8,9);
+\draw [very thick,green] (6.9,8.9) circle [radius = 6cm];
+\draw [thick, green] (7.4,9.4) circle [radius = 6cm];
+\draw [thin, green] (7.9,9.9) circle [radius = 6cm];
+\end{scope}
+
+
+%подписи
+\node[below,right ] at (12,0) {\Large{\fontspec{Miama} C1}};
+\node[left] at (0,11) {\Large{\fontspec{Miama} C2}};
+\node[green,right] at (8,3) {\Large{\fontspec{Miama} u0}};
+\node[green,right] at (8,3.5) {\Large{\fontspec{Miama} u1}};
+\node[green,right] at (8,4) {\Large{\fontspec{Miama} u2}};
+\node[below] at (4,0) {\Large{\fontspec{Miama} C1''}};
+\node[left] at (0,3.6) {\Large{\fontspec{Miama} C2''}};
+\node[below] at (2,0) {\Large{\fontspec{Miama} C1'}};
+\node[left] at (0,5.4) {\Large{\fontspec{Miama} C2'}};
+%сетка
+%\draw [step=, very thin, gray](10,0) grid (0,10);
+\end{tikzpicture}
+
+\end{document}

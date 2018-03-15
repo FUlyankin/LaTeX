@@ -8,7 +8,7 @@
 *.synctex.gz
 *.toc
 *.vrb
-*.Rhistory
-*.DS_Store
+.Rhistory
+.DS_Store
 *.ipynb_checkpoints
 new_hw/

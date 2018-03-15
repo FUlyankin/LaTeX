@@ -1,0 +1,109 @@
+%!TEX TS-program = xelatex
+\documentclass[12pt, a4paper]{article}  
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}  % пакеты для математики
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[british,russian]{babel} % выбор языка для документа
+\usepackage[utf8]{inputenc} % задание utf8 кодировки исходного tex файла
+
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Arial}   % задаёт основной шрифт документа
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+%\setmathfont{Asana Math}      % шрифт для математики
+\usepackage{graphicx}                  % Для вставки рисунков
+\usepackage{graphics} 
+\graphicspath{{images/}{pictures/}}    % можно указать папки с картинками
+\usepackage{wrapfig}                   % Обтекание рисунков и таблиц текстом
+\usepackage[paper=a4paper,top=15mm, bottom=15mm,left=35mm,right=10mm,includefoot]{geometry}
+
+\usepackage{indentfirst}       % установка отступа в первом абзаце главы
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% Графики и рисование %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz, pgfplots}  % язык для рисования графики из latex'a
+\usepackage{amscd}                  %Пакеты для рисования
+\usepackage[matrix,arrow,curve]{xy} %комунитативных диаграмм
+
+% Всякие странные команды из Geogebra и с сайта для TikZ
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{ffffff}{rgb}{1.,1.,1.}
+\definecolor{zzttqq}{rgb}{0.6,0.2,0.}
+\definecolor{ttttff}{rgb}{0.2,0.2,1.}
+\definecolor{zzffzz}{rgb}{0.6,1.,0.6}
+\definecolor{qqccqq}{rgb}{0.,0.8,0.}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+
+
+\usetikzlibrary{calc}
+\usepackage{relsize}
+\newcommand\LM{\ensuremath{\mathit{LM}}}
+\newcommand\IS{\ensuremath{\mathit{IS}}}
+\usetikzlibrary{patterns}
+\author{Спиридонов Роман}
+\title{Домашнее задание №2. Упражнение 4.}
+\date{\today}
+
+\begin{document}
+	\maketitle
+	\section{Упражнение 4 (Вспомнить все)}
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=3.5cm,y=3.3cm]
+\draw[->,color=black] (0.,0.) -- (3.9297157672502614,0.);
+\foreach \x in {,1.,2.,3.}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[color=black] (3.7535443975283247,0.03548732113144759) node [anchor=south west] { Ось X};
+\draw[->,color=black] (0.,0.) -- (0.,4.875794376039934);
+\foreach \y in {,1.,2.,3.,4.}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0.022021421215242042,4.680614109816973) node [anchor=west] { Ось Y};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-0.35565280123583987,-0.5360220965058233) rectangle (3.9297157672502614,4.875794376039934);
+\fill[line width=1.2pt,color=ttttff,fill=ttttff,pattern=north east lines,pattern color=ttttff] (-0.0035680517155022295,2.7312236862539008) -- (-0.0026326848031602568,3.829424329514716) -- (1.420302700244637,1.317036641765334) -- cycle;
+\fill[line width=1.2pt,color=zzttqq,fill=zzttqq,pattern=north east lines,pattern color=zzttqq] (1.9282245126418904,0.8125691922327687) -- (2.6203331358939614,0.12516758149352603) -- (2.8706341724988653,0.3635014918764179) -- (2.726792512027541,0.38774361505181126) -- (2.426686891800046,0.5114985099909846) -- cycle;
+\draw [shift={(3.6026535872613583,2.983196636748247)},line width=2.4pt,color=qqwuqq]  plot[domain=3.2697710385039915:4.439909624318296,variable=\t]({1.*2.720046888502891*cos(\t r)+0.*2.720046888502891*sin(\t r)},{0.*2.720046888502891*cos(\t r)+1.*2.720046888502891*sin(\t r)});
+\draw [line width=1.2pt,dash pattern=on 1pt off 1pt] (-0.0035680517155022295,2.7312236862539008)-- (2.7463578078613615,0.);
+\draw [line width=2.pt] (-0.0026326848031602568,3.829424329514716)-- (2.1662297918756312,0.);
+\draw [line width=1.2pt] (-0.0026326848031602568,3.829424329514716)-- (2.1662297918756312,0.);
+\draw [shift={(3.8451013950919903,3.1493586349378067)},line width=1.2pt,color=qqccqq]  plot[domain=3.2697710385039924:4.439909624318295,variable=\t]({1.*2.7200468885028926*cos(\t r)+0.*2.7200468885028926*sin(\t r)},{0.*2.7200468885028926*cos(\t r)+1.*2.7200468885028926*sin(\t r)});
+\draw [shift={(4.01275275175408,3.436415598135962)},line width=1.2pt,color=zzffzz]  plot[domain=3.2697710385039924:4.439909624318295,variable=\t]({1.*2.7200468885028917*cos(\t r)+0.*2.7200468885028917*sin(\t r)},{0.*2.7200468885028917*cos(\t r)+1.*2.7200468885028917*sin(\t r)});
+\draw [line width=1.2pt,dotted] (0.,1.0532815821651353)-- (1.6858638341199967,1.0532815821651353);
+\draw [line width=1.2pt,dotted] (1.6858638341199967,1.0532815821651353)-- (1.6858638341199967,0.);
+\draw [line width=2.pt] (-0.0026326848031602568,3.829424329514716)-- (1.420302700244637,1.317036641765334);
+\draw [line width=1.2pt,dash pattern=on 1pt off 1pt] (1.9282245126418904,0.8125691922327687)-- (2.6203331358939614,0.12516758149352603);
+\draw [line width=1.2pt,color=ffffff] (2.6203331358939614,0.12516758149352603)-- (2.8706341724988653,0.3635014918764179);
+\draw [line width=1.2pt,color=ffffff] (2.8706341724988653,0.3635014918764179)-- (2.726792512027541,0.38774361505181126);
+\draw [line width=1.2pt,color=ffffff] (2.726792512027541,0.38774361505181126)-- (2.426686891800046,0.5114985099909846);
+\draw [line width=1.2pt,color=ffffff] (2.426686891800046,0.5114985099909846)-- (1.9282245126418904,0.8125691922327687);
+\draw [->,line width=1.2pt] (2.815431853759015,0.3600327620632283) -- (3.0796889083419194,0.9544453910149756);
+\draw [shift={(1.3560614090149736,0.5343418523325325)},line width=2.pt]  plot[domain=1.6207710055320905:3.7717009389754326,variable=\t]({1.*0.14525815099511333*cos(\t r)+0.*0.14525815099511333*sin(\t r)},{0.*0.14525815099511333*cos(\t r)+1.*0.14525815099511333*sin(\t r)});
+\draw [shift={(1.4245850111880067,0.742412961281878)},line width=2.pt]  plot[domain=3.835118434943908:5.905075677883238,variable=\t]({1.*0.09854370923451286*cos(\t r)+0.*0.09854370923451286*sin(\t r)},{0.*0.09854370923451286*cos(\t r)+1.*0.09854370923451286*sin(\t r)});
+\draw [->,line width=2.pt] (1.5161680020597337,0.7060341430948424) -- (1.617466539649847,0.9278299001663898);
+\begin{scriptsize}
+\draw [fill=ududff] (1.2358490581072625,1.642714859016854) circle (1.5pt);
+\draw[color=ududff] (1.2651238002059746,1.775089692179701) node {$B$};
+\draw[color=qqwuqq] (1.905947157569518,1.0431636938435944) node {$U_0$};
+\draw [fill=xdxdff] (1.6858638341199967,1.0532815821651353) circle (1.5pt);
+\draw[color=xdxdff] (1.7187650772399605,1.180677063227954) node {$F$};
+\draw [fill=xdxdff] (4.674547996484018,-1.9150766179488614) circle (1.5pt);
+\draw[color=xdxdff] (-0.3424399485066946,4.95120493344426) node {$H$};
+\draw[color=qqccqq] (2.1481827909371805,1.2028566389351085) node {$U_1$};
+\draw[color=zzffzz] (2.3155455921730197,1.4867552079866893) node {$U_2$};
+\draw [fill=uuuuuu] (1.6858638341199967,0.) circle (1.5pt);
+\draw [fill=black] (1.238698094747684,0.4487510648918473) circle (0.5pt);
+\draw[color=purple] (1.2514022760041208,0.3528799251247924) node {Наклон -1/$\lambda$};
+\end{scriptsize}
+\end{tikzpicture}
+	
+	
+\end{document}
