@@ -11,7 +11,7 @@ create.report <- function(x, prepend = "MyFile_"){
   rnw.file <- paste0(prepend, x, ".Rnw")    # Название будущего rnw файла
   brew('template.Rnw', rnw.file)            # "Варка" этого файла
   knit(rnw.file)                            # Переработка файла в tex. Мы "связываем" его
-  latex.file <- paste0(prepend, x, ".tex")  # Запоминаем нащвание файла, который будем обрабатывать
+  latex.file <- paste0(prepend, x, ".tex")  # Запоминаем название файла, который будем обрабатывать
   texi2pdf(latex.file, clean = TRUE, quiet = TRUE)    # Вяжем из tex pdf
   out.file <- paste0(prepend, x, ".pdf")    # Имя файла
   return(out.file)
