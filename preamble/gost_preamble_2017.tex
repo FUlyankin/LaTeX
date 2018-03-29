@@ -1,4 +1,3 @@
-% !TEX root = main_file.tex
 
 %%%%%%%%%% Програмный код %%%%%%%%%%
 % \usepackage{minted}
@@ -27,22 +26,31 @@
 %\usepackage{tipa} %Для формулки из логитов
 
 
-\usepackage{hyphenat}
+\usepackage{hyphenat} 
 
 
 %%%%%%%%%% Шрифты %%%%%%%%
-\usepackage[english, russian]{babel} % выбор языка для документа
-\usepackage[utf8]{inputenc} % задание utf8 кодировки исходного tex файла
-\usepackage[X2,T2A]{fontenc}        % кодировка
-
 \usepackage{fontspec}         % пакет для подгрузки шрифтов
+
+\defaultfontfeatures{Mapping=tex-text}
 \setmainfont{Times New Roman}       % задаёт основной шрифт документа
 
-\usepackage{unicode-math}      % пакет для установки математического шрифта
-\setmathfont{Asana-Math.otf}    % шрифт для математики
+% Зачем на нужна команда \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Times New Roman}
+\newfontfamily{\cyrillicfont}{Times New Roman}
+\newfontfamily{\cyrillicfontsf}{Times New Roman}
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+\setmathfont[math-style=ISO]{Asana Math}      % шрифт для математики
 
 % Конкретный символ из конкретного шрифта
 % \setmathfont[range=\int]{Neo Euler}
+
+\usepackage{polyglossia}      % Пакет для выбора языка
+% Основной язык документа. В опциях активируются всякие приколы для русского языка (вроде кучи разновидностей тире) из пакета babel
+\setdefaultlanguage[babelshorthands=true]{russian}
+\setotherlanguage{english}    % Второстепенный язык документа
 
 
 %%%%%%%%%% Работа с картинками %%%%%%%%%
@@ -133,7 +141,7 @@
 \fancyhead{ } % clear all fields
 \fancyfoot{ } % clear all fields
 \fancyhead[C]{\thepage}
-% Чтобы не прорисовывалась черта!
+% Чтобы не прорисовывалась черта! 
 \renewcommand{\headrulewidth}{0pt}
 
 
@@ -143,13 +151,13 @@
 
 
 %%% Заголовки
-\usepackage[indentfirst]{titlesec}{\raggedleft}
-% Заголовки по левому краю
-% опция identfirst устанавливает отступ в первом абзаце
+\usepackage[indentfirst]{titlesec}{\raggedleft} 
+% Заголовки по левому краю    
+% опция identfirst устанавливает отступ в первом абзаце 
 
 
 
-% В Linux этот пакет сделан косячно. Исправляет это следующий непонятный кусок кода.
+% В Linux этот пакет сделан косячно. Исправляет это следующий непонятный кусок кода. 
 \makeatletter
 \patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
 \patchcmd{\ttlh@hang}{\noindent}{}{}{}
@@ -161,14 +169,14 @@
       {\normalfont\large\bfseries}
       {\thechapter }{0.5 em}{}
 
-% Редактирование ненумеруемых глав chapter* (Введение и тп)
+% Редактирование ненумеруемых глав chapter* (Введение и тп) 
 \titleformat{name=\chapter,numberless}
 {\centering\normalfont\bfseries\large}{}{0.25em}{\normalfont}
-
+ 
 % Убирает чеканутые отступы вверху страницы
-\titlespacing{\chapter}{0pt}{-\baselineskip}{\baselineskip}
-
-% Более низкие уровни
+\titlespacing{\chapter}{0pt}{-\baselineskip}{\baselineskip} 
+ 
+% Более низкие уровни 
 \titleformat{\section}{\bfseries}{\thesection}{0.5 em}{}
 \titleformat{\subsection}{\bfseries}{\thesubsection}{0.5 em}{}
 
@@ -180,21 +188,21 @@
 \usepackage{titletoc}
 
 \titlecontents{chapter}
-             [1em] %
+             [1em] % 
              {\normalsize}
              {\contentslabel{1 em}}
              {\hspace{-1 em}}
              {\normalsize\titlerule*[10pt]{.}\contentspage}
 
 \titlecontents{section}
-              [3 em] %
+              [3 em] % 
               {\normalsize}
               {\contentslabel{1.75 em}}
               {\hspace{-1.75 em}}
               {\normalsize\titlerule*[10pt]{.}\contentspage}
 
 \titlecontents{subsection}
-              [6 em] %
+              [6 em] % 
               {\normalsize}
               {\contentslabel{3 em}}
               {\hspace{-3 em}}
@@ -202,19 +210,19 @@
 
 
 % Правильные подписи под таблицей и рисунком
-% Документация к пакету на русском языке!
+% Документация к пакету на русском языке! 
 \usepackage[tableposition=top, singlelinecheck=false]{caption}
 \usepackage{subcaption}
 
-
-   \DeclareCaptionStyle{base}%
+	
+   \DeclareCaptionStyle{base}% 
 		[justification=centering,indention=0pt]{}
    \DeclareCaptionLabelFormat{gostfigure}{Рисунок #2}
    \DeclareCaptionLabelFormat{gosttable}{Таблица #2}
-
-   \DeclareCaptionLabelSeparator{gost}{~---~}
-   \captionsetup{labelsep=gost}
-
+  	
+   \DeclareCaptionLabelSeparator{gost}{~---~}   
+   \captionsetup{labelsep=gost} 
+   
    \DeclareCaptionStyle{fig01}%
            [margin=5mm,justification=centering]%
            {margin={3em,3em}}
@@ -247,7 +255,7 @@
 
 %%% ГОСТОВСКИЕ СПИСКИ
 
-% Первый тип списков. Большая буква.
+% Первый тип списков. Большая буква. 
 \newlist{Enumerate}{enumerate}{1}
 
 \setlist[Enumerate,1]{labelsep=0.5em,leftmargin=1.25em,labelwidth=1.25em,
@@ -258,7 +266,7 @@ parsep=0em,itemsep=0em,topsep=0ex, before={\parskip=-1em},label=\arabic{Enumerat
 \setlist[enumerate]{label=\arabic{enumi}),parsep=0em,itemsep=0em,topsep=0.75ex, before={\parskip=-1em}}
 
 
-% Третий тип списков. Два уровня.
+% Третий тип списков. Два уровня. 
 \newlist{twoenumerate}{enumerate}{2}
 \setlist[twoenumerate,1]{itemsep=0mm,parsep=0em,topsep=0.75ex,, before={\parskip=-1em},label=\asbuk{twoenumeratei})}
 \setlist[twoenumerate,2]{leftmargin=1.3em,itemsep=0mm,parsep=0em,topsep=0ex, before={\parskip=-1em},label=\arabic{twoenumerateii})}
@@ -276,27 +284,29 @@ parsep=0em,itemsep=0em,topsep=0ex, before={\parskip=-1em},label=\arabic{Enumerat
 
 %%%%%%%%%% Список литературы %%%%%%%%%%
 
-%\usepackage[%
+%\usepackage[% 
 %backend=biber, %подключение пакета biber (тоже нужен)
-%bibstyle=gost-numeric, %подключение одного из четырех главных стилей biblatex-gost
+%bibstyle=gost-numeric, %подключение одного из четырех главных стилей biblatex-gost 
 %sorting=ntvy, %тип сортировки в библиографии
 %]{biblatex}
 \usepackage[backend=biber,style=gost-numeric, maxbibnames=9,maxcitenames=2,uniquelist=false, babel=other]{biblatex}
 
-% Справка по 4 главным стилям для ленивых:
+% Справка по 4 главным стилям для ленивых: 
 % gost-inline  ссылки внутри теста в круглых скобках
 % gost-footnote подстрочные ссылки
 % gost-numeric затекстовые ссылки
-% gost-authoryear тоже затекстовые ссылки, но немного другие
+% gost-authoryear тоже затекстовые ссылки, но немного другие 
 
-% Подробнее смотри страницу 4 документации. Она на русском.
+% Подробнее смотри страницу 4 документации. Она на русском. 
 
 % Ещё немного настроек
 \DeclareFieldFormat{postnote}{#1} %убирает с. и p.
 \renewcommand*{\mkgostheading}[1]{#1} % только лишь убираем курсив с авторов
 
 
-% Этот кусок кода выносит русские источники на первое место. Костыль описали авторы пакета в руководстве к нему. Подробнее смотри:
+\addbibresource{diploma_bib.bib} % сюда нужно вписать свой bib-файлик.
+
+% Этот кусок кода выносит русские источники на первое место. Костыль описали авторы пакета в руководстве к нему. Подробнее смотри: 
 % https://github.com/odomanov/biblatex-gost/wiki/Как-сделать%2C-чтобы-русскоязычные-источники-предшествовали-остальным
 \DeclareSourcemap{
   \maps[datatype=bibtex]{
