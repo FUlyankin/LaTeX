@@ -1,6 +1,9 @@
 ---
 title: "Мы работаем в Markdown"
-output: word_document
+output:
+  word_document: default
+  html_document:
+    df_print: paged
 lang: russian
 ---
 

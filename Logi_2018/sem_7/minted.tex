@@ -2,7 +2,7 @@
 \documentclass[12pt, a4paper]{article}
 
 %%%%%%%%%% Програмный код %%%%%%%%%%
-% \usepackage{minted}
+\usepackage{minted}
 % Включает подсветку команд в программах!
 % Нужно, чтобы на компе стоял питон, надо поставить пакет Pygments, в котором он сделан, через pip.
 
@@ -123,17 +123,17 @@
 \maketitle
 
 
-\subsection{Как слышу так и пишу}
+\section{Как слышу так и пишу}
 
 Окружение verbatim предназначено для буквального воспроизведения имеющихся в файле символов.
 
 \begin{verbatim}
 def monthlength(month,year):
-if year % 4 == 0:
-VisYear = 29
-else:
-VisYear = 28
-return [31,VisYear,31,30,31,30,31,31,30,31,30,31][month]
+    if year % 4 == 0:
+        VisYear = 29
+    else:
+        VisYear = 28
+    return [31,VisYear,31,30,31,30,31,31,30,31,30,31][month]
 \end{verbatim}
 
 Можно использовать это окружения для написания команд напрямую. Например, команда \verb|\dots| задает многоточие.
@@ -154,7 +154,7 @@ def monthlength(month,year):
     else:
          VisYear = 28
     return [31,VisYear,31,30,31,30,31,31,30,31,30,31][month]
-\end{minted}
+sudo ln -s $(which pygmentize) pygmentize\end{minted}
 
 Можно писать математические комменатрии к коду. У пакета очень много разных опций.
 
