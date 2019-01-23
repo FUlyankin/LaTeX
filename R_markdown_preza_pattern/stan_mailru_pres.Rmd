@@ -1,0 +1,332 @@
+---
+title: |
+  | STAN:
+  | как перестать беспокоиться и полюбить байесовский подход
+date: |
+  | 2016-12-09
+  | Юрьев день
+author: |
+  | Борис Демешев
+output: 
+  revealjs::revealjs_presentation:
+    css: left.css
+    theme: simple
+    highlight: pygments
+    center: false
+    smart: true
+    transition: slide
+    background_transition: slide
+    reveal_options:
+      fig_width: 5
+      fig_height: 4
+      slideNumber: true
+      previewLinks: true
+    self_contained: true
+    reveal_plugins: []
+---
+
+
+```{r, echo=FALSE, include=FALSE}
+library("rstan")
+library("tidyverse")
+library("forcats")
+```
+
+
+## Коротко про STAN
+
+- язык описания байесовских моделей
+
+- открытый, mc-stan.org
+
+- отлично интегрирован с R, python, julia, ...
+
+## {data-background="bayes.gif"}
+
+## Задача Томаса Байеса
+
+«An Essay towards solving a Problem in the Doctrine of Chances» (1763)
+
+«Given the number of times in which an unknown event has happened and failed: Required the chance that the probability of its happening in a single trial lies somewhere between any two degrees of probability that can be named»
+
+## По-русски
+
+Известно, сколько раз монетка выпала орлом и сколько решкой. Какова условная вероятность того, что вероятность выпадения решки при отдельном броске лежит между двумя заданными числами?
+
+
+## Современная формулировка
+
+$b$ — вероятность выпадения решки
+
+Априорно: 
+
+$b \sim U[0;1]$
+
+Данные:
+
+$y_i$ — результаты прошлых бросков (0 — орёл, 1 — решка)
+
+Апостериорно: 
+
+$b|y_1, \ldots, y_N$ ~ ?
+
+## Формулировка STAN
+
+```{r}
+model <- "
+data {
+  int N;
+  int y[N];
+}
+parameters {
+  real<lower=0, upper=1> b; 
+}
+model {
+  b ~ uniform(0, 1);
+
+  for (n in 1:N) {
+    y[n] ~ bernoulli(b);
+  }
+}
+"
+```
+
+## Ещё немного кода
+
+```{r, eval=FALSE}
+library("rstan") # вызываем дух преподобного Томаса!
+
+# Шаманские заклинания для ускорения STAN:
+rstan_options(auto_write = TRUE)
+options(mc.cores = parallel::detectCores())
+
+
+y <- c(1, 1, 1, 1, 0, 1, 1)
+N <- length(y)
+data <- list(N = N, y = y)
+
+fit <- stan(model_code = model, 
+            data = data, iter = 1000, chains = 4)
+```
+
+
+
+```{r, eval=FALSE, include=FALSE}
+model_bayes_prior <- "
+parameters {
+  real<lower=0, upper=1> b; 
+}
+model {
+  b ~ uniform(0, 1);
+}
+"
+```
+
+## Результаты работы
+
+Скучным текстом:
+
+```{r, include=FALSE}
+fit <- readRDS("fit_bayes_problem.Rds")
+```
+
+
+```{r}
+fit
+```
+
+## Распределение до и после {data-background="do_posle_boy.jpeg"}
+
+
+## Распределение до и после
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+fit_prior <- readRDS("fit_bayes_problem_prior.Rds")
+fit_post <- readRDS("fit_bayes_problem.Rds")
+
+par_prior <- rstan::extract(fit_prior, "b")$b
+par_post <- rstan::extract(fit_post, "b")$b
+df_prior <- data_frame(par = par_prior, partype = "prior")
+df_post <- data_frame(par = par_post, partype = "posterior")
+all_df <- bind_rows(df_prior, df_post)
+all_df <- mutate(all_df, partype = fct_relevel(partype, "prior"))
+qplot(data = all_df, x = par) + facet_grid(~ partype)
+```
+
+
+## Преимущества байесовского подхода:
+
+- естественные вопросы: какова вероятность того, что параметр больше заданного порога?
+
+- анализ сложных моделей: параметров больше, чем наблюдений!
+
+- гибкость априорных распределений: можно взять любое!
+
+
+## STAN хорош!
+
+- взаимодействует со всем, что движется: R, python, julia, matlab, stata.
+
+- подробная документация: $\ln(pages)\approx 6.36$
+
+- даже официальных примеров куча: $\ln(examples) \approx 6.04$
+
+В диалоговом режиме выбираем любой пример:
+```{r, eval=FALSE}
+model <- stan_demo()
+```
+
+
+
+## Когда жёлудь спелый, его всякая свинья слопает! {data-background="jelud.jpeg"}
+
+
+
+## Прямые конкуренты STAN:
+
+- JAGS: хуже диагностика кода модели, медленная сходимость для высокой размерности
+
+- WinBUGS: ещё и только под windows
+
+- python + pymc: меньше пользователей
+
+- julia + Klara, Mamba: пока совсем мало пользователей
+
+## Наборы готовых моделей:
+
+- R + MCMCpack, BMR, arm, bayesm, ... > 100 пакетов
+
+## Союзники STAN в R
+
+- shinystan: графический анализ полученной выборки из апостериорного распределения
+- rstanarm: набор заранее скомпилированных моделей STAN
+- brms: конвертер иерархических моделей из формул R на язык STAN
+
+
+
+## Регрессия с ограничением
+
+```{r, echo=FALSE}
+qplot(data = cars, x = speed, y = dist) + xlab("speed, скорость, миль/час") +
+  ylab("dist, длина тормозного пути, футов")
+```
+
+## Модель:
+
+Данные:
+
+\[
+dist_i = \beta_1 + \beta_2 speed_i + u_i
+\]
+
+- $E(u_i)=0$, $Var(u_i)=\sigma^2$
+
+Априорно:
+
+- $\beta_1 \sim U(-\infty; +\infty)$ 
+
+- $\beta_2 \sim Exp(\lambda = 0.1)$
+
+- $\sigma \sim U[0; +\infty)$
+
+
+## Код STAN
+
+```{r}
+model <- "
+data {
+  int N;
+  int K;
+  vector[N] y;
+  matrix[N, K] X;
+}
+parameters {
+  vector[K] beta;
+  real<lower=0> sigma;
+}
+model {
+  beta[2] ~ exponential(0.1);
+  y ~ normal(X * beta, sigma);
+}
+"
+```
+
+
+## Что на графиках?
+
+- сравнить априорное и апостериорное распределение
+
+- наличие жёстких зависимостей на диаграмме рассеяния
+
+- сходимость марковской цепи к апостериорному распределению
+
+## Как вытащить априорное распределение?
+
+Легко! Удалить из описания модели данные:
+```{r}
+model_prior <- "
+parameters {
+  real<lower=0> beta_2;
+}
+model {
+  beta_2 ~ exponential(0.1);
+}
+"
+```
+
+Важно! Несобственные распределения будут расходиться! Используйте собственные :)
+
+
+## Распределение до и после:
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+fit_prior <- readRDS("fit_limited_lm_prior.Rds")
+fit_post <- readRDS("fit_limited_lm.Rds")
+
+par_prior <- rstan::extract(fit_prior, "beta_2")$beta_2
+par_post <- rstan::extract(fit_post, "beta[2]")$`beta[2]`
+df_prior <- data_frame(par = par_prior, partype = "prior")
+df_post <- data_frame(par = par_post, partype = "posterior")
+all_df <- bind_rows(df_prior, df_post)
+all_df <- mutate(all_df, partype = fct_relevel(partype, "prior"))
+qplot(data = all_df, x = par) + facet_grid(~ partype)
+```
+
+## Диаграммы рассеяния:
+
+```{r, include=FALSE}
+fit <- readRDS("fit_limited_lm.Rds")
+```
+
+
+```{r}
+pairs(fit, pars = c("beta[1]", "beta[2]", "sigma"))
+```
+
+
+## Графическая проверка сходимости: 
+
+```{r, eval=FALSE}
+library("shinystan")
+launch_shinystan(fit)
+```
+
+![результат из launch_shinystan(fit)](shinystan.png)
+
+## Спасибо!
+
+
+Ура, это почти последний слайд! :)
+
+
+boris.demeshev@gmail.com
+
+
+## Бонус: задача о шляпах
+
+У старухи Шапокляк бесконечное количество занумерованных шляп. В каждую из них она кладёт бумажку со значением случайной величины $X_i$. Все $X_i \sim N(0;1)$ и независимы.
+
+Гена и Чебурашка достают содержимое всех шляп кроме одной, по своему выбору. Их задача идеально точно угать величину в нераскрытой шляпе.
+
+Какую вероятность угадывания они могут себе гарантировать?
+

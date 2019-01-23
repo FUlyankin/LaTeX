@@ -122,6 +122,36 @@
 
 \maketitle
 
+\section{Вольфрам} 
+
+
+$$
+\frac{1}{\pi  \left(z^2+1\right)} \quad \text{,  if} \quad \Re\left(z^2\right)>-1
+$$
+
+
+\[
+\left(
+\begin{array}{ccccc}
+\sin (x+y) & \sin \left(x^2+2 y\right) & \sin \left(x^3+3
+y\right) & \sin \left(x^4+4 y\right) & \sin \left(x^5+5
+y\right) \\
+\sin \left(2 x+y^2\right) & \sin \left(2 x^2+2 y^2\right) & \sin
+\left(2 x^3+3 y^2\right) & \sin \left(2 x^4+4 y^2\right) &
+\sin \left(2 x^5+5 y^2\right) \\
+\sin \left(3 x+y^3\right) & \sin \left(3 x^2+2 y^3\right) & \sin
+\left(3 x^3+3 y^3\right) & \sin \left(3 x^4+4 y^3\right) &
+\sin \left(3 x^5+5 y^3\right) \\
+\sin \left(4 x+y^4\right) & \sin \left(4 x^2+2 y^4\right) & \sin
+\left(4 x^3+3 y^4\right) & \sin \left(4 x^4+4 y^4\right) &
+\sin \left(4 x^5+5 y^4\right) \\
+\sin \left(5 x+y^5\right) & \sin \left(5 x^2+2 y^5\right) & \sin
+\left(5 x^3+3 y^5\right) & \sin \left(5 x^4+4 y^5\right) &
+\sin \left(5 x^5+5 y^5\right) \\
+\end{array}
+\right)
+\]
+
 
 \section{Как слышу так и пишу}
 
@@ -154,7 +184,7 @@ def monthlength(month,year):
     else:
          VisYear = 28
     return [31,VisYear,31,30,31,30,31,31,30,31,30,31][month]
-sudo ln -s $(which pygmentize) pygmentize\end{minted}
+\end{minted}
 
 Можно писать математические комменатрии к коду. У пакета очень много разных опций.
 
@@ -165,6 +195,10 @@ def sum_from_one_to(n):
     r = range(1,n+1)
     return sum(r)
 \end{minted}
+
+
+
+
 
 
 \end{document} % конец документа

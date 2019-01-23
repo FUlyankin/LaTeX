@@ -10,15 +10,16 @@ layout: nil
 
 * Воронцов, [LaTeX в примерах](http://www.ccas.ru/voron/download/voron05latex.pdf)
 * Львовский, [Набор и вёрстка в системе LaTeX](http://www.mccme.ru/free-books/llang/newllang.pdf)
-* [Wiki-книга](https://en.wikibooks.org/wiki/LaTeX) о LaTeX c кучей примеров, но на английском. 
+* [Wiki-книга](https://en.wikibooks.org/wiki/LaTeX) о LaTeX c кучей примеров, но на английском.
 
 Замечание ко всем книжкам! Следует использовать кодировку utf-8 для файлов. Если в книге есть строчка
 
-```\usepackage[cp1251]{inputenc}``` 
+```\usepackage[cp1251]{inputenc}```
 
-то её нужно заменить на 
+то её нужно заменить на
 
 ```\usepackage[utf8]{inputenc}```
+
 
 
 ## Полезные и не очень виньетки
@@ -32,7 +33,3 @@ layout: nil
 * [Пакет](https://www.ctan.org/pkg/cite)  цитирования, Cite
 * [Библиография](http://www.ctan.org/pkg/biblatex)  в biblatex
 * [Пакет](http://www.ctan.org/pkg/biblatex-gost)  biblatex-gost
-
-
-
-
