@@ -1,0 +1,118 @@
+%!TEX TS-program = xelatex
+\documentclass[12pt, a4paper, oneside]{article}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}  % пакеты для математики
+
+\usepackage[utf8]{inputenc} % задание utf8 кодировки исходного tex файла
+\usepackage[british,russian]{babel} % выбор языка для документа
+
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Helvetica}   % задаёт основной шрифт документа
+
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Helvetica}
+\newfontfamily{\cyrillicfont}{Helvetica}
+\newfontfamily{\cyrillicfontsf}{Helvetica}
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+\setmathfont{Neo Euler}      % шрифт для математики
+% \setmathfont[math-style=ISO]{Asana Math}
+% Можно делать смену начертания с помощью разных стилей
+
+% Конкретный символ из конкретного шрифта
+% \setmathfont[range=\int]{Neo Euler}
+
+%%%%%%%%%% Работа с картинками %%%%%%%%%
+\usepackage{graphicx}                  % Для вставки рисунков
+\usepackage{graphics}
+\graphicspath{{images/}{pictures/}}    % можно указать папки с картинками
+\usepackage{wrapfig}                   % Обтекание рисунков и таблиц текстом
+
+%%%%%%%%%%%%%%%%%%%%%%%% Графики и рисование %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz, pgfplots}  % язык для рисования графики из latex'a
+
+%%%%%%%%%% Гиперссылки %%%%%%%%%%
+\usepackage{xcolor}              % разные цвета
+
+\usepackage{hyperref}
+\hypersetup{
+	unicode=true,           % позволяет использовать юникодные символы
+	colorlinks=true,       	% true - цветные ссылки, false - ссылки в рамках
+	urlcolor=blue,          % цвет ссылки на url
+	linkcolor=red,          % внутренние ссылки
+	citecolor=green,        % на библиографию
+	pdfnewwindow=true,      % при щелчке в pdf на ссылку откроется новый pdf
+	breaklinks              % если ссылка не умещается в одну строку, разбивать ли ее на две части?
+}
+
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет Последний день Помпеи}
+% \listoftodos --- печатает все поставленные \todo'шки
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+
+\usepackage[paper=a4paper, top=20mm, bottom=15mm,left=20mm,right=15mm]{geometry}
+\usepackage{indentfirst}       % установка отступа в первом абзаце главы
+
+\usepackage{setspace}
+\setstretch{1.15}  % Межстрочный интервал
+\setlength{\parskip}{4mm}   % Расстояние между абзацами
+% Разные длины в латехе https://en.wikibooks.org/wiki/LaTeX/Lengths
+
+
+\usepackage{xcolor} % Enabling mixing colors and color's call by 'svgnames'
+
+\definecolor{MyColor1}{rgb}{0.2,0.4,0.6} %mix personal color
+\newcommand{\textb}{\color{Black} \usefont{OT1}{lmss}{m}{n}}
+\newcommand{\blue}{\color{MyColor1} \usefont{OT1}{lmss}{m}{n}}
+\newcommand{\blueb}{\color{MyColor1} \usefont{OT1}{lmss}{b}{n}}
+\newcommand{\red}{\color{LightCoral} \usefont{OT1}{lmss}{m}{n}}
+\newcommand{\green}{\color{Turquoise} \usefont{OT1}{lmss}{m}{n}}
+
+\usepackage{titlesec}
+\usepackage{sectsty}
+%%%%%%%%%%%%%%%%%%%%%%%%
+%set section/subsections HEADINGS font and color
+\sectionfont{\color{MyColor1}}  % sets colour of sections
+\subsectionfont{\color{MyColor1}}  % sets colour of sections
+
+%set section enumerator to arabic number (see footnotes markings alternatives)
+\renewcommand\thesection{\arabic{section}.} %define sections numbering
+\renewcommand\thesubsection{\thesection\arabic{subsection}} %subsec.num.
+
+%define new section style
+\newcommand{\mysection}{
+	\titleformat{\section} [runin] {\usefont{OT1}{lmss}{b}{n}\color{MyColor1}} 
+	{\thesection} {3pt} {} } 
+
+
+%	CAPTIONS
+\usepackage{caption}
+\usepackage{subcaption}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\captionsetup[figure]{labelfont={color=Turquoise}}
+
+\usepackage[normalem]{ulem}  % для зачекивания текста
+
+\pagestyle{empty}
+
+\begin{document}
+	
+\section*{Задание 7:  дружба R и LaTeX (20  баллов) }
+
+Не забывай, где находится  \href{https://fulyankin.github.io/LaTeX/}{страничку курса} с кучей шпаргалок! А также где лежит \href{https://docs.google.com/forms/d/e/1FAIpQLSe11kxKVfv07iCL1E9yNX7ll9swKImiVwRr1H70lslGzInRSg/viewform}{уютная гугл-форма.} Не стесняйтесь просить о помощи, если она вам необходима. 
+
+В этом задании вам нужно подружить R и \LaTeX{}. Конечно же мы будем делать это, пытаясь создать положительную экстерналию. Во многих вузах, на многих курсах просят оформлять домашки в техе. Потому что так удобнее их собирать и проверять. Вам нужно оформить одну из своих текущих домашек по эконометрике/финансам/макроэкономике или любому другому предмету в связке R+\LaTeX.  \textbf{Речь здесь идёт именно про домашку, в которой нужно сделать какие-то расчёты.}
+
+Например, у третьего курса, скорее всего, будет проект по финансам, где нужно будет оценить модель CAPM. Выстройте в R + \LaTeX{} пайплайн для этого. Через пакет \texttt{quantmod}  загрузите в R данные по динамике различных ценных бумаг, затем проведите с ними все необходимые расчёты, постройте графики, таблицы и напишите поясняющий текст. В итоге выйдет так, что за одну работу вы получите баллы сразу на двух предметах. И на финансах, и на техе. 
+
+У второго курса, скорее всего, будет какое-то похожее задание по макре. Если возможности оформить какие-нибудь вычисления в связке так и не возникнет, вы можете взять свою домашку по макре из предыдущего семестра, где вам нужно было сгладить с помощью фильтра Ходрика-Прескота временной ряд (домашка 4) и перебить её решение в связку R + \LaTeX.  Если хочется взять какую-то другую старую домашку, где нужно было что-то посчитать, флаг вам в руки. 
+
+Напоследок ещё разок прочитайте \href{https://github.com/FUlyankin/LaTeX/raw/master/Logi_2018/sem_5/Anatolyev.pdf}{статью Анатольева} о правильном оформлении эконометрических расчётов. Никогда не вставляйте в свою работу протоколы из статы или ивзглядов (это шутка про Eviews). Оформляйте всё по-человечески!  И вообще, делайте эконометрику в R!
+
+\end{document}
+

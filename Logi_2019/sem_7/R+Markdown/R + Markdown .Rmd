@@ -1,0 +1,112 @@
+---
+title: "Мы работаем в Markdown"
+output:
+  word_document: default
+  html_document:
+    df_print: paged
+lang: russian
+---
+
+Возьмем набор данных по цене бриллианта!
+
+```{r,include=FALSE}
+
+library("ggplot2")
+library("dplyr")
+library("knitr")
+library("memisc")
+library("pander")
+
+```
+
+Для наглядности приведем начало таблички
+
+```{r}
+head(diamonds)
+
+```
+
+То же самое, но красивенько!
+
+```{r,results='asis'}
+head(diamonds) %>% kable()
+#функция из knitr, делающая таблицу безумно красивой!
+
+```
+
+Сравним несколько моделей!
+
+```{r}
+model_0 <- lm(data = diamonds,price ~ x)
+model_1 <- lm(data = diamonds,price ~ carat + x + y + z)
+
+d2 <- mutate(diamonds,all = x+y+z)
+model_2 <- lm(data = d2,price ~ carat + all)
+
+```
+
+Красивая табличка 
+
+```{r,results='asis'}
+mtable(model_0,model_1,model_2, 
+       summary.stats=c("N","R-squared")) %>% pander()
+
+# для разметки в ворде используется пакет pander!
+# будет выведен какой-то трэш! А с опциями только то что мы хотим :)
+
+```
+
+Проведем F-тест для сравнения моделей!
+
+```{r}
+anova(model_2,model_1) %>% pander()
+# пандер стремится из всего сделать конфетку
+# Sum of Sq - разница между RSS
+
+# гипотеза о том что верна ограниченная модель отвергается
+
+```
+
+Пролетарская таблица...
+
+```{r,results='asis'}
+#сдклаем список из всех моделей
+all_models <- list(model_0,model_1,model_2)
+#сделаем заготовку!
+report <- data.frame(model=c("Модель 0","Модель 1","Модель Даша"),F=NA)
+report %>% pander()
+#заполним заготовку своими руками!
+#for(model in all_models) - пантовый цикл
+
+for(i in 1:length(all_models)){
+  otchet <- all_models[[i]] %>% summary()
+  #у вектора однократные скобки, а у нас список!
+  report$F[i] <- otchet$fstatistic[1]
+  }
+
+report %>% pander()
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

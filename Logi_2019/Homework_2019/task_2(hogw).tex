@@ -1,0 +1,148 @@
+%!TEX TS-program = xelatex
+\documentclass[12pt, a4paper, oneside]{article}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}  % пакеты для математики
+
+\usepackage[utf8]{inputenc} % задание utf8 кодировки исходного tex файла
+\usepackage[british,russian]{babel} % выбор языка для документа
+\usepackage[X2,T2A]{fontenc}        % кодировка
+
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Helvetica}   % задаёт основной шрифт документа
+
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Helvetica}
+\newfontfamily{\cyrillicfont}{Helvetica}
+\newfontfamily{\cyrillicfontsf}{Helvetica}
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+\setmathfont{Neo Euler}      % шрифт для математики
+% \setmathfont[math-style=ISO]{Asana Math}
+% Можно делать смену начертания с помощью разных стилей
+
+% Конкретный символ из конкретного шрифта
+% \setmathfont[range=\int]{Neo Euler}
+
+%%%%%%%%%% Работа с картинками %%%%%%%%%
+\usepackage{graphicx}                  % Для вставки рисунков
+\usepackage{graphics}
+\graphicspath{{images/}{pictures/}}    % можно указать папки с картинками
+\usepackage{wrapfig}                   % Обтекание рисунков и таблиц текстом
+
+%%%%%%%%%%%%%%%%%%%%%%%% Графики и рисование %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz, pgfplots}  % язык для рисования графики из latex'a
+
+%%%%%%%%%% Гиперссылки %%%%%%%%%%
+\usepackage{xcolor}              % разные цвета
+
+\usepackage{hyperref}
+\hypersetup{
+	unicode=true,           % позволяет использовать юникодные символы
+	colorlinks=true,       	% true - цветные ссылки, false - ссылки в рамках
+	urlcolor=blue,          % цвет ссылки на url
+	linkcolor=red,          % внутренние ссылки
+	citecolor=green,        % на библиографию
+	pdfnewwindow=true,      % при щелчке в pdf на ссылку откроется новый pdf
+	breaklinks              % если ссылка не умещается в одну строку, разбивать ли ее на две части?
+}
+
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет Последний день Помпеи}
+% \listoftodos --- печатает все поставленные \todo'шки
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+
+\usepackage[paper=a4paper, top=20mm, bottom=15mm,left=20mm,right=15mm]{geometry}
+\usepackage{indentfirst}       % установка отступа в первом абзаце главы
+
+\usepackage{setspace}
+\setstretch{1.15}  % Межстрочный интервал
+\setlength{\parskip}{4mm}   % Расстояние между абзацами
+% Разные длины в латехе https://en.wikibooks.org/wiki/LaTeX/Lengths
+
+
+\usepackage{xcolor} % Enabling mixing colors and color's call by 'svgnames'
+
+\definecolor{MyColor1}{rgb}{0.2,0.4,0.6} %mix personal color
+\newcommand{\textb}{\color{Black} \usefont{OT1}{lmss}{m}{n}}
+\newcommand{\blue}{\color{MyColor1} \usefont{OT1}{lmss}{m}{n}}
+\newcommand{\blueb}{\color{MyColor1} \usefont{OT1}{lmss}{b}{n}}
+\newcommand{\red}{\color{LightCoral} \usefont{OT1}{lmss}{m}{n}}
+\newcommand{\green}{\color{Turquoise} \usefont{OT1}{lmss}{m}{n}}
+
+\usepackage{titlesec}
+\usepackage{sectsty}
+%%%%%%%%%%%%%%%%%%%%%%%%
+%set section/subsections HEADINGS font and color
+\sectionfont{\color{MyColor1}}  % sets colour of sections
+\subsectionfont{\color{MyColor1}}  % sets colour of sections
+
+%set section enumerator to arabic number (see footnotes markings alternatives)
+\renewcommand\thesection{\arabic{section}.} %define sections numbering
+\renewcommand\thesubsection{\thesection\arabic{subsection}} %subsec.num.
+
+%define new section style
+\newcommand{\mysection}{
+	\titleformat{\section} [runin] {\usefont{OT1}{lmss}{b}{n}\color{MyColor1}} 
+	{\thesection} {3pt} {} } 
+
+
+%	CAPTIONS
+\usepackage{caption}
+\usepackage{subcaption}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\captionsetup[figure]{labelfont={color=Turquoise}}
+
+\usepackage[normalem]{ulem}  % для зачекивания текста
+
+\pagestyle{empty}
+
+\begin{document}
+	
+\section*{Задание 2 :  Тот, чьё имя никто не знает (15 баллов)}
+
+Поздравляю! Вы тот, кто рассылает письма из Хогвартса! И вы столкнулись с проблемой. Министерство \sout{Образования РФ}  Магии недавно приняло совершенно дурацкий законопроект, который задаёт единый образец для оформления всех идущих из Хогвартса писем. Как же хорошо, что в мире волшебников есть \LaTeX{}, недоступный для маглов. Ведь он поможет один раз и навсегда написать такой шаблон. 
+
+\textbf{Требования к письму из школы:}
+\begin{enumerate}
+\item Текст письма должен быть написан на листе формата A4
+\item Текст печатается с единичным интервалом между строками шрифтом Arial 14 размера
+\item Поля страницы должны быть отрегулированны следующим образом: отступы сверху и снизу листа по 10мм, слева и справа по 35мм
+\item Никаких красных строк в начале абзаца, расстояние между абзацами 4мм
+\item  Наверху, перед текстом письма, ровно по центру должен быть расположен герб школы чародейства и волшебства. Высота картинки должна быть ровно 6 см.
+\item  Ровно через 1 см от герба расположена информация о том кому именно предназначено это письмо. Например, "Мистеру Поттеру". Эта информация набрана 12 шрифтом.
+\item  Ровно через 2.5 см от информации о получателе начинается текст письма. Текст может быть любым. Главное, чтобы в нём было отражено, что получатель приглашается для обучения в Хогвартс.
+\item  Информация, которая идёт после текста письма должна быть всегда прибита к низу страницы вне зависимости от того насколько длинным получилось письмо.
+\item Подпись профессора МакГонагалл может быть выполнена любым шрифтом, имитирующим человеческую подпись. Также она может быть прорисована в TiKz подобно xkcd стилю.
+\item  В самом низу есть гиперссылка на сайт Школы Чародейства и Волшебства.
+\item Страница с письмом не нумеруется.
+\end{enumerate}
+
+
+\textbf{Требования к приложению:}
+\begin{enumerate}[resume]
+\item  В приложении А располагаются список необходимых книг и предметов.  Приложения нумеруются русскими буквами. Перед номером приложения идёт слово "Приложение".
+\item  Каждый новый предмет идёт после изображения волшебной палочки.
+\item  В приложении Б располагается список предметов, изучаемых в течение первого учебного года.
+\item  На каждой странице расположены колонтитулы, которые необходимо оформить также как в образце.
+\end{enumerate}
+
+При оформлении письма оставьте в преамбуле только те пакеты, которые реально используются в документе.
+
+\begin{itemize}
+\item[$(10)$] Вы оформили письмо в соответствии с требованиями.
+
+\item[$(5)$] Вы отправили письмо другу, который не ходит на факультатив. В качестве подтверждения факта отправки прикреплён скрин с реакцией друга на письмо.
+\end{itemize}
+
+Итоговый pdf-файл, tex-файл и все картинки, которые использовались в документе, нужно положить в папку на свой Dropbox, Github, yandex-disk или другой репозиторий. После нужно заполнить \href{https://docs.google.com/forms/d/e/1FAIpQLSe11kxKVfv07iCL1E9yNX7ll9swKImiVwRr1H70lslGzInRSg/viewform}{уютную гугл-форму.}  
+
+Если вы выполняете работу в overleaf, то прикрепляйте в форму ссылку на неё. Если вы прикрепите ссылку с возможностью редактирования вашего файла, при проверке мы оставим у вас в файле полезные комментарии. Если вы кидаете ссылку на репозиторий, все комменты отправим в личку.
+
+Перед этим обязательно проверьте компилируется ли файл без ошибок на вашем компьютере. Не стесняйтесь абсолютно в любое время дня и ночи просить о помощи, если она вам действительно необходима! \textbf{Также не забывайте про то, что любое творчество поощряется,} а ещё не забываете, где  находится  \href{https://fulyankin.github.io/LaTeX/}{страничку курса} с кучей шпаргалок!
+
+\end{document}

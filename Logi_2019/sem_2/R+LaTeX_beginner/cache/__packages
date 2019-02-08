@@ -1,0 +1,9 @@
+base
+knitr
+zoo
+xts
+TTR
+quantmod
+ggplot2
+dplyr
+xtable

@@ -17,13 +17,8 @@ layout: nil
 
 **Свои вопросы по LaTeX** лучше всего задать на [tex.stackexchange.com](http://tex.stackexchange.com/)
 
-* Онлайн редактор [Sharelatex](https://www.sharelatex.com/)
 * Онлайн редактор [Overleaf](https://www.overleaf.com/)
-
 
 ### Другие курсы по LaTeX
 
 Если очень лень ходить на пары, то можно посмотреть [документы и презентации в LaTeX от ВШЭ](https://www.coursera.org/learn/latex/home/welcome). Это введение в LaTeX от Высшей Школы Экономики на русском языке.
-
-
-

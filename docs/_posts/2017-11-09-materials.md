@@ -4,13 +4,12 @@ title: 'Книги и виньетки'
 layout: nil
 ---
 
-* [Весь репозиторий как на ладони](https://github.com/FUlyankin/LaTeX) с папочками да файликами
-
 ## Неплохие книги о LaTeX
 
 * Воронцов, [LaTeX в примерах](http://www.ccas.ru/voron/download/voron05latex.pdf)
 * Львовский, [Набор и вёрстка в системе LaTeX](http://www.mccme.ru/free-books/llang/newllang.pdf)
-* [Wiki-книга](https://en.wikibooks.org/wiki/LaTeX) о LaTeX c кучей примеров, но на английском.
+* [Wiki-книга](https://en.wikibooks.org/wiki/LaTeX) о LaTeX c кучей примеров. Есть и на английском и на русском, в опциях надо поменять язык.
+* [Разные материалы от онлайн-сервиса Overliaf](https://www.overleaf.com/learn/latex/Creating_a_document_in_LaTeX)
 
 Замечание ко всем книжкам! Следует использовать кодировку utf-8 для файлов. Если в книге есть строчка
 
@@ -19,7 +18,6 @@ layout: nil
 то её нужно заменить на
 
 ```\usepackage[utf8]{inputenc}```
-
 
 
 ## Полезные и не очень виньетки

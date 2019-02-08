@@ -1,0 +1,129 @@
+%!TEX TS-program = xelatex
+\documentclass[12pt, a4paper, oneside]{article}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}  % пакеты для математики
+
+\usepackage[utf8]{inputenc} % задание utf8 кодировки исходного tex файла
+\usepackage[british,russian]{babel} % выбор языка для документа
+
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Helvetica}   % задаёт основной шрифт документа
+
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Helvetica}
+\newfontfamily{\cyrillicfont}{Helvetica}
+\newfontfamily{\cyrillicfontsf}{Helvetica}
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+\setmathfont{Neo Euler}      % шрифт для математики
+% \setmathfont[math-style=ISO]{Asana Math}
+% Можно делать смену начертания с помощью разных стилей
+
+% Конкретный символ из конкретного шрифта
+% \setmathfont[range=\int]{Neo Euler}
+
+%%%%%%%%%% Работа с картинками %%%%%%%%%
+\usepackage{graphicx}                  % Для вставки рисунков
+\usepackage{graphics}
+\graphicspath{{images/}{pictures/}}    % можно указать папки с картинками
+\usepackage{wrapfig}                   % Обтекание рисунков и таблиц текстом
+
+%%%%%%%%%%%%%%%%%%%%%%%% Графики и рисование %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz, pgfplots}  % язык для рисования графики из latex'a
+
+%%%%%%%%%% Гиперссылки %%%%%%%%%%
+\usepackage{xcolor}              % разные цвета
+
+% Два способа включить в пакете какие-то опции:
+%\usepackage[опции]{пакет}
+%\usepackage[unicode,colorlinks=true,hyperindex,breaklinks]{hyperref}
+
+\usepackage{hyperref}
+\hypersetup{
+	unicode=true,           % позволяет использовать юникодные символы
+	colorlinks=true,       	% true - цветные ссылки, false - ссылки в рамках
+	urlcolor=blue,          % цвет ссылки на url
+	linkcolor=red,          % внутренние ссылки
+	citecolor=green,        % на библиографию
+	pdfnewwindow=true,      % при щелчке в pdf на ссылку откроется новый pdf
+	breaklinks              % если ссылка не умещается в одну строку, разбивать ли ее на две части?
+}
+
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет Последний день Помпеи}
+% \listoftodos --- печатает все поставленные \todo'шки
+
+\usepackage[paper=a4paper, top=20mm, bottom=15mm,left=20mm,right=15mm]{geometry}
+\usepackage{indentfirst}       % установка отступа в первом абзаце главы
+
+\usepackage{setspace}
+\setstretch{1.15}  % Межстрочный интервал
+\setlength{\parskip}{4mm}   % Расстояние между абзацами
+% Разные длины в латехе https://en.wikibooks.org/wiki/LaTeX/Lengths
+
+
+\usepackage{xcolor} % Enabling mixing colors and color's call by 'svgnames'
+
+\definecolor{MyColor1}{rgb}{0.2,0.4,0.6} %mix personal color
+\newcommand{\textb}{\color{Black} \usefont{OT1}{lmss}{m}{n}}
+\newcommand{\blue}{\color{MyColor1} \usefont{OT1}{lmss}{m}{n}}
+\newcommand{\blueb}{\color{MyColor1} \usefont{OT1}{lmss}{b}{n}}
+\newcommand{\red}{\color{LightCoral} \usefont{OT1}{lmss}{m}{n}}
+\newcommand{\green}{\color{Turquoise} \usefont{OT1}{lmss}{m}{n}}
+
+\usepackage{titlesec}
+\usepackage{sectsty}
+%%%%%%%%%%%%%%%%%%%%%%%%
+%set section/subsections HEADINGS font and color
+\sectionfont{\color{MyColor1}}  % sets colour of sections
+\subsectionfont{\color{MyColor1}}  % sets colour of sections
+
+%set section enumerator to arabic number (see footnotes markings alternatives)
+\renewcommand\thesection{\arabic{section}.} %define sections numbering
+\renewcommand\thesubsection{\thesection\arabic{subsection}} %subsec.num.
+
+%define new section style
+\newcommand{\mysection}{
+	\titleformat{\section} [runin] {\usefont{OT1}{lmss}{b}{n}\color{MyColor1}} 
+	{\thesection} {3pt} {} } 
+
+
+%	CAPTIONS
+\usepackage{caption}
+\usepackage{subcaption}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\captionsetup[figure]{labelfont={color=Turquoise}}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\section*{Задание 1: фактчек  (10 баллов)}
+
+\textbf{Дедлайн:} 20 февраля. 
+
+Изучить \href{https://fulyankin.github.io/LaTeX/}{страничку курса}, если вы ещё её не изучили. Установить LaTeX, если он ещё не установлен. Создать свой первый документ в LaTeX. Помните о том, что любое творчество поощряется. 
+
+
+\begin{itemize}
+
+\item [$(2)$] Написать в нём перечень с 10 фактами о себе
+
+\item[$(2)$] Вставить свою фотографию.  Вставить мемас, с которого ты нормально орнул в последнее время. Пояснить почему орнул. Картинки должны быть пронумерованы. По ходу текста на них должны быть ссылки. 
+
+\item[$(2)$] Нарисовать таблицу из трёх колонок: название предмета, насколько ты любишь его по 10-бальной шкале, ассоциация, которая возникает с этим предметом. Например, тервер, $10$, кубик. Первая колонка должна быть выравнена по левому краю, вторая по центру, третья по правому краю. Заполните таблицу как минимум $5$ строками.
+
+\item[$(3)$] Написать 5 своих любимых формул и одну ненавистную (если такая конечно найдётся). В этих формулах должны встретиться: хотябы один интеграл, сумма, предел, дробь, матрица. Все формулы должны быть реальными. Нельзя набирать формулы из рандомных символов и объявлять их своими любимыми. Хотябы одна формула должна занять несколько строк.  Хотябы раз вы должны создать в преамбуле для какой-то формулы или обозначения для удобства короткий алиас через \texttt{def} или \texttt{newcommand}. Рассказать почему ты любишь какие-то формулы, а какие-то нет. Сослаться в тексте на эти формулы. 
+
+\todo[inline]{В формулах нельзя делать фактических ошибок. В прошлые разы многие неправильно вбили формулу для геометрической прогрессии. При этом они написали, что она у них любимая. ХА! НЕ ВЕРЮ!}
+
+\item[$(1)$] Все формулы, которые упоминаются в тексте должны быть пронумерованы символами æ, ææ, æææ и так далее. Нумерацию можно задать вручную, не прописывая в преамбуле никаких опций. Команду для этого придётся нагуглить. 
+\end{itemize}
+
+Итоговый pdf-файл, tex-файл и все картинки, которые использовались в документе, нужно положить в папку на свой Dropbox, Github, yandex-disk или другой репозиторий. После нужно заполнить \href{https://docs.google.com/forms/d/e/1FAIpQLSe11kxKVfv07iCL1E9yNX7ll9swKImiVwRr1H70lslGzInRSg/viewform}{уютную гугл-форму.}  
+
+Если вы выполняете работу в overleaf, то прикрепляйте в форму ссылку на неё. Если вы прикрепите ссылку с возможностью редактирования вашего файла, при проверке мы оставим у вас в файле полезные комментарии. Если вы кидаете ссылку на репозиторий, все комменты отправим в личку.
+\end{document}

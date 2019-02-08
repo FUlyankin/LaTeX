@@ -1,0 +1,407 @@
+%!TEX TS-program = xelatex
+\documentclass[12pt, a4paper]{article}  
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}  % пакеты для математики
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[british,russian]{babel} % выбор языка для документа
+\usepackage[utf8]{inputenc} % задание utf8 кодировки исходного tex файла
+
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Arial}   % задаёт основной шрифт документа
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+%\setmathfont{Asana Math}      % шрифт для математики
+
+
+%%%%%%%%%% Работа с картинками %%%%%%%%%
+\usepackage{graphicx}                  % Для вставки рисунков
+\usepackage{graphics} 
+\graphicspath{{images/}{pictures/}}    % можно указать папки с картинками
+\usepackage{wrapfig}                   % Обтекание рисунков и таблиц текстом
+
+
+%%%%%%%%%% Работа с таблицами %%%%%%%%%%
+\usepackage{tabularx}            % новые типы колонок
+\usepackage{tabulary}            % и ещё новые типы колонок
+\usepackage{array}               % Дополнительная работа с таблицами
+\usepackage{longtable}           % Длинные таблицы
+\usepackage{multirow}            % Слияние строк в таблице
+\usepackage{float}               % возможность позиционировать объекты в нужном месте 
+\usepackage{booktabs}            % таблицы как в книгах!  
+\renewcommand{\arraystretch}{1.3} % больше расстояние между строками
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% Оформление %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[paper=a4paper,top=15mm, bottom=15mm,left=35mm,right=10mm,includefoot]{geometry}
+ \usepackage{indentfirst}       % установка отступа в первом абзаце главы
+
+
+% Заголовок
+\author{Уютный факультатив} 
+\title{Картинки и таблицы в \LaTeX}
+\date{\today}
+
+\begin{document} 
+
+\maketitle
+
+\section{Картинки}
+\subsection{Вставка картинок}
+
+% Для вставки рисунков используется команда:
+\includegraphics{doge.png}
+
+% Можно изменять размер рисунка с помощью необязательного аргумента. Например:
+
+% уменьшить рисунок в два раза
+\includegraphics[scale=0.5]{doge.png} 
+
+% самостоятельно задать параметры длины и ширины
+\includegraphics[height=3cm,width=10cm]{doge.png}
+
+% Использовать функцию 'keepaspectratio'
+\includegraphics[height=3cm,width=10cm,keepaspectratio]{doge.png}
+
+% Вставить картинку размера 5/10 от ширины текста
+\includegraphics[width=0.5\textwidth]{doge.png}
+
+% Единицы измерения в LaTeX: 
+% pt  пункт (0.35 mm) 
+% mm  миллиметры 
+% cm  сантиметры
+% in  дюймы
+% 
+% em  ширина буквы M используемого шрифта
+% ex  высота бувы х используемого шрифта
+% 
+% \pagewidth   ширина страницы     \pageheight   высота страницы
+% \textwidth   ширина текста             \textheight   высота текста
+%
+% \linewidth   длина текста в текущем окружении
+
+
+
+
+
+\subsection{Нумерация картинок}
+
+% Часто для размещения иллюстраций удобно использовать окружение:
+% с - поставить рисунок в центре страницы где удобно теху  (center) 
+% t - поставить рисунок где у добно теху и прижать к верху (top)
+% b - поставить рисунок где удобно теху и прижать к низу   (bottom)
+% h - поставить рисунок там, где он идет по тексту с нарушением всех правил верстки (here) 
+% p - поставить рисунок на отдельной странице, целиком состоящей из "плавающих" рисунков и таблиц
+% h! - поставить ну прям с высокой вероятностью там где надо нам
+% H - в 100 случаях из 100 рисунок будет там где нам надо (нужен пакет float)
+
+\begin{figure}[H]
+%\caption{Заголовок можно сунуть и сюда}
+\begin{center}
+\includegraphics[width=0.3\textheight]{doge.png}
+\end{center}
+\caption{Картинка с изображением Doge}\label{pic:doge}
+%\caption[Заголовок для списка рисунков]{Обычный заголовок}
+\end{figure}
+
+Это окружение автоматически размещает картинку в таком месте куда она входит целиком, если не указать [H].  На рис. \ref{pic:doge} изображена знаменитая собака DOGE!
+
+
+% Можно создать несколько рисунков внутри одного!
+\subsection{Два рисунка внутри одного}
+
+\begin{figure}[H]
+\begin{minipage}[H]{0.29\linewidth} 
+% Обратите внимание на \linewidth-длину текста в теущем окружении!
+\center{\footnotesize{растровый и векторный} \\ \includegraphics[width=0.8\linewidth]{rv.jpg}}
+\end{minipage}
+\hfill
+\begin{minipage}[H]{0.69\linewidth}
+\center{\footnotesize{DOGE} \\ \includegraphics[width=0.8\linewidth]{doge.png}}
+\end{minipage}
+\caption{Две картиночки :з}
+\label{fig:1figs}
+\end{figure}
+
+
+\newpage
+
+
+\section{Таблицы}
+
+
+
+\subsection{Рисование таблиц}
+
+\begin{tabular}{|c|c|c|cc|p{6cm}|}
+\hline
+$X$ & -2 & -1 & 0 & 1 & 2 \\
+\hline
+$P(\ldots)$ & 0.1 & 0.2 & 0.4 & 0.2 & 0.1 \\
+\end{tabular}
+
+% & разделяют столбцы, а \\ разделяют строки, \hline - прорисовка линии!
+
+
+% c - колонка выровнена по центру
+% l - колонка выровнена по левому краю
+% r - колонка выровнена по правому краю
+% p{...} - колнка верстается как абзац, в скобках - ширина колонки
+% m{...} - абзац будет выровнен по середине своей высоты (лежит в array)
+% b{...} - абзац будет выроавнен по нижней строке        (лежит в array)
+
+\vspace{20mm}
+
+% Таблицы из пакетов tabularx и tabulary работают поприятнее! Выравнивание делается так, чтобы текст занял одинаковое число строчек!
+
+\begin{tabularx}{\textwidth}{|X|X|X|}
+	\hline
+	Звёздные войны - это очень крутой фильм & В астероидной сцене эпизода 5 один из астероидов на самом деле был ботинком. По слухам, Джордж Лукас заставил специалистов по эффектам переделывать эту сцену столько раз, что они обозлились и добавили туда ботинок. & Лукас на первой пресс-конференции по Star Wars сказал: «Господа, я прекрасно осведомлен, о том что в вакууме не слышно взрывов и выстрелов, а теперь задавайте свои вопросы».   \\
+	\hline
+\end{tabularx}
+
+% Новый формат столбцов из tabularx:
+% X - подбирает столбцы равной ширины
+
+\vspace{20mm}
+
+
+\begin{tabulary}{\textwidth}{|L|J|L|}
+	\hline
+	Сцена, где Хана Соло замораживают имперские штурмовики, была очень длинной и комплексной, и снимать ее потребовалось много раз подряд. Почти в самом конце Лея говорит Хану: «Я люблю тебя». Харрисон Форд слышал эту фразу уже так много раз, что он изменил заданную по сценарию реплику «Я тоже тебя люблю» на «Я знаю». Лукас не захотел переснимать эту сцену, справедливо рассудив, что так даже гораздо лучше. & Звёздные войны - это очень крутой фильм & Чтобы скрыть шокирующую концовку в пятом эпизоде, Лукас сказал актеру, который ходил в костюме Дарта Вейдера — Дэвиду Проузу, чтобы он говорил «Оби-Ван-Кеноби убил твоего отца!», а только на стадии финализации фильма, это место было продублировано актером, который говорил за Вейдера — Джеймсом Ёрлом Джонсом, и изменено на «Я твой отец!». \\
+	\hline
+\end{tabulary}
+
+% Новые форматы столбцов из tabulary:
+% C - выравнивание по центру
+% J - выравнивание по ширине
+% R - выравнивание по правому краю 
+% L - выравнивание по левому краю 
+
+
+\subsection{Нумерация таблиц}
+
+В таблице \ref{tab:random} приведено распределение случайной величины $X$.
+
+\begin{table}[h!]
+\caption{Распределение случайной величины $X$}\label{tab:random}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$X$ & -2 & -1 & 0 & 1 & 2 \\
+\hline
+$P(\ldots)$ & 0.1 & 0.2 & 0.4 & 0.2 & 0.1 \\
+\hline
+\end{tabular}
+%\caption[Заголовок для списка таблиц]{Обычный заголовок}
+\end{center}
+\end{table}
+
+
+
+\section{Объединение ячеек}
+
+\begin{center}
+\begin{tabular}{ |l|c|c| }
+\hline
+ & \multicolumn{2}{c|}{Способ выбора} \\
+\cline{2-3}
+ & Без повторений & С повторениями  \\ \hline
+\multirow{3}{*}{Порядок не важен}
+                & & \\
+                & $ C_n^{k} = \frac{n!}{k!(n-k)!} $ & $ \hat{C_n^k} = C_{n+k-1}^k $ \\
+                & & \\
+
+\hline
+\multirow{3}{*}{Порядок важен}
+               & & \\
+               & $ A_n^{k} = n \cdot (n-1) \ldots \cdot (n-k+1) $ & $ \hat{A_n^k} = n^k $ \\
+               & & \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\section{Таблицы для истиных Леди и Джентельменов.}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+& Estimate & Std. Error & t value & $Pr( > | t |)$ \\
+\midrule
+Intercept & -1.6598 & 0.0239 & -69.51 & 0.0000 \\
+cut & -0.0206 & 0.0014 & -14.53 & 0.0000 \\
+color & 0.1085 & 0.0011 & 97.30 & 0.0000 \\
+clarity & -0.1784 & 0.0021 & -86.67 & 0.0000 \\
+depth & 0.0121 & 0.0003 & 43.28 & 0.0000 \\
+table & 0.0022 & 0.0002 & 12.07 & 0.0000 \\
+price & 0.0000 & 0.0000 & 231.49 & 0.0000 \\
+x & 0.2425 & 0.0018 & 134.73 & 0.0000 \\
+y & 0.0060 & 0.0012 & 4.92 & 0.0000 \\
+z & 0.0046 & 0.0021 & 2.18 & 0.0290 \\
+\bottomrule
+\end{tabular}
+\caption{Моя милая регрессия}
+\end{table}
+
+
+
+\section{Длинная таблица}
+
+\begin{center}
+\begin{longtable}{|l|l|l|}
+\caption{Простая длинная таблица} \label{tab:long} \\
+\hline
+\textbf{Первая колонка} & \textbf{Вторая колонка} & \textbf{Третья колонка} \\ \hline 
+\endfirsthead
+
+\multicolumn{3}{c}{\tablename{} \thetable{}: продолжение } \\
+\hline 
+\textbf{Первая}&\textbf{Вторая} & \textbf{Третья} \\
+\hline 
+\endhead
+
+\hline
+\multicolumn{3}{|c|}{Продолжение на следующей странице} \\ \hline
+\endfoot
+\hline
+\endlastfoot
+
+
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+\end{longtable}
+\end{center}
+
+
+% Table generated by Excel2LaTeX from sheet 'Лист1'
+\begin{table}[htbp]
+	\centering
+	\caption{Add caption}
+	\begin{tabular}{rrr}
+		1     & 2     & 2 \\
+		3     & 4     & 5 \\
+	\end{tabular}%
+	\label{tab:addlabel}%
+\end{table}%
+
+
+
+\section{Обтекаемые таблицы и рисунки}
+
+\begin{wrapfigure}{l}{0.3333\linewidth}
+	\includegraphics[width=\linewidth]{doge.png}
+	\caption{Картинка с обтеканием}
+\end{wrapfigure}
+
+
+Dogecoin был создан программистом из Портланда Билли Маркусом. Он хотел создать криптовалюту, которая была бы ближе к большей демографической группе, а также дистанцироваться от истории Биткойна, в частности связанной с продажей наркотиков. Dogecoin был основан на существующей криптовалюте Luckycoin, которая в свою очередь была основана на Litecoin, которая основана на Биткойне. Как и в Luckycoin, размер награды за каждый блок в Dogecoin устанавливалась случайным образом. В марте 2014 года это положение было изменено и размер награды стал фиксированным. Изначально задумывалось, что размер эмиссии составит 100 млрд, но позже было объявлено, что производство dogecoin'ов будет неограниченным.
+
+\begin{wraptable}{r}{0.5\linewidth}
+\begin{center}
+\begin{tabular}{cccc}
+\toprule
+$Y$ & -1 & 0 & 1  \\
+\midrule
+$P(\ldots)$ & 0.1 & 0.8 & 0.1 \\
+\bottomrule
+\end{tabular}
+\caption{Обтекаемая таблица}
+\end{center}
+\end{wraptable}
+
+Сообщество Dogecoin неоднократно поддерживало сбор средств на благотворительность. В январе 2014 года сообщество участвовало в сборе 50 тыс долларов сборной Ямайки по бобслею для участия в Зимних Олимпийских играх 2014, которая получила квалификацию, но не обладала средствами для участия в соревнованиях. 25 марта 2014 года сообщество также собрало около 67,8 млн dogecoin (около 55 тыс долларов на тот момент), чтобы профинансировать гонщика Джоша Уайза (NASCAR Sprint Cup Series 2012). На следующих соревнованиях он будет выступать в машине с символикой Dogecoin.
+
+
+\section{Список таблиц и список рисунков}
+% В эти списки пойдёт всё, что находится в окружениях figure и table
+\listoffigures
+
+\listoftables
+
+\tableofcontents
+
+
+\end{document}
