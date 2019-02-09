@@ -1,7 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
-\PYG{c+c1}{\PYGZsh{} Код ниже выдаст $\sum_{i=1}^{n}i$}
-
-\PYG{k}{def} \PYG{n+nf}{sum\PYGZus{}from\PYGZus{}one\PYGZus{}to}\PYG{p}{(}\PYG{n}{n}\PYG{p}{):}
-    \PYG{n}{r} \PYG{o}{=} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{n}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}
-    \PYG{k}{return} \PYG{n+nb}{sum}\PYG{p}{(}\PYG{n}{r}\PYG{p}{)}
-\end{Verbatim}

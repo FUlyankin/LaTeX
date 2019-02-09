@@ -25,8 +25,6 @@ layout: nil
 7. Презентации в LaTeX — большая боль или чувство стиля?
 8. Занимаемся рукоблудием. В LaTeX из Wolfram. Оформляем код в пакете Minted. Немного смотрим на Atom. Немного говорим про Markdown.
 
-<br>
-
 ## Команда курса
 
 Поддержкой курса занимается бравая команда из четырёх человек. Если у вас есть проблемы, вопросы, слава, деньги, женщины, пишите любому из нас:
@@ -36,3 +34,5 @@ layout: nil
 |Костя Рыбак   |[Vk.com](https://vk.com/rybakconst) |[Telegram](//telegram.me/rybakconst)|
 |Саша Тишин    |[Vk.com](https://vk.com/bolshoyti)  |[Telegram](//telegram.me/Huge_Ti)   |
 |Ахмед Зарманбетов | [Vk.com](https://vk.com/ahmeeeed) | |
+
+<br>
