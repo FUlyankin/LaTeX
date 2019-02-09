@@ -9,7 +9,7 @@ layout: nil
 * Воронцов, [LaTeX в примерах](http://www.ccas.ru/voron/download/voron05latex.pdf)
 * Львовский, [Набор и вёрстка в системе LaTeX](http://www.mccme.ru/free-books/llang/newllang.pdf)
 * [Wiki-книга](https://en.wikibooks.org/wiki/LaTeX) о LaTeX c кучей примеров. Есть и на английском и на русском, в опциях надо поменять язык.
-* [Разные материалы от онлайн-сервиса Overliaf](https://www.overleaf.com/learn/latex/Creating_a_document_in_LaTeX)
+* [Разные материалы от онлайн-сервиса Overliaf,](https://www.overleaf.com/learn/latex/Creating_a_document_in_LaTeX) из них я взял кое-что для курса
 
 Замечание ко всем книжкам! Следует использовать кодировку utf-8 для файлов. Если в книге есть строчка
 

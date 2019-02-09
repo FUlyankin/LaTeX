@@ -13,7 +13,6 @@ layout: nil
 *  [Примеры рисунков в Tikz](http://www.texample.net/tikz/)                
 *  [Куча](http://tex.stackexchange.com/questions/158668/nice-scientific-pictures-show-off) разной безумной анимации и картинок, сделанных с помощью LaTeX
 *  [Темы для презентаций](https://www.hartwork.org/beamer-theme-matrix/) в Beamer
-*  [Три базовые открытые презентации](https://www.overleaf.com/latex/learn/free-online-introduction-to-latex-part-1#.V_o9Bh8xDqN), из которых я кое-что спёр для курса
 
 **Свои вопросы по LaTeX** лучше всего задать на [tex.stackexchange.com](http://tex.stackexchange.com/)
 

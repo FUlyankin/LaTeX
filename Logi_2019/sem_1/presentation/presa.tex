@@ -446,12 +446,63 @@
 
 \section{Про картинки и таблицы} 
 
+\begin{frame}{Векторные и растровые картинки} 
+\begin{columns}
+	\begin{column}{.55\linewidth}
+		\begin{itemize}
+			\item Растровые: PNG, GIF, JPEG \ldots
+			\item Хранятся пиксельно, немасштабируются
+			\item Веторные: PDF, EPS \ldots
+			\item Хранятся описательно, масштабируются
+			\item Сложный объект требует много места векторно и мало растрово.
+		\end{itemize}
+	\end{column}
+	\begin{column}{.42\linewidth}
+		\includegraphics[width=0.99\linewidth]{rv.jpg}
+	\end{column}
+\end{columns}
+\end{frame}
+
 \begin{frame}[fragile]
 \frametitle{Про картинки}
 \begin{center}
 	\includegraphics[scale=0.25]{document5.png} 
 \end{center}
 \end{frame}
+
+
+\begin{frame}[fragile]{ }
+\begin{block}{Единицы измерения в \LaTeX}
+	\centering 
+	\begin{tabulary}{\textwidth}{JccL}
+		\toprule
+		pt & & &пункт (0.35 mm) \\
+		pc & & &пика  (12 pt)   \\
+		mm & & &миллиметр       \\
+		cm & & &сантиметр       \\
+		in & & &дюйм            \\
+		em & & &ширина буквы M используемого шрифта \\
+		ex & & &высота буквы x используемого шрифта \\
+		\bottomrule
+	\end{tabulary}
+\end{block}
+\end{frame}
+
+
+\begin{frame}[fragile]{ }
+\begin{block}{И ещё немного длин в \LaTeX}
+\centering 
+\begin{tabulary}{\textwidth}{JccL}
+	\toprule
+	\verb|\pagewidth|  & & &ширина страницы \\
+	\verb|\pageheight| & & &высота страницы \\
+	\verb|\textwidth|  & & &ширина текста   \\
+	\verb|\textheight| & & &высота текста   \\
+	\verb|\linewidth|  & & & длина текста в текущем окружении \\
+	\bottomrule
+\end{tabulary}
+\end{block}
+\end{frame} 
 
 
 \begin{frame}[fragile]
@@ -481,7 +532,7 @@
 
 \begin{frame}{Про картинки и таблицы}
 \begin{itemize}
-\item В будущем мы будем подробнее обсуждать картинки и таблицы. Тут вам дан минимум, чтобы сделать дз и не сойти с ума на следущей паре. 
+\item Мы ещё не раз поговорим про картинки и таблицы.  Готовьтесь к этому :3 
 \item Обратите внимание, что \alert{таблицы  —  это слабое место теха.} Их надо вбивать вручную, со всеми разделителями, чёрточками и это больно. Но есть автоматические способы рисовать их. Есть даже способы перегонять их из R. Но об этом рассказ будет в следущей серии. 
 \end{itemize}
 \end{frame}

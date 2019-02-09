@@ -1,0 +1,20 @@
+\documentclass{article}
+\begin{document}
+
+<<echo=FALSE>>=
+
+# Это тело нашего документа, которое будет всё время изменяться! На место <%= x %> ,будут
+# подставляться новые и новые элементы! Этот символ можно использовать как в чанках, так и в тексте.
+
+mydata <- <%= x %>^2
+@
+ 
+Blah blah blah.
+ 
+Let's look at our data using a seed of <%= x %>
+ 
+<< >>=
+print(mydata)
+@
+
+\end{document}
