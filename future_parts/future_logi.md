@@ -65,24 +65,6 @@ https://habr.com/ru/post/48260/
 * [Примеры в TikZ](https://sites.google.com/site/kochiuyu/Tikz#TOC-Labor-Supply-Decision) от китайского коллеги
 
 
-### Посиделка 3: шрифты, документ в целом
-
-* Хочу [всё и сразу]( )
-* Уютненькая [презентация номер два]( )
-
-* [Texовский файл]( ) работа со шрифтами в XeLaTeX
-* Texовский файл [Картинки и таблицы]( ) в LaTeX. [Папка с картинками]( ) для файла.
-* Texовский файл [Набор документа]( )
-
-* [Надстройка для excel](https://www.ctan.org/pkg/excel2latex), которая создаёт таблички для TeXa, а также [инструкция](http://tex.stackexchange.com/questions/24897/using-excel2latex-in-excel-2010) по её активации. Если вкратце, то просто скачайте архив, положите внутренности в удобное вам место и добавьте новую надстройку.
-* [Пошаговая инструкция](http://blog.harrix.org/article/656) с подгрузкой словарей
-
-* [Документация к пакету unicode-math](https://www.ctan.org/pkg/unicode-math). Один из pdf-файлов - сравнительная таблица с символами из разных математических шрифтов.
-* [Менеджер по шрифтам](http://fontba.se/)
-* [Шрифт вымогателей](http://www.dafont.com/phorssa.font) для письма с угрозами
-* [Всё, что нужно знать о кодировке]( http://local.joelonsoftware.com/wiki/%D0%90%D0%B1%D1%81%D0%BE%D0%BB%D1%8E%D1%82%D0%BD%D1%8B%D0%B9_%D0%9C%D0%B8%D0%BD%D0%B8%D0%BC%D1%83%D0%BC,_%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B9_%D0%9A%D0%B0%D0%B6%D0%B4%D1%8B%D0%B9_%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA_%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE_%D0%9E%D0%B1%D0%B5%D1%81%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9E%D0%B1%D1%8F%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE_%D0%94%D0%BE%D0%BB%D0%B6%D0%B5%D0%BD_%D0%97%D0%BD%D0%B0%D1%82%D1%8C_%D0%BE_Unicode_%D0%B8_%D0%9D%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%85_%D0%A1%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D0%BE%D0%B2) - дополнительное чтиво.
-
-
 
 
 
