@@ -47,35 +47,6 @@ https://habr.com/ru/post/48260/
 
 
 
-### Посиделка 4: TikZ, Geogebra, преамбула для души
-
-* Хочу [всё и сразу]( )
-* Уютненькая [презентация номер три]( )
-* Texовский файл [Графика и Tikz]( )
-* Texовский файл [Оформление документа, наши первые ковыряния в преамбуле]( )
-* Texовский файл [Свои команды и макросы]( )
-* Продажа души
-* [Репозиторий с наклеечками](https://github.com/FUlyankin/stickers) в Tikz
-* [Наши cowsay-приколы]( )
-
-*  [30 страниц с минимальной информацией по TikZ](http://cremeronline.com/LaTeX/minimaltikz.pdf )
-*  [Главная страница](https://www.geogebra.org/cms/ru/) проекта Geogebra
-*  [Примеры рисунков в Tikz](http://www.texample.net/tikz/)                
-*  [Куча](http://tex.stackexchange.com/questions/158668/nice-scientific-pictures-show-off) разной безумной анимации и картинок, сделанных с помощью LaTeX
-* [Примеры в TikZ](https://sites.google.com/site/kochiuyu/Tikz#TOC-Labor-Supply-Decision) от китайского коллеги
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### Посиделка 7: Всякие мелочи (какое-то апреля)
 
 * Хочу [вольфрамовские блокноты]( )
