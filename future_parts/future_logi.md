@@ -27,12 +27,6 @@ https://habr.com/ru/post/48260/
 
 
 ### Посиделка 5: Список литературы, преамбула по ГОСТ
-* Хочу [всё и сразу](https://raw.githubusercontent.com/FUlyankin/LaTeX/master/Logi_2018/sem_4/sem_4.zip)
-* [Texовский файл](https://github.com/FUlyankin/LaTeX/raw/master/Logi_2018/sem_4/Bibliograthy/my_bibliograthy.tex) создание библиографии в ручную
-* [Texовский файл](https://github.com/FUlyankin/LaTeX/raw/master/Logi_2018/sem_4/Bibliograthy/biblatex/my_book.tex) для работы в biblatex и [библиография ](https://github.com/FUlyankin/LaTeX/blob/master/Logi_2018/sem_4/Bibliograthy/biblatex/ex_biblio.bib) к нему
-* Неплохой [файл о biblatex](https://github.com/FUlyankin/LaTeX/blob/master/Logi_2018/sem_4/Bibliograthy/HSE.pdf) от ВШЭ
-* [Несколько примеров](https://ru.sharelatex.com/learn/Biblatex_bibliography_styles) использования разных стилей для biber
-* Ссылочка на [Google scholar](https://scholar.google.ru/), а также на сервис [sci-hub](http://www.sci-hub.tw/), который позволяет нахаляву скачать любую платную статью. Достаточно просто вставить ссылку на неё в окно поиска.
 
 * За найденные в моём поправленном ГОСТ косяки ставятся дополнительные баллы.
 * [Бакалаврский диплом в ГОСТ](https://github.com/FUlyankin/LaTeX/raw/master/preamble/My_gost_diploma.zip),
