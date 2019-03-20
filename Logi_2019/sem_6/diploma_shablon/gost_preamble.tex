@@ -1,0 +1,283 @@
+% !TEX root = main_file.tex
+
+%%%%%%%%%% Програмный код %%%%%%%%%%
+% \usepackage{minted}
+% Включает подсветку команд в программах!
+% Нужно, чтобы на компе стоял питон, надо поставить пакет Pygments, в котором он сделан, через pip.
+
+% Для Windows: Жмём win+r, вводим cmd, жмём enter. Открывается консоль.
+% Прописываем pip install Pygments
+% Заходим в настройки texmaker и там прописываем в PdfLatex или XelaTeX:
+% pdflatex -shell-escape -synctex=1 -interaction=nonstopmode %.tex
+
+% Для Linux: Открываем консоль. Убеждаемся, что у вас установлен pip командой pip --version
+% Если он не установлен, ставим его: sudo apt-get install python-pip
+% Ставим пакет sudo pip install Pygments
+
+% Для Mac: Всё то же самое, что на Linux, но через brew.
+
+% После всего этого вы должны почувствовать себя тру-программистами!
+% Документация по пакету хорошая. Сам читал, погуглите!
+
+%%%%%%%%%% Математика %%%%%%%%%%
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+% Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+%\mathtoolsset{showonlyrefs=true}
+%\usepackage{leqno} % Нумерация формул слева
+
+%%%%%%%%%% Шрифты %%%%%%%%%%
+\usepackage[english, russian]{babel}   % выбор языка для документа
+\usepackage[utf8]{inputenc}            % выбор utf8 кодировки
+\usepackage[X2,T2A]{fontenc}           % ещё немного кодировки
+
+\usepackage{fontspec}                  % пакет для подгрузки шрифтов
+\setmainfont{Times New Roman}          % задаёт основной шрифт документа
+
+\usepackage{unicode-math}              % пакет для установки математического шрифта
+\setmathfont{Asana-Math.otf}           % шрифт для математики
+
+% Конкретный символ из конкретного шрифта
+% \setmathfont[range=\int]{Neo Euler}
+
+%%%%%%%%%% Работа с картинками %%%%%%%%%%
+\usepackage{graphicx}                  % Для вставки рисунков
+\usepackage{graphics}
+\graphicspath{{images/}{pictures/}}    % можно указать папки с картинками
+\usepackage{wrapfig}                   % Обтекание рисунков и таблиц текстом
+
+
+%%%%%%%%%% Работа с таблицами %%%%%%%%%%
+\usepackage{tabularx}            % новые типы колонок
+\usepackage{tabulary}            % и ещё новые типы колонок
+\usepackage{array,delarray}      % Дополнительная работа с таблицами
+\usepackage{longtable}           % Длинные таблицы
+\usepackage{multirow}            % Слияние строк в таблице
+\usepackage{float}               % возможность позиционировать объекты в нужном месте
+\usepackage{booktabs}            % таблицы как в книгах
+% Заповеди из документации к booktabs:
+% 1. Будь проще! Глазам должно быть комфортно
+% 2. Не используйте вертикальные линни
+% 3. Не используйте двойные линии. Как правило, достаточно трёх горизонтальных линий
+% 4. Единицы измерения - в шапку таблицы
+% 5. Не сокращайте .1 вместо 0.1
+% 6. Повторяющееся значение повторяйте, а не говорите "то же"
+% 7. Есть сомнения? Выравнивай по левому краю!
+
+%  вычисляемые колонки по tabularx
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{Y}{>{\arraybackslash}X}
+\newcolumntype{Z}{>{\centering\arraybackslash}X}
+
+
+%%%%%%%%%% Графика и рисование %%%%%%%%%%
+\usepackage{tikz, pgfplots}    % язык для рисования графики из latex'a
+
+%%%%%%%%%% Гиперссылки %%%%%%%%%%
+\usepackage{xcolor}            % разные цвета
+
+\usepackage{hyperref}
+\hypersetup{
+    unicode=true,           % позволяет использовать юникодные символы
+    colorlinks=true,       	% true - цветные ссылки, false - ссылки в рамках
+    urlcolor =blue,         % цвет ссылки на url
+    linkcolor=black,        % внутренние ссылки
+    citecolor=black,        % на библиографию
+	breaklinks              % если ссылка не умещается в одну строку, разбивать ли ее на две части?
+}
+
+%%%%%%%%%% Другие приятные пакеты %%%%%%%%%%
+\usepackage{multicol}       % несколько колонок
+\usepackage{verbatim}       % для многострочных комментариев
+\usepackage{enumitem}       % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+
+\usepackage{todonotes}      % для вставки в документ заметок о том, что  осталось сделать
+% \todo{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет Последний день Помпеи}
+% \listoftodos --- печатает все поставленные \todo'шки
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% ГОСТОВСКИЕ ПРИБАМБАСЫ %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% размер листа бумаги
+\usepackage[paper=a4paper,top=15mm, bottom=15mm,left=35mm,right=10mm,includehead]{geometry}
+
+% всякие разные расстояния
+\usepackage{setspace}
+\setstretch{1.33}              % Полуторный межстрочный интервал
+\setlength{\parindent}{1.5em}  % Красная строка.
+
+\righthyphenmin=2    % Разрешение переноса двух и более символов
+\widowpenalty=10000  % Наказание за вдовствующую строку (одна строка абзаца на этой странице, остальное --- на следующей)
+%\clubpenalty=10000  % Наказание за сиротствующую строку (омерзительно висящая одинокая строка в начале страницы)
+\tolerance=1000      % Ещё какое-то наказание.
+
+% Нумерация страниц сверху по центру
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{ } % clear all fields
+\fancyfoot{ } % clear all fields
+\fancyhead[C]{\thepage}
+% Чтобы не прорисовывалась черта!
+\renewcommand{\headrulewidth}{0pt}
+
+% Нумерация страниц с надписью "Глава"
+\usepackage{etoolbox}
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+
+% Заголовки по левому краю
+% опция identfirst устанавливает отступ в первом абзаце
+\usepackage[indentfirst]{titlesec}{\raggedleft}
+
+% В Linux этот пакет для заголовков. Исправляет это следующий непонятный кусок кода:
+\makeatletter
+\patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
+\patchcmd{\ttlh@hang}{\noindent}{}{}{}
+\makeatother
+
+% Редактирования Глав и названий
+\titleformat{\chapter}
+      {\normalfont\large\bfseries}
+      {\thechapter }{0.5 em}{}
+
+% Редактирование ненумеруемых глав chapter* (Введение и тп)
+\titleformat{name=\chapter,numberless}
+{\centering\normalfont\bfseries\large}{}{0.25em}{\normalfont}
+
+% Убирает чеканутые отступы вверху страницы
+\titlespacing{\chapter}{0pt}{-\baselineskip}{\baselineskip}
+
+% Более низкие уровни (подзаголовки)
+\titleformat{\section}{\bfseries}{\thesection}{0.5 em}{}
+\titleformat{\subsection}{\bfseries}{\thesubsection}{0.5 em}{}
+
+\titlespacing*{\section}{0 pt}{\baselineskip}{\baselineskip}
+\titlespacing*{\subsection}{0 pt}{\baselineskip}{\baselineskip}
+
+% Содержание, команды ниже изменяют отступы и рисуют точечки!
+\usepackage{titletoc}
+
+\titlecontents{chapter}
+             [1em] %
+             {\normalsize}
+             {\contentslabel{1 em}}
+             {\hspace{-1 em}}
+             {\normalsize\titlerule*[10pt]{.}\contentspage}
+
+\titlecontents{section}
+              [3 em] %
+              {\normalsize}
+              {\contentslabel{1.75 em}}
+              {\hspace{-1.75 em}}
+              {\normalsize\titlerule*[10pt]{.}\contentspage}
+
+\titlecontents{subsection}
+              [6 em] %
+              {\normalsize}
+              {\contentslabel{3 em}}
+              {\hspace{-3 em}}
+              {\normalsize\titlerule*[10pt]{.}\contentspage}
+
+% Правильные подписи под таблицей и рисунком
+% Документация к пакету на русском языке!
+\usepackage[tableposition=top, singlelinecheck=false]{caption}
+\usepackage{subcaption}
+
+   \DeclareCaptionStyle{base}%
+		[justification=centering,indention=0pt]{}
+   \DeclareCaptionLabelFormat{gostfigure}{Рисунок #2}
+   \DeclareCaptionLabelFormat{gosttable}{Таблица #2}
+
+   \DeclareCaptionLabelSeparator{gost}{~---~}
+   \captionsetup{labelsep=gost}
+
+   \DeclareCaptionStyle{fig01}%
+           [margin=5mm,justification=centering]%
+           {margin={3em,3em}}
+   \captionsetup*[figure]{style=fig01,labelsep=gost,labelformat=gostfigure,format=hang}
+
+   \DeclareCaptionStyle{tab01}%
+           [margin=5mm,justification=centering]%
+           {margin={3em,3em}}
+   \captionsetup*[table]{style=tab01,labelsep=gost,labelformat=gosttable,format=hang}
+
+% межстрочный отступ в таблице
+ \renewcommand{\arraystretch}{1.2}
+
+% многостраничные таблицы под РОССИЙСКИЙ СТАНДАРТ
+% ВНИМАНИЕ! Обязательно после пакета caption!
+\usepackage{fr-longtable}
+
+%Более гибкие спсики
+\usepackage{enumitem}
+
+% сообщаем окружению о том, что существует такая штука, как нумерация русскими буквами
+\makeatletter
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ}
+\makeatother
+
+% ГОСТОВСКИЕ СПИСКИ
+
+% Первый тип списков. Большая буква.
+\newlist{Enumerate}{enumerate}{1}
+
+\setlist[Enumerate,1]{labelsep=0.5em,leftmargin=1.25em,labelwidth=1.25em,
+parsep=0em,itemsep=0em,topsep=0ex, before={\parskip=-1em},label=\arabic{Enumeratei}.}
+
+% Второй тип списков. Маленькая буква.
+\setlist[enumerate]{label=\arabic{enumi}),parsep=0em,itemsep=0em,topsep=0.75ex, before={\parskip=-1em}}
+
+% Третий тип списков. Два уровня.
+\newlist{twoenumerate}{enumerate}{2}
+\setlist[twoenumerate,1]{itemsep=0mm,parsep=0em,topsep=0.75ex,, before={\parskip=-1em},label=\asbuk{twoenumeratei})}
+\setlist[twoenumerate,2]{leftmargin=1.3em,itemsep=0mm,parsep=0em,topsep=0ex, before={\parskip=-1em},label=\arabic{twoenumerateii})}
+
+% Четвёртый тип списков. Список с тире.
+\setlist[itemize]{label=--,parsep=0em,itemsep=0em,topsep=0ex, before={\parskip=-1em},after={\parskip=-1em}}
+
+% WARNING WARNING WARNIN!
+% Если в списке предложения, то должна по госту стоять точка после цифры => команда Enumerate! Если идет перечень маленьких фактов, не обособляемых предложений то после цифры идет скобка ")" => команда enumerate! Если перечень при этом ещё и двууровневый, то twoenumerate.
+
+
+%%%%%%%%%% Список литературы %%%%%%%%%%
+
+%\usepackage[%
+%backend=biber, %подключение пакета biber (тоже нужен)
+%bibstyle=gost-numeric, %подключение одного из четырех главных стилей biblatex-gost
+%sorting=ntvy, %тип сортировки в библиографии
+%]{biblatex}
+\usepackage[backend=biber,style=gost-numeric, maxbibnames=9,maxcitenames=2,uniquelist=false, babel=other]{biblatex}
+
+% Справка по 4 главным стилям для ленивых:
+% gost-inline  ссылки внутри теста в круглых скобках
+% gost-footnote подстрочные ссылки
+% gost-numeric затекстовые ссылки
+% gost-authoryear тоже затекстовые ссылки, но немного другие
+
+% Подробнее смотри страницу 4 документации. Она на русском.
+
+% Ещё немного настроек
+\DeclareFieldFormat{postnote}{#1} %убирает с. и p.
+\renewcommand*{\mkgostheading}[1]{#1} % только лишь убираем курсив с авторов
+
+% Этот кусок кода выносит русские источники на первое место. Костыль описали авторы пакета в руководстве к нему. Подробнее смотри:
+% https://github.com/odomanov/biblatex-gost/wiki/Как-сделать%2C-чтобы-русскоязычные-источники-предшествовали-остальным
+\DeclareSourcemap{
+  \maps[datatype=bibtex]{
+    \map{
+      \step[fieldsource=langid, match=russian, final]
+      \step[fieldset=presort, fieldvalue={a}]
+    }
+    \map{
+      \step[fieldsource=langid, notmatch=russian, final]
+      \step[fieldset=presort, fieldvalue={z}]
+    }
+  }
+}
+
+\DefineBibliographyStrings{english}{%
+pages = {P\adddot},
+number = {№},
+}
