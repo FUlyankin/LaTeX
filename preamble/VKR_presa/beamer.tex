@@ -1,0 +1,423 @@
+%!TEX TS-program = xelatex
+
+% Данный шаблон подготовлен для курса LaTeX в РАНХиГС
+% на основе шаблона 
+% Данилы Фёдоровых (danil@fedorovykh.ru),
+%  который использовал его в курсе 
+% <<Документы и презентации в \LaTeX>> НИУ ВШЭ
+% Исходная версия шаблона --- 
+% https://www.writelatex.com/coursera/latex/5.1
+\documentclass[c, dvipsnames]{beamer}  % [t], [c], или [b] --- вертикальное 
+%\documentclass[handout, dvipsnames, c]{beamer} % Раздаточный материал (на слайдах всё сразу)
+\input{pre}
+\title[Эмпирический анализ моделей эк. роста ]{Эмпирический анализ выводов \\ моделей экономического роста}
+\subtitle{Защита выпускной квалификационной работы}
+
+
+\author[Александр Тишин]{Александр Тишин \\ \smallskip \scriptsize ЭО-13-02 \\ \smallskip \scriptsize \href{mailto:phenyard@gmail.com}{\nolinkurl{phenyard@gmail.com} }}
+
+\superviser{к.э.н. Перевышин Ю.Н.}
+
+%\author[Имя автора]{Имя автора \\ \smallskip \scriptsize \href{mailto:author@ranepa.ru}{author@ranepa.ru} \\ \smallskip  \href{http://ranepa.ru}{http://ranepa.ru} }
+
+\institute[РАНХиГС]{ \uppercase{
+  Российская Академия Народного Хозяйства и  \\ Государственной Службы при Президенте Российской Федерации}}
+\date{23 июня 2017 г.}
+
+
+\titlegraphic{\includegraphics[scale=0.5]{logo1}}
+\titlegraphicii{\includegraphics[scale=0.5]{logo2}}
+
+\begin{document}
+
+\frame[plain]{\titlepage}	% Титульный слайд
+
+
+\begin{frame}[c]{Актуальность исследования} 
+\begin{itemize}
+	\item  Зуб даю, актуально! 
+	\item  Ничего нет актуальнее!!!
+	\item  Актуальность --- зашкаливает
+	\item  Актуальная актуальность с актуальным актуалитетом.
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}[c]
+\frametitle{Анализ предметной области}
+{ \small   % вместо small можно поставить scriptsize чтобы влезло
+	\begin{table}[]
+		\centering
+		\resizebox{\textwidth}{!}{ 
+			\begin{tabular}{|p{2.2cm}|p{1.8cm}|p{3.5cm}|p{7cm}|}
+				\hline\rowcolor{backgr}
+				\textcolor{white}{Авторы} & \textcolor{white}{Выборка, период}  & \textcolor{white}{Метод исследования}& \textcolor{white}{Результат} \\			
+				\hline
+				(Kuper, 2003)  & США, 998-2008  &  Коинтеграци и VECM & Получились значимые результаты с интересной интерпретацией.\\
+				\hline
+		\end{tabular} }
+	\end{table}
+}
+\end{frame}
+
+
+\begin{frame}[shrink=3]
+	\frametitle{Цели и задачи}
+	\begin{block}{Цель:}
+	\begin{itemize}
+		\item Единственная цель
+	\end{itemize}
+		
+	\end{block}
+
+	 	\begin{block}{Задачи:}
+			\begin{enumerate}
+	\item Найти красивый шаблон
+	\item Заручиться поддержкой научного руководителя 
+	\item Ходить на научные семинары
+	\item ?????
+	\item Profit
+	 \end{enumerate}	
+	\end{block}
+\end{frame}
+
+
+
+\section{Неоклассические модели экономического роста}
+\subsection{Страны, пространственная выборка}
+
+\begin{frame}[shrink=5]
+\frametitle{\insertsection} 
+\framesubtitle{\insertsubsection}
+Модель (Mankiw N. G., Romer D., Weil D. N., 1992): 
+\begin{equation} 
+\log(y_i)=a+\frac{\alpha}{1-\alpha}\log((s_k)_i)-\frac{\alpha}{1-\alpha}\log(n_i+g+\delta)+\varepsilon_i
+\end{equation}
+где: 
+\begin{itemize}
+\item $y$ "--- ВВП на душу населения по ППС  в долларах США в 2013 гг.
+\item $s_k$ "--- средняя доля инвестиций в  ВВП (Gross capital formation), так как $I=S$
+\item $n$ "--- средний темп прироста  численности населения  ($g+\delta=5\%$)
+\end{itemize}
+Рассматриваются три группы стран:
+\begin{itemize}
+\item Высокий доход, не нефтедобывающие~---~68 стран 
+\item Средний доход --- 67 страны
+\item Высокий доход, входящие в ОЭСР --- 22 страны
+\end{itemize}
+Отличия:
+\begin{itemize}
+	\item Непересекающийся с MRW временной интервал с 1990 по 2013 гг.
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+ 			\frametitle{\insertsection}
+	\framesubtitle{\insertsubsection}
+	\vspace{-1ex}
+	\begin{itemize}
+		\item \alert{ Значимые коэффициенты }для первой и второй групп стран
+		\item \alert{Предполагаемые теорией знаки:} отрицательный перед темпами прироста населения и положительный перед долей инвестиций 
+		\item Достаточно высокий $R^2_{adj}$
+	\end{itemize}
+	\vspace{-2ex}
+	
+\begin{table}[!htbp] \centering 
+\resizebox{0.9\textwidth}{!}{ 
+\begin{tabular}{@{\extracolsep{5pt}}lD{.}{.}{-2} D{.}{.}{-2} D{.}{.}{-2} } 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+\\[-1.8ex] & \multicolumn{3}{c}{Зависимая переменная: ВВП ($y$)} \\ 
+ & \multicolumn{1}{c}{Первая группа} & \multicolumn{1}{c}{Вторая группа} & \multicolumn{1}{c}{Третья группа} \\ 
+\hline \\[-1.8ex] 
+ $\log(n+g+\delta)$ & -7.68^{***} & -6.60^{***} & -0.96 \\ 
+  & (0.82) & (0.87) & (1.07) \\ 
+  $\log(s_k)$ & 2.04^{***} & 1.53^{***} & 1.20 \\ 
+  & (0.48) & (0.57) & (1.15) \\ 
+  Constant & 17.28^{***} & 17.01^{***} & 8.58^{**} \\ 
+  & (2.31) & (2.55) & (3.62) \\ 
+ \textit{N} & \multicolumn{1}{c}{86} & \multicolumn{1}{c}{67} & \multicolumn{1}{c}{22} \\ 
+
+Adjusted R$^{2}$ & \multicolumn{1}{c}{0.58} & \multicolumn{1}{c}{0.51} & \multicolumn{1}{c}{-0.02} \\ 
+
+\hline 
+\hline \\[-1.8ex] 
+
+\end{tabular} }
+\end{table} 
+\end{frame}
+
+
+
+\subsection{Страны, панель}
+
+
+
+\begin{frame}[shrink=12]
+\frametitle{\insertsection} 
+\framesubtitle{\insertsubsection}
+Модель панельной регрессии с фиксированными временными эффектами: 
+\begin{equation} 
+\log(y_{i,t})=a_t+\frac{\alpha}{1-\alpha}\log((s_k)_{i,t})-\frac{\alpha}{1-\alpha}\log(n_{i,t}+g+\delta)+\varepsilon_{i,t}
+\end{equation}
+где 
+\begin{itemize}
+\item $y$ "--- средний ВВП на душу населения по ППС  в долларах США в постоянных ценах  за шесть лет
+\item $s_k$ "--- средняя доля инвестиций в  ВВП  за шесть лет
+\item $n$ "--- средний темп прироста  численности населения  за шесть лет
+\end{itemize}
+Рассматриваются три группы стран:
+\begin{itemize}
+\item Высокий доход, не нефтедобывающие~---~68 стран 
+\item Средний доход --- 67 страны
+\item Высокий доход, входящие в ОЭСР --- 22 страны
+\end{itemize}
+Построение панелей:
+\begin{itemize}
+	\item Данные с 1990 по 2013 гг. усреднялись по 6 лет $\Rightarrow$ 4 временных промежутка 
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+ 			\frametitle{\insertsection}
+	\framesubtitle{\insertsubsection}
+	\begin{itemize}
+		\item Результаты \alert{ совпадают с пространственным анализом}: статистически значимые коэффициенты и предполагаемые теорией знаки
+	\end{itemize}
+	\vspace{-2ex}
+\begin{table}[!htbp] \centering 
+\resizebox{\textwidth}{!}{ 
+\begin{tabular}{@{\extracolsep{5pt}}lD{.}{.}{-2} D{.}{.}{-2} D{.}{.}{-2} } 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+\\[-1.8ex] & \multicolumn{3}{c}{Зависимая переменная: ВВП ($y$)} \\ 
+ & \multicolumn{1}{c}{Первая группа} & \multicolumn{1}{c}{Вторая группа} & \multicolumn{1}{c}{Третья группа} \\ 
+\hline \\[-1.8ex] 
+ $\log(n+g+\delta)$ & -5.52^{***} & -5.36^{***} & -0.79^{*} \\ 
+  & (0.42) & (0.45) & (0.41) \\ 
+  $\log(s_k)$ & 1.43^{***} & 1.08^{***} & 1.05^{**} \\ 
+  & (0.22) & (0.26) & (0.43) \\ 
+ \textit{N} & \multicolumn{1}{c}{359} & \multicolumn{1}{c}{277} & \multicolumn{1}{c}{88} \\ 
+Adjusted R$^{2}$ & \multicolumn{1}{c}{0.38} & \multicolumn{1}{c}{0.37} & \multicolumn{1}{c}{0.02} \\ 
+\hline 
+\hline \\[-1.8ex] 
+\end{tabular} }
+\end{table}
+\end{frame}
+
+\section{Выводы по неоклассическим моделям}
+\begin{frame}
+	\frametitle{\insertsection}
+	Страны:
+	\begin{itemize}
+		\item Норма сбережений физического и человеческого капитала и темп прироста населения являются факторами объясняющими различия в уровне подушевого дохода 
+		\item Модель Солоу объясняет $60\%-70\%$ вариации подушевого дохода для первой и второй групп стран. Добавление человеческого капитала улучшает выводы (\textit{уменьшаются коэффициенты})
+	\end{itemize}	
+	Регионы 
+	\begin{itemize}
+		\item Свидетельств  того, что различия подушевого дохода регионов объясняются за счет факторов неоклассических моделей экономического роста не выявлено
+		\item Возможные объяснения: нарушены предпосылки моделей, например, закрытая экономика 
+	\end{itemize}
+\end{frame}
+ 
+\section{Конвергенция}
+
+
+\begin{frame}
+\frametitle{\insertsection} 
+ 
+\begin{block}{Безусловная $\beta$-конвергенция }
+ \begin{equation}
+\dfrac{1}{T}\log(\dfrac{y_{i,T}}{y_{i,0}})=\alpha-\beta \log(y_{i,0})+\varepsilon_{i}
+ \end{equation} 
+ Бедные страны растут быстрее богатых, и разница в уровнях подушевого дохода постепенно снижается независимо от  характеристик экономики
+ \end{block}
+ \begin{block}{Условная $\beta$-конвергенция}
+  \begin{equation}
+\dfrac{1}{T}\log(\dfrac{y_{i,T}}{y_{i,0}})=\alpha-\beta \log(y_{i,0})+\gamma X+ \varepsilon_{i}
+ \end{equation} 
+ Бедные страны растут быстрее богатых при условиях одинаковых характеристик экономики 
+  \end{block}
+  
+  $y_i$ --- подушевой доход для $i$ субъекта,  $0$ --- в начальный момент времени и $T$ --- в конечный момент времени
+
+
+\end{frame}
+
+
+\subsection{Страны, пространственная выборка, безусловная конвергенция}
+
+\frame<beamer:0>{
+% Можно и вернуть обратно
+ 			\frametitle{\insertsection}
+	\framesubtitle{\insertsubsection}
+		\begin{itemize}
+		\item \alert{Не отвергается гипотеза о  безусловной конвергенции} для первой и второй групп: статистически значимые отрицательные коэффициенты 
+        
+	\end{itemize}
+\begin{table}[!htbp] \centering 
+\resizebox{\textwidth}{!}{ 
+\begin{tabular}{@{\extracolsep{5pt}}lD{.}{.}{-2} D{.}{.}{-2} D{.}{.}{-2} } 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+\\[-1.8ex] & \multicolumn{3}{c}{Зависимая переменная: средний темп роста ВВП} \\
+ & \multicolumn{1}{c}{Первая группа} & \multicolumn{1}{c}{Вторая группа} & \multicolumn{1}{c}{Третья группа} \\ 
+\hline \\[-1.8ex] 
+ $\log(y_{1990})$ & -0.14^{***} & -0.15^{***} & -0.22 \\ 
+  & (0.04) & (0.04) & (0.20) \\ 
+  Constant & 1.76^{***} & 1.89^{***} & 2.43 \\ 
+  & (0.31) & (0.37) & (2.11) \\ 
+ \textit{N} & \multicolumn{1}{c}{85} & \multicolumn{1}{c}{69} & \multicolumn{1}{c}{22} \\ 
+Adjusted R$^{2}$ & \multicolumn{1}{c}{0.14} & \multicolumn{1}{c}{0.15} & \multicolumn{1}{c}{0.01} \\ 
+\hline 
+\hline \\[-1.8ex] 
+\end{tabular} }
+\end{table} 
+}
+
+\subsection{Страны, панель, безусловная конвергенция}
+
+\begin{frame}
+ 			\frametitle{\insertsection}
+	\framesubtitle{\insertsubsection}
+	\begin{itemize}
+ 
+		\item Статистически значимые и отрицательные  коэффициенты для всех групп $\Rightarrow$ \alert{безусловная конвергенция}
+		\item В теории из безусловной конвергенции следует условная, подробнее в раздаточных материалах 
+			\item Лучше пространственной регрессии
+	\end{itemize}
+	\vspace{-3ex}
+\begin{table}[!htbp] \centering 
+	\resizebox{\textwidth}{!}{ 
+\begin{tabular}{@{\extracolsep{5pt}}lD{.}{.}{-2} D{.}{.}{-2} D{.}{.}{-2} } 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+\\[-1.8ex] & \multicolumn{3}{c}{Зависимая переменная: средний темп роста ВВП} \\
+ & \multicolumn{1}{c}{Первая группа} & \multicolumn{1}{c}{Вторая группа} & \multicolumn{1}{c}{Третья группа} \\ 
+\hline \\[-1.8ex] 
+ $\log(y_{0})$ & -0.10^{***} & -0.12^{***} & -0.51^{**} \\ 
+  & (0.03) & (0.04) & (0.23) \\ 
+ \textit{N} & \multicolumn{1}{c}{306} & \multicolumn{1}{c}{242} & \multicolumn{1}{c}{71} \\ 
+Adjusted R$^{2}$ & \multicolumn{1}{c}{0.02} & \multicolumn{1}{c}{0.02} & \multicolumn{1}{c}{0.01} \\ 
+\hline 
+\hline \\[-1.8ex] 
+\end{tabular} }
+\end{table}
+\end{frame}
+
+\section{Выводы по конвергенции}
+\begin{frame}
+\frametitle{\insertsection}
+ 
+\begin{itemize}
+	\item Конвергенция по странам не отвергается для всех трех групп (панель)
+	\item Конвергенция по регионам не отвергается  для обеих групп 
+	\item Таким образом, как на страновом уровне, так и на региональном есть <<конвергенционные клубы>>, подушевой доход их <<участников>> имеет тенденцию к сближению 
+\end{itemize} 
+\end{frame}
+ 
+
+\begin{frame}[c, plain]
+\begin{center}
+
+{\LARGE Спасибо за внимание}
+
+\bigskip
+
+{\Large \inserttitle}
+
+\bigskip
+
+{\insertauthor} 
+
+\bigskip
+
+\bigskip\bigskip
+
+{\large \insertdate}
+\end{center}
+\end{frame}
+
+\section{Приложения}
+\begin{frame}[plain,c]
+\begin{center}
+\Huge{\textbf{
+	ПРИЛОЖЕНИЯ}}
+\end{center}
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{\insertsection}
+	\framesubtitle{Группы регионов }
+\begin{table}[ht]
+	\centering
+	\resizebox{\textwidth}{!}{ 
+		\begin{tabular}{|lr|lr|lr|}
+ \hline
+ регион & N & регион & N & регион & N \\
+ \hline
+ Белгородская область & 1 & Брянская область & 2 & Республика Марий Эл & 2 \\ Липецкая область & 1 & Владимирская область & 2 & Республика Мордовия & 2 \\ Московская область & 1 & Воронежская область & 2 & Удмуртская Республика & 2 \\ Республика Коми & 1 & Ивановская область & 2 & Чувашская Республика & 2 \\ Вологодская область & 1 & Калужская область & 2 & Кировская область & 2 \\ Ленинградская область & 1 & Костромская область & 2 & Нижегородская область & 2 \\ Новгородская область & 1 & Курская область & 2 & Пензенская область & 2 \\ г.Санкт-Петербург & 1 & Орловская область & 2 & Саратовская область & 2 \\ Краснодарский край & 1 & Рязанская область & 2 & Ульяновская область & 2 \\ Астраханская область & 1 & Смоленская область & 2 & Курганская область & 2 \\ Республика Башкортостан & 1 & Тамбовская область & 2 & Республика Алтай & 2 \\ Республика Татарстан & 1 & Тверская область & 2 & Республика Бурятия & 2 \\ Пермский край & 1 & Тульская область & 2 & Республика Тыва & 2 \\ Оренбургская область & 1 & Ярославская область & 2 & Республика Хакасия & 2 \\ Самарская область & 1 & Республика Карелия & 2 & Алтайский край & 2 \\ Свердловская область & 1 & Калининградская область & 2 & Новосибирская область & 2 \\ Челябинская область & 1 & Мурманская область & 2 & Омская область & 2 \\ Иркутская область & 1 & Псковская область & 2 & Приморский край & 2 \\ Кемеровская область & 1 & Республика Адыгея & 2 & Хабаровский край & 2 \\ Томская область & 1 & Республика Калмыкия & 2 & Амурская область & 2 \\ Республика Саха (Якутия) & 1 & Волгоградская область & 2 & Магаданская область & 2 \\ Чукотский автономный округ & 1 & Ростовская область & 2 & Еврейская автономная область & 2 \\
+ \hline
+	\end{tabular} }
+\end{table}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{\insertsection}
+	\framesubtitle{Оценки $\alpha$ и $\beta$ }
+	\begin{table}[ht]
+\centering 
+	\resizebox{\textwidth}{!}{ 
+\begin{tabular}{|l|c|c|c|c|c|c|}
+  \hline
+ Модель & \multicolumn{2}{c|}{Первая группа} & \multicolumn{2}{c|}{Вторая группа} & \multicolumn{2}{c|}{Третья группа} \\ 
+Солоу & GDP PPP & GDP PC & GDP PPP & GDP PC & GDP PPP & GDP PC \\ 
+  \hline
+Оценка $\alpha$ & 0.75 & 0.78 & 0.71 & 0.76 & 0.27 & 0.52 \\ 
+  Левая граница & 0.70 & 0.73 & 0.64 & 0.68 & -2.40 & -1.58 \\ 
+  Правая граница & 0.79 & 0.82 & 0.76 & 0.81 & 0.59 & 0.73 \\ 
+   \hline
+\end{tabular} }
+\end{table}
+
+\begin{table}[ht]
+\centering
+	\resizebox{\textwidth}{!}{ 
+\begin{tabular}{|l|c|c|c|c|c|c|}
+  \hline
+Модель Солоу & \multicolumn{2}{c|}{Первая группа} & \multicolumn{2}{c|}{Вторая группа} & \multicolumn{2}{c|}{Третья группа} \\ 
+с чел. капиталом & GDP PPP & GDP PC & GDP PPP & GDP PC & GDP PPP & GDP PC \\ 
+  \hline
+Оценка $\alpha$ & 0.46 & 0.45 & 0.37 & 0.34 & -0.14 & 0.19 \\ 
+  Левая граница & 0.37 & 0.33 & 0.22 & 0.12 & 2.47 & 1.78 \\ 
+  Правая граница & 0.51 & 0.51 & 0.45 & 0.45 & 0.43 & 0.56 \\ 
+   \hline
+\end{tabular} }
+\end{table}
+
+\begin{table}[ht]
+\centering
+	\resizebox{\textwidth}{!}{ 
+\begin{tabular}{|l|c|c|c|c|c|c|}
+  \hline
+Модель Солоу & \multicolumn{2}{c|}{Первая группа} & \multicolumn{2}{c|}{Вторая группа} & \multicolumn{2}{c|}{Третья группа} \\ 
+с чел. капиталом & GDP PPP & GDP PC & GDP PPP & GDP PC & GDP PPP & GDP PC \\ 
+  \hline
+Оценка $\beta$ & 0.26 & 0.30 & 0.31 & 0.37 & 0.20 & 0.20 \\ 
+  Левая граница & 0.25 & 0.29 & 0.30 & 0.34 & 0.20 & 0.20 \\ 
+  Правая граница & 0.26 & 0.32 & 0.33 & 0.44 & 0.21 & 0.21 \\ 
+   \hline
+\end{tabular} }
+\end{table}
+	
+\end{frame}
+
+\end{document}
