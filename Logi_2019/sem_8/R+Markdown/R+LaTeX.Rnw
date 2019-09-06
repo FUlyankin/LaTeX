@@ -1,0 +1,179 @@
+%!TEX TS-program = xelatex
+\documentclass[12pt, a4paper]{article}
+
+%%%%%%%%%% Математика %%%%%%%%%%
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+
+%%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[british,russian]{babel} % выбор языка для документа
+\usepackage[utf8]{inputenc} % задание utf8 кодировки исходного tex файла
+\usepackage[X2,T2A]{fontenc}        % кодировка
+
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Arial}   % задаёт основной шрифт документа
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+%\setmathfont{Asana Math}      % шрифт для математики
+% \setmathfont[math-style=ISO]{Asana Math}
+% Можно делать смену начертания с помощью разных стилей
+
+
+\usepackage[paper=a4paper,top=13.5mm, bottom=13.5mm, left=16.5mm, right=13.5mm, includefoot]{geometry}
+\usepackage[unicode,colorlinks=true,urlcolor=blue,hyperindex,breaklinks]{hyperref}
+
+\usepackage{indentfirst} % установка отступа в первом абзаце главы!!!
+\usepackage{booktabs} 
+\usepackage{float}
+
+
+\title{Отчёт о проделанной работе}
+\author{Винни-Пух}
+\date{\today}
+\begin{document}
+
+\maketitle
+
+\section{Основовы}
+
+
+<<include=FALSE,message=FALSE>>=
+
+# Чтобы вставить такую штуку:  Code/ Insert Chunk  либо   ctrl+alt+I
+
+# include (TRUE) Если изменить на FALSE - то в документе не будет показан вывод кода. 
+# message (TRUE) Если FALSE, то системные сообщения от функций в pdf не включаются.
+# echo    (TRUE) Если FALSE, то програмный код не будет включаться в pdf
+# eval    (TRUE) Если FALSE, то чанк с кодом игнорируется, вычисления не запускаются
+# warning (TRUE) Если FALSE, то предупреждения не включаются в pdf
+# message (TRUE) Если FALSE, то сообщения от R не включаются в pdf
+# results ('hold') Есть 4 разные опции. 'hide' - скрывает вывод куска кода, другие две опции переставляют его местами. Чтобы посмотреть все возможные варианты для команды - Tab!
+
+
+# загружаем библиотеки:
+library(knitr)                     # взаимодействие R-Latex
+library(quantmod)                  # загрузка котировок с yahoo.finance, google.finance
+library(ggplot2)                   # симпатявые графики
+library(dplyr)
+library(xtable)
+
+invisible(Sys.setlocale("LC_MESSAGES", "C"))  # установка локали потенциально решает проблему 
+invisible(Sys.setlocale("LC_TIME", "C"))      # с отсутствием дат в getSymbols с гугла :)
+
+
+# Опции для кода можно настраивать либо глобально (для всех окон с кодом сразу) либо локально отдельно для каждого окна. Глобальные опции задаются следующим способом: 
+
+# cache=TRUE ускоряет работу, но на сложных проектах может глючить
+opts_chunk$set(cache=TRUE)  # после первого запуска запоминает рассчеты в маленький файл, а потом обращается к ним! При каждой компиляции, кроме первой пересчитываются только изменённые чанки. Иногда при неумелом использовании это привоодит к проблемам.
+
+# НЕ ЗАБЫТЬ ПОКАЗАТЬ ПОЯВЛЕНИЕ ПАПКИ Cahe!!! АУДИТОРИЯ, ЕСЛИ ТЫ ЧИТАЕШЬ ЭТО, ТО НАПОМНИ МНЕ ОБ ЭТОМ!
+
+opts_chunk$set(echo=FALSE)        
+opts_chunk$set(warning=FALSE,message=FALSE,dev='png',dpi=1000,fig.align='center')
+# dpi - Разрешение. Самое дешёвое спасение русских букв в графиках =)
+# dev - Формат для сохранения картинок.
+
+
+# Knitr - развитие Sweave. Он был создан для более простой и удобной работы с картинками. Вместе с появлением этого пакета часть опций в Sweave изменилась и стала неактуальной. Появились новые опции.
+@
+
+\section{Первый чанк или четыре лапки равно собачка}
+
+Тут можно писать текст, и даже вот такие вот формулы
+
+\[ \int_{0}^{+\infty} x^{s-1} \cdot e^{-x} dx = \Gamma(s). \]
+
+Всё совсем как в \LaTeX! Но у нас нет на это времени! Пора создавать чанк!
+
+
+<<echo=TRUE>>=
+x <- rnorm(100)
+x_mean <- mean(x)
+x_mean
+@
+
+Мы видим, что наши вычисления прошли усспешно и среднее составило \Sexpr{round(x_mean,2)}
+
+
+
+\section{Картинки, таблицы и другие штуки!}
+
+<<results='hide'>>=
+getSymbols(Symbols="GOOG",from="2016-01-01",to="2016-08-08")
+df <- data.frame(t=time(GOOG),coredata(GOOG))
+df <- df[,-c(6,7)]
+beautiful <- head(df) %>% kable()
+@
+
+
+\begin{table}[h!]
+\begin{center}
+\Sexpr{beautiful}
+\caption{Стоимость акций}
+\end{center} 
+\end{table}
+
+
+Таблицы можно получать немного иначе. С помощью пакета xtable. Посмотрим как! Оценим модель с помощью следующего кода: 
+
+<<echo=TRUE>>=
+formula = "GOOG.Open~t+GOOG.Close"
+model <- lm(data=df,formula)
+@
+
+
+Оценки, которые мы заслужили приведены в таблице \ref{tab:regress}. 
+
+<<echo=FALSE,results='asis'>>=
+library(xtable)
+floating = getOption("xtable.floating", TRUE)
+table.placement = getOption("xtable.table.placement", "H")
+latex.environments = getOption("xtable.latex.environments", c("center"))
+
+xtable(summary(model), caption = "Оценки, которые мы заслужили!",label="tab:regress",digits=2)
+@
+
+
+<<echo=FALSE,results='asis'>>=
+floating = getOption("xtable.floating", TRUE)
+table.placement = getOption("xtable.table.placement", "H")
+latex.environments = getOption("xtable.latex.environments", c("center"))
+
+xtable(summary(model), caption = "Оценки, которые мы заслужили!",label="tab:regress2",digits=2)
+@
+
+Графики можно построить совсем разными. Например, вот такой! 
+
+
+<<fig.height=2>>=
+ggplot(df) +
+  geom_line(aes(x = t, y = GOOG.High), colour = 'blue') +
+  geom_line(aes(x = t, y = GOOG.Low), colour = 'red')  +
+  ggtitle("Изменение стоимости акций google") + 
+  ylab("Изменение цены") + xlab("Время")
+@
+
+Можно к коду использовать любые окружения теха! Прямо как к рисунку \ref{fig}.
+
+\begin{figure}[H]
+<<fig.height=1.8,fig.width=2.5>>=
+qplot(data=df,GOOG.Close)
+@
+\caption{Гистограмка для стоимости акций гугл! \label{fig}}
+\end{figure}
+
+
+Средняя цена заыкрытия акции гугла рана $\Sexpr{mean(df$GOOG.Close)}$
+
+Команда \$ \$ делает в техе формулу. Команда Sexpr обращается к R. Все, что написано в скобках к Sexpr будет посчитано в R и вставленно в \TeX. 
+
+
+\section{Имена чанков}
+
+Чанкам можно давать имена! Напримеп, ниже чанк по имени Антон. Зачем их давать? Это забавно. Да и ктому же чанки удобно искать по именам...
+
+<<Anton>>=
+x <- 10
+@
+
+
+\end{document}

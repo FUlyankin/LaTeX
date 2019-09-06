@@ -1,0 +1,414 @@
+%!TEX TS-program = xelatex
+\documentclass[14pt, a4paper]{extarticle}
+% Математика %
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+
+% Шрифты 
+\usepackage[british,russian]{babel} % выбор языка для документа
+\usepackage[utf8]{inputenc} % задание utf8 кодировки исходного tex файла
+\usepackage[X2,T2A]{fontenc}        % кодировка
+
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Arial}   % задаёт основной шрифт документа
+
+\usepackage{unicode-math} 
+\usepackage{tipa} % пакет для установки математического шрифта
+%\setmathfont{Asana Math}      % шрифт для математики
+
+\usepackage[paper=a4paper,top=10.5mm, bottom=10.5mm, left=10.5mm, right=10.5mm, includefoot]{geometry}
+\usepackage[unicode,colorlinks=true,urlcolor=blue,hyperindex,breaklinks]{hyperref}
+\setlength{\parindent}{0em}
+
+\usepackage{booktabs} 
+\usepackage{float}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{wrapfig} 
+\usepackage{multicol}
+
+\author{Семёнова Алёна}
+\title{Эссе по временным рядам}
+\date{20 апреля 2019 г.}
+
+\begin{document}
+
+\maketitle
+
+
+<<library, include=FALSE>>=
+library(knitr)      # взаимодействие R-Latex
+library(ggplot2)    # симпатявые графики
+library(dplyr)      # работа с df
+library(tidyverse) #манипуляция с данными
+library(forecast) #arima,ets,tbats
+library(rio)#импорт данных
+library(tsibble)
+library(lmtest)
+library(lubridate)
+library(texreg)
+library(tseries)
+library(uroot)
+library(urca)
+library(aTSA)
+library(xtable)
+
+# опции для всего документа ниже, если надо отклониться, фиксишь чанк
+opts_chunk$set(warning=FALSE, message=FALSE, echo=FALSE,
+               dev='png', dpi=1000, fig.align='center', fig.height=4)
+
+# cache=TRUE ускоряет работу, но на сложных проектах может глючить
+opts_chunk$set(cache=TRUE)  # после первого запуска запоминает рассчеты в маленький файл, а потом обращается к ним! При каждой компиляции, кроме первой пересчитываются только изменённые чанки. Иногда при неумелом использовании это привоодит к проблемам.
+
+Sys.setlocale(locale="russian")
+dtp=import("dtp moscow.xlsx")
+colnames(dtp)<-c("date", "death")
+
+dtp[,1] = as.Date(dtp[,1])
+dtp[,1] = yearmonth(dtp[,1])
+dtp_tsibble = as.tsibble(dtp, index = date)
+dtp_ts = as.ts(dtp_tsibble)
+
+@
+
+\begin{center}
+\section{Ряд 1. Погибшие в ДТП}
+\subsection{Идентификация параметров и определение коэффициентов}
+\end{center}
+
+С сайта ЕМИСС выгрузила месячные данные по числу лиц, погибших в ДТП, в г. Москва с января $2010$ по апрель $2019$, $n = 112$. В исходном виде данные были оформлены в виде накопленного показателя, я преобразовала их в месячные данные, взяв соответсвующие разности. 
+Посмотрим на графики данных:
+
+\begin{figure}[H]
+<<result = 'asis'>>=
+ggtsdisplay(dtp_ts, main = "Число погибших в ДТП (г. Москва)", xlab = "Дата", ylab="Число погибших, чел")
+@
+\end{figure}
+
+Визуально на графике можно выявить:
+
+\begin{enumerate}
+
+\item Сезонность: в $12$-ый и $24$-ый лаг автокорреляционная функция принимает значения, значимо отличающиеся от нуля. Это значит, что если $12$ или $24$ месяца назад наблюдалась высокая смертность, то и сегодня будет наблюдаться высокая смертность; если низкая, то и сегодня, вероятнее всего, будет наблюдаться низкая смертность. Сезонность так же можно заметить на следующем графике, где каждая линия представляет $1$ год:
+
+\begin{figure} [H]
+<< >>=
+ggseasonplot(dtp_ts, main = "Сезонность", ylab = "Число погибших, чел")
+@
+\end{figure}
+
+\item Резкий сдвиг графика вниз в течение $2015$-ого года может быть структурным сдвигом, связанным с тем, что с 01.07.2015 ввели уголовную ответственнсть за вождение в нетрезвом виде. 
+
+\item Визуально заметно, что дисперсия не постоянна, поэтому ряд не стационарен. Имеет смысл преобразовать данные. 
+
+\end{enumerate}
+
+<<include=F>>=
+l =BoxCox.lambda(dtp_ts)
+@
+
+Проделаю следующие шаги:
+
+\begin{enumerate}
+
+\item Через функцию BoxCox.lambda нахожу значение $\lambda$, которая подобрана функцией так, чтобы балансировать дисперсию. В нашем примере $\lambda$  равна $\Sexpr{round(BoxCox.lambda(dtp_ts),2)}$, что довольно близко к $0$. $\lambda$, равная $0$ в преобразовании Бокса-Кокса, означает, что мы должны взять логарифм от ряда. 
+
+<<>>=
+BoxCox.lambda(dtp_ts)
+@
+
+\begin{figure} [H]
+<< >>=
+logdtp = log(dtp_ts)
+ggtsdisplay(logdtp, main = "Логарифм числа погибших в ДТП (г. Москва)", xlab = "Дата", ylab="Число погибших, log(чел)" )
+@
+\end{figure}
+
+\item Через HEGY тест проверяю наличие сезонного корня. Сезонный корень присутствует.
+
+<<background='#ffffff'>>=
+hegy.test(logdtp)
+
+nsdiffs(logdtp,test="hegy")
+@
+
+\item Беру разность с шагом $12$ (то есть diff(x,12)), чтобы убрать сезонность и прикинуть параметры модели.
+
+\begin{figure}[H]
+<< >>=
+ggtsdisplay(diff(logdtp,12), main = "Разность (12) логарифма числа погибших", xlab = "Дата", ylab="Прирост числа погибших, log(чел)" )
+@
+\end{figure}
+
+\item Видно, что есть сезонный $MA(1)$. Имеет смысл проверить несколько моделей и сравнить их с тем, что предлагает автоматический подбор модели. 
+
+\item Проверяю данные с взятой сезонной разностью на наличие единичного корня (если гипотеза о нем отвергается, то ряд стационарен). Критическое значение tao $5 \% = - 1.95 \Rightarrow$ гипотеза отвергается и ряд стационарен. 
+
+<<background='#ffffff'>>=
+ur.df(diff(logdtp,12))
+@
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Проверка моделей}
+<< >>=
+train89=window(dtp_ts, end = c(2017,5))
+test23=window(dtp_ts, start=c(2017,6))
+zeros=mutate(dtp, breake=1*(date >= ymd("2015-07-01")))
+@
+Теперь проверяю несколько моделей. Для всех из них данные преобразованы с $\lambda = \Sexpr{round(l,2)}$, а затем через параметр biasadj = TRUE происходит обратное преобразование для прогнозирования данных в подходящих единицах измерения (чел).
+
+\begin{enumerate}
+\item ARIMA[0,0,0][0,1,1][12] с дамми-переменной 
+\item ARIMA[1,0,0][0,1,1][12] с дамми-переменной 
+\item auto-arima [1,0,1][0,1,1][12] с дамми-переменной 
+\item ARIMA[1,0,1][0,1,1][12]  
+\item auto-arima [0,1,1][0,1,1][12] 
+\item ets
+\end{enumerate}
+
+Ниже привожу пять вариаций моделей ARIMA, где указаны коэффициенты и штрафные критерии.
+<<include=F>>=
+auto = function(dtp_ts, first, last) { 
+  Arima(dtp_ts, order = c(1,0,1), seasonal = c(0,1,1), lambda = l, biasadj = TRUE, xreg=zeros[first:last,3])
+}
+auto_train = auto(train89, 1, 89)
+auto_forecast = forecast::forecast(auto_train, h=23, xreg = zeros[90:112,3])
+summary(auto(dtp_ts,1,112))
+accuracy(auto_forecast, test23)
+mine = function(dtp_ts, first, last) { 
+  Arima(dtp_ts, order = c(0,0,0), seasonal = c(0,1,1), lambda = l, biasadj = TRUE, xreg=zeros[first:last,3])
+}
+mine_train=mine(train89,1,89)
+mine_forecast = forecast::forecast(mine_train, h=23, xreg = zeros[90:112,3])
+
+mine1 = function(dtp_ts, first, last) { 
+  Arima(dtp_ts, order = c(1,0,0), seasonal = c(0,1,1), lambda = l, biasadj = TRUE, xreg=zeros[first:last,3])
+}
+mine_train1=mine1(train89,1,89)
+mine_forecast1 = forecast::forecast(mine_train1, h=23, xreg = zeros[90:112,3])
+
+ets0 = function(dtp_ts) { 
+  ets(dtp_ts, model = "ANA", lambda = l, biasadj = TRUE)
+}
+ets0_train = ets0(train89)
+ets0_forecast = forecast::forecast(ets0_train, h = 23, lambda = l, biasadj=TRUE)
+plot(ets0_forecast, main = "ETS прогноз", ylab="Погибшие в ДТП, чел")
+lines(test23)
+@
+
+
+<<results='asis'>>= 
+texreg(list(auto(dtp_ts,1,112),mine(dtp_ts, 1, 112), mine1(dtp_ts,1,112), Arima(dtp_ts, order = c(0,1,1), seasonal = c(0,1,1), lambda = l, biasadj =  TRUE), Arima(dtp_ts, order = c(1,0,1), seasonal = c(0,1,1), lambda = l, biasadj =  TRUE)), caption="Вариации моделей ARIMA",custom.note = "*=авто модель, D=дамми, сезонная часть для всех одинакова", float.pos="h", custom.model.names = c("*[1,0,1]+D","[0,0,0]+D","[1,0,0]+D", "*[0,1,1]", "[1,0,1]"), stars = 0.05)
+@
+
+
+По критерию AICc модель [1,0,1][0,1,1][12]+D оказывается лучше других. 
+
+
+\begin{figure}[H]
+<<fig.height=3>>=
+autoplot(ets(dtp_ts, lambda=0, biasadj = TRUE), main = "Автоматический ets: (A,N,A)")
+@
+\end{figure}
+Коэффициенты ETS модели:
+<<background='#ffffff'>>=
+ets(dtp_ts, lambda=0, biasadj = TRUE)
+@
+
+<<include=F>>=
+summary(auto(dtp_ts,1,112))
+summary(Arima(dtp_ts, order = c(0,1,1), seasonal = c(0,1,1), lambda = l, biasadj =  TRUE))
+summary(Arima(dtp_ts, order = c(1,0,1), seasonal = c(0,1,1), lambda = l, biasadj =  TRUE))
+accuracy(auto_forecast, test23)
+accuracy(mine_forecast, test23)
+accuracy(mine_forecast1, test23)
+accuracy(ets0_forecast, test23)
+bez_d = function(dtp_ts){
+  Arima(dtp_ts, order = c(1,0,1), seasonal = c(0,1,1), lambda = l, biasadj =  TRUE)
+}
+accuracy(forecast::forecast(bez_d(train89), h =23),test23)
+accuracy(forecast::forecast(Arima(train89, order = c(0,1,1), seasonal = c(0,1,1), lambda = l, biasadj =  TRUE),h=23),test23)
+
+@
+
+Создав тренировочный массив из 89 наблюдений (до 05.2017), я прогнозирую на 23 месяца вперед и сравниваю с актульными данными. 
+
+\begin{table}[H]
+\centering
+\begin{tabular}{rrrrrrrrrr}
+  \hline
+ & ME & RMSE & MAE & MPE & MAPE & MASE & ACF1 & Theil's U \\ 
+  \hline
+A: Training set & 0.11 & 9.65 & 7.50 & -2.22 & 13.60 & 0.58 & -0.11 &  \\ 
+   Test set & -7.05 & 11.19 & 8.30 & -24.20 & 27.47 & 0.65 & -0.15 & 0.72 \\ 
+   \hline
+   B: Training set & 0.89 & 9.76 & 7.71 & -1.09 & 13.99 & 0.60 & 0.14 &  \\ 
+   Test set & -7.75 & 11.53 & 8.98 & -25.77 & 28.95 & 0.70 & -0.15 & 0.74 \\ 
+   \hline
+  C: Training set & 0.53 & 9.72 & 7.74 & -1.58 & 13.89 & 0.60 & -0.15 &  \\ 
+   Test set & -7.57 & 11.45 & 8.79 & -25.30 & 28.50 & 0.68 & -0.15 & 0.73 \\ 
+   \hline
+  D: Training set & -1.73 & 10.65 & 7.96 & -5.09 & 14.43 & 0.62 & 0.01 &  \\ 
+  Test set & 1.74 & 8.26 & 6.69 & -1.10 & 20.65 & 0.52 & -0.25 & 0.52 \\ 
+   \hline
+   E: Training set & -1.20 & 10.74 & 7.88 & -3.78 & 13.82 & 0.61 & 0.04 &  \\ 
+   Test set & 5.92 & 10.00 & 8.54 & 10.38 & 23.58 & 0.66 & -0.20 & 0.67 \\ 
+   \hline
+   ETS: Training set & -1.12 & 9.56 & 8.14 & -4.40 & 14.56 & 0.63 & 0.00 &  \\ 
+   Test set & -2.80 & 8.48 & 6.55 & -12.31 & 21.10 & 0.51 & -0.13 & 0.54 \\ 
+   \hline
+\end{tabular}
+\caption{Характеристики различных вариантов модели} 
+\end{table}
+
+Выделю отдельно RMSE: 
+\begin{enumerate}
+\item RMSE=11.19 для модели A: *[1,0,1][0,1,1][12]+D
+\item RMSE=11.53 для модели B: [0,0,0][0,1,1][12]+D
+\item RMSE=11.45 для модели C: [1,0,0][0,1,1][12]+D
+\item RMSE=8.26 для модели D: [1,0,1][0,1,1][12]
+\item RMSE=10.00 для модели E: *[0,1,1][0,1,1][12]
+\item RMSE=8.48 для модели ETS. 
+\end{enumerate}
+
+Графики: синяя линия - прогноз, черная - истинные значения. 
+
+\begin{minipage}[t]{0.5\textwidth}
+\begin{figure}[H]
+<< >>=
+plot(auto_forecast, main="Auto-ARIMA[1,0,1][0,1,1][12]+D", xlab='Год',ylab="Погибшие в дтп, чел")
+lines(test23)
+@ 
+\end{figure}
+\end{minipage}
+
+\begin{minipage}[t]{0.5\textwidth}
+\begin{figure}[H]
+<< >>=
+plot(mine_forecast, main="ARIMA[0,0,0][0,1,1][12]+D", xlab='Год',ylab="Погибшие в дтп, чел")
+lines(test23)
+@
+\end{figure}
+\end{minipage}
+
+\begin{minipage}[t]{0.5\textwidth}
+\begin{figure}[H]
+<< >>=
+plot(mine_forecast1, main="ARIMA[1,0,0][0,1,1][12]+D",xlab='Год', ylab="Погибшие в дтп, чел")
+lines(test23)
+@
+\end{figure}
+\end{minipage}
+
+\begin{minipage}[t]{0.5\textwidth}
+\begin{figure}[H]
+<< >>=
+plot(ets0_forecast, main = "ETS прогноз", xlab='Год',ylab="Погибшие в ДТП, чел")
+lines(test23)
+@
+\end{figure}
+\end{minipage}
+
+\begin{minipage}[t]{0.5\textwidth}
+\begin{figure}[H]
+<< >>=
+plot(forecast::forecast(Arima(train89, order = c(0,1,1), seasonal = c(0,1,1), lambda = l, biasadj =  TRUE),h=23), main = "Auto-ARIMA[0,1,1][0,1,1]", xlab='Год',ylab="Погибшие в ДТП, чел")
+lines(test23)
+@
+\end{figure}
+\end{minipage}
+
+\begin{minipage}[t]{0.5\textwidth}
+\begin{figure}[H]
+<< >>=
+plot(forecast::forecast(bez_d(train89),h=23), main = "ARIMA [1,0,1][0,1,1]", xlab='Год',ylab="Погибшие в ДТП, чел")
+lines(test23)
+@
+\end{figure}
+\end{minipage}
+
+Таким образом, из имеющихся моделей более хорошей для описания существующих данных оказывается модель с дамми переменной: ARIMA[1,0,1][0,1,1][12], в то время как для прогнозирования больше подходит та же модель, но без дамми-переменной. 
+
+Тесты:
+\begin{enumerate}
+\item Проверю остатки моделей через тест Льюнга-Бокса на их некоррелированность между собой. Р-значение велико. Это значит, что гипотеза о равенстве нулю автокорреляционной функции остатков модели не отвергается. 
+\begin{figure}[H]
+<<background='#e9fce3'>>=
+checkresiduals(auto(dtp_ts, 1, 112), plot = F)
+@
+\end{figure}
+\begin{figure}[H]
+<<background='#e9fce3'>>=
+checkresiduals(bez_d(dtp_ts), plot = F)
+@
+\end{figure}
+
+\item Далее - тест Харке-Берра. По его результатам обе модели имеют ненормальные остатки. Это очень грустно.
+<<background='#fce3e3'>>=
+jarque.bera.test(resid(auto(dtp_ts,1,112)))
+@
+
+
+<<background='#fce3e3'>>=
+jarque.bera.test(resid(bez_d(dtp_ts)))
+@
+
+\item ARCH-тест для проверки гомоскедостичности остатков:
+
+<<background='#e9fce3', fig.show='hide'>>=
+arch.test(arima(logdtp, order=c(1,0,1), seasonal = list(order = c(0,1,1),period=12)))
+@
+
+<<background='#e9fce3',fig.show='hide'>>=
+arch.test(arima(logdtp, order=c(1,0,1), seasonal = list(order = c(0,1,1),period=12, xreg=zeros[,3])))
+@
+\end{enumerate}
+
+Значит, с точки зрения качества остатков эти модели примерно одинаковы. Для прогноза я возьму модель  ARIMA[1,0,1][0,1,1][12] без дамми-переменной.
+
+\subsection{Прогнозирование}
+
+Теперь сделаем прогноз на два года  вперед.
+числовой прогноз:
+
+<<include=F>>=
+FOR = forecast::forecast(bez_d(dtp_ts), h = 24)
+@
+
+<<results='asis'>>=
+floating = getOption("xtable.floating", TRUE) 
+table.placement = getOption("xtable.table.placement", "H") 
+latex.environments = getOption("xtable.latex.environments", c("center")) 
+
+xtable(as.data.frame(FOR), caption = "Числовой прогноз на 24 месяца",digits=2) 
+@
+
+
+\begin{figure}[H]
+<<fig.height=4>>=
+autoplot(FOR, main = "Прогноз числа погибших в ДТП в г. Москва на 24 месяца", ylab = "Число погибших, чел")
+@
+\end{figure}
+
+<< >>=
+FOR_ets=forecast::forecast(ets0(dtp_ts), h= 24)
+@
+
+<<results='asis'>>=
+floating = getOption("xtable.floating", TRUE) 
+table.placement = getOption("xtable.table.placement", "H") 
+latex.environments = getOption("xtable.latex.environments", c("center")) 
+
+xtable(as.data.frame(FOR_ets), caption = "ETS Числовой прогноз на 24 месяца",digits=2) 
+@
+
+
+\begin{figure}[H]
+<<fig.height=5>>=
+plot(FOR_ets, main = "ETS Прогноз числа погибших в ДТП в г. Москва на 24 месяца", ylab = "Число погибших, чел")
+lines(as.ts(FOR)[,1],col='red')
+@
+\end{figure}
+
+\end{document}
