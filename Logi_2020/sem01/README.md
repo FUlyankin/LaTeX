@@ -7,7 +7,7 @@ __Важно:__ если overleaf выдаёт ошибку, нажмите сл
 * Наш [первый документ](https://github.com/FUlyankin/LaTeX/blob/master/Logi_2020/sem01/Our%20first%20LaTeX%20doc.tex) в LaTeX, [он же на overleaf](https://www.overleaf.com/6568449954ycmrdrsjmdqq)
 * [Первый файл с семинара](https://www.overleaf.com/9437914884tcskrqtjnpwv)
 
-__Ещё материалы!__
+__Ещё материалы:__
 
 * Перед выполнением ДЗ посмотрите скрипт [Математика](https://github.com/FUlyankin/LaTeX/blob/master/Logi_2020/sem01/math_Latex.tex) в LaTeX, [он же на overleaf](https://www.overleaf.com/8441254428nhjkbxhsjcdy)
 * [Книга Воронцова с короткими примерчиками](http://www.ccas.ru/voron/download/voron05latex.pdf)
