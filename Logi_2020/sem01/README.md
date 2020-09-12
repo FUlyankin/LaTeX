@@ -15,4 +15,4 @@ __Ещё материалы!__
 
 > Если вы сломали файл в overleaf или увидели, что он там сломан, просто скопируйте его заново из гита. Не бойтесь ставить эксперименты.
 
-__Задание:__ написать 10 фактов о себе. [В pdf-ке](https://github.com/FUlyankin/LaTeX/blob/master/Logi_2020/sem01/task_1%20factcheck.pdf) подробное описание и оценивание. [Форма для сдачи домашек.](https://docs.google.com/forms/d/e/1FAIpQLSe11kxKVfv07iCL1E9yNX7ll9swKImiVwRr1H70lslGzInRSg/viewform)
+__Задание:__ написать 10 фактов о себе. [В pdf-ке](https://github.com/FUlyankin/LaTeX/blob/master/Logi_2020/sem01/task_1%20factcheck.pdf) подробное описание и оценивание. [Форма для сдачи домашек.](https://docs.google.com/forms/d/e/1FAIpQLSe11kxKVfv07iCL1E9yNX7ll9swKImiVwRr1H70lslGzInRSg/viewform) В папке [facts лежат чужие факты.](https://github.com/FUlyankin/LaTeX/tree/master/Logi_2020/sem01/facts) Если вы хотите, чтобы я удалил/не выкладывал ваши факты, сообщите мне об этом. 
