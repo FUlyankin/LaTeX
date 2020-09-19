@@ -1,0 +1,198 @@
+%!TEX TS-program = xelatex
+\documentclass[12pt]{article}
+
+% установка knitr, а дальше включить его в опциях 
+% install.packages('knitr', dependencies = TRUE)
+
+%%%%%%%%%% Математика %%%%%%%%%%
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+
+%%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[british,russian]{babel} % выбор языка для документа
+\usepackage[utf8]{inputenc} % задание utf8 кодировки исходного tex файла
+\usepackage[X2,T2A]{fontenc}        % кодировка
+
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Arial}   % задаёт основной шрифт документа
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+%\setmathfont{Asana Math}      % шрифт для математики
+% \setmathfont[math-style=ISO]{Asana Math}
+% Можно делать смену начертания с помощью разных стилей
+
+\usepackage[paper=a4paper,top=13.5mm, bottom=13.5mm, left=16.5mm, right=13.5mm, includefoot]{geometry}
+\usepackage[unicode,colorlinks=true,urlcolor=blue,hyperindex,breaklinks]{hyperref}
+
+\usepackage{indentfirst} % установка отступа в первом абзаце главы!!!
+\usepackage{booktabs} 
+\usepackage{float}
+
+\title{Отчёт о проделанной работе №1}
+\author{Винни-Пух}
+\date{\today}
+\begin{document}
+
+\maketitle
+
+\section{Опции чанков}
+
+Чанки бывают разные в зависимости от их опций. Есть ленивые, которые не хотят запускать код, а есть ,например, скрытные, которые не хотят показывать свой код. Опций очень много, но мы изучим основные их них.
+
+К примеру код чанка с подгрузкой пакетов и некоторых настроек не хочется показывать в итоговом файле(pdf). Для этого существует опция echo(TRUE). Также при подгрузки пакетов возникают разные предупрежденя и сообщения, для того, чтобы не отображать их есть соответствующие опции warning(TRUE) и message(TRUE). Давайте попробуем применить эти опции.
+
+<<echo = FALSE, warning=FALSE, message=FALSE>>=
+library(knitr)      # взаимодействие R-Latex
+library(quantmod)   # загрузка котировок с yahoo.finance, google.finance
+library(ggplot2)    # симпатявые графики
+library(dplyr)      # работа с df
+library(xtable)     # красивые таблички
+
+invisible(Sys.setlocale("LC_MESSAGES", "C"))  # установка локали потенциально решает проблему 
+invisible(Sys.setlocale("LC_TIME", "C"))      # с отсутствием дат в getSymbols с гугла :)
+@
+
+Пакеты подгрузились, но в pdf ничего не отобразилось. На самом деле всего этого можно было достичь с помощью опции include(TRUE). Она отвечает за отображение кода и всех выводов. Но сам код выполняться будет.
+
+Часто бывает, что вам просто нужно показать  кусок кода без запуска вычислений. Для этого есть опция eval(TRUE). К примеру в приложении своей работы, вы хотите показать как вы сделали какую-нибудь табличку.
+
+<<eval = FALSE>>=
+mtcars %>% filter(wt > 3.5) %>%
+           group_by(cyl, am) %>% 
+           summarise(mn = mean(mpg))
+@
+
+
+Также для настройки отображения кода и вывода чанка используются следующие опции:
+\begin{itemize}
+  \item background - цвет фона чанка(по дефолту стоит серый)
+  \item highlight(TRUE) - выделение кода цветом
+  \item comment - знак перед каждой строчкой вывода
+\end{itemize}
+
+Посмотрим на следующие 2 чанка и их опции.
+
+<<results='hide'>>=
+x <- rnorm(100)
+x_mean <- mean(x)
+x_mean
+@
+
+<<background = '#63bfd4', highlight = FALSE, comment = NA>>=
+x <- rnorm(100)
+x_mean <- mean(x)
+x_mean
+@
+
+За вывод отвечает еще одна опция results ('hold') Есть 4 разные опции. 'hide' - скрывает вывод куска кода, другие две опции переставляют его местами. Чтобы посмотреть все возможные варианты для команды - Tab!
+
+Когда расчетов в документе становится много, компиляция файлов может занимать очень много времени, потому что каждый раз все начинается с чистого листа. Чтобы этого избежать можно использовать опцию cache(FALSE), которая ускоряет работу, но на сложных проектах может глючить. После первого запуска запоминает рассчеты в маленький файл(который находится в папке cache), а потом обращается к ним! При каждой компиляции, кроме первой пересчитываются только изменённые чанки. Иногда при неумелом использовании это приводит к проблемам.
+
+\section{Глобальные и локальные опции чанков}
+
+Опции для кода можно настраивать либо глобально (для всех окон с кодом сразу) ,либо локально отдельно для каждого окна. Глобальные опции задаются следующим способом: 
+
+<<include=FALSE>>=
+opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE,
+               cache = TRUE, dev='png', dpi=1000, fig.align='center')
+# dpi - Разрешение. Самое дешёвое спасение русских букв в графиках =)
+# dev - Формат для сохранения картинок.
+@
+
+\section{Картинки, таблицы и другие штуки!}
+
+<<include = FALSE>>=
+getSymbols(Symbols="GOOG",from="2020-01-01",to="2020-08-08")
+df <- data.frame(t=time(GOOG),coredata(GOOG))
+df <- df[,-c(6,7)]
+beautiful <- head(df) %>% kable()
+@
+
+\begin{table}[H]
+\begin{center}
+\Sexpr{beautiful}
+\caption{Стоимость акций}
+\end{center} 
+\end{table}
+
+Таблицы можно получать немного иначе. С помощью пакета xtable. Посмотрим как! Оценим модель с помощью следующего кода: 
+
+<<echo=TRUE>>=
+formula = "GOOG.Open~t+GOOG.Close"
+model <- lm(data=df,formula)
+@
+
+Оценки, которые мы заслужили приведены в таблице \ref{tab:regress}. 
+
+<<echo=FALSE,results='asis'>>=
+floating = getOption("xtable.floating", TRUE)
+table.placement = getOption("xtable.table.placement", "H")
+latex.environments = getOption("xtable.latex.environments", c("center"))
+
+xtable(summary(model), caption = "Оценки, которые мы заслужили!",label="tab:regress",digits=2)
+@
+
+
+Графики можно построить совсем разными. Например, вот такой! 
+
+<<fig.height=2>>=
+ggplot(df) +
+  geom_line(aes(x = t, y = GOOG.High), colour = 'blue') +
+  geom_line(aes(x = t, y = GOOG.Low), colour = 'red')  +
+  ggtitle("Изменение стоимости акций google") + 
+  ylab("Изменение цены") + xlab("Время")
+@
+
+Можно к коду использовать любые окружения теха! Прямо как к рисунку \ref{fig}.
+
+\begin{figure}[H]
+<<fig.height=1.8,fig.width=2.5>>=
+qplot(data=df,GOOG.Close)
+@
+\caption{Гистограмка для стоимости акций гугл! \label{fig}}
+\end{figure}
+
+Средняя цена заыкрытия акции гугла рана $\Sexpr{mean(df$GOOG.Close)}$
+
+Команда \$ \$ делает в техе формулу. Команда Sexpr обращается к R. Все, что написано в скобках к Sexpr будет посчитано в R и вставленно в \TeX. 
+
+
+\section{Имена чанков}
+
+Чанкам можно давать имена! Напримеп, ниже чанк по имени Антон. Зачем их давать? Это забавно. Да и к тому же чанки удобно искать по именам в больших документах.
+
+<<Anton>>=
+x <- 10
+@
+
+
+
+\section{Использование других языков программирования!}
+
+На самом деле это не просто связка R + \LaTeX. \LaTeX дружит со многими языками программирования, а пакет knitr помогает ему соединять все языки в одном файле. Часто бывает, что нужно сделать часть работы в Python, а остальную часть в R. Для того, чтобы пользоваться несколькими языками программирования, нам нужно установить пакет reticulate.
+
+<<>>=
+install.packages("reticulate")
+@
+
+Всё готово! Чтобы knitr понимал, какой язык мы используем, нужно установить опцию engine, по дефолту она равна R. Давайте попробуем!
+
+<<engine='python', echo = TRUE>>=
+a = list(range(10))
+print(a[0])
+@
+
+Если основной код сделан в python, то есть смысл установить глобальную опцию чанка engine на python.
+
+Если Sweave не может найти движок питона на вашем компьютере, то его можно установить явно:
+
+<<echo = TRUE>>=
+opts_chunk$set(engine.path = list(
+  python = '/home/ahmedushka/anaconda3/bin/python'
+))
+@
+
+
+
+\end{document}
+
+

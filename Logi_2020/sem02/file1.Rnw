@@ -1,0 +1,53 @@
+%!TEX TS-program = xelatex
+\documentclass[12pt]{article}
+
+% установка knitr, а дальше включить его в опциях 
+% install.packages('knitr', dependencies = TRUE)
+
+%%%%%%%%%% Математика %%%%%%%%%%
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+
+%%%%%%%%%%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[british,russian]{babel} % выбор языка для документа
+\usepackage[utf8]{inputenc} % задание utf8 кодировки исходного tex файла
+\usepackage[X2,T2A]{fontenc}        % кодировка
+
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Arial}   % задаёт основной шрифт документа
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+%\setmathfont{Asana Math}      % шрифт для математики
+% \setmathfont[math-style=ISO]{Asana Math}
+% Можно делать смену начертания с помощью разных стилей
+
+\usepackage[paper=a4paper,top=13.5mm, bottom=13.5mm, left=16.5mm, right=13.5mm, includefoot]{geometry}
+\usepackage[unicode,colorlinks=true,urlcolor=blue,hyperindex,breaklinks]{hyperref}
+
+\usepackage{indentfirst} % установка отступа в первом абзаце главы!!!
+\usepackage{booktabs} 
+\usepackage{float}
+
+\title{Отчёт о проделанной работе №1}
+\author{Винни-Пух}
+\date{\today}
+\begin{document}
+
+\maketitle
+
+\section{Первый чанк или четыре лапки равно собачка}
+
+Тут я могу писать текст, и даже формулы 
+
+\[ \int_{0}^{+\infty} x^{s-1} \cdot e^{-x} dx = \Gamma(s). \]
+
+Всё совсем как в \LaTeX! Но у нас нет на это времени! Пора создавать чанк! Его можно создать с помощью Code/Insert Chunk  либо Ctrl+Alt+I.
+
+<<>>=
+x <- rnorm(100)
+x_mean <- mean(x)
+x_mean
+@
+
+Мы видим, что наши вычисления прошли усспешно и среднее составило \Sexpr{round(x_mean,2)}
+
+\end{document}

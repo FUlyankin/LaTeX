@@ -1,0 +1,337 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[british,russian]{babel}
+\usepackage[utf8]{inputenc} 
+
+\usepackage{amsmath, amsfonts, amssymb, amsthm, mathtools} % у нас тут формулки будут, поэтому нужно подгрузить пакеты
+
+\usepackage{fontspec}
+
+\setmainfont{Times New Roman} % выбор шрифта
+
+\usepackage{unicode-math} 
+
+\usepackage[paper=a4paper,top=15mm, bottom=15mm,left=35mm,right=10mm,includefoot]{geometry}
+
+\usepackage{indentfirst}  % установка отступа в первом абзаце главы
+
+\usepackage{graphicx}  % Для вставки рисунков  
+\usepackage{graphics} 
+\usepackage{float} 
+
+%%%%%%%%%% Гиперссылки %%%%%%%%%%
+\usepackage{xcolor}    % разные цвета
+
+% Два способа включить в пакете какие-то опции:
+%\usepackage[опции]{пакет}
+%\usepackage[unicode,colorlinks=true,hyperindex,breaklinks]{hyperref}
+
+\usepackage{hyperref}
+\hypersetup{
+    unicode=true,           % позволяет использовать юникодные символы
+    colorlinks=true,       	% true - цветные ссылки, false - ссылки в рамках
+    urlcolor=blue,          % цвет ссылки на url
+    linkcolor=red,          % внутренние ссылки
+    citecolor=green,        % на библиографию
+	breaklinks              % если ссылка не умещается в одну строку, разбивать ли ее на две части?
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{todonotes} % мои тудушки :) 
+
+% Задаём титульник
+\title{ДЗ адын}
+\author{Винни-Пух}
+\date{\today}  % сегодняшняя дата, если надо посчитать её автоматически
+
+\def \a{\alpha}
+% \def \RR{\mathbb{R}}
+
+\newcommand{\RR}{\ensuremath{\mathbb{R}}}
+\newcommand{\s}{\ensuremath{\sigma}}
+
+\newcommand{\newsize}[1]{ {\fontsize{32}{1.33}\selectfont #1 } }
+
+\newcommand{\fr}[2]{ ^{#1}/_{#2} }
+
+\newcommand{\iid}{\mathrel{\stackrel{\rm i.\,i.\,d.}\sim}} 
+
+\newcommand{\dx}[1]{\,\mathrm{d}#1} % для интеграла: маленький отступ и прямая d
+
+\DeclareGraphicsExtensions{.png, .jpg}
+
+
+% математические операторы 
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Corr}{Corr}
+\DeclareMathOperator{\E}{\mathbb E}
+\DeclareMathOperator{\Med}{Med}
+\DeclareMathOperator{\Mod}{Mod}
+
+\begin{document}  % тут заканчивается преамбула и начинается документ
+
+\maketitle
+
+\tableofcontents
+
+\section{Тудушки}
+
+Бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла \todo{Здесь надо коэффициенты исправить}  Бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла
+
+Бла бла бла бла бла бла. Бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла. Бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла. Бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла. Бла бла бла бла бла бла. Бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла. Бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла. Бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла.
+  
+Бла бла бла бла бла бла. Бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла. Бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла. Бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла. Бла бла бла бла бла бла бла бла бла \todo[fancyline]{боле веселая стрелка.} бла бла бла бла бла бла. Бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла. Бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла. Бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла.
+
+\vspace{2cm}
+
+\todo[inline, backgroundcolor=magenta]{Здесь надо коэффициенты исправить}
+
+\vspace{2cm}
+
+\missingfigure{Здесь будет Последний день Помпеи}
+
+% Больше примеров тут: https://mirror.hmc.edu/ctan/macros/latex/contrib/todonotes/todonotes.pdf
+
+\newpage % с новой страницы
+
+\section{Размер шрифта} 
+
+\begin{table}[h!]
+	\caption{Размеры шрифта}
+	\centering
+		\begin{tabular}{|c|c|}
+		\hline	\verb|\tiny|      & \tiny        крошечный \\
+		\hline	\verb|\scriptsize|   & \scriptsize  очень маленький\\
+			\hline \verb|\footnotesize| & \footnotesize  довольно маленький \\
+			\hline \verb|\small|        &  \small        маленький \\
+			\hline \verb|\normalsize|   &  \normalsize  нормальный \\
+			\hline \verb|\large|        &  \large       большой \\
+			\hline \verb|\Large|        &  \Large       еще больше \\[5pt]
+			\hline \verb|\LARGE|        &  \LARGE       очень большой \\[5pt]
+			\hline \verb|\huge|         &  \huge        огромный \\[5pt]
+			\hline \verb|\Huge|         &  \Huge        громадный \\ \hline
+		\end{tabular}
+\end{table}
+
+\begin{Huge}
+Какой-нибудь обычный текст.
+\end{Huge}
+
+\vspace{1cm}
+
+Можно писать текст и \LARGE постоянно переключать \tiny шрифты между \normalsize собой.
+
+\vspace{1cm}
+
+{ \Huge  Какой-нибудь обычный текст. }
+
+\vspace{1cm}
+
+Можно поставить произвольный размер шрифта:
+
+% \fontsize{размер шрифта}{межстрочное расстояние}
+
+{ \fontsize{8}{1.33}\selectfont Текст 8 кеглем}
+
+{ \fontsize{32}{1.33}\selectfont Текст 32 кеглем}
+
+{ \fontsize{15}{1.33}\selectfont Текст 15 кеглем}
+
+\section{Свои команды} 
+
+\begin{equation*}
+  \frac{r_n - \pi}{\RR + \a} 
+\end{equation*}
+
+$$
+^4/_3
+$$
+
+$$
+\fr{4}{3}
+$$
+
+Я могу перейти в мат режим сам $\RR$ а могу оставить это на усмотрение теха \RR. Внутри $\s$-алгебры тра та та. \s-алгебра
+
+Можно сделать \newsize{свою команду для смены шрифта}, и латех поменят сам шрифт.
+
+$$
+X_1, \ldots, X_n \iid N(0, 1)
+$$
+
+$$
+\int_0^1 \frac{1}{x^2} dx 
+$$
+
+$$
+\int_0^1 \frac{1}{x^2} \dx{x}
+$$
+
+% тут лучше сделать команду, которая сама будет рисовать 
+% (см. \textbf{рис.\ref{pic: рис.2}})  % показать как делать команды 
+
+\section{Сноски}
+
+Чтобы сделать сноску к какому-то месту в тексте, достаточно использовать команду \verb|\footnote| с одним обязательным аргументом — текстом сноски. Cноски\footnote{Вроде этой.} нумеруются подряд на протяжении всей главы.
+
+\section{Безумная типографика}
+
+Толстой, Достоевский, Гончаров --- писатели,которых нужно прочитать. 
+
+\vspace{2cm}
+
+% --- это длинное тире
+Дима --- слесарь!  % это правильный вариант
+
+Дима - слесарь!    % это не оч правильный 
+
+\vspace{2cm}
+
+\begin{equation} 
+    m + v = g + \pi,
+\end{equation}
+где $\pi$ --- инфляция, $g$ --- экономический рост, ... 
+
+
+% ~ это неразрывный пробел
+% Обычно неразрывный пробел ставится после предлогов, перед единицами измерения. В случае если 10 кг попадет на конец строки, ~ позволит сохранить их рядом, а не написать 10 на одной строке, а кг на другой.
+
+Бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла Бла бла бла бла бла бла бла  10 см. Бла бла бла бла бла бла бла.
+
+\vspace{2mm}
+
+Бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла Бла бла бла бла бла бла бла  10~см. Бла бла бла бла бла бла бла.
+
+\vspace{2mm}
+
+Бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла Бла бла бла бла бла бла бла~10~см. Бла бла бла бла бла бла бла.
+
+
+\section{Ещё более безумная типографика}
+
+% Раздел добавлен после слишком настойчивых рекоммендаций Саши Типографа.
+
+% В пакете babel для русского языка предусмотрена куча других разных мелочей! Давайте подгрузим их, прописав в преамбуле команду  \setkeys{russian}{babelshorthands=true}
+
+В русском наборе принято:
+\begin{itemize}
+   \item единицы измерения, знак процента отделять пробелами от числа: 10~кВт, 15~\%;
+   \item $\tg 20^\circ$, но: 20~${}^\circ$С;
+   \item знак номера, параграфа отделять от числа: №~5, \S~8;
+   \item стандартные сокращения: т.\:е., и~т.\:д., и~т.\:п.;
+   \item неразрывные пробелы в~предложениях.
+\end{itemize}
+
+
+N dash --
+
+M dash ---
+
+Москва "--- столица РФ.
+
+"--* Прямая речь
+
+<<Елочки и ,,лапки``>>
+
+\section{Гиперссылки}
+
+\url{https://vk.com}
+
+В \href{https://vk.com}{этой социальной сети} можно многое найти!
+
+\section{Формулы} 
+
+\begin{equation}\label{eqn:b}
+    \hs = What? \tag{\ae\ae}
+\end{equation}
+
+\begin{equation}\label{eqn:b}
+    \hs = \text{What?} \tag{\ae\ae}
+\end{equation}
+
+Плотность распределения для равномерной случайной величины: 
+
+\begin{equation}
+    f_X(x) = \begin{cases} 
+    0, \text{ если } x \notin [0;1] \\ 
+    1, \text{ если } x \in [0;1] \\ 
+    \end{cases} 
+\end{equation}
+
+
+не $sin$, а $\sin$
+
+Найдём дисперсию $\Var(X)$ и математическое ожидание $\E(X)$.
+
+
+\begin{equation*}
+   r_r = \frac{r_n - \pi}{1 + \pi}
+\end{equation*}
+
+Формулы во много строк 
+
+$$ \iiint\limits_{T} (\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z})dxdydz = $$
+
+$$ = \iint\limits_{\sigma}(P\cos{\alpha} + Q\cos{\beta} + R\cos{\gamma})ds = $$
+
+$$ = \iint\limits_{\sigma}(Pdydz + Qdxdz + Rdxdy)$$
+
+Вариант по ГОСТ: 
+
+ \begin{multline*}
+    \iiint\limits_{T} (\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z})dxdydz = \\  = \iint\limits_{\sigma}(P\cos{\alpha} + Q\cos{\beta} + R\cos{\gamma})ds = \\ = \iint\limits_{\sigma}(Pdydz + Qdxdz + Rdxdy)
+\end{multline*}
+
+Для формул есть два режима:  
+
+\begin{enumerate}
+    \item Первый режим, когда я пишу формулу $\lim\limits_{x\to 1} f(x) = 42$ внутри теста 
+    
+    \item Второй режим, когда я пишу формулу как отдельную строчку 
+    
+    $$
+    \lim_{x\to 1} f(x) = 42
+    $$
+\end{enumerate}
+
+\vspace{2cm} 
+
+\begin{enumerate}
+    \item Первый режим, когда я пишу формулу $\displaystyle \lim_{x\to 1} f(x) = 42$ внутри теста 
+    
+    \item Второй режим, когда я пишу формулу как отдельную строчку 
+    
+    $$
+    \textstyle \lim_{x\to 1} f(x) = 42
+    $$
+\end{enumerate}
+
+\vspace{2cm} 
+
+\[
+\left( 1 - \frac{1}{n} \right)^n
+\]
+
+\begin{equation*}
+\int_0^1 x \dx{x} = \left.\frac{x^2}{2} \right|_0^1 
+\end{equation*}
+
+\section{Табличка из R}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+  \hline
+(Intercept) & -250.0579 & 575.3001 & -0.43 & 0.6644 \\ 
+  t & 0.0145 & 0.0316 & 0.46 & 0.6473 \\ 
+  GOOG.Close & 0.9864 & 0.0159 & 62.15 & 0.0000 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\end{document}
+
