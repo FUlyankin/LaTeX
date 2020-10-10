@@ -1,0 +1,294 @@
+%!TEX TS-program = xelatex
+\documentclass[12pt, a4paper]{article}  
+
+%%%%%%%%%% Математика %%%%%%%%%%
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+
+%%%%%%%%%%%%%%% Шрифты %%%%%%%%%%%
+
+\usepackage[british,russian]{babel}  % выбор языка для документа
+\usepackage[utf8]{inputenc}          % задание utf8 кодировки исходного tex файла
+\usepackage[X2,T2A]{fontenc}          % кодировка
+
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Arial}         % задаёт основной шрифт документа
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+% шрифт для математики
+\setmathfont{Asana-Math}
+
+
+\usepackage{pgf,tikz,pgfplots}
+\usetikzlibrary{arrows,calc}
+\usepackage{relsize}
+\usepackage{mathrsfs}
+\pagestyle{empty}
+
+\newcommand\LM{\ensuremath{\mathit{LM}}}
+\newcommand\IS{\ensuremath{\mathit{IS}}}
+
+% Заголовок
+\author{Уютный факультатив} 
+\title{Xe\LaTeX. Работа со шрифтами.}
+\date{\today}
+
+\begin{document}
+
+\section{Украденная IS-LM} 
+
+\begin{tikzpicture}[
+        scale=2,
+        IS/.style={blue, thick},
+        LM/.style={red, thick},
+        axis/.style={very thick, ->, >=stealth', line join=miter},
+        important line/.style={thick}, dashed line/.style={dashed, thin},
+        every node/.style={color=black},
+        dot/.style={circle,fill=black,minimum size=4pt,inner sep=0pt,
+            outer sep=-1pt},
+    ]
+    % axis
+    \draw[axis,<->] (2.5,0) node(xline)[right] {$Y$} -|
+                    (0,2.5) node(yline)[above] {$i$};
+    % % IS-LM diagram
+    % \draw[LM] (0.2,0.3) coordinate (LM_1) parabola (4,4)
+    %     coordinate (LM_2) node[above] {\LM};
+        
+    \draw[IS] (0.2,1.8) coordinate (IS_1) parabola[bend at end]
+         (1.8,.3) coordinate (IS_2) node[right] {\IS};
+    %Intersection is calculated "manually" since Tikz does not offer
+    %intersection calculation for parabolas
+    \node[dot,label=above:$A$] at (1,.68) (int1) {};
+    %shifted IS-LM diagram
+    \draw[xshift=.7cm, LM, red!52] (0.2,0.2) parabola (1.8,1.7)
+        node[above] {\LM'};
+    \draw[xshift=.4cm, yshift=.3cm, IS, blue!60] (0.2,1.8)
+        parabola[bend at end] (1.8,.3)
+        node[right] {\IS'};
+    %Intersection of shifted IS-LM
+    \path[xshift=.36cm, yshift=.35cm] (.98,.7)
+        node[dot,label=above:{$B$}] (int2) {};
+    \path[xshift=.805cm] (1,.68) node[dot,label=above:$C$] (int3) {};
+    %arrows between intersections
+    \draw[->, very thick, black, >=stealth']
+        ($(int1)+1/2*(-.80,1)$) -- ($(int2)+1/2*(-.8,1)$)
+        node[sloped, above, midway] {$\mathsmaller{\Delta G > 0}$};
+    \draw[->, very thick, black, >=stealth']
+        ($(int2)+2*(.14,.2)$) -- ($(int2)!.2cm!270:(int2)+(.9,0)$)
+        node[sloped,above, midway] {$\mathsmaller{\Delta M>0}$};
+        
+    \begin{scope}[xshift=4cm]
+        %E-diagram
+        \draw[axis,<->] (0,2.5) node(eyline)[above] {$i$} |-
+                        (2.5,0) node(exline)[right] {$E$};
+
+        \draw[important line, green, xshift=.5cm]
+            (.2,.2) coordinate (es) -- (1.5,1.5) coordinate (ee)
+            node [above right] {Interest rate parity};
+    \end{scope}
+    %Lines connecting IS LM coordinates and E coordinates
+    \draw[dashed] 
+        let
+            % Store the intersection point in \p1 for later retrieval. 
+            % A convenient feature of the let operation is that we can
+            % access the x and y component of the coordinate directly 
+            % using the \x1 and \y1 syntax. 
+            \p1=(intersection of int2--[xshift=1]int2 and es--ee)
+        in
+            (0,\y1) node[left]{$i'$} -|  (\x1,0)
+            node[pos=0.5,dot,label=above:$B'$] {} node[below] {$E'$};
+
+    \draw[dashed line] let
+        \p1=(intersection of int3--[xshift=1]int3 and es--ee)
+            in
+        (0,\y1) node[left]{$i\phantom{'}$} -| (\x1,0)
+        node[dot,label=above:$C'$,pos=0.5] {} node[below] {$E$};
+\end{tikzpicture}
+
+\section{Основные команды Tikz}
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw (0,0) -- (1,1);
+    \end{tikzpicture}
+\end{center}
+
+\vspace{2cm} 
+
+\begin{tikzpicture}
+    \draw[help lines] (0,0) grid (3,3);
+\end{tikzpicture}
+
+\vspace{2cm} 
+
+\begin{tikzpicture}
+    \draw[help lines] (0,0) grid (3,3);
+    \draw[->] (0,0) -- (1,1);
+    \draw[<->, thick, blue] (2,1) -- (0,3);
+    \draw[<-, thick, dashed] (2,2) -- (3,3);
+\end{tikzpicture}
+
+\vspace{2cm} 
+
+\begin{tikzpicture}
+    \draw[help lines] (0,0) grid (3,3);
+    % axes 
+    \draw[<->, thick] (0,3.5) -- (0,0) -- (3.5,0);
+    \draw (1.5,0.5) -- (2.5,1.5) -- (1.5,2.5) -- (0.5, 1.5) -- cycle;
+\end{tikzpicture}
+
+\vspace{2cm} 
+
+\begin{tikzpicture}
+    \draw[help lines] (0,0) grid (3,3);
+    % axes 
+    \draw[<->, thick] (0,3.5) -- (0,0) -- (3.5,0);
+    \draw[thick, blue, fill=pink] (1.5,0.5) -- (2.5,1.5) -- (1.5,2.5) -- (0.5, 1.5) -- cycle;
+\end{tikzpicture}
+
+\vspace{2cm} 
+
+\begin{tikzpicture}
+ \foreach \x in {0,...,9}
+ \draw [->] (\x, 0) -- (\x, -2);
+\end{tikzpicture}
+
+
+\vspace{2cm} 
+
+\begin{tikzpicture}
+    \draw[help lines] (0,0) grid (3,3);
+    \draw (1.5, 2.0) circle (0.5);
+    \draw (0.5, 0.5) rectangle (2, 1);
+\end{tikzpicture}
+
+\vspace{2cm} 
+
+% Непонятно в чём ошибка :( 
+% \begin{tikzpicture}
+%     \draw[<->, thick] (0,3.5) -- (0,0) -- (3.5,0);
+%     \draw[domain=0:2*pi] plot (\x, {cos(\x r)}) };
+% \end{tikzpicture}
+
+\begin{tikzpicture}[domain=0:4]
+    \draw[very thin,color=gray] (-0.1,-1.1) grid (3.9,3.9);
+    
+    \draw[->] (-0.2,0) -- (4.2,0) node[right] {$x$};
+    \draw[->] (0,-1.2) -- (0,4.2) node[above] {$f(x)$};
+    
+    \draw[color=red]    plot (\x,\x) node[right] {$f(x) =x$};
+    
+    \draw[color=blue]   plot (\x,{sin(\x r)})   node[right] {$f(x) = \sin x$};
+    
+    \draw[color=orange] plot (\x,{0.05*exp(\x)}) node[right] {$f(x) = \frac{1}{20} \mathrm e^x$};
+\end{tikzpicture}
+
+\section{Geogebra} 
+
+\begin{center}
+\definecolor{dcrutc}{rgb}{0.86,0.07,0.23}
+\definecolor{ududff}{rgb}{0.30,0.30,1.}
+\begin{tikzpicture}[line cap=round,line join=round,x=1.0cm,y=1.0cm]
+
+\clip(0,0) rectangle (7,7);
+
+\draw [line width=4.4pt,color=dcrutc] (2.54,1.96)-- (5.54,1.98);
+
+\draw [line width=2.pt] (4.,3.) circle (3cm);
+
+\begin{scriptsize}
+\draw [fill=black] (3.,4.) circle (5pt);
+\draw [fill=black] (5.,4.) circle (5pt);
+\end{scriptsize}
+\end{tikzpicture}
+\end{center} 
+
+\section{Примеры картинок}
+
+\begin{figure}[H]
+\begin{minipage}[H]{0.39\linewidth}
+\begin{center}
+\[ f(p) = \begin{cases}
+             1&, p \in [0;1] \\
+             0&, \text{иначе}\\
+            \end{cases} \]
+\end{center}
+\end{minipage}
+\hfill
+\begin{minipage}[H]{0.59\linewidth}
+\begin{center}
+\begin{tikzpicture}
+% оси
+\draw [->] (-3.8,0) -- (4,0);
+\draw [->] (0,0) -- (0,3.5);
+% график
+\draw [blue, thick, domain=0:2] plot (\x, 2);
+\draw [->, blue, thick] (-3.8,0)--(-0.05,0);
+\draw [<-, blue, thick] (2.05,0)--(4,0);
+\draw [blue, thick,dashed] (2,0)--(2,2);
+% точки
+\draw[fill,blue] (2,2) circle [radius=0.03];
+\draw[fill,blue] (0,2) circle [radius=0.03];
+% подписи
+\node [below] at (0,0) {0};
+\node [below] at (2,0) {1};
+\node [left] at (0,2) {1};
+\node [below right] at (4,0) {$p$};
+\node [left] at (0,3.3) {$f(p)$};
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{figure}
+
+\vspace{2cm} 
+
+\begin{center}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\definecolor{qqttcc}{rgb}{0.,0.2,0.8}
+\definecolor{qqqqcc}{rgb}{0.,0.,0.8}
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-0.7666616663680121,-3.3866122567793884) rectangle (11.148382983444685,3.1344594772397105);
+\draw [rotate around={90.:(2.,0.)},line width=1.6pt,color=qqqqcc] (2.,0.) ellipse (2.7489679841754673cm and 1.8859546595880108cm);
+\draw [rotate around={90.:(8.,0.)},line width=1.6pt,color=qqttcc] (8.,0.) ellipse (2.7489679841754686cm and 1.885954659588012cm);
+\draw [->] (2.,2.) -- (7.8,2.);
+\draw [->,line width=0.4pt] (7.8,2.) -- (2.,2.);
+\draw [->,line width=0.4pt] (2.,1.2) -- (7.8,1.2);
+\draw [->,line width=0.4pt] (7.8,1.2) -- (2.,1.2);
+\draw [->,line width=0.4pt] (2.,0.2) -- (7.8,0.2);
+\draw [->,line width=0.4pt] (7.8,0.2) -- (2.,0.2);
+\draw [->,line width=0.4pt] (2.,-0.8) -- (7.8,-0.8);
+\draw [->,line width=0.4pt] (7.8,-0.8) -- (2.,-0.8);
+\draw (1.5,2.463567323534042) node[anchor=north west] {$\mathbf{1}$};
+\draw (1.5,1.6584967390872398) node[anchor=north west] {$\mathbf{2}$};
+\draw (1.5,0.6387406654546235) node[anchor=north west] {$\mathbf{3}$};
+\draw (1.5,-0.35417972202976605) node[anchor=north west] {$\mathbf{4}$};
+\draw (7.8,2.530656538904609) node[anchor=north west] {$\mathbf{?}$};
+\draw (7.8,1.7121681113836933) node[anchor=north west] {$\mathbf{2}$};
+\draw (7.8,0.7326655669734171) node[anchor=north west] {$\mathbf{4}$};
+\draw (7.8,-0.2870905066591992) node[anchor=north west] {$\mathbf{6}$};
+\draw [->,line width=0.4pt] (2.,-2.) -- (7.8,-2.);
+\draw [->,line width=0.4pt] (7.8,-2.) -- (2.,-2.);
+\draw (7.5,-1.19) node[anchor=north west] {$\dots$};
+\draw (1.5814608716018326,-1.5483677556258562) node[anchor=north west] {$\mathbf{n}$};
+\draw (7.8,-1.4946963833294027) node[anchor=north west] {\small{$\mathbf{2n-2}$}};
+\draw (7.5,-2.22) node[anchor=north west] {$\dots$};
+\draw (1.7,-1.19) node[anchor=north west] {$\dots$};
+\draw (1.7,-2.22) node[anchor=north west] {$\dots$};
+\begin{scriptsize}
+\draw [fill=qqqqff] (2.,2.) circle (2.0pt);
+\draw [fill=qqqqff] (2.,1.2) circle (2.0pt);
+\draw [fill=qqqqff] (2.,0.2) circle (2.0pt);
+\draw [fill=qqqqff] (2.,-0.8) circle (2.0pt);
+\draw [fill=qqqqff] (7.8,2.) circle (2.0pt);
+\draw [fill=qqqqff] (7.8,1.2) circle (2.0pt);
+\draw [fill=qqqqff] (7.8,0.2) circle (2.0pt);
+\draw [fill=qqqqff] (7.8,-0.8) circle (2.0pt);
+\draw [fill=qqqqff] (2.,-2.) circle (2.0pt);
+\draw [fill=qqqqff] (7.8,-2.) circle (2.0pt);
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
+
+
+\end{document}
