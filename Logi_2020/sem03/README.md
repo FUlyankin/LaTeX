@@ -1,13 +1,12 @@
 ## Графика и шрифты в LaTeX
 
-* [Видео с пары]( )
-
+* [Видео с пары](https://youtu.be/eu7mUT6WNEM)
 * [Уютная презентация номер два](https://github.com/FUlyankin/LaTeX/blob/master/Logi_2020/sem03/presentation/presa2.pdf)
 * [Файлик с пары про шрифты](https://github.com/FUlyankin/LaTeX/blob/master/Logi_2020/sem03/xetex_fonts.tex) и [он же на overleaf](https://www.overleaf.com/3893212282tffrmhspttkd)
+* [Файлик про графику  TikZ и Geogebra](https://github.com/FUlyankin/LaTeX/blob/master/Logi_2020/sem03/grathics_latex_part2.tex) и [он же на overleaf](https://www.overleaf.com/4228649346yjpqtxydjbwt)
+* [Продажа души](https://github.com/FUlyankin/LaTeX/blob/master/Logi_2020/sem03/contract_v2/main.tex) в рассрочку и [на overleaf](https://www.overleaf.com/9962236544jgzxbmkfxpch)
+* [Сайт где скачать Geogebra5,](https://www.geogebra.org/download) а также [методичка](https://github.com/FUlyankin/LaTeX/blob/master/Logi_2020/sem03/geogebraquickstart_ru.pdf) для быстрого старта
 
-* [Файлик про графику  TikZ и Geogebra]( ) и [он же на overleaf](https://www.overleaf.com/4228649346yjpqtxydjbwt)
-
-* [Продажа души]( ) в рассрочку и [на overleaf](https://www.overleaf.com/9962236544jgzxbmkfxpch)
 
 __Материалы про кодировку и шрифты:__
 
