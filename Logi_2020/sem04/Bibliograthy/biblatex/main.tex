@@ -65,7 +65,7 @@
 	colorlinks=true,       	% true - цветные ссылки, false - ссылки в рамках
 	urlcolor=blue,          % цвет ссылки на url
 	linkcolor=red,          % внутренние ссылки
-	citecolor=green,        % на библиографию
+	citecolor=red,        % на библиографию
 	pdfnewwindow=true,      % при щелчке в pdf на ссылку откроется новый pdf
 	breaklinks              % если ссылка не умещается в одну строку, разбивать ли ее на две части?
 }
@@ -91,77 +91,19 @@
 \usepackage[paper=a4paper,top=15mm, bottom=15mm,left=35mm,right=10mm,includefoot]{geometry}
 \usepackage{indentfirst}       % установка отступа в первом абзаце главы
 
-
-%%%%%%%%%% Теоремы %%%%%%%%%%
-
-\theoremstyle{plain}              % Это стиль по умолчанию.  Есть другие стили.
-\newtheorem{theorem}{Теорема}[section]
-% Вопросы из зала (от Юрия Николаевича)
-\renewcommand{\thetheorem}{\thesection.\Asbuk{theorem}}
-
-\newtheorem{result}{Следствие}[theorem]
-% счётчик подчиняется теоремному, нумерация идёт по главам согласованно между собой
-
-\theoremstyle{definition}         % убирает курсив и что-то еще наверное делает ;)
-\newtheorem*{defin}{Определение}  % нумерация не идёт вообще
-
-\newtheorem{fignia}{Какая-то фигня}
-
-
-%%%%%%%%%% Свои команды %%%%%%%%%%
-\usepackage{etoolbox}    % логические операторы для своих макросов
-
-
-%%%%%%%%%% Список литературы %%%%%%%%%%
-
-%\usepackage[backend=biber,style=chem-acs,sorting=nty]{biblatex}
-% style --- стиль оформления библиографии
-% backend --- Движок для сборки. Просто пишите сюда biber. Trust me.
-% sorting --- Порядок сортировки в списке. nty = сначала по имени, потом по названию, потом по году выхода статьи. В этот же список можно включить 'a' - по алфавиту,  
-
-%\usepackage[backend=biber,style=authoryear]{biblatex}
-
-%\usepackage[backend=biber,bibstyle=gost-inline]{biblatex}
-%\usepackage[backend=biber,bibstyle=gost-footnote]{biblatex}
-\usepackage[backend=biber,bibstyle=gost-numeric]{biblatex}
-%\usepackage[backend=biber,bibstyle=gost-authoryear]{biblatex}
-
-% Справка по 4 главным стилям для ленивых: 
-% gost-inline  ссылки внутри теста в круглых скобках
-% gost-footnote подстрочные ссылки
-% gost-numeric затекстовые ссылки
-% gost-authoryear тоже затекстовые ссылки, но немного другие 
-
-% Подробнее смотри страницу 4 документации. Она на русском. 
-
-
-\addbibresource{ex_biblio.bib} % сюда нужно вписать свой биб-файлик
+\usepackage[style=authoryear,sorting=nty]{biblatex}
+\addbibresource{mybiber.bib} %сюда надо вписать свой bib-файлик
 
 
 \begin{document}
 
-\section{Мой список литературы} 
+\section{Мой список литературы через biber}
 
-Доказательство можно найти в \cite{Shan:sets}. Для знатоков может быть интересен тот факт, что в~этом доказательстве неявно используется аксиома выбора. Без неё можно представить $\mathbb{R}$ как счётное объединение счётных множеств \parencite{williams:wto}. Эта заметка была написана в \citeyear{williams:wto} году. Написали её \citeauthor{williams:wto}.
+В работе~\cite{ahhahahah} есть много букоф. Читать её крайне не рекомендуется.
 
-В данной книжке мы придерживаемся системы аксиом ZFC. Хотя бы просто потому, что авторы (по крайней мере пока) не умеет думать без аксиомы выбора. Подробности можно найти в \footcite{herrlich:axiom}. Также особо любопытные могут прочитать всего лишь сорок страниц заметок о теории множеств в \textcite{Franclin:sets}.
+\nocite{*} % процитировать все статьи из .bib файла
 
-\nocite{*}    место для статьи из гугла!
-
-% Если хотим поменять название, добавляем аргумент!
-
-% \printbibliography[title={Чтиво}]
-\printbibliography
-
+%\printbibliography
+\printbibliography[title={Чтиво}]
 
 \end{document}
-
-
-
-
-
-
-
-
-
-

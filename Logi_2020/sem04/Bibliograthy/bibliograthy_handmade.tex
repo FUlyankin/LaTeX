@@ -65,7 +65,7 @@
 	colorlinks=true,       	% true - цветные ссылки, false - ссылки в рамках
 	urlcolor=blue,          % цвет ссылки на url
 	linkcolor=red,          % внутренние ссылки
-	citecolor=green,        % на библиографию
+	citecolor=red,        % на библиографию
 	pdfnewwindow=true,      % при щелчке в pdf на ссылку откроется новый pdf
 	breaklinks              % если ссылка не умещается в одну строку, разбивать ли ее на две части?
 }
@@ -92,28 +92,6 @@
 \usepackage{indentfirst}       % установка отступа в первом абзаце главы
 
 
-%%%%%%%%%% Теоремы %%%%%%%%%%
-
-\theoremstyle{plain}              % Это стиль по умолчанию.  Есть другие стили.
-\newtheorem{theorem}{Теорема}[section]
-% Вопросы из зала (от Юрия Николаевича)
-\renewcommand{\thetheorem}{\thesection.\Asbuk{theorem}}
-
-\newtheorem{result}{Следствие}[theorem]
-% счётчик подчиняется теоремному, нумерация идёт по главам согласованно между собой
-
-\theoremstyle{definition}         % убирает курсив и что-то еще наверное делает ;)
-\newtheorem*{defin}{Определение}  % нумерация не идёт вообще
-
-\newtheorem{fignia}{Какая-то фигня}
-
-
-%%%%%%%%%% Свои команды %%%%%%%%%%
-\usepackage{etoolbox}    % логические операторы для своих макросов
-
-% Все свои команды лучше всего определять не по ходу текста, как это сделано в этом документе, а в преамбуле!
-
-
 \begin{document}
 
 \section{Библиография вручную}
@@ -126,19 +104,22 @@
 
 
 %Команды для изменения названия у списка литры!
-\renewcommand{\refname}{Чтиво}  % для класса article
+\renewcommand{\refname}{Наше чтиво}  % для класса article
 %\renewcommand{\bibname}{Чтиво}  % для классов book и report
 
 
 \begin{thebibliography}{99}
+
 \addcontentsline{toc}{chapter}{Чтиво} %добавляем в соодержание
+
+\bibitem{ахахах} Barro R. J. Reputation in a model of monetary policy with incomplete information //Journal of Monetary Economics. – 1986. – Т. 17. – №. 1. – С. 3-20.
 
 \bibitem{UDAEVA} Юдаева, К. В. О денежно-кредитной политике Банка России на современном этапе //Деньги и кредит. --- 2014. --- С. 13.
 
 \bibitem{barro1986reputation} Barro, R. J. Reputation in a model of monetary policy with incomplete information //Journal of Monetary Economics. --- 1986. --- Т. 17. №. 1. С. 3-20.
 
 \bibitem{3} Barro, R. J., Gordon, D. B. A positive theory of monetary policy in a natural-rate model. --- 1981.
+
 \end{thebibliography}
 
 \end{document}
-
