@@ -24,4 +24,8 @@ __Ещё материалы:__
 
 __Задание:__  
 
-- Начать писать НИР: [подробнее в описании задания]( )
+- [Начать писать НИР в техе](https://github.com/FUlyankin/LaTeX/blob/master/Logi_2020/sem05/task_6_nir.pdf)
+- [Составить реюме](https://github.com/FUlyankin/LaTeX/blob/master/Logi_2020/sem05/task_5_cv.pdf)
+- [Написать письмо в Хогвартс,](https://github.com/FUlyankin/LaTeX/blob/master/Logi_2020/sem05/hogwarts/task_2_hogw.pdf) для этого задания есть [решение.](https://github.com/FUlyankin/LaTeX/blob/master/Logi_2020/sem05/hogwarts/hogwarts.tex)
+
+[Форма для сдачи домашек.](https://docs.google.com/forms/d/e/1FAIpQLSe11kxKVfv07iCL1E9yNX7ll9swKImiVwRr1H70lslGzInRSg/viewform)
