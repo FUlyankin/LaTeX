@@ -1,0 +1,6 @@
+\documentclass{article}
+\begin{document}
+Name: <%= x[1] %>
+
+\input{<%= x[2] %>
+\end{document}

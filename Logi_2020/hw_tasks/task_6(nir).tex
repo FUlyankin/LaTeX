@@ -1,0 +1,156 @@
+%!TEX TS-program = xelatex
+\documentclass[12pt, a4paper, oneside]{article}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}  % пакеты для математики
+
+\usepackage[utf8]{inputenc} % задание utf8 кодировки исходного tex файла
+\usepackage[british,russian]{babel} % выбор языка для документа
+
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Helvetica}   % задаёт основной шрифт документа
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+\setmathfont{Neo Euler}      % шрифт для математики
+% \setmathfont[math-style=ISO]{Asana Math}
+% Можно делать смену начертания с помощью разных стилей
+
+% Конкретный символ из конкретного шрифта
+% \setmathfont[range=\int]{Neo Euler}
+
+%%%%%%%%%% Работа с картинками %%%%%%%%%
+\usepackage{graphicx}                  % Для вставки рисунков
+\usepackage{graphics}
+\graphicspath{{images/}{pictures/}}    % можно указать папки с картинками
+\usepackage{wrapfig}                   % Обтекание рисунков и таблиц текстом
+
+%%%%%%%%%%%%%%%%%%%%%%%% Графики и рисование %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz, pgfplots}  % язык для рисования графики из latex'a
+
+%%%%%%%%%% Гиперссылки %%%%%%%%%%
+\usepackage{xcolor}              % разные цвета
+
+\usepackage{hyperref}
+\hypersetup{
+	unicode=true,           % позволяет использовать юникодные символы
+	colorlinks=true,       	% true - цветные ссылки, false - ссылки в рамках
+	urlcolor=blue,          % цвет ссылки на url
+	linkcolor=red,          % внутренние ссылки
+	citecolor=green,        % на библиографию
+	pdfnewwindow=true,      % при щелчке в pdf на ссылку откроется новый pdf
+	breaklinks              % если ссылка не умещается в одну строку, разбивать ли ее на две части?
+}
+
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет Последний день Помпеи}
+% \listoftodos --- печатает все поставленные \todo'шки
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+
+\usepackage[paper=a4paper, top=20mm, bottom=15mm,left=20mm,right=15mm]{geometry}
+\usepackage{indentfirst}       % установка отступа в первом абзаце главы
+
+\usepackage{setspace}
+\setstretch{1.15}  % Межстрочный интервал
+\setlength{\parskip}{4mm}   % Расстояние между абзацами
+% Разные длины в латехе https://en.wikibooks.org/wiki/LaTeX/Lengths
+
+
+\usepackage{xcolor} % Enabling mixing colors and color's call by 'svgnames'
+
+\definecolor{MyColor1}{rgb}{0.2,0.4,0.6} %mix personal color
+\newcommand{\textb}{\color{Black} \usefont{OT1}{lmss}{m}{n}}
+\newcommand{\blue}{\color{MyColor1} \usefont{OT1}{lmss}{m}{n}}
+\newcommand{\blueb}{\color{MyColor1} \usefont{OT1}{lmss}{b}{n}}
+\newcommand{\red}{\color{LightCoral} \usefont{OT1}{lmss}{m}{n}}
+\newcommand{\green}{\color{Turquoise} \usefont{OT1}{lmss}{m}{n}}
+
+\usepackage{titlesec}
+\usepackage{sectsty}
+%%%%%%%%%%%%%%%%%%%%%%%%
+%set section/subsections HEADINGS font and color
+\sectionfont{\color{MyColor1}}  % sets colour of sections
+\subsectionfont{\color{MyColor1}}  % sets colour of sections
+
+%set section enumerator to arabic number (see footnotes markings alternatives)
+\renewcommand\thesection{\arabic{section}.} %define sections numbering
+\renewcommand\thesubsection{\thesection\arabic{subsection}} %subsec.num.
+
+%define new section style
+\newcommand{\mysection}{
+	\titleformat{\section} [runin] {\usefont{OT1}{lmss}{b}{n}\color{MyColor1}} 
+	{\thesection} {3pt} {} } 
+
+
+%	CAPTIONS
+\usepackage{caption}
+\usepackage{subcaption}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\captionsetup[figure]{labelfont={color=Turquoise}}
+
+\usepackage[normalem]{ulem}  % для зачекивания текста
+
+\pagestyle{empty}
+
+\begin{document}
+	
+\section*{Задание 6 :  положительная экстерналия (40  баллов) }
+	
+Не забывай, где находится  \href{https://fulyankin.github.io/LaTeX/}{страничку курса} с кучей шпаргалок! Как правильно себя вести — вы уже знаете. Вот вам \href{https://docs.google.com/forms/d/e/1FAIpQLSe11kxKVfv07iCL1E9yNX7ll9swKImiVwRr1H70lslGzInRSg/viewform}{уютная гугл-форма.}   Не стеснятесь просить о помощи, если она вам необходима.
+	
+
+\subsection*{Необходимое условие для положительной экстерналии }
+
+Заставьте работать biber. Убедитесь, что пакет biblatex-gost тоже работает.  Не забывайте включить в настройках \textbf{(preferences/build)}  \texttt{biber}. Также нужно прописать в \textbf{preferences/commands} в строку \textbf{XeLaTeX}
+
+ \texttt{xelatex -shell-escape -synctex=1 -interaction=nonstopmode \%.tex}
+ 
+до этого там будет написано
+ 
+  \texttt{xelatex -synctex=1 -interaction=nonstopmode \%.tex}
+  
+Дополнительная опция \texttt{-shell-escape} необходима для корректной работы внешних пакетов вроде biber и minted.
+
+Если у вас Linux, то вы достаточно брутальны, чтобы открыть консоль и прописать в ней  \texttt{sudo apt-get install biber}. Не забудьте похвастаться своим великим кодингом в терминале перед пользователями других ОС.
+
+\subsection*{Достаточное условие  для положительной экстерналии}
+
+Уже начали писать НИР? А вот пора бы. Первый профит от знания теха вы можете обрести именно на этом поприще.  Красивые формулы после минимума усилий, нужного для запоминания синтаксиса. Автоматические ссылки на список литературы, автоматическая нумерация всего, что только можно себе представить, а ещё ноль усилий для оформления текста по ГОСТ. Нужно только лишь подключить преамбулу и всё. 
+
+Задание состоит в том, что нужно оформить по ГОСТ свой уже написанный кусок НИРа.  Если вы ещё не начали писать его, то пора начать. Мы посмотрим на то, как хорошо вы справляетесь с его написанием в плане теховского синтаксиса и поправим ошибки. Само по себе содержание вашей работы нас не интересует. Мы хотим минимально 8 страниц: 
+
+\begin{itemize} 
+\item[$(1)$] Первая страница - титульный лист!
+
+\item[$(1)$]  Вторая страница - оглавление!
+
+\item[$(1)$]  Последняя страница - список литературы, оформленный с помощью biber. Если вы до сих пор не прочли ни одной статьи, то прямо сейчас начните читать первую.
+\end{itemize} 
+
+Остальные пять страниц — это текст вашей научной работы. Баллы будут начисляться за следующие вещи:
+
+\begin{itemize}
+\item[$(4)$] Вам удалось подключить гостовскую преамбулу. Вы сделали это, положив её рядом в папочке в отдельном файлике, чтобы каждый раз при открытии документа не пролистывать её всю полностью. 
+	
+\item[$(4)$]  У вас в тексте есть несколько правильно оформленных формул.
+
+\item[$(4)$]  Таблица. Если у вас нет таблиц в НИР, то оформите таблицу с критическим анализом эмпирических статей. Она вам пригодится в будущем. Наверное, логично сделать её многостраничной. Либо контролировать, чтобы она занимала одну страницу и не ставить около неё ни в коем случае \texttt{[H]}. Прижмите её к верху страницы с помощью \texttt{[t]} или к низу с помощью \texttt{[b]}.
+
+\item[$(4)$]  Картинка. Если у вас нет картинки для НИР, то оформите по ГОСТ в качестве картинки фото человека, в которого вы по уши влюблены, но скрываете это.
+
+\item[$(4)$]  Вы сослались на несколько источников по ходу текста. Возможно, вы сослались на формулы рисунки или вообще на что угодно другое, но сослались. При этом правильно сослались.
+
+\item[$(4)$]  Вы правильно оформили все четыре различных перечня. Если у вас в НИР нет перечислений, то перечислите хоть что-нибудь. Например, те предметы, которые прямо сейчас валяются на вашем столе. Перечислите их так, чтобы потом не забыть удалить из итогового текста.
+
+\item[$(4)$]  В приложении вы оформили какой-то код, который вы использовали для расчётов или какую-то таблицу с результатами расчётов. Или что-то ещё, что обычно помещают в приложение.
+
+\item[$(5)$]  Вы адекватный человек, который хорошо, с точки зрения TeX, набирает текст и не делает странных вещей. 
+
+\item[$(4)$]  Вы выносите какие-то символы, которые часто используете по ходу формул в отдельные команды. 
+\end{itemize} 
+
+\end{document}
+
+

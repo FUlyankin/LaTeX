@@ -1,0 +1,197 @@
+%выравнивание на слайдах (верх, центр, низ)
+%\documentclass[handout, dvipsnames]{beamer} % Раздаточный материал (на слайдах всё сразу)
+%\documentclass[aspectratio=169, dvipsnames]{beamer} % Соотношение сторон
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+
+%\usetheme{Berkeley} % Тема оформленияLLL
+%\usetheme{Bergen}
+%\usetheme{CambridgeUS}
+\usetheme{Boadilla}
+
+\usecolortheme{crane} % Цветовая схема
+
+%\useoutertheme{infolines} % Навигация 
+%\useoutertheme{tree}
+%\useoutertheme{miniframes}
+%\useoutertheme{shadow}
+%\useoutertheme{sidebar}
+%\useoutertheme{smoothbars}
+%\useoutertheme{smoothtree}
+%\useoutertheme{split}
+%\useoutertheme{default}
+
+
+%\useinnertheme{circles}
+\useinnertheme{rectangles}
+%\useinnertheme{rounded}
+%\useinnertheme{inmargin}
+
+
+%%% Работа с русским языком
+\usepackage[english,russian]{babel}   %% загружает пакет многоязыковой вёрстки
+\usepackage{fontspec}      %% подготавливает загрузку шрифтов Open Type, True Type и др.
+\defaultfontfeatures{Ligatures={TeX},Renderer=Basic}  %% свойства шрифтов по умолчанию
+\setmainfont[Ligatures={TeX,Historic}]{Arial} %% задаёт основной шрифт документа
+\setsansfont{Arial}                    %% задаёт шрифт без засечек
+\setmonofont{Arial}
+\usepackage{indentfirst}
+\frenchspacing
+
+
+
+%% Beamer по-русски
+\newtheorem{rtheorem}{Теорема}
+\newtheorem{rproof}{Доказательство}
+\newtheorem{rexample}{Пример}
+
+%%% Дополнительная работа с математикой
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} % AMS
+\usepackage{icomma} % "Умная" запятая: $0,2$ --- число, $0, 2$ --- перечисление
+
+%% Номера формул
+\mathtoolsset{showonlyrefs=true} % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+%\usepackage{leqno} % Нумерация формул слева
+
+%% Свои команды
+\DeclareMathOperator{\sgn}{\mathop{sgn}}
+
+%% Перенос знаков в формулах (по Львовскому)
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}
+{\hbox{$\mathsurround=0pt #1$}}{}}
+
+%%% Работа с картинками
+\usepackage{graphicx}  % Для вставки рисунков
+\graphicspath{{images/}{images2/}}  % папки с картинками
+\setlength\fboxsep{3pt} % Отступ рамки \fbox{} от рисунка
+\setlength\fboxrule{1pt} % Толщина линий рамки \fbox{}
+\usepackage{wrapfig} % Обтекание рисунков текстом
+
+%%% Работа с таблицами
+\usepackage{array,tabularx,tabulary,booktabs} % Дополнительная работа с таблицами
+\usepackage{longtable}  % Длинные таблицы
+\usepackage{multirow} % Слияние строк в таблице
+
+%%% Программирование
+\usepackage{etoolbox} % логические операторы
+
+%%% Другие пакеты
+\usepackage{lastpage} % Узнать, сколько всего страниц в документе.
+%\usepackage{soul} % Модификаторы начертания
+\usepackage{csquotes} % Еще инструменты для ссылок
+\usepackage{multicol} % Несколько колонок
+
+
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{        % Гиперссылки
+    unicode=true,           % русские буквы в раздела PDF
+    pdftitle={Заголовок},   % Заголовок
+    pdfauthor={Автор},      % Автор
+    pdfsubject={Тема},      % Тема
+    pdfcreator={Создатель}, % Создатель
+    pdfproducer={Производитель}, % Производитель
+    pdfkeywords={keyword1} {key2} {key3}, % Ключевые слова
+    colorlinks=true,        % false: ссылки в рамках; true: цветные ссылки
+    linkcolor=,          % внутренние ссылки
+    citecolor=green,        % на библиографию
+    filecolor=magenta,      % на файлы
+    urlcolor=blue           % на URL
+} 
+
+\usepackage{dcolumn}
+
+%fffff3
+\definecolor{backgr}{RGB}{146,26,29}
+\definecolor{backgr1}{RGB}{230,43,37}
+\definecolor{ex1}{RGB}{231,142,36}
+\definecolor{ex2}{RGB}{249,155,28}
+\definecolor{ex3}{RGB}{242,103,36}
+
+\definecolor{red}{RGB}{230,43,37}
+%\setbeamercolor{normal text}{fg=black,bg=backgr}
+\setbeamercolor{frametitle}{bg=backgr,fg=white}
+%\setbeamercolor{footline}{bg=backgr,fg=white}
+%\setbeamercolor{normal text}{bg=yellow}
+%\setbeamercolor{section in toc}{fg=yellow}
+%\setbeamercolor{subsection in toc}{fg=blue}
+
+% How to change colour of Navigation Bar in Beamer -  много интересного
+
+%Пример команд, задающих внешний вид блока
+\setbeamercolor{block title}{fg=white,bg=ex1}
+\setbeamerfont{block title}{family=\sffamily}
+\setbeamercolor{block body}{bg=white}
+\setbeamertemplate{blocks}[rounded][shadow=fasle]
+\setbeamercolor{title}{bg=backgr, fg=white}
+\setbeamercolor{alerted text}{fg=backgr1}
+
+\newlength\subtitwd
+\setlength\subtitwd{4cm}% change the width here
+
+\makeatletter
+\newcommand\titlegraphicii[1]{\def\inserttitlegraphicii{#1}}
+\titlegraphicii{}
+\newcommand\superviser[1]{\def\insertsuperviser{Научный руководитель: #1}}
+\superviser{}
+
+\setbeamertemplate{title page}
+{
+  \vbox{}
+   {\usebeamercolor[fg]{titlegraphic} \hspace{0.35ex} \inserttitlegraphic\hfill\inserttitlegraphicii \hspace{1ex} \par }\vspace{1.5ex}
+  \begin{centering}
+    \begin{beamercolorbox}[sep=8pt,center]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center]{title}
+    
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx  \insertsubtitle\@empty%
+      \else%
+        \vskip0.5em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vskip1em\par
+    \begin{beamercolorbox}[sep=5pt,center]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}%\vskip0.5em
+    \begin{beamercolorbox}[sep=5pt,center]{author}
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+        \begin{beamercolorbox}[sep=4pt,center]{institute}
+      \usebeamerfont{institute}\insertsuperviser
+    \end{beamercolorbox}
+  \end{centering}
+  %\vfill
+}
+\makeatother
+
+\setbeamercolor{item projected}{bg=ex3}
+\setbeamertemplate{enumerate items}[default]
+
+\setbeamercolor{palette primary}{bg=white}
+\setbeamercolor{palette primary}{fg=black}
+\setbeamercolor{palette secondary}{bg=white}
+\setbeamercolor{palette secondary}{fg=black}
+\setbeamercolor{palette tertiary}{bg=white}
+\setbeamercolor{palette tertiary}{fg=black}
+
+\setbeamercolor{itemize item}{fg=ex3}
+\setbeamercolor{itemize subitem}{fg=ex2}
+\setbeamercolor{itemize subsubitem}{fg=ex1}
+
+\setbeamercolor{enumerate item}{fg=ex3}
+\setbeamercolor{enumerate subitem}{bg=ex3}
+\setbeamercolor{enumerate subsubitem}{bg=ex3}
+
+
+\setbeamertemplate{itemize subitem}{$\Rightarrow$}
+\setbeamertemplate{itemize item}{$\blacktriangleright$}
+
+
+
+\usepackage{todo}
+\newcolumntype{a}{>{\columncolor{red}}c}
+
+
+\usefonttheme{professionalfonts}

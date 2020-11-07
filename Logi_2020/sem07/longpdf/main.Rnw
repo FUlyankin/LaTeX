@@ -1,0 +1,62 @@
+\documentclass{article}
+\begin{document}
+ 
+% Это шапочка для нашего документа
+
+<<echo=FALSE>>=
+
+# Это тело нашего документа, которое будет всё время изменяться!
+# При каждом обращении к теду Pfd_creator будет подставлять вместо 
+# символа 1 новые данные
+
+mydata <- 1^2
+@
+ 
+Blah blah blah.
+ 
+Let's look at our data using a seed of 1
+ 
+<< >>=
+print(mydata)
+@
+
+
+<<echo=FALSE>>=
+
+# Это тело нашего документа, которое будет всё время изменяться!
+# При каждом обращении к теду Pfd_creator будет подставлять вместо 
+# символа 2 новые данные
+
+mydata <- 2^2
+@
+ 
+Blah blah blah.
+ 
+Let's look at our data using a seed of 2
+ 
+<< >>=
+print(mydata)
+@
+
+
+<<echo=FALSE>>=
+
+# Это тело нашего документа, которое будет всё время изменяться!
+# При каждом обращении к теду Pfd_creator будет подставлять вместо 
+# символа 3 новые данные
+
+mydata <- 3^2
+@
+ 
+Blah blah blah.
+ 
+Let's look at our data using a seed of 3
+ 
+<< >>=
+print(mydata)
+@
+
+% Это носочки для нашего документа
+
+\end{document}
+
